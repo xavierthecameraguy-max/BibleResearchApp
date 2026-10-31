@@ -11,6 +11,7 @@ import { TextCredit } from '../components/TextCredit.tsx'
 import { CrossRefSheet } from '../components/CrossRefSheet.tsx'
 import { OriginalWordsSheet } from '../components/OriginalWordsSheet.tsx'
 import { DictionarySheet } from '../components/DictionarySheet.tsx'
+import { ChapterEntities } from '../components/ChapterEntities.tsx'
 import { Chip } from '../components/VerseActions.tsx'
 import { BUNDLED } from '../lib/bible.ts'
 import { formatReference } from '../lib/references.ts'
@@ -164,6 +165,8 @@ export function BibleChapterPage() {
         <TextCredit used={used} notice={notice} />
         {fellBack && <span className="mt-1 block font-semibold">{fallbackMessage(chosen.abbr, fellBack)}</span>}
       </p>
+
+      <ChapterEntities book={book.id} chapter={chapter} />
 
       <div className="mt-6 grid gap-2">
         <OpenOnlineLink passage={passage} className={buttonClass('secondary', 'w-full')} />

@@ -169,3 +169,11 @@ export const LanguageIcon = (p: P) => (
     <path d="M13 21l4-9 4 9M14.5 18h5" />
   </Svg>
 )
+export const PeopleIcon = (p: P) => (
+  <Svg {...p}>
+    <circle cx="9" cy="8" r="3" />
+    <path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6" />
+    <circle cx="17" cy="9" r="2.5" />
+    <path d="M15.5 14.2c3 .4 5.5 2.9 5.5 5.8" />
+  </Svg>
+)

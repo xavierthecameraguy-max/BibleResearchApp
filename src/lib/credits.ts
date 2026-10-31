@@ -2,6 +2,7 @@
 // Copyright page). Add an entry whenever a new dataset is added.
 
 import { DICTIONARY_SOURCES, SOURCE_ORDER } from './data/dictionary.ts'
+import { PEOPLE_CREDITS } from './data/people.ts'
 
 export interface Credit {
   title: string
@@ -29,5 +30,6 @@ export const CREDITS: Credit[] = [
     title: 'Lessons, glossary and timeline',
     text: 'Written for Foundations. Book introductions and lesson text are original to this app.',
   },
+  ...PEOPLE_CREDITS.map((c) => ({ title: c.title, text: c.text, url: c.url })),
   ...SOURCE_ORDER.map((id) => ({ title: DICTIONARY_SOURCES[id].title, text: DICTIONARY_SOURCES[id].credit, url: DICTIONARY_SOURCES[id].url })),
 ]
