@@ -19,7 +19,12 @@ export function VerseOfTheDay() {
   const to = p.endVerse ?? from
   const text = verses
     .filter((v) => v.v >= from && v.v <= to)
-    .map((v) => v.t.replace(/\n/g, ' '))
+    .map((v) => {
+      // Some translations put a psalm's title ("A Psalm of David.") in verse 1; leave it out here.
+      const lines = v.t.split('\n')
+      if (p.book === 'PSA' && v.v === 1 && lines.length > 1 && /psalm|song|maskil|miktam|prayer|choirmaster|director/i.test(lines[0])) lines.shift()
+      return lines.join(' ')
+    })
     .join(' ')
   const key = rangeKey(p.book, p.startChapter, Array.from({ length: to - from + 1 }, (_, i) => from + i))
   const memorizing = useAppState((s) => !!s.memory[key])
@@ -28,14 +33,14 @@ export function VerseOfTheDay() {
       <p className="text-sm font-semibold uppercase tracking-wide text-stone-600 dark:text-stone-400">Verse of the day</p>
       <blockquote className="mt-2 font-serif text-xl leading-relaxed">{loading ? '…' : `“${text}”`}</blockquote>
       <p className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1">
-        <Link to={readerPath(p)} className="font-semibold text-amber-800 underline underline-offset-2 dark:text-amber-300">
+        <Link to={readerPath(p)} className="inline-flex min-h-11 items-center font-semibold text-amber-800 underline underline-offset-2 dark:text-amber-300">
           {formatReference(p)}
         </Link>
         <button
           type="button"
           onClick={() => addMemoryCard(key)}
           disabled={memorizing}
-          className="text-sm text-stone-700 underline underline-offset-2 disabled:no-underline disabled:opacity-70 dark:text-stone-300"
+          className="inline-flex min-h-11 items-center text-sm text-stone-700 underline underline-offset-2 disabled:no-underline disabled:opacity-70 dark:text-stone-300"
         >
           {memorizing ? 'In your memory verses' : 'Memorize'}
         </button>

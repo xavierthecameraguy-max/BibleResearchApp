@@ -18,9 +18,8 @@ export function speak(chunks: string[], rate = 0.95) {
     u.rate = rate
     u.lang = 'en-US'
     if (voice) u.voice = voice
-    if (i === chunks.length - 1) {
-      u.onend = () => emit(false)
-    }
+    if (i === chunks.length - 1) u.onend = () => emit(false)
+    u.onerror = () => emit(false)
     speechSynthesis.speak(u)
   })
   emit(true)

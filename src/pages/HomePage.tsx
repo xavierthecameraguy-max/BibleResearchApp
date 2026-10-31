@@ -16,7 +16,9 @@ export function HomePage() {
   const lastLesson = useAppState((s) => s.lastLesson)
   const lastRead = useAppState((s) => s.lastRead)
   const plans = useAppState((s) => s.plans)
-  const activePlan = PLANS.find((p) => plans[p.id])
+  // The plan you're reading now: the first started plan that still has days left.
+  const startedPlans = PLANS.filter((p) => plans[p.id])
+  const activePlan = startedPlans.find((p) => plans[p.id].done.length < p.days.length) ?? startedPlans[0]
   const activity = useAppState((s) => s.activity)
   const memory = useAppState((s) => s.memory)
   const streak = currentStreak(activity)
@@ -36,7 +38,9 @@ export function HomePage() {
         <p className="mt-2 text-stone-600 dark:text-stone-400">
           {isNew
             ? 'Learn the Bible from the ground up: its big story, how we got it, how the church got here, and how to read it well.'
-            : `You've completed ${doneCount} lesson${doneCount === 1 ? '' : 's'}. Keep going.`}
+            : doneCount
+              ? `You've completed ${doneCount} lesson${doneCount === 1 ? '' : 's'}. Keep going.`
+              : 'Pick up where you left off.'}
         </p>
       </div>
 
@@ -96,8 +100,17 @@ export function HomePage() {
         (() => {
           const pr = plans[activePlan.id]
           // The next day you haven't ticked off (reading ahead is fine).
-          const show = activePlan.days.findIndex((_, i) => !pr.done.includes(i + 1)) + 1 || activePlan.days.length
+          const show = activePlan.days.findIndex((_, i) => !pr.done.includes(i + 1)) + 1
           const day = todayIndex(pr.startedAt, activePlan.days.length)
+          if (!show)
+            return (
+              <Card>
+                <p className="text-lg font-semibold">🎉 You finished “{activePlan.title}”!</p>
+                <Link to="/plans" className={buttonClass('secondary', 'mt-3 w-full')}>
+                  Choose another reading plan
+                </Link>
+              </Card>
+            )
           return (
             <Card>
               <p className="text-sm font-semibold uppercase tracking-wide text-stone-600 dark:text-stone-400">
@@ -110,12 +123,12 @@ export function HomePage() {
               </p>
               <p className="mt-1 flex flex-wrap gap-x-3">
                 {activePlan.days[show - 1].map((p) => (
-                  <Link key={formatReference(p)} to={readerPath(p)} className="text-lg text-amber-800 underline underline-offset-2 dark:text-amber-300">
+                  <Link key={formatReference(p)} to={readerPath(p)} className="inline-flex min-h-11 items-center text-lg text-amber-800 underline underline-offset-2 dark:text-amber-300">
                     {formatReference(p)}
                   </Link>
                 ))}
               </p>
-              <Link to="/plans" className="mt-2 inline-block text-sm underline underline-offset-2">
+              <Link to="/plans" className="inline-flex min-h-11 items-center text-sm underline underline-offset-2">
                 Open plan
               </Link>
             </Card>

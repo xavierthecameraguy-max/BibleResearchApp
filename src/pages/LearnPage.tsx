@@ -9,7 +9,7 @@ export function LearnPage() {
   const progress = useAppState((s) => s.progress)
   return (
     <div>
-      <PageTitle sub="Four tracks. Each lesson takes about five to seven minutes and ends with a few questions.">Learn</PageTitle>
+      <PageTitle sub={`${tracks.length} tracks. Each lesson takes about five to seven minutes and ends with a few questions.`}>Learn</PageTitle>
       <ul className="space-y-4">
         {tracks.map((t, i) => {
           const all = lessonsInTrack(t.id)

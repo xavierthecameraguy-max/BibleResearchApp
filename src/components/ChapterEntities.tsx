@@ -19,7 +19,7 @@ export function ChapterEntities({ book, chapter }: { book: string; chapter: numb
   const chip = 'inline-flex min-h-10 items-center rounded-full border border-stone-300 px-3 text-[0.95rem] dark:border-stone-700'
   return (
     <details className="mt-6 rounded-2xl border border-stone-200 bg-white p-4 dark:border-stone-800 dark:bg-stone-900">
-      <summary className="cursor-pointer font-semibold">
+      <summary className="flex min-h-11 cursor-pointer items-center font-semibold">
         People and places in this chapter ({data.people.length + data.places.length})
       </summary>
       {data.people.length > 0 && (
@@ -38,7 +38,7 @@ export function ChapterEntities({ book, chapter }: { book: string; chapter: numb
       )}
       {data.places.length > 0 && (
         <>
-          <Link to={`/map?book=${book}&chapter=${chapter}`} className="mt-3 inline-block font-semibold text-amber-800 underline underline-offset-2 dark:text-amber-300">
+          <Link to={`/map?book=${book}&chapter=${chapter}`} className="mt-3 inline-flex min-h-11 items-center font-semibold text-amber-800 underline underline-offset-2 dark:text-amber-300">
             Map this chapter
           </Link>
           <h3 className="mb-2 mt-3 text-sm font-semibold uppercase tracking-wide text-stone-600 dark:text-stone-400">Places</h3>

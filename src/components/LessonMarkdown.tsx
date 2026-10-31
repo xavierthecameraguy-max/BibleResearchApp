@@ -1,7 +1,8 @@
 // Renders lesson Markdown. Glossary words written as [[term]] become
 // tappable definitions, and Bible references are linked to the reader.
 
-import { useState, type ReactNode } from 'react'
+import { useEffect, useState, type ReactNode } from 'react'
+import { searchDictionary } from '../lib/data/dictionary.ts'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { Link } from 'react-router-dom'
@@ -13,32 +14,39 @@ import { DIAGRAMS } from './Diagrams.tsx'
 
 /** Turn our shorthand into ordinary Markdown links the renderer understands. */
 function preprocess(md: string): string {
-  return md
-    .split('\n')
-    .map((line) => {
-      if (/^\s*#/.test(line)) {
-        // headings: just show the glossary word, no links
-        return line.replace(GLOSSARY_LINK, (_m, id: string, label?: string) => label ?? getTerm(id)?.term ?? id)
-      }
-      // Protect existing links, then add Bible-reference links, then glossary links.
-      const saved: string[] = []
-      let out = line.replace(/\[[^\]]*\]\([^)]*\)|\[\[[^\]]+\]\]/g, (m) => {
-        saved.push(m)
-        return `\u0000${saved.length - 1}\u0000`
-      })
-      out = out.replace(REFERENCE_IN_TEXT, (ref) => {
-        const p = parseReference(ref)
-        return p ? `[${ref}](${readerPath(p)})` : ref
-      })
-      out = out.replace(/\u0000(\d+)\u0000/g, (_m, i) => saved[Number(i)])
-      return out.replace(GLOSSARY_LINK, (_m, id: string, label?: string) => `[${label ?? id}](glossary:${id})`)
-    })
-    .join('\n')
+  const saved: string[] = []
+  const keep = (m: string) => {
+    saved.push(m)
+    return `\u0000${saved.length - 1}\u0000`
+  }
+  const termName = (id: string, label?: string) => label ?? getTerm(id)?.term ?? id
+  // Headings show the glossary word without a link and get no Bible links.
+  let out = md.replace(/^\s*#.*$/gm, (line) => keep(line.replace(GLOSSARY_LINK, (_m, id: string, label?: string) => termName(id, label))))
+  // Protect existing links and glossary terms, then link Bible references.
+  // This works across the line breaks inside a paragraph.
+  out = out.replace(/\[[^\]]*\]\([^)]*\)|\[\[[^\]]+\]\]/g, keep)
+  out = out.replace(REFERENCE_IN_TEXT, (ref) => {
+    const p = parseReference(ref.replace(/\s+/g, ' '))
+    return p ? `[${ref}](${readerPath(p)})` : ref
+  })
+  while (/\u0000\d+\u0000/.test(out)) out = out.replace(/\u0000(\d+)\u0000/g, (_m, i) => saved[Number(i)])
+  return out.replace(GLOSSARY_LINK, (_m, id: string, label?: string) => `[${termName(id, label).replace(/\s+/g, ' ')}](glossary:${id})`)
 }
 
 export function GlossaryLink({ id, children }: { id: string; children: ReactNode }) {
   const [open, setOpen] = useState(false)
+  const [inDictionary, setInDictionary] = useState(false)
   const term = getTerm(id)
+  useEffect(() => {
+    if (!open || !term) return
+    let cancelled = false
+    searchDictionary(term.term.replace(/\s*\(.*\)$/, ''), 1)
+      .then((r) => !cancelled && setInDictionary(r.length > 0))
+      .catch(() => undefined)
+    return () => {
+      cancelled = true
+    }
+  }, [open, term])
   if (!term) return <>{children}</>
   return (
     <>
@@ -53,13 +61,15 @@ export function GlossaryLink({ id, children }: { id: string; children: ReactNode
       </button>
       <Sheet open={open} onClose={() => setOpen(false)} title={term.term}>
         <p className="text-lg leading-relaxed">{term.definition}</p>
-        <div className="mt-5 grid grid-cols-2 gap-2">
+        <div className={`mt-5 grid gap-2 ${inDictionary ? 'grid-cols-2' : ''}`}>
           <Link to={`/glossary#${id}`} className={buttonClass('secondary')}>
             Glossary
           </Link>
-          <Link to={`/dictionary?q=${encodeURIComponent(term.term.replace(/\s*\(.*\)$/, ''))}`} className={buttonClass('secondary')}>
-            Dictionary
-          </Link>
+          {inDictionary && (
+            <Link to={`/dictionary?q=${encodeURIComponent(term.term.replace(/\s*\(.*\)$/, ''))}`} className={buttonClass('secondary')}>
+              Dictionary
+            </Link>
+          )}
         </div>
       </Sheet>
     </>

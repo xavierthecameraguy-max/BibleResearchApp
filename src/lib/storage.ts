@@ -501,6 +501,6 @@ export function applySettingsToDocument() {
   const { theme, textSize } = state.settings
   const dark = theme === 'dark' || (theme === 'system' && matchMedia('(prefers-color-scheme: dark)').matches)
   document.documentElement.classList.toggle('dark', dark)
-  document.documentElement.classList.toggle('sepia', theme === 'sepia')
+  document.documentElement.classList.toggle('theme-sepia', theme === 'sepia')
   document.documentElement.dataset.textSize = textSize
 }

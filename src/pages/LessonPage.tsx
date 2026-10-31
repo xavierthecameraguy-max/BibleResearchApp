@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { getLesson, getTrack, nextLessonAfter, previousLessonBefore, trackStyle } from '../lib/content.ts'
 import { completeLesson, resetLesson, setLastLesson, useAppState } from '../lib/storage.ts'
@@ -35,9 +35,11 @@ export function LessonPage() {
   const allProgress = useAppState((s) => s.progress)
   const [retake, setRetake] = useState(false)
   const speaking = useSpeaking()
+  const completeRef = useRef<HTMLElement>(null)
   const [body, setBody] = useState<string | null>(null)
   useEffect(() => {
     let cancelled = false
+    stopSpeaking()
     setBody(null)
     if (lessonId) loadLessonBody(lessonId).then((b) => !cancelled && setBody(b))
     return () => {
@@ -100,8 +102,8 @@ export function LessonPage() {
       </div>
 
       <details className="mt-4 rounded-2xl border border-stone-200 bg-white p-4 dark:border-stone-800 dark:bg-stone-900">
-        <summary className="cursor-pointer font-semibold">Go deeper into {formatReference(lesson.passage)}</summary>
-        <ul className="mt-3 grid grid-cols-2 gap-2 text-[0.95rem]">
+        <summary className="flex min-h-11 cursor-pointer items-center font-semibold">Go deeper into {formatReference(lesson.passage)}</summary>
+        <ul className="mt-3 grid grid-cols-2 gap-2 text-[0.95rem] [&_a]:inline-flex [&_a]:min-h-11 [&_a]:items-center">
           <li>
             <Link className="underline underline-offset-2" to={readerPath(lesson.passage)}>
               Read the whole chapter
@@ -169,7 +171,12 @@ export function LessonPage() {
       </div>
 
       {progress && !retake ? (
-        <section className="mt-10 rounded-2xl border border-emerald-300 bg-emerald-50 p-5 dark:border-emerald-800 dark:bg-emerald-950/40" aria-label="Lesson complete">
+        <section
+          ref={completeRef}
+          tabIndex={-1}
+          className="mt-10 rounded-2xl border border-emerald-300 bg-emerald-50 p-5 outline-none dark:border-emerald-800 dark:bg-emerald-950/40"
+          aria-label="Lesson complete"
+        >
           <p className="flex items-center gap-2 text-lg font-semibold text-emerald-900 dark:text-emerald-200">
             <CheckIcon /> Lesson complete
           </p>
@@ -185,7 +192,14 @@ export function LessonPage() {
             <button type="button" className={buttonClass('secondary')} onClick={() => setRetake(true)}>
               Retake the quiz
             </button>
-            <button type="button" className={buttonClass('ghost')} onClick={() => resetLesson(lesson.id)}>
+            <button
+              type="button"
+              className={buttonClass('ghost')}
+              onClick={() => {
+                resetLesson(lesson.id)
+                setTimeout(() => document.getElementById('quiz-title')?.focus(), 0)
+              }}
+            >
               Mark as not done
             </button>
           </div>
@@ -194,9 +208,11 @@ export function LessonPage() {
         <Quiz
           key={lesson.id + String(retake)}
           questions={lesson.quiz}
+          focusOnMount={retake}
           onFinish={(score) => {
             completeLesson(lesson.id, score, lesson.quiz.length)
             setRetake(false)
+            setTimeout(() => completeRef.current?.focus(), 0)
           }}
         />
       )}
@@ -213,7 +229,7 @@ export function LessonPage() {
         )}
         {!next && (
           <Link to="/learn" className={buttonClass('secondary', 'w-full')}>
-            Track finished: choose another
+            {trackDone ? 'Track finished: choose another' : 'Back to all tracks'}
           </Link>
         )}
         {prev && (

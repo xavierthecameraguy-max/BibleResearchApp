@@ -57,31 +57,31 @@ body {
 }
 
 /* Sepia: a warm, paper-like light theme that's easy on the eyes. */
-html.sepia body {
+html.theme-sepia body {
   background-color: #f3ead7;
   color: #3b2f22;
 }
-html.sepia .bg-white,
-html.sepia .bg-white\/95,
-html.sepia .bg-white\/98 {
+html.theme-sepia .bg-white,
+html.theme-sepia .bg-white\/95,
+html.theme-sepia .bg-white\/98 {
   background-color: #faf3e3;
 }
-html.sepia .bg-stone-50,
-html.sepia .bg-stone-50\/95 {
+html.theme-sepia .bg-stone-50,
+html.theme-sepia .bg-stone-50\/95 {
   background-color: #f3ead7;
 }
-html.sepia .bg-stone-100 {
+html.theme-sepia .bg-stone-100 {
   background-color: #ebdfc6;
 }
-html.sepia .border-stone-200,
-html.sepia .border-stone-300 {
+html.theme-sepia .border-stone-200,
+html.theme-sepia .border-stone-300 {
   border-color: #dccdb0;
 }
-html.sepia .text-stone-600,
-html.sepia .text-stone-700 {
+html.theme-sepia .text-stone-600,
+html.theme-sepia .text-stone-700 {
   color: #5c4a36;
 }
-html.sepia .lesson-prose {
+html.theme-sepia .lesson-prose {
   --tw-prose-body: #3b2f22;
   --tw-prose-headings: #2e2419;
 }

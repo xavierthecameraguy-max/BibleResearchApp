@@ -1,17 +1,27 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import type { QuizQuestion } from '../lib/content.ts'
 import { CheckIcon, CloseIcon } from './Icons.tsx'
 import { buttonClass } from './ui.tsx'
 
-export function Quiz({ questions, onFinish }: { questions: QuizQuestion[]; onFinish: (score: number) => void }) {
+export function Quiz({ questions, onFinish, focusOnMount = false }: { questions: QuizQuestion[]; onFinish: (score: number) => void; focusOnMount?: boolean }) {
+  const titleRef = useRef<HTMLHeadingElement>(null)
+  const resultRef = useRef<HTMLParagraphElement>(null)
   const [answers, setAnswers] = useState<(number | undefined)[]>(() => questions.map(() => undefined))
   const [submitted, setSubmitted] = useState(false)
   const allAnswered = answers.every((a) => a !== undefined)
   const score = answers.filter((a, i) => a === questions[i].answer).length
+  // Keep keyboard and screen-reader users in place when buttons are swapped.
+  useEffect(() => {
+    if (focusOnMount) titleRef.current?.focus()
+  }, [focusOnMount])
+  useEffect(() => {
+    if (submitted) resultRef.current?.focus()
+    else if (answers.every((a) => a === undefined) && document.activeElement === document.body) titleRef.current?.focus()
+  }, [submitted]) // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <section aria-labelledby="quiz-title" className="mt-10">
-      <h2 id="quiz-title" className="font-serif text-2xl font-semibold">
+      <h2 id="quiz-title" ref={titleRef} tabIndex={-1} className="font-serif text-2xl font-semibold outline-none">
         Check your understanding
       </h2>
       <p className="mt-1 text-stone-600 dark:text-stone-400">
@@ -85,7 +95,7 @@ export function Quiz({ questions, onFinish }: { questions: QuizQuestion[]; onFin
           </button>
         ) : (
           <div className="space-y-3">
-            <p className="text-center text-lg font-semibold">
+            <p ref={resultRef} tabIndex={-1} className="text-center text-lg font-semibold outline-none">
               You got {score} of {questions.length}
               {score === questions.length ? '. Well done!' : '. Have a look at the notes above.'}
             </p>

@@ -1,5 +1,5 @@
 import { useEffect, useRef, type ReactNode } from 'react'
-import { NavLink, useLocation, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { BackIcon, BookIcon, HomeIcon, LearnIcon, MenuIcon, PenIcon } from './Icons.tsx'
 import { useOnline } from '../lib/hooks.ts'
 import { UpdateBanner } from './UpdateBanner.tsx'
@@ -21,23 +21,23 @@ const TABS = [
     to: '/more',
     label: 'More',
     icon: MenuIcon,
-    match: (p: string) => p !== '/' && !['/learn', '/lesson', '/bible', '/compare', '/search', ...STUDY_PATHS].some((x) => p.startsWith(x)),
+    match: (p: string) => p !== '/' && p !== '/welcome' && !['/learn', '/lesson', '/bible', '/compare', '/search', ...STUDY_PATHS].some((x) => p.startsWith(x)),
   },
 ]
 
 export function Layout({ children }: { children: ReactNode }) {
-  const { pathname } = useLocation()
+  const { pathname, hash } = useLocation()
   const navigate = useNavigate()
   const online = useOnline()
   const mainRef = useRef<HTMLElement>(null)
-  const isTop = TABS.some((t) => t.to === pathname)
+  const isTop = TABS.some((t) => t.to === pathname) || pathname === '/welcome'
 
   // On every page change, scroll to the top and move focus to the page so
   // screen readers announce the new content.
   useEffect(() => {
-    window.scrollTo(0, 0)
+    if (!hash) window.scrollTo(0, 0)
     mainRef.current?.focus({ preventScroll: true })
-  }, [pathname])
+  }, [pathname]) // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div className="mx-auto flex min-h-dvh max-w-2xl flex-col">
@@ -82,7 +82,7 @@ export function Layout({ children }: { children: ReactNode }) {
             const active = match(pathname)
             return (
               <li key={to} className="flex-1">
-                <NavLink
+                <Link
                   to={to}
                   aria-current={active ? 'page' : undefined}
                   className={`flex min-h-16 flex-col items-center justify-center gap-0.5 text-[0.8rem] font-medium ${
@@ -91,7 +91,7 @@ export function Layout({ children }: { children: ReactNode }) {
                 >
                   <Icon />
                   {label}
-                </NavLink>
+                </Link>
               </li>
             )
           })}

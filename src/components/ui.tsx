@@ -1,6 +1,6 @@
 // Small shared building blocks.
 
-import { useEffect, useRef, type ReactNode } from 'react'
+import { useEffect, useId, useRef, type ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import { CloseIcon, ChevronIcon, InfoIcon } from './Icons.tsx'
 
@@ -86,6 +86,7 @@ export function MentorNote({ compact = false }: { compact?: boolean }) {
  */
 export function Sheet({ open, onClose, title, children }: { open: boolean; onClose: () => void; title: string; children: ReactNode }) {
   const ref = useRef<HTMLDialogElement>(null)
+  const titleId = useId()
   useEffect(() => {
     const d = ref.current
     if (!d) return
@@ -99,12 +100,12 @@ export function Sheet({ open, onClose, title, children }: { open: boolean; onClo
       onClick={(e) => {
         if (e.target === ref.current) onClose()
       }}
-      aria-labelledby="sheet-title"
+      aria-labelledby={titleId}
       className="m-0 mt-auto w-full max-w-none bg-transparent p-0 backdrop:bg-black/50 sm:m-auto sm:max-w-lg"
     >
       <div className="safe-bottom rounded-t-3xl bg-white p-6 text-stone-900 sm:rounded-3xl dark:bg-stone-900 dark:text-stone-100">
         <div className="mb-3 flex items-start gap-3">
-          <h2 id="sheet-title" className="flex-1 font-serif text-2xl font-semibold">
+          <h2 id={titleId} className="flex-1 font-serif text-2xl font-semibold">
             {title}
           </h2>
           <button type="button" onClick={onClose} className="-m-2 rounded-full p-2 hover:bg-stone-100 dark:hover:bg-stone-800" aria-label="Close">
