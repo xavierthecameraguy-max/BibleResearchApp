@@ -134,9 +134,9 @@ gospel".
 Christians agree that sin is real, that it affects everyone, and that we cannot
 fix it on our own. They describe how it passes down in slightly different ways.
 Catholic and many Protestant teaching speaks of "original sin", a fallen
-condition we all inherit. Orthodox Christians tend to stress that we inherit
-mortality and a damaged nature, and that each person is responsible for their
-own sins. Christians also differ on how literally to read the details of this
+condition we all inherit. Orthodox Christians often prefer to speak of "ancestral
+sin". They stress that we inherit mortality and a damaged nature rather than
+Adam's personal guilt, and that each person is responsible for their own sins. Christians also differ on how literally to read the details of this
 chapter. But all agree it tells the truth about us: something is badly wrong,
 and we need rescue.
 

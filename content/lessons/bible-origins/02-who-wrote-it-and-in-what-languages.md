@@ -59,7 +59,7 @@ Christians believe the Bible is God's word. But it did not drop from the sky, an
 
 In 2 Timothy 3:16, Paul says all Scripture is "God-breathed". In our key passage, Peter says the prophets spoke from God as they were "carried along" by the Holy Spirit, a picture like a ship moved by the wind. The writers still used their own minds, vocabulary and style.
 
-You can see this human side throughout the Bible. Luke tells us he carefully researched his Gospel and spoke with eyewitnesses (Luke 1:1-4). Paul sometimes used a secretary. One of them, Tertius, even sends his own greeting in Romans 16:22. The psalm writers pour out real joy and real grief. Christians believe God was at work in all of it, so that the result is both fully human writing and truly God's message.
+You can see this human side throughout the Bible. Luke tells us he carefully investigated everything and drew on accounts handed down by eyewitnesses (Luke 1:1-4). Paul sometimes used a secretary. One of them, Tertius, even sends his own greeting in Romans 16:22. The psalm writers pour out real joy and real grief. Christians believe God was at work in all of it, so that the result is both fully human writing and truly God's message.
 
 ## Who wrote the books?
 

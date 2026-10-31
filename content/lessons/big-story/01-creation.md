@@ -67,8 +67,9 @@ tells us something important. The world is not an accident, and it is not the
 leftover mess of a war between gods, which is how some other ancient stories
 described it. It comes from one God who is wise, powerful and in charge.
 
-Then comes a refrain you will hear seven times: God saw that it was good. After
-he makes humans, he looks at everything and calls it very good (Genesis 1:31).
+Then comes a refrain you will hear six times: God saw that it was good. The
+seventh time, after he makes humans, he looks at everything and calls it very
+good (Genesis 1:31).
 Hold on to that. The physical world, with its rivers and trees, bodies and
 food, is not bad or second-rate. God likes what he made. This will matter a great
 deal when we reach the end of the story.
@@ -90,7 +91,7 @@ Being God's image is also a job. God tells the first humans to fill the earth an
 to rule over it. That does not mean using the world selfishly. It means caring
 for it the way God would, like a gardener tending a garden on behalf of its
 owner. Genesis 2 makes this picture even clearer: God places the first man in a
-garden called Eden to tend it and look after it (Genesis 2:15), and gives him a
+garden in Eden to tend it and look after it (Genesis 2:15), and gives him a
 partner, the woman, so that they can do this together.
 
 ## A day of rest

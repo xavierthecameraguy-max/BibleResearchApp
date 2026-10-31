@@ -1,6 +1,8 @@
 // Credits for the study datasets bundled with the app (shown on the
 // Copyright page). Add an entry whenever a new dataset is added.
 
+import { DICTIONARY_SOURCES, SOURCE_ORDER } from './data/dictionary.ts'
+
 export interface Credit {
   title: string
   text: string
@@ -27,4 +29,5 @@ export const CREDITS: Credit[] = [
     title: 'Lessons, glossary and timeline',
     text: 'Written for Foundations. Book introductions and lesson text are original to this app.',
   },
+  ...SOURCE_ORDER.map((id) => ({ title: DICTIONARY_SOURCES[id].title, text: DICTIONARY_SOURCES[id].credit, url: DICTIONARY_SOURCES[id].url })),
 ]

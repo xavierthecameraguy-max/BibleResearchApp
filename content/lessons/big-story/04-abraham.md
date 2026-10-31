@@ -54,11 +54,13 @@ does not give up. Instead, he speaks to one ordinary man.
 ## The call of Abram
 
 His name at first is Abram (God later renames him Abraham, meaning "father of
-many"). He lives in Mesopotamia, in what is now Iraq. Most scholars place him
-somewhere around 2000–1800 BC, but that date is very approximate. The stories
-come from a time before written records were common, and historians debate how
-precisely they can be dated, or how much can be known about these figures from
-outside the Bible.
+many"). His family comes from Ur, in what is now southern Iraq, and has moved
+north to Haran, in what is now south-eastern Turkey (Genesis 11:31). Those who
+date him often place him somewhere around 2000–1800 BC, but that date is very
+approximate. No source outside the Bible mentions him. Scholars disagree about
+how much can be known about these figures as history: many doubt the stories
+can be tied to any particular period, while others think they preserve genuine
+early memories.
 
 God tells Abram to leave his country, his relatives and his father's household
 and go to a land God will show him (Genesis 12:1). Then come the promises,
@@ -115,8 +117,9 @@ known as the three [[patriarch|patriarchs]], the founding fathers of the
 people.
 
 Jacob is a schemer. His name sounds like a Hebrew phrase for "heel-grabber",
-because he is born grasping his twin brother Esau's heel. He tricks Esau out of
-his birthright and their father's blessing, then flees from Esau's anger. Yet
+because he is born grasping his twin brother Esau's heel. He talks a hungry Esau
+into trading his birthright for a bowl of stew, later tricks their father into
+giving him Esau's blessing, then flees from Esau's anger. Yet
 God meets him in a dream at Bethel, and repeats the promise to him (Genesis
 28:10-22).
 

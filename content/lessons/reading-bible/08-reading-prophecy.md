@@ -78,11 +78,11 @@ For example, Isaiah 13 describes the stars and sun going dark, but the passage i
 
 Some prophecies had a meaning in the prophet's own time and a fuller meaning later.
 
-Isaiah 7:14 is a well-known example. Isaiah gave King Ahaz a sign about a young woman (or virgin) who would bear a son named Immanuel, "God with us." The sign concerned Ahaz's situation in the 700s BC. Yet Matthew sees its fullest meaning in the birth of Jesus (Matthew 1:22-23). Christians understand this as God weaving a pattern that reaches its height in Christ.
+Isaiah 7:14 is a well-known example. Isaiah gave King Ahaz a sign about a young woman (or virgin; translations differ) who would bear a son named Immanuel, "God with us." The sign concerned Ahaz's situation in the 700s BC. Yet Matthew sees its fullest meaning in the birth of Jesus (Matthew 1:22-23). Many Christians understand this as God weaving a pattern that reaches its height in Christ; others read the verse mainly as a direct prediction of Jesus' birth.
 
 ## Conditional prophecy: Jonah
 
-The key passage, Jonah 3:1-10, shows something important. God sends Jonah, a reluctant prophet, to Nineveh, capital of the cruel Assyrian empire. Jonah's message is short and blunt: in forty days, Nineveh will be overthrown.
+The key passage, Jonah 3:1-10, shows something important. God sends Jonah, a reluctant prophet, to Nineveh, a great city of the cruel Assyrian empire. Jonah's message is short and blunt: in forty days, Nineveh will be overthrown.
 
 But the people of Nineveh, from the king down, believe God. They fast, put on sackcloth and turn from their violence. And God relents. He does not bring the disaster (3:10).
 
@@ -100,7 +100,7 @@ Sometimes fulfilment is direct prediction. Often it is a pattern or theme that r
 
 Some prophecies look toward the final renewal of all things. Christians agree that Jesus will return, that the dead will be raised, and that God will make all things new. These are confessed in the ancient [[creed|creeds]] shared by Catholic, Orthodox and Protestant churches.
 
-But Christians hold different views on the details, such as how to understand the "thousand years" of Revelation 20, or whether some prophecies about Israel are still awaiting fulfilment. Catholic and Orthodox churches, and many Protestants, read these passages largely as symbolic of Christ's present reign. Many [[evangelical]] Christians expect a more literal future sequence of events. Sincere believers differ here, and it is wise to hold the details humbly while holding firmly to the shared hope.
+But Christians hold different views on the details, such as how to understand the "thousand years" of Revelation 20, or whether some prophecies about Israel are still awaiting fulfilment. Catholic and Orthodox churches, and many Protestants, read the thousand years largely as symbolic of Christ's present reign. Many [[evangelical]] Christians expect a more literal future sequence of events. Sincere believers differ here, and it is wise to hold the details humbly while holding firmly to the shared hope.
 
 ## Reading the prophets well
 

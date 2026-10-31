@@ -138,8 +138,8 @@ Remember, God had told humans to fill the earth. Here they refuse, huddling
 together to build a monument to their own greatness. It is the garden all over
 again: humans trying to reach God's place by their own power.
 
-God comes down (a gentle bit of humour, since their mighty tower is so small that
-he has to come down to see it) and confuses their language. Unable to understand
+God comes down (many readers see gentle humour here: the mighty tower is so small
+that he has to come down to see it) and confuses their language. Unable to understand
 one another, they scatter across the earth. The place is called Babel, which
 sounds like a Hebrew word for confusion.
 

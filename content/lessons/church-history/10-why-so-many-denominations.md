@@ -83,11 +83,11 @@ Most use or affirm the Nicene Creed, and many the Apostles' Creed. All of these 
 
 Here are some of the most common differences, explained as each side would put it.
 
-**Baptism.** Orthodox, Catholics, Lutherans, Anglicans, Presbyterians and Methodists baptise infants, seeing [[baptism]] as God's gracious act that welcomes a child into the covenant community, like circumcision in the Old Testament. Baptists, Pentecostals and many others baptise only those who can profess faith, seeing baptism as a believer's public response to God's grace.
+**Baptism.** Orthodox, Catholics, Lutherans, Anglicans, Presbyterians and Methodists baptise infants, seeing [[baptism]] as God's gracious act that welcomes a child into his family. Orthodox, Catholics, Lutherans and many Anglicans teach that in baptism God truly washes away sin and gives new birth. Reformed Christians often compare it to circumcision, the sign of God's covenant in the Old Testament. Baptists, Pentecostals and many others baptise only those who can profess faith, seeing baptism as a believer's public response to God's grace.
 
 **Church government.** Some churches are led by bishops (called "episcopal" government). Others are led by elders, regionally and locally (Presbyterian). Others let each congregation make its own decisions (congregational). Each side points to New Testament patterns to support its view.
 
-**The Lord's Supper.** Orthodox and Catholics believe the bread and wine truly become Christ's body and blood. Lutherans believe Christ is truly present "in, with and under" the bread and wine. Reformed Christians speak of a real spiritual presence received by faith. Many Baptists and others see it mainly as a memorial meal. All agree it is central to Christian worship.
+**The Lord's Supper.** Orthodox and Catholics believe the bread and wine truly become Christ's body and blood. Lutherans believe Christ is truly present "in, with and under" the bread and wine. Reformed Christians speak of a real spiritual presence received by faith. Many Baptists and others see it mainly as a memorial meal. Nearly all churches celebrate it as something Jesus commanded his followers to do.
 
 **Spiritual gifts.** Pentecostals and charismatics believe gifts such as tongues and prophecy are for today and should be eagerly sought. Some other Protestants, sometimes called cessationists, believe those particular gifts were mainly for the apostolic age. Many are somewhere in between.
 

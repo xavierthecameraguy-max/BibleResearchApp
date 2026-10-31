@@ -13,11 +13,11 @@ summary: >
 quiz:
   - q: "About how many Christians are there in the world today?"
     options:
-      - "About 2.4 billion, roughly a third of the world's population"
+      - "About 2.3 to 2.6 billion, roughly three in ten people on earth"
       - "About 50 million"
       - "About 7 billion"
     answer: 0
-    explain: "Estimates vary, but most researchers put the number at around 2.4 billion, close to one in three people on earth."
+    explain: "Estimates vary with who is counting, from about 2.3 billion (Pew Research, 2020) to about 2.6 billion (World Christian Database, 2025), or roughly three in ten people on earth."
   - q: "What was the Second Vatican Council (1962–65)?"
     options:
       - "A Protestant meeting that founded the World Council of Churches"
@@ -39,7 +39,7 @@ quiz:
       - "Many believers suffered and died under regimes such as Soviet communism, and persecution continues in parts of the world today"
       - "Only church leaders were ever persecuted"
     answer: 1
-    explain: "Many historians think more Christians were killed for their faith in the 20th century than in any earlier century, though the figures are debated."
+    explain: "Some researchers estimate that more Christians were killed for their faith in the 20th century than in any earlier century, though the figures are debated."
 ---
 
 You have travelled a long way in these lessons: from a room in Jerusalem, through persecution and councils, monasteries and reformations, revivals and missions. Now we arrive at the present day, and at you.
@@ -48,7 +48,7 @@ You have travelled a long way in these lessons: from a room in Jerusalem, throug
 
 The 20th century was both one of the darkest and one of the most hopeful in the church's history.
 
-It was dark because of persecution. In the Soviet Union after 1917, thousands of churches were closed or destroyed, and many priests, pastors and ordinary believers were imprisoned, sent to labour camps or killed. Similar suffering followed in other communist countries, such as Albania, which declared itself an atheist state in 1967. Christians were also persecuted under the Nazi regime, which imprisoned or executed some who resisted, like the German pastor Dietrich Bonhoeffer, killed in 1945. The Armenian genocide during the First World War killed huge numbers of Armenian and other Christians. Many historians think more Christians died for their faith in the 20th century than in all earlier centuries combined, though such figures are hard to measure and are debated.
+It was dark because of persecution. In the Soviet Union after 1917, tens of thousands of churches were closed or destroyed, and many priests, pastors and ordinary believers were imprisoned, sent to labour camps or killed. Similar suffering followed in other communist countries, such as Albania, which declared itself an atheist state in 1967. Christians were also persecuted under the Nazi regime, which imprisoned or executed some who resisted, like the German pastor Dietrich Bonhoeffer, killed in 1945. The Armenian genocide during the First World War killed huge numbers of Armenian and other Christians. Some researchers estimate that more Christians died for their faith in the 20th century than in any earlier century, though such figures are hard to measure and are debated.
 
 Persecution has not ended. Today, Christians in a number of countries face discrimination, prison or violence for their faith. The [[martyr|martyrs]] are not only a story from the Roman Empire.
 
@@ -66,17 +66,17 @@ Perhaps the most surprising story of the last century is where the church grew.
 
 In 1900, roughly four out of five Christians lived in Europe and North America. Today, the majority live in Africa, Latin America and Asia, often called the Global South. Researchers describe this as Christianity's "centre of gravity" shifting south.
 
-**Africa.** In 1900 there were perhaps ten million Christians in Africa. Today estimates put the number at well over 600 million, more than on any other continent. Growth has come in Catholic, Anglican and other historic churches and in thousands of African-founded churches and Pentecostal movements.
+**Africa.** In 1900 there were perhaps ten million Christians in Africa. Today estimates put the number at around 700 million, more than on any other continent. Growth has come in Catholic, Anglican and other historic churches and in thousands of African-founded churches and Pentecostal movements.
 
 **Latin America.** Long a Catholic region, Latin America is home to more Catholics than any other region. It has also seen rapid growth of Pentecostal and evangelical churches since the mid-1900s.
 
-**Asia.** The church in South Korea grew from a small minority to a major part of the population during the 20th century. In China, after missionaries were expelled around 1950 and churches faced harsh restrictions, the number of Christians grew enormously, though exact figures are uncertain. Estimates range widely, often between about 40 and 100 million. India, Indonesia and the Philippines also have large Christian communities.
+**Asia.** The church in South Korea grew from a small minority to a major part of the population during the 20th century. In China, after missionaries were expelled around 1950 and churches faced harsh restrictions, the number of Christians grew enormously, though exact figures are uncertain. Estimates range very widely, from about 20 or 30 million in surveys to over 100 million in some other estimates. India, Indonesia and the Philippines also have large Christian communities.
 
 Meanwhile, church attendance has declined in much of Europe, though new immigrant churches are bringing fresh life to many cities.
 
 ## The church today in numbers
 
-Numbers vary depending on who is counting, so treat these as rough. Christians number about 2.4 billion people, roughly a third of the world. About half are Catholic. Protestants of all kinds, including Pentecostals and independent churches, make up roughly another third or more, and Orthodox Christians around a tenth. Some researchers count over 40,000 distinct denominations and networks, though many are small and closely related.
+Numbers vary depending on who is counting, so treat these as rough. Christians number somewhere between about 2.3 and 2.6 billion people, roughly three in ten people worldwide. About half are Catholic. Protestants of all kinds, including Pentecostals and independent churches, make up roughly another third or more, and Orthodox Christians around a tenth. Some researchers count over 40,000 distinct denominations and networks, though many are small and closely related.
 
 If you picture a "typical" Christian today, she is more likely to be a young woman in Nigeria, Brazil or the Philippines than an elderly man in Europe.
 

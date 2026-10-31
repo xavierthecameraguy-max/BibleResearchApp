@@ -26,6 +26,7 @@ import { PrayerPage } from './pages/PrayerPage.tsx'
 import { StudyHubPage } from './pages/StudyHubPage.tsx'
 import { WordPage } from './pages/WordPage.tsx'
 import { WordsPage } from './pages/WordsPage.tsx'
+import { DictionaryEntryPage, DictionaryPage } from './pages/DictionaryPage.tsx'
 
 export function App() {
   return (
@@ -46,6 +47,8 @@ export function App() {
         <Route path="/copyright" element={<CopyrightPage />} />
         <Route path="/memory" element={<MemoryPage />} />
         <Route path="/words" element={<WordsPage />} />
+        <Route path="/dictionary" element={<DictionaryPage />} />
+        <Route path="/dictionary/:id" element={<DictionaryEntryPage />} />
         <Route path="/word/:strong" element={<WordPage />} />
         <Route path="/prayer" element={<PrayerPage />} />
         <Route path="/study" element={<StudyHubPage />} />

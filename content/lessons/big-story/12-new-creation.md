@@ -52,10 +52,13 @@ So how does the story end?
 ## A surprising ending
 
 Many people imagine that the Christian hope is to die and float away to heaven,
-leaving this world behind. The Bible tells a bigger and more earthy story.
+leaving this world behind. Christians do believe that those who die in Christ
+are with him (Philippians 1:21-23). But the Bible's final hope is bigger and
+more earthy than that.
 
 The last book of the Bible is Revelation, written by a man named John while
-exiled on the island of Patmos, probably near the end of the first century AD. It
+exiled on the island of Patmos, probably near the end of the first century AD (a few scholars prefer the late
+60s). It
 is [[apocalyptic]] writing, a type of literature that uses vivid symbols,
 visions and numbers to pull back the curtain on God's view of history. Christians
 interpret many of its details in different ways, and some passages are puzzling
@@ -76,7 +79,9 @@ throne says that he is making everything new (Revelation 21:4-5).
 
 This is the [[new-creation|new creation]]. It does not mean God throws away the
 old world and starts again from nothing. It means he heals and renews it, the way
-Jesus' resurrected body was still his body, but transformed. The
+Jesus' resurrected body was still his body, but transformed. (Some Christians,
+reading fiery passages such as 2 Peter 3:10-13, expect more of a fresh start,
+but Catholic, Orthodox and many Protestant traditions speak of renewal.) The
 [[resurrection]] of Jesus was the first piece of this new world, arriving
 early.
 
@@ -100,8 +105,8 @@ nations of Babel are gathered into one family, just as God promised Abraham.
 
 There is something else missing from the city: a temple. John says he saw no
 temple, because God himself and the Lamb are its temple (Revelation 21:22). The
-whole city is shaped like a perfect cube, like the Most Holy Place in Solomon's
-temple. The tabernacle and the temple were always small previews. Now the whole
+whole city is shaped like a perfect cube (Revelation 21:16), like the Most Holy
+Place in Solomon's temple (1 Kings 6:20). The tabernacle and the temple were always small previews. Now the whole
 creation is filled with God's presence.
 
 ## The whole story in one view
@@ -126,12 +131,12 @@ Spirit-filled church, finds its fulfilment here.
 
 ## Living in the story now
 
-Where are we in this story? We live between Jesus' resurrection and his return,
-in chapter six. The [[kingdom-of-god|kingdom of God]] has begun, but it is not
-yet complete. Christians call this the "already and not yet".
+Where are we in this story? We live between Jesus' resurrection and his return
+(the [[second-coming|second coming]]), in part six. The [[kingdom-of-god|kingdom of God]] has begun, but it is not
+yet complete. Many Christians call this the "already and not yet".
 
-That changes how we live. If God is going to throw the world away, then nothing
-much matters. But if God is renewing it, then what we do now matters a great deal.
+That changes how we live. If God were simply going to throw the world away, it
+would be easy to think nothing here matters much. But if God is renewing it, then what we do now matters a great deal.
 Paul, after a long chapter on resurrection, tells believers that their work for
 the Lord is never wasted (1 Corinthians 15:58). Every act of kindness, honesty,
 forgiveness, justice and care is a small sign of the world to come.

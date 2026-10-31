@@ -53,7 +53,7 @@ Israel's history.
 
 ## Messengers from God
 
-Over the next two hundred years or so, many kings in both kingdoms turn away from
+Over the next few centuries, many kings in both kingdoms turn away from
 God. They worship other gods, ignore the poor and treat the Law as optional. So
 God sends [[prophet|prophets]].
 
@@ -100,9 +100,11 @@ moment.
 
 ## Hope in a foreign land
 
-Yet the exile is also where some of the Bible's most hopeful words are written.
+Yet the exile is also the setting for some of the Bible's most hopeful words.
 Prophets such as Jeremiah, Ezekiel and parts of Isaiah speak of a future
-beyond judgement.
+beyond judgement. (Many scholars think Isaiah 40–55 was written during the exile
+by a later prophet in Isaiah's tradition; others hold that the whole book comes
+from Isaiah himself, in the 700s BC.)
 
 Jeremiah tells the exiles to settle down, build houses and seek the good of
 Babylon, the city where they now live (Jeremiah 29:4-7). Then he gives one of the
@@ -114,8 +116,9 @@ and remember them no more (Jeremiah 31:31-34).
 Ezekiel has a vision of a valley full of dry bones that God brings back to life
 (Ezekiel 37), and promises that God will give his people a new heart and put his
 Spirit within them (Ezekiel 36:26-27). Isaiah speaks of a coming servant who will
-suffer for the sins of others (Isaiah 52:13–53:12), and of a child from David's
-line who will rule with justice forever (Isaiah 9:6-7; 11:1-9).
+suffer for the sins of others (Isaiah 52:13–53:12). Earlier chapters of Isaiah
+also promise a child from David's line who will rule with justice forever
+(Isaiah 9:6-7; 11:1-9).
 
 Notice how these promises connect back. A king from David's family. A heart
 renewed. Sins forgiven. Blessing for the nations. The prophets are saying that
@@ -126,24 +129,29 @@ God's plan has not failed. It is going deeper.
 In 539 BC the Persian king Cyrus conquers Babylon. He allows exiled peoples to
 return to their homelands, and groups of Jews begin making their way back to
 Judah (Ezra 1). They rebuild the temple, which is completed around 516 BC. Later,
-in the 400s BC, leaders such as Ezra and Nehemiah rebuild Jerusalem's walls and
-call the people back to the Law.
+in the 400s BC, Ezra calls the people back to the Law and Nehemiah leads the
+rebuilding of Jerusalem's walls.
 
-But the return feels incomplete. The new temple is much smaller than Solomon's,
-and some older people weep when they see it (Ezra 3:12). The Jews are home, but
+But the return feels incomplete. The new temple is far less splendid than Solomon's, and some older people who
+remember the first temple weep when its foundations are laid (Ezra 3:12). The Jews are home, but
 they are still ruled by foreign empires. There is no king from David's line on the
 throne. The great promises have not yet come true.
 
 ## Four hundred years of waiting
 
-The Old Testament ends with the prophet Malachi, around the 400s BC. After that,
-Christians often speak of "the four hundred years" before Jesus. History did not
+In Protestant and most modern Catholic Bibles the Old Testament ends with the
+prophet Malachi, who probably spoke in the 400s BC. (Jewish and Orthodox Bibles arrange
+the books in a different order.) The roughly four hundred years between
+Malachi and Jesus are often called the
+[[intertestamental-period|intertestamental period]], or simply "the four hundred
+years". History did not
 stop. The Persians were replaced by the Greeks under Alexander the Great in the
-330s BC, then a Jewish revolt led by the Maccabees won independence for a time
-in the 160s BC, and the Romans took control in 63 BC.
+330s BC, then a Jewish revolt led by the Maccabees, beginning in 167 BC, won back the
+temple and later independence for a time, and the Romans took control in 63 BC.
 
 Catholic and Orthodox Bibles include books from this period, such as 1 and 2
-Maccabees, which they call [[deuterocanonical]] books. Protestants usually call
+Maccabees, which they call [[deuterocanonical]] books (Orthodox Bibles include a few more
+than Catholic ones). Protestants usually call
 them the [[apocrypha|Apocrypha]] and do not count them as Scripture, though many
 find them helpful for history.
 

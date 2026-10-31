@@ -11,7 +11,7 @@ summary: >
   At Pentecost the Holy Spirit comes, and the good news spreads from Jerusalem to
   Jews and Gentiles across the Roman world.
 quiz:
-  - q: "Which festival was Jesus celebrating at the Last Supper?"
+  - q: "The Last Supper took place at the time of which festival?"
     options:
       - "Pentecost"
       - "Passover"
@@ -60,16 +60,22 @@ welcome him. He then clears out the merchants in the temple courts, angering the
 authorities.
 
 On the night before he dies, Jesus shares a Passover meal with his disciples,
-known as the Last Supper. He takes bread, gives thanks, breaks it and says it is
+known as the Last Supper. (Matthew, Mark and Luke present it as a Passover meal.
+John's Gospel seems to place it a day earlier, and scholars still discuss how
+the accounts fit together.) He takes bread, gives thanks, breaks it and says it is
 his body, given for them. Then he takes a cup of wine and says it is the
 [[new-covenant|new covenant]] in his blood (Luke 22:19-20). Remember Jeremiah's
 promise of a new covenant, with sins forgiven and hearts renewed? Jesus says it
 begins with his death.
 
 Christians still share this meal, calling it Communion, the Lord's Supper or the
-Eucharist (from the Greek for "thanksgiving"). Catholic, Orthodox and Protestant
-Christians understand what happens in it in different ways, and many count it as
-a [[sacrament]]. All see it as a way of remembering Jesus and receiving from him.
+[[eucharist|Eucharist]] (from the Greek for "thanksgiving"). Christians understand
+what happens in it in different ways. Catholic and Orthodox Christians believe
+the bread and wine truly become Christ's body and blood. Many Protestants also
+speak of Christ being truly present, though they explain it in different ways,
+while others see the meal mainly as a memorial. Many count it as a
+[[sacrament]]. All see it as a meal Jesus gave his followers to share in
+remembrance of him (1 Corinthians 11:23-26).
 
 ## The cross
 
@@ -113,7 +119,8 @@ the [[holy-spirit|Holy Spirit]], and promises they will be his witnesses there, 
 surrounding regions, and to the ends of the earth (Acts 1:8). That verse is a kind
 of map for the book of Acts.
 
-Ten days later, at the Jewish festival of [[pentecost|Pentecost]], the Spirit comes
+About ten days after Jesus returns to the Father (his [[ascension]]), at the
+Jewish festival of [[pentecost|Pentecost]], the Spirit comes
 on the believers with the sound of wind and what look like flames (Acts 2). They
 begin speaking in many languages, and visitors from across the world hear about
 God in their own tongues. Do you remember Babel, where languages divided

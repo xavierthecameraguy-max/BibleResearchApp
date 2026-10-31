@@ -17,7 +17,7 @@ quiz:
       - "Wittenberg"
       - "Rome"
     answer: 0
-    explain: "Calvin worked in Geneva from 1541 until his death in 1564, making it a centre of the Reformed movement."
+    explain: "Calvin first worked in Geneva in 1536–1538, then returned in 1541 and stayed until his death in 1564, making it a centre of the Reformed movement."
   - q: "What was distinctive about the Anabaptists?"
     options:
       - "They wanted to keep the pope as head of the church"
@@ -53,7 +53,7 @@ Zwingli and Luther agreed on much, but in 1529 they met at Marburg and could not
 
 ## Calvin in Geneva
 
-The most influential second-generation reformer was John Calvin, a French scholar who settled in Geneva. From 1541 until his death in 1564, he preached, taught and organised the church there. His book *Institutes of the Christian Religion* became one of the most important works of Protestant theology.
+The most influential second-generation reformer was John Calvin, a French scholar who first worked in Geneva from 1536 until the city expelled him in 1538. After three years in Strasbourg, he returned, and from 1541 until his death in 1564 he preached, taught and organised the church there. His book *Institutes of the Christian Religion* became one of the most important works of Protestant theology.
 
 Calvin stressed God's sovereignty, the glory of God in all of life, and the authority of Scripture. He also developed a pattern of church government by elders. Geneva trained pastors who carried these ideas to France, the Netherlands, Scotland, Hungary and beyond. The churches that came from this stream are called Reformed, and in Scotland, led by John Knox, Presbyterian.
 
@@ -67,13 +67,13 @@ Many Anabaptists believed the church should be a community of committed disciple
 
 England's story was different. King Henry VIII wanted his marriage to Catherine of Aragon annulled because he had no male heir. When the pope refused, Henry broke with Rome, and in 1534 Parliament declared him head of the Church of England. Henry himself remained fairly Catholic in belief, but he closed the monasteries and allowed an English Bible in churches.
 
-Under his son Edward VI, the church became more Protestant, and Thomas Cranmer wrote the *Book of Common Prayer*. Under Mary I it returned to Rome, and around 280 Protestants were burned. Under Elizabeth I, from 1558, a settlement was reached that combined Protestant teaching with much traditional worship and church order, including [[bishop|bishops]]. Catholics, in turn, suffered fines, imprisonment and in some cases execution. This English tradition became Anglicanism, known in the United States as the Episcopal Church.
+Under his son Edward VI, the church became more Protestant, and Thomas Cranmer wrote the *Book of Common Prayer*. Under Mary I it returned to Rome, and around 280 Protestants were burned. Under Elizabeth I, from 1558, a settlement was reached that combined Protestant teaching with much traditional worship and church order, including [[bishop|bishops]]. Catholics, in turn, suffered fines, imprisonment and in some cases execution. This English tradition became [[anglican|Anglicanism]]. In the United States its main branch is called the Episcopal Church.
 
 ## The Catholic Reformation
 
 It would be a mistake to think the Catholic Church simply reacted to the Protestants. Many Catholics had been working for renewal before Luther, and that work now gathered pace. Historians speak of both a Catholic Reformation (renewal from within) and a Counter-Reformation (response to Protestantism).
 
-The centrepiece was the Council of Trent, which met in northern Italy in three periods between 1545 and 1563. It clearly defined Catholic teaching: that Scripture and Tradition together hand on God's revelation, that justification is by grace and involves real inner renewal, that there are seven [[sacrament|sacraments]], and that the deuterocanonical books belong in the Bible. It also tackled abuses, ordering seminaries to train priests and requiring bishops to live among their people.
+The centrepiece was the Council of Trent, which met in the city of Trent, in what is now northern Italy, in three periods between 1545 and 1563. It clearly defined Catholic teaching: that Scripture and Tradition together hand on God's revelation, that justification is by grace and involves real inner renewal, that there are seven [[sacrament|sacraments]], and that the [[deuterocanonical]] books, such as Tobit and 1 and 2 Maccabees, belong in the Bible. It also tackled abuses, ordering seminaries to train priests and requiring bishops to live among their people.
 
 ## The Jesuits
 

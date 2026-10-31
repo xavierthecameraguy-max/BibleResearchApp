@@ -100,7 +100,7 @@ The Bible itself knows that life does not always follow the patterns of Proverbs
 
 Song of Songs is a collection of love poems celebrating romance and desire between a man and a woman. It reminds us that God made human love and that it is good.
 
-Through history, Jewish and Christian readers have also read it as a picture of God's love for his people, or Christ's love for the church. Many early church writers, and much Catholic and Orthodox tradition, especially treasure this spiritual reading. Many modern readers stress the plain, human meaning first. The two readings need not compete.
+Through history, Jewish and Christian readers have also read it as a picture of God's love for his people, or Christ's love for the church. Many early church writers and much Catholic and Orthodox tradition especially treasure this spiritual reading, and many Protestant preachers of earlier centuries loved it too. Many modern readers stress the plain, human meaning first. The two readings need not compete.
 
 ## Reading poetry well
 

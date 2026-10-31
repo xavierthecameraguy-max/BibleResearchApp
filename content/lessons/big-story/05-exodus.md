@@ -81,12 +81,14 @@ depends on nothing, and who will truly be present with his people.
 ## The plagues
 
 Moses goes to Pharaoh with a simple message from God: let my people go. Pharaoh
-refuses. What follows are ten plagues: the Nile turning to blood, frogs, gnats,
-flies, disease on livestock, boils, hail, locusts and darkness.
+refuses. What follows are ten plagues. The first nine are the Nile turning to
+blood, frogs, gnats, flies, disease on livestock, boils, hail, locusts and
+darkness.
 
 The plagues are more than disasters. Egypt worshipped many gods connected with
-the Nile, the sun, the land and Pharaoh himself. One by one, the plagues show
-that Israel's God is Lord over all of these (Exodus 12:12). It is a contest of
+the Nile, the sun, the land and Pharaoh himself. God says he is bringing
+judgement on all the gods of Egypt (Exodus 12:12), and taken together the
+plagues show that Israel's God is Lord over all of them. It is a contest of
 power, and only one God is truly God.
 
 ## The Passover
@@ -123,8 +125,10 @@ It is fair to ask when this took place. Scholars do not agree. Some date the
 exodus to about 1446 BC, the 15th century, based on a number in 1 Kings 6:1.
 Many others prefer a date around 1250 BC, the 13th century, partly because
 Exodus 1:11 mentions a city called Rameses, a name linked to later pharaohs.
-Some scholars also think the event was smaller than a straightforward reading
-suggests, and archaeology has not settled the question. Christians hold a range
+Many scholars also think any historical event behind the story was much
+smaller than a straightforward reading suggests, perhaps a small group leaving
+Egypt, and some doubt it happened as described at all. Archaeology has not
+settled the question. Christians hold a range
 of views on these details while agreeing on the heart of the story.
 
 ## The Bible's great picture of rescue

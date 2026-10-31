@@ -25,7 +25,7 @@ quiz:
       - "A list of Bible translations"
     answer: 1
     explain: "A bridging principle carries the meaning across from their situation to ours, so we apply what the text actually teaches."
-  - q: "Which question should usually come first when studying a passage?"
+  - q: "Which of these questions should usually come first when studying a passage?"
     options:
       - "What does it mean for me today?"
       - "How does it make me feel?"

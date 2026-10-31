@@ -58,15 +58,15 @@ Then came a new idea: stacking sheets, folding them, and sewing them along one e
 
 A [[scribe]] was a trained writer and copyist. In ancient Israel, scribes became honoured experts in God's Law. Our key passage shows Ezra, "the scribe", reading the Law aloud to the people gathered in Jerusalem, while helpers explained it so everyone could understand.
 
-Jewish scribes developed careful rules for copying the sacred scrolls, especially the [[torah]]. Later Jewish writings describe practices such as using approved materials, copying from a good master copy, writing only one letter at a time, and checking finished scrolls. A scroll with too many errors would not be used for public reading.
+Jewish scribes developed careful rules for copying the sacred scrolls, especially the [[torah]]. Later Jewish writings describe practices such as using approved materials, copying from a good master copy, never writing even a single letter from memory, and checking finished scrolls. A scroll with too many errors would not be used for public reading.
 
-Centuries later, a group of Jewish scholars known as the Masoretes took this care even further. Working from roughly AD 600 to 1000, mostly in Tiberias in Galilee and in Babylon, they protected the traditional Hebrew text. Remember that Hebrew was written with consonants only. The Masoretes added small dots and dashes to show the vowels and pronunciation, along with notes in the margins. They counted verses, words and even letters in each book so that copyists could check their work. Their careful edition is called the [[masoretic-text]], and it is the basis of most English Old Testaments today. One of the most important surviving copies, the Leningrad Codex, dates to about AD 1008 and is the oldest complete Hebrew Bible we have.
+Centuries later, a group of Jewish scholars known as the Masoretes took this care even further. Working from roughly AD 600 to 1000, mostly in Tiberias in Galilee and in Babylon, they protected the traditional Hebrew text. Remember that Hebrew was traditionally written without vowel signs. The Masoretes added small dots and dashes to show the vowels and pronunciation, along with notes in the margins. They counted verses, words and even letters in each book so that copyists could check their work. Their careful edition is called the [[masoretic-text]], and it is the basis of most English Old Testaments today. One of the most important surviving copies, the Leningrad Codex, dates to about AD 1008 and is the oldest complete Hebrew Bible we have.
 
 ## Early Christian copyists
 
 The first Christians were mostly ordinary people, not professional scribes. In the early decades, copies of the Gospels and Paul's letters were often made by believers who wanted their own church to have them. Paul even asked churches to share his letters with one another (Colossians 4:16).
 
-As the church grew, copying became more organised. From the fourth century onward, especially in monasteries, trained copyists worked in rooms set aside for writing. They produced beautiful, carefully checked copies, and some added lovely decoration. Many of the handwritten copies, or [[manuscript|manuscripts]], we still have today came from this patient work.
+As the church grew, copying became more organised. From the fourth century, skilled professional scribes produced fine copies, and in the centuries that followed, especially in monasteries, trained copyists worked in rooms set aside for writing. They produced beautiful, carefully checked copies, and some added lovely decoration. Many of the handwritten copies, or [[manuscript|manuscripts]], we still have today came from this patient work.
 
 ## How mistakes happen
 
@@ -80,7 +80,7 @@ Copying by hand is hard. Try copying a few pages of a book and you will see. Ove
 
 ## How mistakes get caught
 
-Here is the encouraging part. Because the Bible was copied so often, in so many places, mistakes rarely spread everywhere. A slip made in Egypt would not appear in copies made in Syria or Italy. Copyists themselves often corrected their work, and many manuscripts show corrections written in by a later hand.
+Here is the encouraging part. Because the Bible was copied so often, in so many places, mistakes rarely spread everywhere. A slip made in Egypt would not usually appear in copies made in Syria or Italy. Copyists themselves often corrected their work, and many manuscripts show corrections written in by a later hand.
 
 Today, scholars compare thousands of copies side by side. When one manuscript differs from the rest, it is usually easy to see what happened: an eye skip here, a spelling change there. This careful comparing work is called [[textual-criticism]], and we will look at it more closely in the next lesson.
 

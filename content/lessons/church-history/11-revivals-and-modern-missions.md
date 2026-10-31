@@ -57,11 +57,11 @@ A Moravian group on a ship to America deeply impressed a young Anglican priest n
 
 Wesley, his brother Charles, who wrote thousands of hymns, and their friend George Whitefield began preaching in fields and town squares, often to thousands of people, including miners and factory workers who rarely went to church. Whitefield crossed the Atlantic many times. In New England, the pastor and thinker Jonathan Edwards saw revival in his own church and wrote carefully about what true spiritual experience looks like.
 
-Historians call this wave of revival in the 1730s and 1740s the Great Awakening, and it gave rise to the Methodist movement and a broad stream of [[evangelical]] Christianity. Later waves, sometimes called the Second Great Awakening, followed in the early 1800s.
+Historians call this wave of revival in the 1730s and 1740s the Great Awakening (in Britain it is often called the Evangelical Revival), and it gave rise to the Methodist movement and a broad stream of [[evangelical]] Christianity. Later waves, sometimes called the Second Great Awakening, followed in the early 1800s.
 
 ## William Carey and the modern missions movement
 
-Catholic missionaries had already been carrying the faith worldwide for centuries. Orders like the Franciscans, Dominicans and Jesuits had worked across the Americas, Africa and Asia since the 1500s, with figures like Francis Xavier in Asia and Matteo Ricci in China. But Protestants had been slow to send missionaries.
+Catholic missionaries had already been carrying the faith worldwide for centuries. Orders like the Franciscans, Dominicans and Jesuits had worked across the Americas, Africa and Asia since the 1500s, with figures like Francis Xavier in Asia and Matteo Ricci in China. But apart from groups like the Moravians, Protestants had been slow to send missionaries.
 
 That changed with William Carey, an English shoemaker and Baptist pastor who taught himself several languages. In 1792 he published a booklet arguing that Christians have a duty to take the gospel to all nations. That same year he helped found the Baptist Missionary Society, and in 1793 he sailed for India. He worked there for over forty years, translating the Bible into several Indian languages and campaigning against social evils. Many call him the father of modern Protestant [[missions]].
 

@@ -6,13 +6,13 @@ title: "The English Bible: Wycliffe, Tyndale, the KJV and Today"
 minutes: 7
 keyPassage: "Psalm 119:97-105"
 summary: >
-  The Bible reached English through brave and gifted people, from Wycliffe's
-  handwritten Bibles in the 1380s to Tyndale's printed New Testament and the
+  The Bible reached English through brave and gifted people, from the handwritten
+  Wycliffe Bibles of the late 1300s to Tyndale's printed New Testament and the
   King James Version of 1611. Older manuscripts and changing language have
   since led to many modern translations, each trying to bring God's word
   clearly to readers.
 quiz:
-  - q: "What language did the Wycliffe Bibles of the 1380s translate from?"
+  - q: "What language did the Wycliffe Bibles of the late 1300s translate from?"
     options:
       - "Hebrew and Greek"
       - "French"
@@ -48,11 +48,11 @@ Today there are dozens of English Bibles on the shelf. It is easy to forget that
 
 ## Before Wycliffe
 
-For most of the Middle Ages, the Bible used in English churches was the Latin [[vulgate]]. Most people did not read Latin. There were bits of the Bible in Old English, such as word-by-word glosses written between the lines of Latin Gospel books, but there was no full English Bible.
+For most of the Middle Ages, the Bible used in English churches was the Latin [[vulgate]]. Most people did not read Latin. There were parts of the Bible in Old English, such as translations of the Gospels and word-by-word glosses written between the lines of Latin Gospel books, but there was no full English Bible.
 
 ## Wycliffe: a Bible for ordinary people
 
-In the 1380s, an Oxford scholar named John Wycliffe argued that every Christian should be able to read God's word. He and his followers produced the first complete Bibles in English. They worked from the Latin Vulgate, because few in England then knew Hebrew or Greek.
+In the 1380s, an Oxford scholar named John Wycliffe argued that every Christian should be able to read God's word. His followers produced the first complete Bibles in English: a first version around 1382 and a smoother revision some years later. Scholars debate how much of the translating Wycliffe did himself. The translators worked from the Latin Vulgate, because few in England then knew Hebrew or Greek.
 
 These Bibles were copied by hand, since printing had not yet arrived. Church authorities feared that unauthorised translations would spread errors, and in 1409 they banned English translations without official approval. Even so, Wycliffe's Bibles were secretly copied and treasured.
 
@@ -62,7 +62,7 @@ A century later, two things had changed. The printing press, from around 1450, m
 
 William Tyndale, an English scholar with a gift for language, resolved to translate the Bible directly from Hebrew and Greek. He reportedly told a critic that he would make a ploughboy know more Scripture than the clergyman did. Unable to work safely in England, he moved to Germany, and in 1526 his English New Testament was printed in Worms. Copies were smuggled into England in bales of cloth. Many were seized and burned.
 
-Tyndale went on to translate much of the Old Testament from Hebrew. But in 1535 he was betrayed, arrested near Brussels, and in 1536 he was executed. He is remembered as a [[martyr]] for the cause of an English Bible. His words, though, lived on. Phrases we still use, such as "let there be light" and "the powers that be", come down to us largely through Tyndale.
+Tyndale went on to translate much of the Old Testament from Hebrew. But in 1535 he was betrayed and arrested in Antwerp, then held in a castle near Brussels, and in 1536 he was executed. He is remembered as a [[martyr]] for the cause of an English Bible. His words, though, lived on. Phrases we still use, such as "let there be light" and "the powers that be", come down to us largely through Tyndale.
 
 Within a few years, King Henry VIII allowed an official English Bible, the Great Bible of 1539, which drew heavily on Tyndale's work.
 
@@ -76,7 +76,7 @@ The KJV became the best-loved English Bible for over three hundred years. Its rh
 
 ## A Catholic English Bible
 
-Catholic scholars, exiled from England, made their own English translation from the Latin Vulgate. The New Testament was published at Rheims in France in 1582, and the Old Testament at Douai in 1609–10. The Douay-Rheims Bible, later revised in the 1750s by Bishop Richard Challoner, served English-speaking [[catholic|Catholics]] for generations.
+Catholic scholars, exiled from England, made their own English translation from the Latin Vulgate. The New Testament was published at Rheims in France in 1582, and the Old Testament at Douai in 1609–10. The Douay-Rheims Bible, later revised around 1750 by Bishop Richard Challoner, served English-speaking [[catholic|Catholics]] for generations.
 
 ## New discoveries, new translations
 

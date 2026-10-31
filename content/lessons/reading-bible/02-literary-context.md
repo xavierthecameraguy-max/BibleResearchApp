@@ -16,7 +16,7 @@ quiz:
       - "By the original authors as they wrote"
       - "By Moses for the Old Testament and Paul for the New"
     answer: 0
-    explain: "Chapter divisions were added around the 1200s and verse numbers in the 1500s. They are useful, but they are not part of the original writings."
+    explain: "Chapter divisions were added in the early 1200s and today's verse numbers in the 1500s. They are useful, but they are not part of the original writings."
   - q: "In its context, what is Paul mainly talking about in Philippians 4:13?"
     options:
       - "Winning competitions through faith"
@@ -61,7 +61,7 @@ These two questions alone will clear up a surprising number of puzzles.
 
 It helps to know that the Bible's writers did not use chapter and verse numbers. They wrote letters, stories, poems and sermons in flowing text.
 
-Chapter divisions were added around the early 1200s, usually credited to Stephen Langton, a church leader in England. Verse numbers for the whole Bible came in the 1550s, through the printer Robert Estienne. These were wonderful aids for finding your place, a bit like street numbers on houses.
+Chapter divisions were added in the early 1200s, usually credited to Stephen Langton, a teacher in Paris who later became Archbishop of Canterbury. The verse numbers we use today came in the 1550s, largely through the printer Robert Estienne. These were wonderful aids for finding your place, a bit like street numbers on houses.
 
 But sometimes the breaks fall in odd spots, splitting a thought in two. A new chapter does not always mean a new subject. So when you read, feel free to ignore the numbers and follow the flow of the writing.
 
@@ -77,7 +77,7 @@ Philippians 4:13 is one of the most quoted verses in the Bible. Paul writes that
 
 Now let's read the context, Philippians 4:10-20.
 
-**Where is Paul?** He is in custody, probably in Rome around AD 60, though some scholars suggest Ephesus or Caesarea (Philippians 1:12-14).
+**Where is Paul?** He is in custody (Philippians 1:12-14). Traditionally this is thought to be Rome, around AD 60, though many scholars suggest Ephesus a few years earlier, and some suggest Caesarea.
 
 **What has happened?** The church in Philippi has sent him a gift to support him (4:10, 4:18).
 
@@ -91,7 +91,7 @@ That is not a smaller meaning. It is a deeper one. It speaks to the person in a 
 
 ## Another quick example
 
-Jeremiah 29:11 is another favourite, a promise that God knows his plans to give a hope and a future. Read the chapter, though, and you discover it was sent to Jewish exiles in Babylon who would have to wait seventy years (Jeremiah 29:10). It is a promise about God's long faithfulness to his people, not a guarantee of quick personal success. We will look at this passage more closely in Lesson 4.
+Jeremiah 29:11 is another favourite, a promise that God knows his plans to give a hope and a future. Read the chapter, though, and you discover it was sent to Jewish exiles in Babylon who were told their exile would last seventy years (Jeremiah 29:10). It is a promise about God's long faithfulness to his people, not a guarantee of quick personal success. We will look at this passage more closely in Lesson 4.
 
 ## How to practise
 

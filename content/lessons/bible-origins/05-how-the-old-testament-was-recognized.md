@@ -55,7 +55,7 @@ Jewish people call their Bible the **[[tanakh|Tanakh]]**. That word is made from
 - **Nevi'im**, the Prophets. This includes not only books like Isaiah and Jeremiah but also history books such as Joshua, Judges, Samuel and Kings, which are seen as prophetic history.
 - **Ketuvim**, the Writings. A varied collection including Psalms, Proverbs, Job, Ruth, Lamentations, Esther, Daniel, Ezra, Nehemiah and Chronicles.
 
-The Tanakh has the same contents as the Protestant Old Testament, but it is arranged and counted differently. For example, the twelve shorter prophets are counted as one book, and Samuel, Kings and Chronicles are each one book rather than two. So Jews usually count 24 books where Protestants count 39. The books themselves are the same. The order is different, too: the Tanakh ends with Chronicles, which closes with the hope of returning to Jerusalem.
+The Tanakh has the same contents as the Protestant Old Testament, but it is arranged and counted differently. For example, the twelve shorter prophets are counted as one book, Samuel, Kings and Chronicles are each one book rather than two, and Ezra and Nehemiah together make one book. So Jews usually count 24 books where Protestants count 39. The books themselves are the same. The order is different, too: the Tanakh usually ends with Chronicles, which closes with the hope of returning to Jerusalem.
 
 ## A gradual process
 
@@ -67,7 +67,7 @@ We have some interesting clues along the way. A Jewish book called Sirach, trans
 
 For Christians, one of the most important pieces of evidence is how Jesus himself treated these writings. He quoted them often. When tempted in the desert, he answered three times from Deuteronomy. He said that Scripture cannot be broken (John 10:35). He spoke of the blood of the righteous from Abel to Zechariah (Luke 11:51), which some see as running from the first book of the Hebrew Bible, Genesis, to the last, Chronicles.
 
-In our key passage, the risen Jesus tells his disciples that everything written about him in "the Law of Moses and the Prophets and the Psalms" had to be fulfilled. Many scholars think "the Psalms", as the first and largest book of the Writings, stood for that whole third section. Then Luke says Jesus opened their minds to understand the Scriptures.
+In our key passage, the risen Jesus tells his disciples that everything written about him in "the Law of Moses and the Prophets and the Psalms" had to be fulfilled. Many scholars think "the Psalms", as the largest book of the Writings and often placed first, stood for that whole third section. Then Luke says Jesus opened their minds to understand the Scriptures.
 
 The [[apostle|apostles]] followed his lead. The New Testament quotes or alludes to the Old Testament hundreds of times, treating it as God's word. When Paul says all Scripture is God-breathed (2 Timothy 3:16), the Scripture he had in mind was what we now call the Old Testament.
 
@@ -75,7 +75,7 @@ The [[apostle|apostles]] followed his lead. The New Testament quotes or alludes 
 
 Here scholars genuinely disagree. Some think the Hebrew canon was essentially settled by the second century BC. Others think the edges, especially in the Writings, remained under discussion until the second century AD or a little later. What most agree on is that, within Judaism, the list was largely settled by the early centuries AD, and that it was a gradual recognition rather than a single vote.
 
-You may come across the idea of a "Council of Jamnia". The theory, popular from the late 1800s, held that around AD 90 a gathering of rabbis at Jamnia (also called Yavneh), a town near the coast, officially closed the Jewish canon. Most scholars now doubt this. There is little evidence for any formal council that decided the list. The rabbis there seem to have discussed whether certain books, such as Ecclesiastes and Song of Songs, should be read in particular ways, rather than drawing up an official list.
+You may come across the idea of a "Council of Jamnia". The theory, popular from the late 1800s, held that around AD 90 a gathering of rabbis at Jamnia (also called Yavneh), a town near the coast, officially closed the Jewish canon. Most scholars now doubt this. There is little evidence for any formal council that decided the list. The rabbis there seem to have debated the sacred status of a few books already in use, such as Ecclesiastes and Song of Songs, rather than drawing up an official list.
 
 ## A wider circle of books
 

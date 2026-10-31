@@ -32,7 +32,7 @@ quiz:
       - "Because the battle belongs to the Lord, and all will know there is a God in Israel"
       - "Because Goliath is sick"
     answer: 2
-    explain: "David says the battle is the Lord's and that the victory will show the whole earth that Israel has a living God (1 Samuel 17:46-47)."
+    explain: "David says the battle is the Lord's and that the victory will show all the earth that there is a God in Israel (1 Samuel 17:45-47)."
   - q: "How do biblical narrators usually teach lessons?"
     options:
       - "By ending each story with a moral"

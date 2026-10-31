@@ -85,7 +85,7 @@ This is not a way of keeping the Bible at arm's length. It is a way of taking it
 
 The key passage for this lesson, Nehemiah 8:1-8, is set around 445 BC. The Jewish people had returned from [[exile]] in Babylon and gathered in Jerusalem. Ezra the [[scribe]] stood on a wooden platform and read from the Law of Moses from early morning until midday.
 
-But reading was not all that happened. Levites, who were helpers in Israel's worship, moved among the crowd and explained the meaning so that the people understood (Nehemiah 8:8). Many of them may have spoken [[aramaic|Aramaic]] by then rather than [[hebrew|Hebrew]], so some explaining was needed.
+But reading was not all that happened. Levites, who were helpers in Israel's worship, helped the people understand, explaining the meaning so that everyone could grasp what was read (Nehemiah 8:7-8). Many of them may have spoken [[aramaic|Aramaic]] by then rather than [[hebrew|Hebrew]], so some explaining was needed.
 
 Notice three things. The people treated the reading as important; they stood up when the book was opened. The reading was done in community, not alone. And understanding was the goal. The words were meant to be grasped, not just heard.
 

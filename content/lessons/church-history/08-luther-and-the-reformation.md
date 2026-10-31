@@ -56,7 +56,7 @@ Luther was not the first to protest. In England in the 1370s, John Wycliffe, an 
 
 ## Indulgences
 
-The spark for Luther was [[indulgence|indulgences]]. Catholic teaching held, and still holds, that even after sins are forgiven, there can remain a "temporal punishment", a need for healing and purification, which may continue after death in purgatory. The church taught that it could grant an indulgence, drawing on the merits of Christ and the saints, to release people from some or all of this, usually in connection with prayer, good works or a gift.
+The spark for Luther was [[indulgence|indulgences]]. Catholic teaching held, and still holds, that even after sins are forgiven, there can remain a "temporal punishment", a need for healing and purification, which may continue after death in [[purgatory]]. The church taught that it could grant an indulgence, drawing on the merits of Christ and the saints, to release people from some or all of this, usually in connection with prayer, good works or a gift.
 
 In 1517 a preacher named Johann Tetzel was selling indulgences near Wittenberg to help pay for rebuilding St Peter's Basilica in Rome. His sales pitch suggested that money could swiftly free loved ones from purgatory. Luther was alarmed. He feared that people were being taught to trust in a piece of paper rather than in God's mercy, and to skip true [[repentance]].
 

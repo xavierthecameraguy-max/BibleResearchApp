@@ -25,14 +25,14 @@ quiz:
       - "Laws about food, clothing and money"
       - "Moral, civil and ceremonial laws"
     answer: 3
-    explain: "Many Catholic and Reformed teachers have grouped the laws as moral, civil and ceremonial, seeing the moral law as still binding. Other Christians frame things differently."
+    explain: "Many Catholic, Reformed and Anglican teachers have grouped the laws as moral, civil and ceremonial, seeing the moral law as still binding. Other Christians frame things differently."
   - q: "How did Jesus summarise the Law?"
     options:
       - "Love God with all your heart, soul, mind and strength, and love your neighbour as yourself"
       - "Keep the Sabbath and offer sacrifices"
       - "Do not eat unclean food"
     answer: 0
-    explain: "Jesus said these two commands, from Deuteronomy 6:5 and Leviticus 19:18, hold up all the Law and the Prophets (Matthew 22:37-40)."
+    explain: "Jesus named these two commands, from Deuteronomy 6:5 and Leviticus 19:18, as the greatest (Mark 12:29-31), and said all the Law and the Prophets hang on them (Matthew 22:37-40)."
   - q: "What does the harvest law in Leviticus 19:9-10 show about God's character?"
     options:
       - "God only cares about farming techniques"
@@ -71,13 +71,13 @@ Many of these laws were remarkably humane for their time. Others reflect an anci
 
 This is a big question, and Christians have answered it in more than one way. All agree that Christians are not saved by keeping the Law, and that Jesus fulfils the Law (Matthew 5:17). They differ on exactly how the Law applies now.
 
-**The threefold division.** A very common approach, found in Catholic teaching (going back to Thomas Aquinas) and in Reformed Protestant confessions, sorts the laws into three groups:
+**The threefold division.** A very common approach, found in Catholic teaching (classically set out by Thomas Aquinas, building on earlier writers) and in Reformed and [[anglican|Anglican]] confessions, sorts the laws into three groups:
 
 - *Moral* laws, such as the Ten Commandments, reflect God's unchanging character and still guide Christians.
 - *Civil* laws governed Israel as a nation and are not directly binding on other nations today, though they show principles of justice.
 - *Ceremonial* laws about sacrifices, priests and purity pointed ahead to Jesus and are fulfilled in him.
 
-**Fulfilled as a whole.** Other Christians, including many Lutherans, some [[anabaptist|Anabaptists]] and those who hold to what is sometimes called new covenant theology, prefer to say the whole Mosaic Law, as a covenant, is fulfilled in Christ. Christians now live under the [[new-covenant|new covenant]] and the "law of Christ" (Galatians 6:2). Old Testament laws still teach us about God and are often repeated or deepened in the New Testament, but we read them through Jesus.
+**Fulfilled as a whole.** Other Christians, including some Lutherans, some [[anabaptist|Anabaptists]] and those who hold to what is sometimes called new covenant theology, prefer to say the whole Mosaic Law, as a covenant, is fulfilled in Christ. Christians now live under the [[new-covenant|new covenant]] and the "law of Christ" (Galatians 6:2). Old Testament laws still teach us about God and are often repeated or deepened in the New Testament, but we read them through Jesus.
 
 [[orthodox|Orthodox]] Christians similarly emphasise that the Law was a teacher leading to Christ (Galatians 3:24), and read it in the light of his life and the church's worship.
 
@@ -85,7 +85,7 @@ In practice, these approaches often arrive at very similar conclusions. Christia
 
 ## Jesus' summary
 
-When an expert asked Jesus which commandment was greatest, he answered with two: love the Lord your God with all your heart, soul, mind and strength (Deuteronomy 6:5), and love your neighbour as yourself (Leviticus 19:18). Everything in the Law and the Prophets, he said, hangs on these two (Matthew 22:37-40).
+When an expert asked Jesus which commandment was greatest, he answered with two: love the Lord your God with all your heart, soul, mind and strength (Deuteronomy 6:5; Mark 12:29-31), and love your neighbour as yourself (Leviticus 19:18). Everything in the Law and the Prophets, he said, hangs on these two (Matthew 22:37-40).
 
 That gives us a powerful lens. When reading any law, ask: how does this show love for God? How does it show love for neighbour?
 

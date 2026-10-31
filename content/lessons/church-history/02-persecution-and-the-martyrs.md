@@ -24,7 +24,7 @@ quiz:
       - "No, it was sporadic and local for long periods, with a few empire-wide campaigns"
       - "Yes, but only in Rome itself"
     answer: 2
-    explain: "For much of the time persecution depended on local officials and crowds. Empire-wide campaigns came mainly under Decius (250) and Diocletian (303–311)."
+    explain: "For much of the time persecution depended on local officials and crowds. Empire-wide campaigns came mainly under Decius (250), Valerian (257–258) and Diocletian (303–311)."
   - q: "Who was Polycarp?"
     options:
       - "An elderly bishop of Smyrna who was martyred around AD 155"
@@ -70,9 +70,11 @@ In AD 203, in Carthage in North Africa, a young noblewoman named Perpetua was ar
 
 It would be easy to imagine that Christians spent three centuries hiding in catacombs. Historians today paint a more mixed picture. For long stretches, persecution was sporadic and local. It depended on a hostile governor, an angry crowd, or a neighbour with a grudge. In many places and decades, Christians lived fairly openly, owned property and even built meeting places.
 
-Then came two empire-wide campaigns.
+Then came a few empire-wide campaigns.
 
 In AD 250, the emperor Decius ordered everyone to offer a [[sacrifice]] to the gods and get a certificate proving they had done it. Many Christians refused and died. Others gave in, or bought fake certificates. Afterwards the church had a painful debate: should those who gave in be allowed back? Most churches decided that, after real [[repentance]], they could be welcomed home.
+
+A few years later, in 257–258, the emperor Valerian targeted church leaders in particular. Among those executed was Cyprian, the bishop of Carthage.
 
 The worst came last. From AD 303 to about 311, under the emperor Diocletian and his co-rulers, the "Great Persecution" tried to wipe Christianity out. Churches were torn down, Scriptures were burned, and many believers were imprisoned, tortured or killed, especially in the eastern half of the empire.
 

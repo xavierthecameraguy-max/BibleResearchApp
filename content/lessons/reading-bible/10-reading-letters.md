@@ -73,7 +73,7 @@ But it needs care. Not every instruction means there was a big problem. Writers 
 
 ## Example: Philemon
 
-The key passage is the whole of Philemon, Paul's shortest letter, written around AD 60 while he was in prison.
+The key passage is the whole of Philemon, Paul's shortest letter, written while he was in prison, probably in the mid-50s to early 60s AD (scholars debate where and when).
 
 **The people.** Philemon was a Christian, probably wealthy, in whose house a church met, likely in Colossae. Onesimus had been enslaved in his household. Somehow Onesimus had come to be with Paul and had become a Christian (Philemon 1:10). Exactly how is uncertain; many think he had run away, others that he had been sent or sought Paul's help.
 
@@ -85,7 +85,7 @@ For us, the bridging principle might be: our new family in Christ should reshape
 
 ## Timeless principles and cultural applications
 
-Letters often combine lasting principles with specific applications for their own culture. Paul tells several churches to greet one another with a holy kiss (Romans 16:16). Most Christians see the principle, warm and genuine welcome, as lasting, while the form can change. Some churches, especially Orthodox and Catholic ones, keep a form of this greeting in their [[liturgy]] as the sign of peace.
+Letters often combine lasting principles with specific applications for their own culture. Paul tells several churches to greet one another with a holy kiss (Romans 16:16). Most Christians see the principle, warm and genuine welcome, as lasting, while the form can change. Some churches, including Orthodox, Catholic and many Anglican and Lutheran ones, keep a form of this greeting in their [[liturgy]], often called the sign of peace.
 
 It is honest to say that Christians sometimes disagree on where the line falls. Questions about women's roles in church leadership, head coverings, or certain practices in worship are examples where faithful, Bible-loving Christians reach different conclusions. Some helpful questions are:
 

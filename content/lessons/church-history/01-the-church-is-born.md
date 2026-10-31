@@ -57,7 +57,7 @@ Read the key passage, Acts 2:37-47. Notice what the first believers did: they le
 
 It is easy to forget that the first Christians were almost all Jewish. Jesus was Jewish, his twelve [[apostle|apostles]] were Jewish, and the first church met in and around the [[temple]] in Jerusalem. They did not think they were starting a new religion. They believed the God of Israel had kept his promises by sending Jesus.
 
-The early church was led by the apostles, especially Peter and John, and later by James, the brother of Jesus. They faced opposition from some religious leaders. A young man named Stephen became the first Christian killed for his faith (Acts 7). After his death, many believers scattered from Jerusalem and took the message with them.
+The early church was led by the apostles, especially Peter and John, and later by James, called "the Lord's brother" (Galatians 1:19). Many Protestants take this to mean a younger son of Mary and Joseph, while Catholic and Orthodox Christians understand it to mean a close relative, such as a cousin or stepbrother. The first believers faced opposition from some religious leaders. A young man named Stephen became the first Christian killed for his faith (Acts 7). After his death, many believers scattered from Jerusalem and took the message with them.
 
 ## The door opens to the Gentiles
 

@@ -52,7 +52,7 @@ This lesson explains why the lists differ, and tries to describe each tradition'
 
 - **Protestant Bibles** have 66 books: 39 in the Old Testament and 27 in the New.
 - **Catholic Bibles** have 73 books. The extra seven are Tobit, Judith, 1 and 2 Maccabees, Wisdom (also called the Wisdom of Solomon), Sirach (also called Ecclesiasticus) and Baruch. Catholic Bibles also include longer versions of Esther and Daniel.
-- **Orthodox Bibles** include all of these and usually a few more, such as 1 Esdras, 3 Maccabees, the Prayer of Manasseh and Psalm 151. The exact list varies somewhat between Orthodox churches, for example between Greek and Russian traditions.
+- **Orthodox Bibles** include all of these and usually a few more, such as 1 Esdras, 3 Maccabees, the Prayer of Manasseh and Psalm 151. The exact list varies somewhat between Orthodox churches, for example between Greek and Russian traditions. The Ethiopian Orthodox Church, one of the ancient [[oriental-orthodox|Oriental Orthodox]] churches, has the largest Bible of all, traditionally counted as 81 books, including Enoch and Jubilees.
 
 The key point: the New Testament is the same in all three. Every tradition accepts the same 27 books. The differences are all in the Old Testament.
 
@@ -69,7 +69,7 @@ The early church spoke mostly Greek, so it used the Septuagint widely. Many earl
 Even the names differ, and the names reflect the views:
 
 - Catholics and Orthodox often call them the [[deuterocanonical]] books, meaning "second canon". This does not mean "second-rate". It refers to the fact that their place in the canon was settled later than the others.
-- Protestants usually call them the [[apocrypha]], meaning "hidden things". Protestants value them as historical writings but do not treat them as Scripture.
+- Protestants usually call them the [[apocrypha]], meaning "hidden things". Many Protestants value them as useful historical and devotional reading but do not treat them as Scripture.
 - The Orthodox sometimes use a Greek word meaning "worthy to be read".
 
 ## Jerome
@@ -84,9 +84,9 @@ Protestants give several reasons. These books were not in the Hebrew Bible of th
 
 ## The Catholic view
 
-The Catholic Church responded at the Council of Trent in 1546, which formally declared these books to be fully part of the Old Testament. Catholics see this as confirming, not inventing, what the church had long done.
+The Catholic Church responded at the Council of Trent in 1546, which formally declared these books to be fully part of the Old Testament. Catholics see this as confirming, not inventing, what the church had long done. The Council of Florence had already listed the same books in 1442.
 
-Catholics point out that the early church used the Septuagint, which included these books, and that regional councils such as Hippo and Carthage around AD 400 listed them. They note that the New Testament writers often quoted the Septuagint and that passages like Hebrews 11:35 seem to echo the stories of martyrs in 2 Maccabees. For Catholics, the church's long practice of reading these books in worship is itself strong evidence of their place in Scripture.
+Catholics point out that the early church used the Septuagint, which included these books, and that regional councils such as Hippo and Carthage around AD 400 listed them. They note that the New Testament writers often quoted the Septuagint and that passages like Hebrews 11:35 seem to echo the stories of martyrs in 2 Maccabees. They also point out that the New Testament never directly quotes several books everyone accepts, such as Esther and Song of Songs, so a lack of quotation does not settle the question. For Catholics, the church's long practice of reading these books in worship is itself strong evidence of their place in Scripture.
 
 ## The Orthodox view
 

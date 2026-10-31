@@ -91,4 +91,4 @@ A hopeful moment came in 1965. Pope Paul VI and Patriarch Athenagoras of Constan
 
 ## Two lungs
 
-The two churches today, the [[catholic|Roman Catholic Church]] and the [[orthodox|Eastern Orthodox]] churches, share the same ancient creeds, the seven [[sacrament|sacraments]], the early councils and a deep love for the church fathers. Pope John Paul II liked to say the church must "breathe with both lungs", East and West. Whatever tradition you belong to, you can pray Jesus' prayer for unity with them.
+The two churches today, the [[catholic|Roman Catholic Church]] and the [[orthodox|Eastern Orthodox]] churches, share the same ancient creeds, the seven [[sacrament|sacraments]] (which the Orthodox usually call "holy mysteries"), the early councils and a deep love for the church fathers. Pope John Paul II liked to say the church must "breathe with both lungs", East and West. Whatever tradition you belong to, you can pray Jesus' prayer for unity with them.

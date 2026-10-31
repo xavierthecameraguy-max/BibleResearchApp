@@ -48,7 +48,7 @@ The Bible's writers did the same. They assumed their readers knew about farming 
 
 ## A different world
 
-The Bible was written over more than a thousand years, roughly from around 1000 BC (or earlier for some material) to around AD 100. Its world was ancient, mostly rural, and very different from modern life. A few features are worth knowing.
+The Bible was written over more than a thousand years, roughly from around 1000 BC (or earlier for some material) to around AD 100. Exact dates for many books are debated. Its world was ancient, mostly rural, and very different from modern life. A few features are worth knowing.
 
 **Honour and shame.** In many ancient societies, your reputation in the community was one of the most precious things you had. Families gained honour through generosity, faithfulness and wise behaviour, and lost it through public failure. Many stories turn on this.
 
@@ -89,7 +89,7 @@ When Jesus turns water into wine, he is not only showing power. He is quietly pr
 
 Some passages are harder. In 1 Corinthians 11:2-16, Paul discusses whether women should cover their heads when praying or prophesying in worship. Scholars point out that in Corinth, head coverings likely carried meanings about marriage, modesty and social status that we do not share.
 
-Christians have reached different conclusions. Some churches, including some Orthodox, Anabaptist and conservative communities, continue the practice. Many others believe Paul's underlying concerns, such as order, respect and avoiding needless offence in worship, still apply, while the specific custom was tied to that culture. This is an area to approach humbly, with your church's guidance.
+Christians have reached different conclusions. Some churches, including some Orthodox, Anabaptist, traditional Catholic and conservative Protestant communities, continue the practice. Many others believe Paul's underlying concerns, such as order, respect and avoiding needless offence in worship, still apply, while the specific custom was tied to that culture. This is an area to approach humbly, with your church's guidance.
 
 ## Stepping into their sandals
 

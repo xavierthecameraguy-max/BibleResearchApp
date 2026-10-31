@@ -44,7 +44,7 @@ quiz:
     explain: "A few books, including Hebrews, James, 2 Peter and Revelation, were doubted in some regions before being accepted everywhere."
 ---
 
-In the last lesson we saw how the Old Testament came to be recognised. Now we turn to the New Testament. How did 27 books, written in the first century AD, come to stand alongside the ancient Scriptures of Israel?
+In the last lesson we saw how the Old Testament came to be recognised. Now we turn to the New Testament. How did 27 books, written mainly in the first century AD, come to stand alongside the ancient Scriptures of Israel?
 
 You might have heard someone claim that a powerful emperor or a single church meeting picked the books for political reasons. The real story is slower, more organic and, frankly, more interesting.
 
@@ -54,7 +54,7 @@ The first Christians already had a Bible: the Jewish Scriptures. Alongside them 
 
 As the apostles travelled and wrote, their letters were read aloud in the churches. Paul asked that his letters be shared between congregations (Colossians 4:16). In our key passage, Peter mentions Paul's letters and puts them alongside "the other Scriptures". Very early, then, some Christian writings were already being treated with deep respect.
 
-Over the next few centuries, the [[church]] gradually came to agree on which writings belonged in its [[canon]]. Christians across traditions usually describe this as the church recognising which books were already God's word, rather than giving them their authority. A helpful picture is a jeweller who recognises real gold. The jeweller does not make it gold, but learns to tell the real thing apart.
+Over the next few centuries, the [[church]] gradually came to agree on which writings belonged in its [[canon]]. Christians across traditions usually describe this as the church recognising which books were already God's word, rather than giving them their authority. Catholic and Orthodox Christians also stress that the church, guided by the Holy Spirit, had real authority to make that judgement, while many Protestants stress that the books carried their own authority, which the church came to see. A helpful picture is a jeweller who recognises real gold. The jeweller does not make it gold, but learns to tell the real thing apart.
 
 ## How did they tell?
 
@@ -77,7 +77,7 @@ In the early 300s, the church historian Eusebius sorted books into those that we
 
 A milestone came in AD 367. Each year the [[bishop]] of Alexandria in Egypt wrote a letter announcing the date of Easter. That year, Bishop Athanasius used his letter to list the books of Scripture. His New Testament list contains exactly the 27 books we have today. He described these books as springs of salvation.
 
-Soon afterwards, church gatherings in North Africa, the councils of Hippo in 393 and Carthage in 397, confirmed the same 27 books. These were regional meetings, not worldwide ones, and they were largely confirming what churches were already doing rather than announcing something new. Over time, the same list was received across the Christian world.
+Soon afterwards, church gatherings in North Africa, the councils of Hippo in 393 and Carthage in 397, confirmed the same 27 books. These were regional meetings, not worldwide ones, and they were largely confirming what churches were already doing rather than announcing something new. Over time, the same list was received across almost all of the Christian world. (Some Syriac-speaking churches long used a shorter New Testament of 22 books, without 2 Peter, 2 and 3 John, Jude and Revelation.)
 
 ## The books that took longer
 
@@ -88,7 +88,7 @@ It is honest and helpful to know that a few books were questioned for a while:
 - **2 and 3 John** and **Jude** are very short and were not read everywhere.
 - **Revelation** was accepted early in the West but doubted for a time by some in the East, partly because of debates about how to interpret it.
 
-In the end, all of these books were accepted. Meanwhile, some other early Christian writings, such as the *Shepherd of Hermas* and the *Didache*, were valued and read by some churches but were not included. Later writings like the so-called Gospel of Thomas were rejected because they came later and did not fit the apostolic faith.
+In the end, all of these books were accepted. Meanwhile, some other early Christian writings, such as the *Shepherd of Hermas* and the *Didache*, were valued and read by some churches but were not included. Other writings, such as the Gospel of Thomas, were rejected. Most scholars date Thomas, at least in its final form, to the second century, and early church leaders judged that it did not fit the apostolic faith.
 
 ## A shared inheritance
 

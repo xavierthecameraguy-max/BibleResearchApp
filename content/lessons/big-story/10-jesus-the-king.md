@@ -19,7 +19,7 @@ quiz:
       - "The temple is all you need"
     answer: 0
     explain: "Mark 1:15 sums up Jesus' message: the time has come and God's kingdom is near, so repent and believe the good news."
-  - q: "Why is Jesus probably born around 6–4 BC rather than in AD 1?"
+  - q: "Why was Jesus probably born around 6–4 BC rather than in AD 1?"
     options:
       - "Because the Gospels say so directly"
       - "Because Christians changed the date on purpose"
@@ -61,7 +61,7 @@ person.
 
 Matthew and Luke tell of Jesus' birth. An angel tells a young woman named Mary
 that she will have a son by the power of the Holy Spirit, and that he will be
-given the throne of his ancestor David (Luke 1:30-33). Mary is engaged to Joseph,
+given the throne of his ancestor David (Luke 1:30-35). Mary is engaged to Joseph,
 a man from David's family. Jesus is born in Bethlehem, David's hometown, in very
 humble conditions, and his first visitors are shepherds.
 

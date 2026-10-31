@@ -10,6 +10,7 @@ import { NotesIcon } from '../components/Icons.tsx'
 import { TextCredit } from '../components/TextCredit.tsx'
 import { CrossRefSheet } from '../components/CrossRefSheet.tsx'
 import { OriginalWordsSheet } from '../components/OriginalWordsSheet.tsx'
+import { DictionarySheet } from '../components/DictionarySheet.tsx'
 import { Chip } from '../components/VerseActions.tsx'
 import { BUNDLED } from '../lib/bible.ts'
 import { formatReference } from '../lib/references.ts'
@@ -33,7 +34,7 @@ export function BibleChapterPage() {
   const highlights = useAppState((s) => s.highlights)
   const verseNotes = useAppState((s) => s.verseNotes)
   const speaking = useSpeaking()
-  const [panel, setPanel] = useState<null | 'xrefs' | 'words'>(null)
+  const [panel, setPanel] = useState<null | 'xrefs' | 'words' | 'dict'>(null)
   const [jumpOpen, setJumpOpen] = useState(false)
   const navigate = useNavigate()
   // Swipe left/right to change chapter (ignored while verses are selected).
@@ -189,8 +190,18 @@ export function BibleChapterPage() {
               <Chip onClick={() => setPanel('xrefs')}>
                 Cross-refs{selected.length > 1 ? ` (v${Math.min(...selected)})` : ''}
               </Chip>
+              <Chip onClick={() => setPanel('dict')}>Dictionary</Chip>
             </>
           }
+        />
+      )}
+      {selected.length > 0 && (
+        <DictionarySheet
+          open={panel === 'dict'}
+          onClose={() => setPanel(null)}
+          book={book.id}
+          chapter={chapter}
+          verse={Math.min(...selected)}
         />
       )}
       {selected.length > 0 && (

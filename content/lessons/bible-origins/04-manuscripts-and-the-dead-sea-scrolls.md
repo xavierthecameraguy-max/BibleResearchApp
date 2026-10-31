@@ -51,7 +51,7 @@ In 1947, according to the usual account, a young Bedouin shepherd was searching 
 
 Over the next decade, searchers explored eleven caves near a site called Qumran. They found the remains of around 900 scrolls, most of them in fragments, some as small as a fingernail. These are known as the [[dead-sea-scrolls]]. They date from roughly 250 BC to AD 70, and many scholars connect them with a Jewish community that lived nearby, though exactly who they were is still discussed.
 
-About a quarter of the scrolls are copies of books of the Hebrew Bible. Every Old Testament book is represented at least in fragments, with the exception of Esther. Before 1947, the oldest substantial Hebrew copies of the Old Testament dated to around AD 900 to 1000. Suddenly, scholars had copies that were roughly a thousand years older.
+About a quarter of the scrolls are copies of books of the Hebrew Bible. Every book of the Hebrew Bible is represented, at least in fragments, except Esther. (No piece of Nehemiah has been identified either, but in ancient times Ezra and Nehemiah were counted as one book, and Ezra is there.) Before 1947, the oldest substantial Hebrew copies of the Old Testament dated to around AD 900 to 1000. Suddenly, scholars had copies that were roughly a thousand years older.
 
 ## The Great Isaiah Scroll
 
@@ -75,13 +75,13 @@ With so many manuscripts, it is no surprise that they contain differences. These
 
 Scholars weigh questions such as: Which reading appears in the oldest copies? Which is found across many different regions? Which reading best explains how the others came about? A tired copyist is more likely to shorten a sentence by accident than to invent a new one, for example.
 
-The great majority of variants are minor: spelling differences, changes in word order that do not affect meaning in Greek, or a word like "the" being present or absent. Only a small portion make any difference to meaning, and scholars from many backgrounds agree that no central Christian teaching depends on a single uncertain passage.
+The great majority of variants are minor: spelling differences, changes in word order that do not affect meaning in Greek, or a word like "the" being present or absent. Only a small portion make any difference to meaning, and most scholars, from many backgrounds, agree that no central Christian teaching depends on a single uncertain passage.
 
 ## Notes in your Bible
 
 You may notice a few places where your Bible adds brackets or a note such as "some early manuscripts do not include these verses". Two well-known examples are:
 
-- **Mark 16:9-20.** Some of the oldest manuscripts end Mark's Gospel at 16:8, with the women leaving the empty tomb in awe. The longer ending appears in many later copies.
+- **Mark 16:9-20.** Some of the oldest manuscripts end Mark's Gospel at 16:8, with the women leaving the empty tomb in awe. The longer ending appears in most later copies. Most scholars think it was added after Mark wrote, though some argue it is original.
 - **John 7:53–8:11.** The story of Jesus and the woman caught in adultery is missing from the earliest manuscripts and appears in different places in some later ones. Many scholars think it is a genuine early memory about Jesus that was added to John's Gospel later.
 
 Modern Bibles usually still print these passages but mark them honestly. That openness is a strength. It means translators are showing you their work rather than hiding it.

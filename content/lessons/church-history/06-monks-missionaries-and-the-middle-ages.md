@@ -18,7 +18,7 @@ quiz:
       - "A creed about the Holy Spirit"
     answer: 1
     explain: "Benedict wrote his Rule around 530. Its balanced pattern of prayer, work and reading shaped Western monasteries for centuries."
-  - q: "Who brought the gospel to Ireland in the 400s, after first being taken there as a slave?"
+  - q: "Who became the great missionary to Ireland in the 400s, after first being taken there as a slave?"
     options:
       - "Benedict"
       - "Antony"
@@ -47,7 +47,7 @@ When people hear "the Middle Ages", they sometimes picture a gloomy time of igno
 
 ## Into the desert
 
-As the church became safe and comfortable after Constantine, some Christians worried that it was losing its edge. A number of them went out into the deserts of Egypt and Syria to seek God in simplicity and prayer.
+Even before Constantine, a few Christians had gone out into the deserts of Egypt and Syria to seek God in simplicity and prayer. As the church became safe and comfortable after him, many more followed, partly because they worried it was losing its edge.
 
 The most famous was Antony of Egypt (about 251–356). As a young man he heard Jesus' words to the rich young man read in church: sell what you have and give to the poor (Matthew 19:21). He did exactly that and spent most of his long life in the desert, praying, fasting and fighting temptation. Athanasius wrote a biography of him that became a bestseller of the ancient world and inspired thousands to follow.
 
@@ -67,7 +67,7 @@ Before printing, every book had to be copied by hand. Monks spent countless hour
 
 ## Patrick and the Celtic missions
 
-Patrick was born in Roman Britain around the early 400s. As a teenager he was kidnapped by raiders and taken to Ireland as a slave. There, in loneliness, he began to pray. After about six years he escaped and returned home. Later he felt God calling him back to the very people who had enslaved him. He spent the rest of his life in Ireland as a missionary bishop, and his own short writings still survive.
+Patrick was born in Roman Britain, probably in the late 300s or early 400s; his exact dates are uncertain. As a teenager he was kidnapped by raiders and taken to Ireland as a slave. There, in loneliness, he began to pray. After about six years he escaped and returned home. Later he felt God calling him back to the very people who had enslaved him. He spent the rest of his life in Ireland as a missionary bishop, and his own short writings still survive.
 
 Ireland then became a sending country. Irish monks such as Columba, who founded a monastery on the island of Iona around 563, carried the faith to Scotland and northern England. Others travelled across Europe.
 
@@ -87,7 +87,7 @@ Catholics see the [[pope]] as the successor of Peter, given a special role by Ch
 
 ## Charlemagne
 
-On Christmas Day in the year 800, Pope Leo III crowned Charlemagne, king of the Franks, as emperor in Rome. Charlemagne ruled much of western Europe. He promoted schools, better copies of the Bible and church reform. But he also forced some conquered peoples, such as the Saxons, to be baptised at sword point, which most Christians today would see as contrary to the gospel. The coronation also annoyed the emperor in Constantinople, who saw himself as the true Roman emperor.
+On Christmas Day in the year 800, Pope Leo III crowned Charlemagne, king of the Franks, as emperor in Rome. Charlemagne ruled much of western Europe. He promoted schools, better copies of the Bible and church reform. But he also forced some conquered peoples, such as the Saxons, to be baptised at sword point, which most Christians today would see as contrary to the gospel. The coronation also offended the court in Constantinople, which saw its own ruler, at that time the empress Irene, as the true Roman emperor.
 
 ## Beautiful feet
 

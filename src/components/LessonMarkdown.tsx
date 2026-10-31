@@ -52,9 +52,14 @@ export function GlossaryLink({ id, children }: { id: string; children: ReactNode
       </button>
       <Sheet open={open} onClose={() => setOpen(false)} title={term.term}>
         <p className="text-lg leading-relaxed">{term.definition}</p>
-        <Link to={`/glossary#${id}`} className={buttonClass('secondary', 'mt-5 w-full')}>
-          Open the glossary
-        </Link>
+        <div className="mt-5 grid grid-cols-2 gap-2">
+          <Link to={`/glossary#${id}`} className={buttonClass('secondary')}>
+            Glossary
+          </Link>
+          <Link to={`/dictionary?q=${encodeURIComponent(term.term.replace(/\s*\(.*\)$/, ''))}`} className={buttonClass('secondary')}>
+            Dictionary
+          </Link>
+        </div>
       </Sheet>
     </>
   )

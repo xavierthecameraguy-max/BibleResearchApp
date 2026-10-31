@@ -48,8 +48,8 @@ Last time we watched God rescue Israel from slavery in Egypt. Through the
 plagues, the Passover and the crossing of the sea, God showed his power and his
 faithfulness. But rescue was only the beginning.
 
-About three months later the Israelites arrive at Mount Sinai, in the desert.
-There God tells them why he brought them out: he carried them, like an eagle
+In the third month after leaving Egypt, the Israelites arrive at Mount Sinai,
+in the desert (Exodus 19:1). There God tells them why he brought them out: he carried them, like an eagle
 carrying its young, and brought them to himself (Exodus 19:4).
 
 ## A covenant at the mountain
@@ -80,9 +80,9 @@ Commandments (Exodus 20:1-17). In short, they say:
 9. Do not give false testimony.
 10. Do not covet what belongs to your neighbour.
 
-(Jewish, Catholic, Lutheran, Orthodox and Reformed traditions divide these
-commands slightly differently, so the numbering can vary. The content is the
-same.)
+(This list follows the numbering used by Orthodox, Anglican and Reformed
+Christians. Jewish, Catholic and Lutheran traditions divide the same commands
+slightly differently, so the numbering can vary. The content is the same.)
 
 Look carefully at what comes before the list. God begins: I am the LORD your God,
 who brought you out of Egypt, out of slavery (Exodus 20:2). The order matters.
@@ -115,8 +115,9 @@ me, so that I can live among them (Exodus 25:8).
 
 This tent is the [[tabernacle]]. It is portable, so it can travel with the people.
 It has courtyards, curtains, an altar, a lampstand, and an inner room called the
-Most Holy Place, where the ark of the covenant sits. Its decorations of trees,
-fruit and cherubim echo the garden of Eden.
+Most Holy Place, where the ark of the covenant sits. Many readers notice that
+its tree-like lampstand, its flower and fruit designs, and its cherubim (the
+guardians of Eden in Genesis 3:24) echo the garden of Eden.
 
 Remember how the first humans were sent out of the garden, away from God's
 presence? Now, in a small way, God is coming back to live with his people. When

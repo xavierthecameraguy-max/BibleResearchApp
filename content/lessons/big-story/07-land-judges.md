@@ -105,7 +105,7 @@ weaknesses (Judges 13–16).
 ## A downward spiral
 
 The cycle is not just a circle. It is a spiral heading down. Each judge seems
-more flawed than the last. Gideon ends up making an idol. Samson is reckless and
+more flawed than the last. Gideon ends up making a gold object that the people worship (Judges 8:27). Samson is reckless and
 self-centred. By the final chapters, the stories are truly disturbing, showing
 the violence and chaos that follow when a people forgets God.
 
@@ -122,7 +122,8 @@ return.
 
 ## Ruth: light in a dark time
 
-Right after Judges, the Bible places a short and beautiful book: Ruth. It is set
+Right after Judges, Christian Bibles place a short and beautiful book: Ruth.
+(Jewish Bibles keep it in a later section called the Writings.) It is set
 "in the days when the judges ruled" (Ruth 1:1), but it feels completely
 different.
 

@@ -62,7 +62,7 @@ The Septuagint became hugely important for Christians. Many New Testament writer
 
 ## Moving east: Syriac
 
-East of the Roman Empire, in what is now Syria, Iraq and south-east Turkey, many people spoke Syriac, a form of [[aramaic]]. Christianity took root there very early. Around AD 170, a Christian named Tatian combined the four Gospels into a single continuous story in Syriac, known as the Diatessaron.
+East of the Roman Empire, in what is now Syria, Iraq and south-east Turkey, many people spoke Syriac, a form of [[aramaic]]. Christianity took root there very early. Around AD 170, a Christian named Tatian combined the four Gospels into a single continuous story, known as the Diatessaron, which was widely read in Syriac. (Scholars debate whether he first wrote it in Syriac or in Greek.)
 
 Over the following centuries, a standard Syriac Bible developed, called the **Peshitta**, which means "simple" or "common". Its origins are debated, with parts probably translated between the 2nd and 5th centuries. The Peshitta is still read in Syriac-speaking churches today, and these churches carried the gospel as far as India and China.
 
@@ -74,7 +74,7 @@ In Egypt, most ordinary people spoke Coptic, the last stage of the ancient Egypt
 
 In the western half of the Roman Empire, Latin was the main language. By the late 2nd century, there were already Latin translations, now called the Old Latin versions. But they varied widely, and many were rough.
 
-Around AD 382, Pope Damasus asked a brilliant and famously prickly scholar named Jerome to produce a reliable Latin text. Jerome first revised the Gospels. Then, after moving to Bethlehem, he did something unusual for a Christian of his day: he learned Hebrew from Jewish teachers and translated much of the Old Testament directly from the Hebrew, finishing around AD 405.
+Around AD 382, Pope Damasus asked a brilliant and famously prickly scholar named Jerome to produce a reliable Latin text. Jerome first revised the Gospels. Then, after moving to Bethlehem, he did something unusual for a Christian of his day. He had begun learning Hebrew years earlier, and he kept studying it with Jewish teachers, so that he could translate much of the Old Testament directly from the Hebrew, finishing around AD 405.
 
 His work became known as the [[vulgate]], meaning "common" or "popular". It was not welcomed by everyone at first, but over time it became the standard Bible of the Western church for over a thousand years.
 

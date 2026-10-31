@@ -74,7 +74,7 @@ His central point was simple: if Jesus is not truly God, he cannot bring us to G
 
 The debate was finally settled at a second ecumenical council, held in Constantinople in 381. It confirmed Nicaea and expanded its statement, especially about the Holy Spirit, describing the Spirit as "the Lord, the giver of life", who is worshipped and glorified together with the Father and the Son.
 
-The result is the [[creed]] most Christians simply call the Nicene Creed. It is said every Sunday in Orthodox, Catholic, Anglican and Lutheran churches, and many other Protestant churches affirm it as a faithful summary of Scripture.
+The result is the [[creed]] most Christians simply call the Nicene Creed. It is regularly said in Sunday worship in Orthodox, Catholic, Anglican and Lutheran churches, and many other Protestant churches affirm it as a faithful summary of Scripture.
 
 There is one difference you may notice. In the West, the phrase "and the Son" was later added to say that the Spirit proceeds from the Father and the Son. This addition, called the [[filioque]], was not accepted by Eastern churches. You will see in lesson seven how it became part of a much larger split. But the creed's main teaching is shared by all.
 

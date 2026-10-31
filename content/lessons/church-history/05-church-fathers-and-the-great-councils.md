@@ -79,7 +79,7 @@ The Orthodox and Catholic churches both accept seven ecumenical councils, from N
 
 Not everyone accepted Chalcedon. Many Christians in Egypt, Ethiopia, Armenia and Syria felt that its language of "two natures" leaned too far towards dividing Christ. They preferred an older formula from Cyril of Alexandria about the "one nature of God the Word made flesh". These churches are today called the [[oriental-orthodox|Oriental Orthodox]] churches. They include the Coptic Orthodox Church of Egypt, the Armenian Apostolic Church, the Ethiopian Orthodox Tewahedo Church, and the Syriac Orthodox Church.
 
-Their opponents sometimes called them "Monophysites", but they reject that label because they do not believe Christ's humanity was lost. They confess that he is fully God and fully human, united without mixture. In recent decades, theologians from these churches, the Eastern Orthodox and the Catholic Church have agreed that much of the old dispute was about words and politics as much as belief. These ancient churches have kept the faith through centuries of hardship.
+Their opponents sometimes called them "Monophysites", but they reject that label because they do not believe Christ's humanity was lost. Many prefer the term "Miaphysite", meaning "one united nature". They confess that he is fully God and fully human, united without mixture. In recent decades, theologians from these churches, the Eastern Orthodox and the Catholic Church have agreed that they share the same basic faith about Christ, and that much of the old dispute was over words. Historians add that politics and language barriers also played a large part. These ancient churches have kept the faith through centuries of hardship.
 
 ## The Church of the East
 

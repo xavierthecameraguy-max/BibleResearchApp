@@ -97,8 +97,13 @@ trusting God for victory (1 Samuel 17). Saul becomes jealous and hunts David for
 years, yet David refuses to harm "the LORD's anointed" king.
 
 David becomes king around 1010 BC. He captures Jerusalem and makes it his
-capital, then brings the ark of the covenant there. He also writes many of the
-Psalms, the songs and prayers of the Bible.
+capital, then brings the ark of the covenant there. He is also remembered as a
+songwriter: 73 of the Psalms, the songs and prayers of the Bible, carry his
+name in their headings, though scholars debate how many he wrote himself.
+
+Outside the Bible, an inscription from the 800s BC, found at Tel Dan in northern
+Israel, mentions the "house of David". Archaeologists still debate how large and
+powerful the kingdoms of David and Solomon actually were.
 
 ## God's promise to David
 

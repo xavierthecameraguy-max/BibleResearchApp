@@ -55,7 +55,7 @@ You have reached the final lesson in this track. We will look at the most unusua
 
 ## Apocalyptic: lifting the curtain
 
-The word [[apocalyptic]] comes from a Greek word meaning "unveiling" or "revealing." Apocalyptic writing pulls back the curtain on everyday events to show what is really going on in heaven and in history. It was a recognised kind of Jewish writing between roughly 200 BC and AD 100.
+The word [[apocalyptic]] comes from a Greek word meaning "unveiling" or "revealing." Apocalyptic writing pulls back the curtain on everyday events to show what is really going on in heaven and in history. It was a recognised kind of Jewish and early Christian writing that flourished from roughly 200 BC to AD 200, with roots in the earlier prophets.
 
 In the Bible, the main examples are the second half of Daniel (chapters 7-12) and the book of Revelation, with shorter passages in Ezekiel, Zechariah and the Gospels.
 
@@ -68,7 +68,7 @@ Apocalyptic writing has some typical features:
 
 ## Reading the symbols
 
-The key thing to remember is that these symbols had to make sense to the first readers. Revelation was written, probably in the AD 90s, to seven real churches in what is now western Turkey (Revelation 1:4, 1:11). Some faced persecution; others were tempted to compromise with the power and wealth of Rome.
+The key thing to remember is that these symbols had to make sense to the first readers. Revelation was written, probably in the AD 90s (some scholars prefer the late 60s), to seven real churches in what is now western Turkey (Revelation 1:4, 1:11). Some faced persecution; others were tempted to compromise with the power and wealth of Rome.
 
 Many symbols are drawn from the Old Testament. Revelation alludes to it hundreds of times. The beasts recall Daniel 7, where beasts stand for empires. Often the book even explains its own symbols: the seven lampstands are the seven churches (1:20).
 
@@ -96,7 +96,7 @@ Here are six common mistakes, all of which this track has tried to guard you aga
 
 **5. Treating every promise as personal to me.** Some promises were made to particular people, such as Abraham, or to Israel as a nation. They still teach us about God's faithfulness, but we should not assume each one is a direct guarantee to us. Many promises are given to all believers in Christ, and the context shows which is which.
 
-**6. Allegorising everything.** Allegory treats every detail as a hidden symbol for something else. Some passages invite symbolic reading, and the early church fathers valued spiritual readings alongside the plain sense. But if every detail can mean anything, the text ends up meaning whatever we like. Start with the plain sense the author intended.
+**6. Allegorising everything.** [[allegory|Allegory]] treats every detail as a hidden symbol for something else. Some passages invite symbolic reading, and the early church fathers valued spiritual readings alongside the plain sense. But if every detail can mean anything, the text ends up meaning whatever we like. Start with the plain sense the author intended.
 
 ## The five-question study method
 
