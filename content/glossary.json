@@ -20,6 +20,11 @@
     "definition": "The family of churches that grew from the Church of England's Reformation, including Episcopal churches. Anglicans keep bishops and set prayers (the Book of Common Prayer) alongside Protestant teaching."
   },
   {
+    "id": "annihilationism",
+    "term": "Annihilationism",
+    "definition": "Also called conditional immortality: the view that the final punishment of the unrepentant is to cease to exist, rather than to suffer forever. A minority view held by some evangelicals."
+  },
+  {
     "id": "apocalyptic",
     "term": "Apocalyptic",
     "definition": "A type of writing that uses vivid symbols, visions and numbers to reveal God's view of history and his final victory over evil. Daniel 7–12 and Revelation are the main biblical examples."
@@ -28,6 +33,11 @@
     "id": "apocrypha",
     "term": "Apocrypha",
     "definition": "Literally 'hidden things'. Protestants use the word for the Jewish books written roughly 300 BC–AD 100 that appear in Catholic and Orthodox Old Testaments but not in the Hebrew Bible. Catholics call most of them the deuterocanonical books."
+  },
+  {
+    "id": "apologetics",
+    "term": "Apologetics",
+    "definition": "From the Greek apologia, 'a reasoned defence' (1 Peter 3:15). Giving thoughtful reasons for the Christian faith, gently and respectfully."
   },
   {
     "id": "apostle",
@@ -90,6 +100,11 @@
     "definition": "An early book made of folded, stacked pages, as opposed to a scroll. Early Christians adopted the codex very early for copying Scripture."
   },
   {
+    "id": "complementarian",
+    "term": "Complementarian",
+    "definition": "The view that men and women are equal in worth but that God gives some different roles, for example that certain church leadership roles are for men."
+  },
+  {
     "id": "context",
     "term": "Context",
     "definition": "Everything around a passage that shapes its meaning: the surrounding verses and book (literary context) and the time, place, culture and situation in which it was written (historical context)."
@@ -150,6 +165,11 @@
     "definition": "Efforts by different churches to understand one another, pray together and seek greater unity."
   },
   {
+    "id": "egalitarian",
+    "term": "Egalitarian",
+    "definition": "The view that men and women are equal in worth and that all roles in the church and home are open to both."
+  },
+  {
     "id": "eisegesis",
     "term": "Eisegesis",
     "definition": "Reading your own ideas into a passage. The opposite of exegesis, and something careful readers try to avoid."
@@ -168,6 +188,16 @@
     "id": "evangelical",
     "term": "Evangelical",
     "definition": "From the Greek for 'good news'. A broad Protestant movement that stresses personal conversion, the authority of the Bible, the cross, and sharing the faith."
+  },
+  {
+    "id": "evolutionary-creation",
+    "term": "Evolutionary creation",
+    "definition": "The view (also called theistic evolution) that God created life through the long process of evolution, and that Genesis teaches who made the world and why rather than a scientific how."
+  },
+  {
+    "id": "exclusivism",
+    "term": "Exclusivism",
+    "definition": "The view that salvation comes only through Jesus and only to those who consciously trust in him."
   },
   {
     "id": "excommunication",
@@ -240,6 +270,11 @@
     "definition": "The study of how to interpret. In Bible study, it means the principles we use to understand what a passage meant and what it means now."
   },
   {
+    "id": "historical-jesus",
+    "term": "Historical Jesus",
+    "definition": "What historians can say about Jesus using ordinary historical methods. Almost all scholars agree that he lived, taught in Galilee and was crucified under Pontius Pilate."
+  },
+  {
     "id": "holy-spirit",
     "term": "Holy Spirit",
     "definition": "The third person of the Trinity: God present and active, who gives life, inspires Scripture, lives in believers and makes them more like Jesus."
@@ -253,6 +288,11 @@
     "id": "incarnation",
     "term": "Incarnation",
     "definition": "'Becoming flesh'. The belief that the eternal Son of God became fully human in Jesus while remaining fully God (John 1:14)."
+  },
+  {
+    "id": "inclusivism",
+    "term": "Inclusivism",
+    "definition": "The view that salvation comes only through Jesus, but that God may save some who never clearly heard of him, through Christ's work, according to how they responded to the light they had."
   },
   {
     "id": "indulgence",
@@ -345,6 +385,11 @@
     "definition": "The Bible's hope that God will heal and renew the whole world, not abandon it, with heaven and earth joined and death gone forever (Revelation 21–22)."
   },
   {
+    "id": "old-earth-creation",
+    "term": "Old-earth creation",
+    "definition": "The view that God created the world over a very long time, matching the scientific age of the earth, while usually holding that God specially created humans."
+  },
+  {
     "id": "oriental-orthodox",
     "term": "Oriental Orthodox",
     "definition": "Ancient churches such as the Coptic, Ethiopian, Armenian and Syriac Orthodox, which did not accept the Council of Chalcedon (451). Recent dialogues suggest the disagreement was largely about wording."
@@ -408,6 +453,11 @@
     "id": "pope",
     "term": "Pope",
     "definition": "The Bishop of Rome, whom Catholics see as Peter's successor and the visible head of the whole church on earth. Orthodox and Protestant Christians do not accept that role."
+  },
+  {
+    "id": "progressive-revelation",
+    "term": "Progressive revelation",
+    "definition": "The idea that God revealed himself step by step through history, so later parts of the Bible (especially Jesus) bring fuller light to earlier ones."
   },
   {
     "id": "proof-texting",
@@ -535,6 +585,11 @@
     "definition": "A place where manuscripts differ in wording. Most variants are tiny, such as spelling or word order, and none changes a core Christian belief."
   },
   {
+    "id": "theodicy",
+    "term": "Theodicy",
+    "definition": "An attempt to explain how a good and all-powerful God can allow evil and suffering. Christians have offered several, and most admit they don't answer every question."
+  },
+  {
     "id": "torah",
     "term": "Torah",
     "definition": "Hebrew for 'instruction'. The first five books of the Bible, or God's teaching more broadly."
@@ -558,5 +613,10 @@
     "id": "wisdom-literature",
     "term": "Wisdom literature",
     "definition": "Books such as Proverbs, Job and Ecclesiastes that reflect on how to live well in God's world and wrestle with life's hard questions."
+  },
+  {
+    "id": "young-earth-creation",
+    "term": "Young-earth creation",
+    "definition": "The view that God created the world in six ordinary days, roughly 6,000–10,000 years ago, reading Genesis 1 as a literal timeline."
   }
 ]
