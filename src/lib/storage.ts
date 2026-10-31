@@ -90,7 +90,7 @@ export interface Settings {
   /** The translation used for "Open in …" links to other Bible sites */
   linkVersion: string
   /** Which site those links go to */
-  linkSite: 'biblegateway' | 'youversion'
+  linkSite: 'biblegateway' | 'youversion' | 'blueletterbible'
   readerFont: ReaderFont
   lineSpacing: LineSpacing
   showVerseNumbers: boolean

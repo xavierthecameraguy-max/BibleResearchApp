@@ -76,7 +76,21 @@ function searchable(p: Passage): string {
   return formatReference(p).replace(/–/g, '-')
 }
 
-export function externalPassageUrl(p: Passage, version: string, site: 'biblegateway' | 'youversion'): string {
+/** Blue Letter Bible's book codes */
+const BLB: Record<string, string> = {
+  GEN: 'gen', EXO: 'exo', LEV: 'lev', NUM: 'num', DEU: 'deu', JOS: 'jos', JDG: 'jdg', RUT: 'rth', '1SA': '1sa', '2SA': '2sa',
+  '1KI': '1ki', '2KI': '2ki', '1CH': '1ch', '2CH': '2ch', EZR: 'ezr', NEH: 'neh', EST: 'est', JOB: 'job', PSA: 'psa', PRO: 'pro',
+  ECC: 'ecc', SNG: 'sng', ISA: 'isa', JER: 'jer', LAM: 'lam', EZK: 'eze', DAN: 'dan', HOS: 'hos', JOL: 'joe', AMO: 'amo',
+  OBA: 'oba', JON: 'jon', MIC: 'mic', NAM: 'nah', HAB: 'hab', ZEP: 'zep', HAG: 'hag', ZEC: 'zec', MAL: 'mal', MAT: 'mat',
+  MRK: 'mar', LUK: 'luk', JHN: 'jhn', ACT: 'act', ROM: 'rom', '1CO': '1co', '2CO': '2co', GAL: 'gal', EPH: 'eph', PHP: 'phl',
+  COL: 'col', '1TH': '1th', '2TH': '2th', '1TI': '1ti', '2TI': '2ti', TIT: 'tit', PHM: 'phm', HEB: 'heb', JAS: 'jas',
+  '1PE': '1pe', '2PE': '2pe', '1JN': '1jo', '2JN': '2jo', '3JN': '3jo', JUD: 'jde', REV: 'rev',
+}
+
+export function externalPassageUrl(p: Passage, version: string, site: 'biblegateway' | 'youversion' | 'blueletterbible'): string {
+  if (site === 'blueletterbible') {
+    return `https://www.blueletterbible.org/${version.toLowerCase()}/${BLB[p.book] ?? 'gen'}/${p.startChapter}/${p.startVerse ?? 1}/`
+  }
   if (site === 'youversion') {
     // YouVersion uses numeric version ids; 114 is the NKJV.
     const ids: Record<string, number> = { NKJV: 114, KJV: 1, ESV: 59, NLT: 116, CSB: 1713, NIV: 111, WEB: 206 }

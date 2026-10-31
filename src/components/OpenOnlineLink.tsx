@@ -6,7 +6,7 @@ import { ExternalIcon } from './Icons.tsx'
 export function OpenOnlineLink({ passage, className = '' }: { passage: Passage; className?: string }) {
   const version = useAppState((s) => s.settings.linkVersion)
   const site = useAppState((s) => s.settings.linkSite)
-  const siteName = site === 'youversion' ? 'YouVersion' : 'Bible Gateway'
+  const siteName = site === 'youversion' ? 'YouVersion' : site === 'blueletterbible' ? 'Blue Letter Bible' : 'Bible Gateway'
   return (
     <a
       href={externalPassageUrl(passage, version, site)}

@@ -263,6 +263,7 @@ export function SettingsPage() {
             options={[
               ['biblegateway', 'Bible Gateway'],
               ['youversion', 'YouVersion'],
+              ['blueletterbible', 'Blue Letter Bible'],
             ]}
             onChange={(linkSite) => updateSettings({ linkSite })}
           />
