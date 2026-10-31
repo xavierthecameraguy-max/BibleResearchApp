@@ -33,6 +33,9 @@ export type LessonMeta = Omit<Lesson, 'body'>
 
 export const TRACK_IDS = ['big-story', 'bible-origins', 'church-history', 'reading-bible', 'first-steps', 'big-questions']
 
+/** Diagrams lessons can include with a line like {{diagram:big-story}} (see src/components/Diagrams.tsx) */
+export const DIAGRAM_NAMES = ['big-story', 'library', 'canons', 'english-bible', 'genres']
+
 /** Matches [[term]] and [[term|shown text]] */
 export const GLOSSARY_LINK = /\[\[([a-z0-9-]+)(?:\|([^\]]+))?\]\]/g
 
@@ -103,6 +106,9 @@ export function parseLesson(source: string, fileName: string, glossaryIds?: Set<
     }
   }
   if (!body) problems.push(`${fileName}: the lesson has no text below the header`)
+  for (const d of body.matchAll(/^\{\{diagram:([a-z-]+)\}\}\s*$/gm)) {
+    if (!DIAGRAM_NAMES.includes(d[1])) problems.push(`${fileName}: unknown diagram "${d[1]}" (use one of: ${DIAGRAM_NAMES.join(', ')})`)
+  }
 
   if (problems.length) return { problems }
   return {

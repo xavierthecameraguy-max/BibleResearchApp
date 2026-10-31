@@ -63,6 +63,8 @@ This lesson explains why the lists differ, and tries to describe each tradition'
 
 The key point: the New Testament is the same in all three. Every tradition accepts the same 27 books. The differences are all in the Old Testament.
 
+{{diagram:canons}}
+
 ## Two forms of the Old Testament
 
 To understand why, we need to go back to the time before Jesus. As we saw in lesson 5, many Jews lived outside the land of Israel and spoke Greek. They used the [[septuagint]], a Greek translation of the Scriptures. Copies of the Septuagint, as preserved by Christians, also included a number of other Jewish books, mostly written between about 300 BC and AD 100.

@@ -137,6 +137,8 @@ covenant in Jesus, are like chapters that move the story along. The theme of God
 dwelling with his people, from Eden to the tabernacle, the temple, Jesus and the
 Spirit-filled church, finds its fulfilment here.
 
+{{diagram:big-story}}
+
 ## Living in the story now
 
 Where are we in this story? We live between Jesus' resurrection and his return

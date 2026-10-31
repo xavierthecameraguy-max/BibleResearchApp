@@ -93,6 +93,8 @@ The twentieth century brought a wave of new translations. The Revised Standard V
 
 More recently, the New Living Translation (1996) aimed for very readable everyday English. The English Standard Version (2001), a revision of the RSV, aimed to stay close to the original wording. The Christian Standard Bible (2017) sought a balance between the two. Catholic readers have the Jerusalem Bible and the New American Bible Revised Edition (2011), among others.
 
+{{diagram:english-bible}}
+
 ## Why so many?
 
 It can seem confusing that there are so many English Bibles. But each one is an attempt to do what Wycliffe and Tyndale longed for: to let ordinary people hear God speak in their own language. In the next lesson, we will look at how these translations differ and how to choose one.

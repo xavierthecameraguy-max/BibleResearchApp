@@ -90,6 +90,8 @@ The New Testament follows a similar pattern:
 
 It is worth knowing that Jewish Bibles contain the same books as the Protestant Old Testament but arrange and count them differently. We will look at that in lesson 5.
 
+{{diagram:library}}
+
 ## Chapters and verses came later
 
 When you see a reference like John 3:16, the first number is the chapter and the second is the verse. These numbers are wonderfully useful. They let millions of people find the same sentence in seconds.

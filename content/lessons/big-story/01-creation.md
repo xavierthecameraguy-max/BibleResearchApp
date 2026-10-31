@@ -141,6 +141,8 @@ What all of these readers agree on is the heart of the chapter: there is one God
 he made everything; his world is good; humans bear his image; and life is meant
 to be lived with him.
 
+{{diagram:big-story}}
+
 ## What this means for you
 
 If you are new to faith, Genesis 1 is a wonderful place to start. It tells you

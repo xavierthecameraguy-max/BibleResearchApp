@@ -109,6 +109,8 @@ Interpreting the Bible can feel daunting at first. Four things help enormously.
 
 **Patience.** Some passages are clear the first time. Others take years to understand. That is normal.
 
+{{diagram:genres}}
+
 ## What comes next
 
 In the lessons ahead you will learn to look at what comes before and after a verse, to step into the ancient world, to think about the first audience, and to recognise different kinds of writing, from stories and laws to poems, prophecies, Gospels, letters and visions. By the end you will have a simple five-question method you can use with any passage.

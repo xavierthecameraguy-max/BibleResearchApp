@@ -9,6 +9,7 @@ import { getTerm } from '../lib/content.ts'
 import { GLOSSARY_LINK } from '../lib/lessonFormat.ts'
 import { parseReference, readerPath, REFERENCE_IN_TEXT } from '../lib/references.ts'
 import { Sheet, buttonClass } from './ui.tsx'
+import { DIAGRAMS } from './Diagrams.tsx'
 
 /** Turn our shorthand into ordinary Markdown links the renderer understands. */
 function preprocess(md: string): string {
@@ -65,9 +66,25 @@ export function GlossaryLink({ id, children }: { id: string; children: ReactNode
   )
 }
 
+/** Lesson text, with {{diagram:name}} lines replaced by diagrams. */
 export function LessonMarkdown({ source }: { source: string }) {
+  const parts = source.split(/^\{\{diagram:([a-z-]+)\}\}\s*$/m)
   return (
     <div className="lesson-prose">
+      {parts.map((part, i) => {
+        if (i % 2 === 1) {
+          const D = DIAGRAMS[part]
+          return D ? <D key={i} /> : null
+        }
+        return <MarkdownChunk key={i} source={part} />
+      })}
+    </div>
+  )
+}
+
+function MarkdownChunk({ source }: { source: string }) {
+  return (
+    <>
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         urlTransform={(url) => url}
@@ -86,6 +103,6 @@ export function LessonMarkdown({ source }: { source: string }) {
       >
         {preprocess(source)}
       </ReactMarkdown>
-    </div>
+    </>
   )
 }
