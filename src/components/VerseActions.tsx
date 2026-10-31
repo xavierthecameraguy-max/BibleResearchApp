@@ -127,7 +127,8 @@ export function VerseActions({ book, chapter, selected, verses, translationAbbr,
           </button>
         </div>
 
-        <div className="mt-3 flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none]">
+        <div className="mt-3 flex items-center gap-2 overflow-x-auto pb-1 [scrollbar-width:none]" role="group" aria-label="Mark this verse">
+          <span className="shrink-0 text-xs font-semibold uppercase tracking-wide text-stone-600 dark:text-stone-400">Mark</span>
           <Chip onClick={() => toggleBookmark(key)} pressed={bookmarked}>
             {bookmarked ? 'Bookmarked' : 'Bookmark'}
           </Chip>
@@ -149,12 +150,15 @@ export function VerseActions({ book, chapter, selected, verses, translationAbbr,
             {memory[key] ? 'Memorizing' : 'Memorize'}
           </Chip>
           <Chip onClick={copy}>Copy</Chip>
-          <ChipLink to={`/compare?ref=${encodeURIComponent(key)}`}>Compare</ChipLink>
-          {extra}
-          <ChipLink to={`/study/passage?ref=${encodeURIComponent(ref)}`}>Study</ChipLink>
           {speechSupported && !noSpeech && (
             <Chip onClick={() => speak(sorted.map((n) => verses.find((v) => v.v === n)?.t ?? ''))}>Listen</Chip>
           )}
+        </div>
+        <div className="mt-1 flex items-center gap-2 overflow-x-auto pb-1 [scrollbar-width:none]" role="group" aria-label="Study this verse">
+          <span className="shrink-0 text-xs font-semibold uppercase tracking-wide text-stone-600 dark:text-stone-400">Study</span>
+          {extra}
+          <ChipLink to={`/compare?ref=${encodeURIComponent(key)}`}>Compare</ChipLink>
+          <ChipLink to={`/study/passage?ref=${encodeURIComponent(ref)}`}>Study passage</ChipLink>
         </div>
       </div>
 

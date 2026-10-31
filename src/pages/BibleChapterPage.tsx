@@ -395,13 +395,10 @@ export function BibleChapterPage() {
           onClear={() => setSelected([])}
           extra={
             <>
-              <Chip onClick={() => setPanel('words')}>
-                {book.testament === 'OT' ? 'Hebrew' : 'Greek'}
-                {selected.length > 1 ? ` (v${Math.min(...selected)})` : ''}
-              </Chip>
               <Chip onClick={() => setPanel('xrefs')}>
                 Cross-refs{selected.length > 1 ? ` (v${Math.min(...selected)})` : ''}
               </Chip>
+              <Chip onClick={() => setPanel('words')}>{book.testament === 'OT' ? 'Hebrew' : 'Greek'}</Chip>
               <Chip onClick={() => setPanel('comm')}>Commentary</Chip>
               <Chip onClick={() => setPanel('topics')}>Topics</Chip>
               <Chip onClick={() => setPanel('dict')}>Dictionary</Chip>
@@ -456,7 +453,7 @@ export function BibleChapterPage() {
         />
       )}
 
-      <nav aria-label="Chapters" className={`mt-6 grid grid-cols-2 gap-2 ${selected.length ? 'pb-56' : ''}`}>
+      <nav aria-label="Chapters" className={`mt-6 grid grid-cols-2 gap-2 ${selected.length ? 'pb-72' : ''}`}>
         {prev ? (
           <Link to={prev} className={buttonClass('ghost')}>
             <BackIcon /> Previous
