@@ -350,7 +350,7 @@ const EXTRA_TEXT_NAMES = {
   dani: 'DAN', hose: 'HOS', jona: 'JON', mica: 'MIC', nahu: 'NAM', haba: 'HAB', hagg: 'HAG', mala: 'MAL',
   roma: 'ROM', gala: 'GAL', ephe: 'EPH', colo: 'COL', '1the': '1TH', '2the': '2TH', titu: 'TIT', phile: 'PHM',
   philem: 'PHM', hebr: 'HEB', jame: 'JAS', '1joh': '1JN', '2joh': '2JN', '3joh': '3JN', reve: 'REV',
-  '1kin': '1KI', '2kin': '2KI', cant: 'SNG', jno: 'JHN',
+  '1kin': '1KI', '2kin': '2KI', cant: 'SNG', jno: 'JHN', 'acts of the apostles': 'ACT',
 }
 const TEXT_NAMES = [...new Set([...allBookNames(), ...Object.keys(EXTRA_TEXT_NAMES)])].sort((a, b) => b.length - a.length)
 const textBookId = (name) => {
@@ -369,6 +369,15 @@ const TEXT_REF = new RegExp(
 const NOT_BOOKS = new Set(['see', 'comp', 'cf', 'ver', 'vers', 'verse', 'verses', 'ch', 'chap', 'chapter', 'in', 'and', 'also', 'compare', 'or', 'with', 'as', 'so', 'but', 'by', 'of', 'to', 'at', 'from', 'ff', 'etc', 'is', 'it', 'he', 'his', 'the'])
 const BOOK_AT_START = new RegExp(`^(${NAME_SRC})\\.?\\s?\\d`, 'i')
 const BOOK_BEFORE_PAREN = new RegExp(`(?<![A-Za-z])(${NAME_SRC})\\.?\\s?\\(\\s?$`, 'i')
+// A book's full name a few words before a bare "(5:1-4)": "Ezekiel’s (5:1-4)", "Mark says
+// (14:5)", "Daniel prophesied (11:30)", "Hosea uses the phrase (1:10)", "Zephaniah also (2:13)".
+const FULL_NAME_SRC = BOOKS.map((b) => b.name)
+  .sort((a, b) => b.length - a.length)
+  .map((n) => n.replace(/^(\d) /, '$1\\s?').replace(/ /g, '\\s'))
+  .join('|')
+const BOOK_NEAR_PAREN = new RegExp(
+  `(?<![A-Za-z])(${FULL_NAME_SRC})(?:['’]s|\\s(?:also\\s)?(?:says|saith|writes|tells|records|relates|describes|speaks|mentions|prophesied|prophesies|declares|calls|uses|refers|alludes|adds|also)(?:\\s[a-z]+){0,2})\\s?\\(\\s?$`,
+)
 
 /** Spans of text for each item of a reference label, aligned with `count` passages. */
 function labelSpans(label, count) {
@@ -390,6 +399,8 @@ class TextBuilder {
   text(s) {
     for (const ch of s) {
       const c = ch.charCodeAt(0)
+      // Stray etext italic markers ("tsori_ or _tseri"); the dictionaries have no real underscores.
+      if (c === 95) continue
       if (c === 32 || c === 9 || c === 10 || c === 13 || c === 160) {
         if (this.out) this.space = true
         continue
@@ -557,9 +568,11 @@ function convertSmith(body, term) {
   const links = []
   const lists = []
   const open = []
-  // Section headings like "<i>Roads.</i> --There appear..." start a new paragraph.
+  // Section headings like "<i>Roads.</i> --There appear..." start a new paragraph,
+  // unless they open a list item, which already has one (and its number: "5. Materials.—").
   const markup = body
-    .replace(/<i>([A-Z][^<]{0,79})<\/i>(\s*\.?\s*)--/g, '<para/><i>$1</i>$2--')
+    .replace(/\s*\._(?=[A-Z])/g, '.--') // "Apocrypha ._The", a garbled heading dash
+    .replace(/(<li>\s*)?<i>([A-Z][^<]{0,79})<\/i>(\s*\.?\s*)--/g, (_, li, head, gap) => `${li ?? '<para/>'}<i>${head}</i>${gap}--`)
     .replace(/\s*--\s*/g, '—')
   walk(markup, b, (t) => {
     if (t.name === 'para') b.para()
@@ -707,14 +720,16 @@ function scanPlainRefs(text, tagged, subject, links = []) {
     } else {
       const lead = masked.slice(Math.max(0, m.index - 24), m.index)
       const before = lead.match(BOOK_BEFORE_PAREN)
+      const near = before ? null : masked.slice(Math.max(0, m.index - 48), m.index).match(BOOK_NEAR_PAREN)
       const chap = lead.match(/(?<![A-Za-z])([A-Z][a-z]+)\.?,?\s(?:ch|chap)\.\s?$/) // "Judith, ch. 10:3"
       if (chap && !textBookId(chap[1])) {
         TEXT_REF.lastIndex = m.index + 1
         continue
       }
-      bookId = before && /^[A-Z]|^\d\s?[A-Z]/.test(before[1]) ? textBookId(before[1]) : chap ? textBookId(chap[1]) : (subject ?? context)
+      bookId = before && /^[A-Z]|^\d\s?[A-Z]/.test(before[1]) ? textBookId(before[1]) : chap ? textBookId(chap[1]) : near ? textBookId(near[1]) : (subject ?? context)
       // If the numbers can't belong to that book, try the other likely one.
-      if (!before && !chap) fallback = subject && context !== subject ? context : subject
+      if (near) fallback = subject ?? context
+      else if (!before && !chap) fallback = subject && context !== subject ? context : subject
     }
     const items = bookId ? parseNumberList(masked, numbersAt) : []
     if (!items.length) {

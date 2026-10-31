@@ -194,14 +194,18 @@ export interface StrongNumber {
   number: number
 }
 
-/** Accepts "H0430G", "h430", "G26", "G0026" ... Returns null for anything else. */
+/**
+ * Accepts "H0430G", "h430", "G26", "G0026" ... Returns null for anything else.
+ * The sense letter keeps its case: after A-Z STEPBible goes on with a-z, so
+ * H5838x (King Azariah) and H5838X are different people.
+ */
 export function parseStrong(input: string): StrongNumber | null {
   const m = /^\s*([HhGg])0*(\d{1,5})([A-Za-z]?)\s*$/.exec(input)
   if (!m) return null
   const prefix = m[1].toUpperCase() as 'H' | 'G'
   const number = Number(m[2])
   const strong = `${prefix}${number}`
-  const sense = m[3].toUpperCase()
+  const sense = m[3]
   return { strong, ext: strong + sense, sense, prefix, number }
 }
 
@@ -304,7 +308,9 @@ export async function getLexicon(strong: string): Promise<LexiconEntry | null> {
   const main: LexiconSense = { id: raw.id, lemma: raw.lemma, translit: raw.translit, gloss: raw.gloss, definition: raw.definition }
   if (raw.pos) main.pos = raw.pos
   const senses = [main, ...(raw.senses ?? []).map((x) => senseOf(x, raw))]
-  const chosen = (s.sense && senses.find((x) => x.id === s.ext)) || main
+  // exact sense first ("H5838x" is not "H5838X"); then ignore case, so a typed "h430g" still finds H430G
+  const upper = s.ext.toUpperCase()
+  const chosen = (s.sense && (senses.find((x) => x.id === s.ext) ?? senses.find((x) => x.id.toUpperCase() === upper))) || main
   return { ...chosen, strong: s.strong, senses }
 }
 

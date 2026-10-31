@@ -145,13 +145,13 @@ export type EntityHit =
 export const PEOPLE_CREDITS = [
   {
     title: 'Theographic Bible Metadata',
-    text: 'People, places, events and the verses that mention them from Theographic Bible Metadata by Robert Rouse and contributors (viz.bible), licensed CC BY-SA 4.0. Dates follow Floyd Nolen Jones, The Chronology of the Old Testament. Descriptions from Easton\'s Bible Dictionary (1897, public domain). Changes: fields trimmed, descriptions shortened, names given short qualifiers where people or places share a name.',
+    text: 'People, places, events and the verses that mention them from Theographic Bible Metadata by Robert Rouse and contributors (viz.bible), licensed CC BY-SA 4.0. Dates follow Floyd Nolen Jones, The Chronology of the Old Testament. Descriptions from Easton\'s Bible Dictionary (1897, public domain). Changes: fields trimmed, descriptions shortened, names given short qualifiers where people or places share a name. The combined people, places and events data in this app is shared under CC BY-SA 4.0.',
     license: 'CC BY-SA 4.0',
     url: 'https://github.com/robertrouse/theographic-bible-metadata',
   },
   {
     title: 'OpenBible.info Bible Geocoding',
-    text: 'Map coordinates and identification confidence from OpenBible.info Bible Geocoding Data, licensed CC BY 4.0.',
+    text: 'Map coordinates, identification confidence and modern site names from OpenBible.info Bible Geocoding Data, licensed CC BY 4.0 (OpenBible.info notes that some of its data comes from OpenStreetMap, © OpenStreetMap contributors, ODbL). Changes: matched to Theographic places by name and verses, confidence shown as 0-100, coordinates rounded.',
     license: 'CC BY 4.0',
     url: 'https://www.openbible.info/geo/',
   },
@@ -387,9 +387,14 @@ export async function getVerseEntities(
 ): Promise<{ people: Person[]; places: Place[] }> {
   const [data, people, places] = await Promise.all([loadBook(book), peopleById(), placesById()])
   const entry = data?.c[chapter - 1]?.[String(verse)]
+  const placeIds = entry?.l ?? []
   return {
     people: (entry?.p ?? []).map((id) => people.get(id)).filter((x): x is Person => !!x),
-    places: (entry?.l ?? []).map((id) => places.get(id)).filter((x): x is Place => !!x),
+    // As in getChapterEntities: drop another name's record (Judean) when the main
+    // record (Judea) is tagged in the same verse.
+    places: placeIds
+      .map((id) => places.get(id))
+      .filter((x): x is Place => !!x && !(x.sameAs && placeIds.includes(x.sameAs))),
   }
 }
 
@@ -451,6 +456,9 @@ export async function searchEntities(
     if (s) hits.push({ kind: 'person', id: p.id, title: p.title, score: s + popularity(p.verseCount), person: p })
   }
   for (const p of places) {
+    // Possessive name records with no verses ("Jerusalem's", "Zion's") only crowd the
+    // results; the main record is found by its own name.
+    if (p.sameAs && !p.verseCount && /['’]s$/.test(p.name)) continue
     const s = nameScore(q, [p.title, p.name], [...(p.alsoCalled ?? []), ...(p.modern ? [p.modern] : [])])
     if (s) hits.push({ kind: 'place', id: p.id, title: p.title, score: s + popularity(p.verseCount), place: p })
   }

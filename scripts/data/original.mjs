@@ -160,6 +160,9 @@ function decodeEntities(s) {
 /** Lexicon HTML -> short plain text with line breaks */
 function plainDefinition(html) {
   let s = html
+    // transcriber notes about the printed Abbott-Smith ("4. <note>…</note>Anarthrous", "ἡ <note>…</note></b>, acc.")
+    .replace(/\s*<note>[\s\S]*?<\/note>(?=[\p{L}\p{N}])/giu, ' ')
+    .replace(/\s*<note>[\s\S]*?<\/note>/gi, '')
     .replace(/<br\s*\/?>/gi, '\n')
     .replace(/<\/?(p|div|li)[^>]*>/gi, '\n')
     .replace(/<[^>]+>/g, '')
@@ -457,7 +460,10 @@ function parseHebrew(text) {
       .replace(/\s+/g, ' ')
       .trim()
       .toLowerCase()
-    const gloss = c[3].replace(/\/ \/|\/\//g, ' ').replace(/\s+/g, ' ').trim()
+    // "/ /" joins the two words of a Qere read as two words; only then does the
+    // gloss collapse with it (Exo 4:2 has a lone maqaf piece: "מַה/־/זֶּ֣ה" = "what/ /[is] this?")
+    const twoWords = /\/ \/|\/\//.test(hebrew)
+    const gloss = (twoWords ? c[3].replace(/\/ \/|\/\//g, ' ') : c[3]).replace(/\s+/g, ' ').trim()
     const strongs = c[4]
     let roots = [...strongs.matchAll(/\{([HG]\d+[A-Za-z]*)\}/g)].map((x) => x[1])
     if (!roots.length) roots = [...strongs.matchAll(/H\d+[A-Za-z]*/g)].map((x) => x[0]).filter((s) => +s.slice(1, 5) < 9000)
@@ -500,9 +506,10 @@ function parseGreek(text) {
     const chapter = kjv ? +kjv[1] : +ch
     const verse = kjv ? +kjv[2] : +vs
     const gm = /^(.*?)\s*\(([^()]*)\)\s*$/.exec(c[1].trim())
-    const word = (gm ? gm[1] : c[1]).replace(/¶/g, '').trim()
+    const word = (gm ? gm[1] : c[1]).replace(/[¶¬]/g, '').trim()
     const translit = gm ? gm[2].trim() : ''
-    const gloss = c[2].replace(/^\[\d+(?:[.:]\d+)?[a-z]?\]\s*/, '').trim() // drop verse-number markers like "[13.1] And"
+    // drop verse-number markers: [KJV], (NA) or {other editions}, e.g. "[13.1] And", "{14.24} To Him"
+    const gloss = c[2].replace(/^[[({]\d+(?:[.:]\d+)?[a-z]?[\])}]\s*/, '').trim()
     const parts = c[3].split(/\s*\+\s*/).map((p) => {
       const [s, g] = p.split('=')
       return { strong: (s ?? '').trim(), morph: (g ?? '').trim() }

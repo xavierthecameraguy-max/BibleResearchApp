@@ -148,6 +148,12 @@ const refText = (n) => {
 
 // ---------------------------------------------------------------- helpers
 const ABBREV = /(?:^|[\s(])(?:St|Mt|Gr|Heb|Lat|Syr|Arab|Chald|Egypt|Assyr|Sept|Comp|comp|cf|Cf|viz|ver|vers|ch|vol|p|pp|Dr|Mr|No|ie|eg|i\.e|e\.g|A\.V|R\.V|B\.C|A\.D|[A-Z])$/
+// "(1 Cor. 16:17), one of the members…" → "One of the members…": Easton's entries
+// often open with the verses straight after the headword, which is not shown here.
+// (Only a bracket holding nothing but verse references, followed by lower case.)
+const VERSE_REF = String.raw`(?:[123]\s)?[A-Z][a-z]+\.?\s\d+(?::\d+)?(?:[-–]\d+(?::\d+)?)?`
+const MORE_REFS = String.raw`(?:[;,]\s?(?:(?:[123]\s)?[A-Z][a-z]+\.?\s)?\d+(?::\d+)?(?:[-–]\d+(?::\d+)?)?)*`
+const LEADING_REF_BRACKET = new RegExp(String.raw`^\(?${VERSE_REF}${MORE_REFS}\)[,;:]?\s+(?=[a-z“"])`)
 
 /** First sentence or two of an Easton's paragraph, as plain text. */
 function shortText(md, max = 300) {
@@ -159,6 +165,7 @@ function shortText(md, max = 300) {
     .replace(/^['=.\s]+/, '') // stray "'=" left at the start of a few entries
     // "1 Chr. 5:7. A Reubenite chief." → "A Reubenite chief." (the verses are listed anyway)
     .replace(/^(?:(?:[123]\s)?[A-Z][a-z]+\.?\s\d+(?::\d+)?(?:[-–,]\s?\d+(?::\d+)?)*[;,]?\s?)+[.,;]?\s+(?=[a-zA-Z])/, '')
+    .replace(LEADING_REF_BRACKET, '')
     .replace(/^[a-z]/, (c) => c.toUpperCase())
     .trim()
   // Nothing but verse references ("1 Chr. 6:11; Ezra 7:3.") says nothing useful.
@@ -309,11 +316,20 @@ const people = tables.people.map((r) => {
 const personById = new Map(people.map((p) => [p.id, p]))
 disambiguate(people, (p) => {
   const kid = p.gender === 'female' ? 'daughter' : p.gender === 'male' ? 'son' : 'child'
-  const parent = personById.get(p.father ?? p.mother ?? '')
+  // Skip a relative whose name only repeats this person's own: "Daughter of Pharaoh
+  // (daughter of Pharaoh)", "Pharaoh (father of Daughter of Pharaoh)".
+  const relative = (id) => {
+    const r = personById.get(id ?? '')
+    // Whole words only: Joah son of Joahaz keeps his qualifier.
+    const a = ` ${r?.name.toLowerCase()} `
+    const b = ` ${p.name.toLowerCase()} `
+    return r && (a === b || !(a.includes(b) || b.includes(a))) ? r : undefined
+  }
+  const parent = relative(p.father) ?? relative(p.mother)
   if (parent) return `${kid} of ${parent.name}`
-  const child = personById.get(p.children?.[0] ?? '')
+  const child = relative(p.children?.[0])
   if (child) return `${p.gender === 'female' ? 'mother' : 'father'} of ${child.name}`
-  const spouse = personById.get(p.spouses?.[0] ?? '')
+  const spouse = relative(p.spouses?.[0])
   if (spouse) return `${p.gender === 'female' ? 'wife' : p.gender === 'male' ? 'husband' : 'spouse'} of ${spouse.name}`
   return undefined
 })
