@@ -231,7 +231,18 @@ export function PersonPage() {
             </div>
           )}
         </dl>
-        {!rel?.father && !rel?.mother && !rel?.spouses.length && !rel?.children.length && !born && !person.groups?.length && (
+        {rel &&
+          !rel.father &&
+          !rel.mother &&
+          !rel.spouses.length &&
+          !rel.children.length &&
+          !rel.siblings.length &&
+          !rel.halfSiblings.length &&
+          !born &&
+          !died &&
+          !places.birth &&
+          !places.death &&
+          !person.groups?.length && (
           <p className="text-stone-600 dark:text-stone-400">No family details recorded.</p>
         )}
       </Card>
@@ -332,6 +343,7 @@ export function PeoplePage() {
   const [params, setParams] = useSearchParams()
   const q = params.get('q') ?? ''
   const [input, setInput] = useState(q)
+  useEffect(() => setInput(q), [q])
   const [hits, setHits] = useState<EntityHit[] | null>(null)
   const [top, setTop] = useState<{ people: Person[]; places: Place[] } | null>(null)
 

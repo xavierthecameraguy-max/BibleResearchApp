@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import { getVerseCommentary, sectionLabel, type CommentarySection } from '../lib/data/commentary.ts'
 import { formatReference } from '../lib/references.ts'
 import { COMMENTARY_NOTE, CommentaryText } from '../pages/CommentaryPage.tsx'
-import { Sheet } from './ui.tsx'
+import { OFFLINE_DATA_MESSAGE, Sheet } from './ui.tsx'
 
 export function CommentarySheet(props: { open: boolean; onClose: () => void; book: string; chapter: number; verse: number }) {
   const { open, onClose, book, chapter, verse } = props
@@ -27,7 +27,7 @@ export function CommentarySheet(props: { open: boolean; onClose: () => void; boo
         {!sections ? (
           <p className="text-stone-600 dark:text-stone-400">Loading…</p>
         ) : !sections.length ? (
-          <p>No notes on this verse.</p>
+          <p>{navigator.onLine ? 'No notes on this verse.' : OFFLINE_DATA_MESSAGE}</p>
         ) : (
           sections.map((s, i) => (
             <section key={i} className="mb-4">

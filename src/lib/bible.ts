@@ -173,3 +173,4 @@ export function onTranslationsChanged(fn: () => void) {
 function notify() {
   listeners.forEach((l) => l())
 }
+export const notifyTranslationsChanged = notify

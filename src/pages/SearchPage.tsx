@@ -23,6 +23,11 @@ function escapeRegExp(s: string) {
   return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 }
 
+/** A pattern where straight and curly apostrophes match each other (Lord's = Lord’s). */
+function flexible(s: string) {
+  return escapeRegExp(s).replace(/['‘’]/g, "['‘’]")
+}
+
 export function SearchPage() {
   useTitle('Search')
   const [params, setParams] = useSearchParams()
@@ -30,6 +35,7 @@ export function SearchPage() {
   const q = params.get('q') ?? ''
   const scope = params.get('in') ?? 'all'
   const [input, setInput] = useState(q)
+  useEffect(() => setInput(q), [q])
   const [hits, setHits] = useState<Hit[]>([])
   const [busy, setBusy] = useState(false)
   const [progress, setProgress] = useState(0)
@@ -51,10 +57,10 @@ export function SearchPage() {
     setBusy(true)
     setHits([])
     // Match whole words, all words in any order; quotes match an exact phrase.
-    const phrase = words.match(/^"(.+)"$/)?.[1]
+    const phrase = words.match(/^["“”](.+)["“”]$/)?.[1]
     const tests = phrase
-      ? [new RegExp(`\\b${escapeRegExp(phrase)}\\b`, 'i')]
-      : words.split(/\s+/).map((w) => new RegExp(`\\b${escapeRegExp(w)}`, 'i'))
+      ? [new RegExp(`\\b${flexible(phrase)}\\b`, 'i')]
+      : words.split(/\s+/).map((w) => new RegExp(`\\b${flexible(w.replace(/["“”]/g, ''))}`, 'i'))
     const books = BOOKS.filter((b) => scope === 'all' || b.testament === scope)
     ;(async () => {
       const found: Hit[] = []
@@ -78,10 +84,10 @@ export function SearchPage() {
     })()
   }, [q, scope, searchIn.id])
 
-  const words = q.replace(/"/g, '').trim().split(/\s+/).filter(Boolean)
+  const words = q.replace(/["“”]/g, '').trim().split(/\s+/).filter(Boolean)
   const mark = (text: string) => {
     if (!words.length) return text
-    const re = new RegExp(`(${words.map(escapeRegExp).join('|')})`, 'gi')
+    const re = new RegExp(`(${words.map(flexible).join('|')})`, 'gi')
     return text.split(re).map((part, i) =>
       i % 2 ? (
         <mark key={i} className="rounded bg-amber-200 px-0.5 text-inherit dark:bg-amber-500/40">

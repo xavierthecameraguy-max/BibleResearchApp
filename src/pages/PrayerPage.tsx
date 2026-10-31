@@ -85,7 +85,7 @@ export function PrayerPage() {
       <button type="button" className={buttonClass('primary', 'w-full')} onClick={() => setEditing({})}>
         Add a prayer
       </button>
-      <div role="tablist" aria-label="Prayers" className="flex gap-2">
+      <div role="group" aria-label="Prayers" className="flex gap-2">
         {(
           [
             ['open', 'Praying'],
@@ -94,9 +94,8 @@ export function PrayerPage() {
         ).map(([id, label]) => (
           <button
             key={id}
-            role="tab"
             type="button"
-            aria-selected={tab === id}
+            aria-pressed={tab === id}
             onClick={() => setTab(id)}
             className={`min-h-11 flex-1 rounded-full border font-semibold ${
               tab === id
@@ -108,7 +107,7 @@ export function PrayerPage() {
           </button>
         ))}
       </div>
-      <div role="tabpanel">
+      <div>
         <ul className="space-y-3">
           {!shown.length && (
             <li>

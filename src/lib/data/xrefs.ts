@@ -18,6 +18,10 @@ function loadBookRefs(book: string) {
       .then((r) => (r.ok ? r.json() : null))
       .catch(() => null)
     cache.set(book, p)
+    // Forget failed loads (e.g. offline) so they're retried later.
+    p.then((d) => {
+      if (!d) cache.delete(book)
+    })
   }
   return p
 }

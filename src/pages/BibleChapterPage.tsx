@@ -50,7 +50,7 @@ export function BibleChapterPage() {
   // Parallel reading: a second translation under each verse.
   const allTranslations = useTranslations()
   const [parallelId, setParallelId] = useState(() => sessionStorage.getItem('parallel') ?? '')
-  const parallelT = allTranslations.find((t) => t.id === parallelId)
+  const parallelT = allTranslations.find((t) => t.id === parallelId && t.id !== used.id)
   const [parallel, setParallel] = useState<{ verses: Verse[]; notice?: string } | null>(null)
   useEffect(() => {
     try {
@@ -110,9 +110,12 @@ export function BibleChapterPage() {
   }, [book, chapter])
 
   // Scroll to the highlighted verse once the text has loaded.
+  // (Runs after the page's scroll-to-top, and again whenever new verses arrive.)
   useEffect(() => {
-    if (!loading && hlStart) document.getElementById(`v${hlStart}`)?.scrollIntoView({ block: 'center' })
-  }, [loading, hlStart])
+    if (loading || !hlStart) return
+    const id = requestAnimationFrame(() => document.getElementById(`v${hlStart}`)?.scrollIntoView({ block: 'center' }))
+    return () => cancelAnimationFrame(id)
+  }, [loading, hlStart, verses, bookId, chapter])
 
   if (!book || !(chapter >= 1 && chapter <= book.chapters)) return <NotFoundPage />
   const idx = BOOKS.indexOf(book)
@@ -123,7 +126,8 @@ export function BibleChapterPage() {
   const onTouchEnd = (e: React.TouchEvent) => {
     const start = touch.current
     touch.current = null
-    if (!start || selected.length) return
+    // Ignore swipes inside an open sheet, and while verses are selected.
+    if (!start || selected.length || optionsOpen || jumpOpen || panel || (e.target as Element).closest('dialog')) return
     const t = e.changedTouches[0]
     const dx = t.clientX - start.x
     const dy = t.clientY - start.y
@@ -136,8 +140,8 @@ export function BibleChapterPage() {
   return (
     <article aria-labelledby="chapter-title" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
       <ChapterJump open={jumpOpen} onClose={() => setJumpOpen(false)} currentBook={book.id} />
-      <div className="mb-4 flex items-baseline justify-between gap-3">
-        <h1 id="chapter-title" className="font-serif text-3xl font-semibold">
+      <div className="mb-4 flex flex-wrap items-baseline justify-between gap-x-3">
+        <h1 id="chapter-title" className="min-w-0 font-serif text-3xl font-semibold [overflow-wrap:anywhere]">
           <button
             type="button"
             onClick={() => setJumpOpen(true)}
@@ -154,7 +158,7 @@ export function BibleChapterPage() {
           type="button"
           onClick={() => setShowIntro((s) => !s)}
           aria-expanded={showIntro}
-          className="shrink-0 rounded-lg px-2 py-1 text-amber-800 underline underline-offset-2 dark:text-amber-300"
+          className="min-h-11 shrink-0 rounded-lg px-2 text-amber-800 underline underline-offset-2 dark:text-amber-300"
         >
           {showIntro ? 'Hide intro' : 'Book intro'}
         </button>
@@ -222,7 +226,7 @@ export function BibleChapterPage() {
             <span className="font-semibold">Parallel translation</span>
             <span className="block text-sm text-stone-600 dark:text-stone-400">Shown in smaller type under each verse.</span>
             <select
-              value={parallelId}
+              value={parallelT?.id ?? ''}
               onChange={(e) => setParallelId(e.target.value)}
               className="mt-2 min-h-12 w-full rounded-xl border border-stone-300 bg-white px-3 text-base dark:border-stone-700 dark:bg-stone-950"
             >
@@ -325,6 +329,17 @@ export function BibleChapterPage() {
         </p>
       )}
 
+      {fellBack && !loading && (
+        <p role="status" className="mb-3 rounded-xl bg-amber-50 p-3 text-[0.95rem] text-amber-950 dark:bg-amber-950/40 dark:text-amber-100">
+          {fallbackMessage(chosen.abbr, fellBack)}
+        </p>
+      )}
+      {parallelT && parallel && parallel.verses.length === 0 && (
+        <p className="mb-3 rounded-xl bg-stone-100 p-3 text-[0.95rem] dark:bg-stone-900">
+          {parallelT.abbr} couldn’t be loaded for this chapter{parallelT.kind === 'online' ? ' (it needs an internet connection)' : ''}, so
+          it isn’t shown alongside.
+        </p>
+      )}
       {loading ? (
         <p className="text-stone-500">Loading…</p>
       ) : verses.length ? (
@@ -345,11 +360,23 @@ export function BibleChapterPage() {
                 linked={highlight(v.v)}
                 color={highlights[verseKey(book.id, chapter, v.v)]}
                 hasNote={!!verseNotes[verseKey(book.id, chapter, v.v)]}
-                onToggle={() => setSelected((s) => (s.includes(v.v) ? s.filter((x) => x !== v.v) : [...s, v.v]))}
+                onToggle={() => {
+                  const adding = !selected.includes(v.v)
+                  setSelected((s) => (s.includes(v.v) ? s.filter((x) => x !== v.v) : [...s, v.v]))
+                  // Keep the verse you just tapped visible above the action bar.
+                  if (adding)
+                    requestAnimationFrame(() => {
+                      const el = document.getElementById(`v${v.v}`)
+                      const bar = document.querySelector('[data-verse-bar]')
+                      if (!el || !bar) return
+                      const overlap = el.getBoundingClientRect().bottom - bar.getBoundingClientRect().top + 16
+                      if (overlap > 0) window.scrollBy({ top: overlap, behavior: 'smooth' })
+                    })
+                }}
               />{' '}
               {v.t.includes('\n') && !interlinear && <span className="block" />}
               {interlinear && <InterlinearRow words={orig?.[v.v]} />}
-              {parallelT && parallel && (
+              {parallelT && parallel && parallel.verses.length > 0 && (
                 <span className="mb-3 mt-1 block border-l-4 border-stone-300 pl-3 font-sans text-[0.95rem] leading-relaxed text-stone-700 dark:border-stone-700 dark:text-stone-300">
                   <span className="mr-1 text-xs font-semibold text-stone-600 dark:text-stone-400">{parallelT.abbr}</span>
                   {parallel.verses.find((x) => x.v === v.v)?.t.replace(/\n/g, ' ') ?? '—'}
@@ -496,7 +523,7 @@ function VerseButton(props: {
       }`}
     >
       {showNumber ? (
-        <sup className="mr-1 font-sans text-xs font-semibold text-stone-600 dark:text-stone-400">{num}</sup>
+        <sup className={`mr-1 font-sans text-xs font-semibold text-stone-600 ${bg ? 'dark:text-stone-200' : 'dark:text-stone-400'}`}>{num}</sup>
       ) : (
         <span className="sr-only">Verse {num}. </span>
       )}

@@ -9,6 +9,25 @@ export function LessonJournal({ lessonId }: { lessonId: string }) {
   const [status, setStatus] = useState('')
   const timer = useRef<number | undefined>(undefined)
   useEffect(() => setText(saved), [lessonId]) // eslint-disable-line react-hooks/exhaustive-deps
+  // Save straight away if the app is hidden or closed, or you leave the lesson.
+  const latest = useRef(text)
+  latest.current = text
+  useEffect(() => {
+    const flush = () => {
+      if (timer.current === undefined) return
+      window.clearTimeout(timer.current)
+      timer.current = undefined
+      setLessonNote(lessonId, latest.current)
+    }
+    const onHide = () => document.visibilityState === 'hidden' && flush()
+    document.addEventListener('visibilitychange', onHide)
+    window.addEventListener('pagehide', flush)
+    return () => {
+      flush()
+      document.removeEventListener('visibilitychange', onHide)
+      window.removeEventListener('pagehide', flush)
+    }
+  }, [lessonId])
 
   return (
     <div className="mt-5">
@@ -21,12 +40,20 @@ export function LessonJournal({ lessonId }: { lessonId: string }) {
         value={text}
         rows={4}
         placeholder="Your thoughts on the questions above, or anything this lesson raised…"
+        onBlur={() => {
+          if (timer.current === undefined) return
+          window.clearTimeout(timer.current)
+          timer.current = undefined
+          setLessonNote(lessonId, text)
+          setStatus('Saved')
+        }}
         onChange={(e) => {
           const v = e.target.value
           setText(v)
           setStatus('')
           window.clearTimeout(timer.current)
           timer.current = window.setTimeout(() => {
+            timer.current = undefined
             setLessonNote(lessonId, v)
             setStatus('Saved')
           }, 600)

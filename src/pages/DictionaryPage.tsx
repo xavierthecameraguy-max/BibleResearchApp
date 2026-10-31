@@ -46,6 +46,7 @@ export function DictionaryPage() {
   const q = params.get('q') ?? ''
   const src = (params.get('in') as DictionarySource | null) ?? null
   const [input, setInput] = useState(q)
+  useEffect(() => setInput(q), [q])
   const [results, setResults] = useState<DictionaryIndexEntry[] | null>(null)
 
   useEffect(() => {

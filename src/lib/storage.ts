@@ -2,6 +2,7 @@
 // browser's localStorage under one key. Nothing is sent anywhere.
 
 import { useSyncExternalStore } from 'react'
+import { getBook } from './books.ts'
 
 export const STORAGE_KEY = 'foundations:v1'
 
@@ -404,7 +405,7 @@ export function exportBackup(): string {
 }
 
 /** Restore a backup file. Notes are merged; progress, highlights and the like from the file win. */
-export function importBackup(text: string): { notes: number; lessons: number } {
+export function importBackup(text: string): { notes: number; lessons: number; other: number } {
   const parsed = JSON.parse(text)
   const data: Partial<AppState> | undefined = parsed?.app === 'foundations' ? parsed.data : undefined
   if (!data || typeof data !== 'object') throw new Error('This does not look like a Foundations backup file.')
@@ -426,17 +427,28 @@ export function importBackup(text: string): { notes: number; lessons: number } {
       plans: { ...s.plans, ...obj<PlanProgress>(data.plans) },
       memory: { ...s.memory, ...obj<MemoryCard>(data.memory) },
       lessonNotes: { ...s.lessonNotes, ...obj<VerseNote>(data.lessonNotes) },
+      settings: { ...s.settings, ...obj<unknown>(data.settings) },
+      lastRead: data.lastRead ?? s.lastRead,
+      lastLesson: data.lastLesson ?? s.lastLesson,
+      onboarded: s.onboarded || !!data.onboarded,
       prayers: Array.isArray(data.prayers)
         ? [...data.prayers.filter((p) => !s.prayers.some((x) => x.id === p.id)), ...s.prayers]
         : s.prayers,
       activity: [...new Set([...s.activity, ...(Array.isArray(data.activity) ? data.activity : [])])].sort().slice(-400),
     }
   })
-  return { notes: notes.length, lessons: Object.keys(progress).length }
+  applySettingsToDocument()
+  const count = (x: unknown) => (Array.isArray(x) ? x.length : x && typeof x === 'object' ? Object.keys(x).length : 0)
+  return {
+    notes: notes.length,
+    lessons: Object.keys(progress).length,
+    other:
+      count(data.highlights) + count(data.verseNotes) + count(data.bookmarks) + count(data.memory) + count(data.prayers) + count(data.lessonNotes),
+  }
 }
 
 /** All your study notes, verse notes and prayers as readable text (Markdown). */
-export function exportNotesText(): string {
+export function exportNotesText(lessonTitle: (id: string) => string | undefined = () => undefined): string {
   const s = state
   const out: string[] = ['# My Foundations notes', `Exported ${new Date().toLocaleDateString()}`, '']
   if (s.notes.length) {
@@ -456,12 +468,15 @@ export function exportNotesText(): string {
   const vn = Object.entries(s.verseNotes)
   if (vn.length) {
     out.push('## Verse notes', '')
-    for (const [k, v] of vn) out.push(`**${k.replace(/\./g, ' ').replace(/ (\d+) (\d+)/, ' $1:$2')}**`, v.text, '')
+    for (const [k, v] of vn) {
+      const [b, c, verse] = k.split('.')
+      out.push(`**${getBook(b)?.name ?? b} ${c}:${verse}**`, v.text, '')
+    }
   }
   const ln = Object.entries(s.lessonNotes)
   if (ln.length) {
     out.push('## Lesson reflections', '')
-    for (const [id, v] of ln) out.push(`**${id}**`, v.text, '')
+    for (const [id, v] of ln) out.push(`**${lessonTitle(id) ?? id}**`, v.text, '')
   }
   if (s.prayers.length) {
     out.push('## Prayer journal', '')

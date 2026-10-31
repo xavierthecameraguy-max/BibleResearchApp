@@ -80,7 +80,7 @@ export function MapPage() {
       ) : !located.length ? (
         <p>No mapped places in this chapter.</p>
       ) : online ? (
-        <div ref={mapEl} className="h-80 w-full overflow-hidden rounded-2xl border border-stone-200 dark:border-stone-800" role="region" aria-label={`Map of places in ${ref}`} />
+        <div ref={mapEl} className="relative z-0 isolate h-80 w-full overflow-hidden rounded-2xl border border-stone-200 dark:border-stone-800" role="region" aria-label={`Map of places in ${ref}`} />
       ) : (
         <p className="rounded-xl bg-stone-100 p-4 dark:bg-stone-900">The map needs an internet connection. The places are listed below.</p>
       )}

@@ -1,6 +1,6 @@
 // A guided daily quiet time: about ten minutes with God, one step at a time.
 
-import { useMemo, useState } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { versesOfTheDay } from '../lib/content.ts'
 import { PLANS } from '../lib/plans.ts'
@@ -29,20 +29,20 @@ export function QuietTimePage() {
   const memory = useAppState((s) => s.memory)
   const [step, setStep] = useState(0)
   const [answer, setAnswer] = useState('')
-  const [saved, setSaved] = useState(false)
+  const [noteId] = useState(() => newId())
 
   // Today's passage: the next unread day of an active plan, otherwise the
   // chapter around the verse of the day (read the paragraph, not just the verse).
-  const today = useMemo(() => {
-    const plan = PLANS.find((p) => plans[p.id])
-    if (plan) {
+  // Chosen once when the quiet time starts, so ticking the plan day doesn't move you on to tomorrow's reading.
+  const [today] = useState(() => {
+    for (const plan of PLANS.filter((p) => plans[p.id])) {
       const day = plan.days.findIndex((_, i) => !plans[plan.id].done.includes(i + 1)) + 1
-      if (day > 0) return { passages: plan.days[day - 1], label: `${plan.title}, day ${day}`, planId: plan.id, day }
+      if (day > 0) return { passages: plan.days[day - 1], label: `${plan.title}, day ${day}`, planId: plan.id as string | undefined, day }
     }
     const v = parseReference(versesOfTheDay[dayOfYear() % versesOfTheDay.length])!
     const around: Passage = { ...v, startVerse: Math.max(1, (v.startVerse ?? 1) - 3), endVerse: (v.endVerse ?? v.startVerse ?? 1) + 3 }
-    return { passages: [around], label: 'Around the verse of the day', planId: undefined, day: 0 }
-  }, [plans])
+    return { passages: [around], label: 'Around the verse of the day', planId: undefined as string | undefined, day: 0 }
+  })
 
   const question = QUESTIONS[dayOfYear() % QUESTIONS.length]
   const openPrayers = prayers.filter((p) => !p.answeredAt).slice(0, 5)
@@ -97,10 +97,7 @@ export function QuietTimePage() {
           <textarea
             id="reflect"
             value={answer}
-            onChange={(e) => {
-              setAnswer(e.target.value)
-              setSaved(false)
-            }}
+            onChange={(e) => setAnswer(e.target.value)}
             rows={6}
             placeholder="Write a few honest sentences…"
             className="w-full rounded-xl border border-stone-300 bg-white p-4 text-base leading-relaxed dark:border-stone-700 dark:bg-stone-900"
@@ -181,13 +178,20 @@ export function QuietTimePage() {
                 recordActivity()
                 if (today.planId && today.day && !plans[today.planId].done.includes(today.day)) togglePlanDay(today.planId, today.day)
               }
-              if (step === 2 && answer.trim() && !saved) {
+              if (step === 2 && answer.trim()) {
+                // Saved under one id, so going Back and editing updates the same note.
+                const refs = today.passages.map(formatReference)
                 saveNote({
-                  id: newId(),
-                  passageRef: today.passages.map(formatReference).join('; '),
-                  answers: { genre: '', context: '', audience: '', story: '', today: `${question}\n${answer.trim()}` },
+                  id: noteId,
+                  passageRef: refs[0],
+                  answers: {
+                    genre: '',
+                    context: '',
+                    audience: '',
+                    story: '',
+                    today: `${refs.length > 1 ? `(Today’s reading: ${refs.join('; ')})\n` : ''}${question}\n${answer.trim()}`,
+                  },
                 })
-                setSaved(true)
               }
               setStep((s) => s + 1)
             }}

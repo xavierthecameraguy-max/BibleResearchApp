@@ -12,7 +12,7 @@ export function CopyrightPage() {
     <div className="space-y-4">
       <PageTitle sub="Where the Bible text and study data in this app come from, and the notices their owners require.">Copyright</PageTitle>
       {all.map((t) => (
-        <Card key={t.id}>
+        <Card key={t.id} className="[overflow-wrap:anywhere]">
           <h2 className="font-serif text-xl font-semibold">
             {t.abbr}: {t.name}
           </h2>
@@ -38,7 +38,7 @@ export function CopyrightPage() {
         </Card>
       ))}
       {CREDITS.map((c) => (
-        <Card key={c.title}>
+        <Card key={c.title} className="[overflow-wrap:anywhere]">
           <h2 className="font-serif text-xl font-semibold">{c.title}</h2>
           <p className="mt-2 leading-relaxed">{c.text}</p>
           {c.url && (

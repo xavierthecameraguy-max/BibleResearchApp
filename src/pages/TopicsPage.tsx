@@ -35,6 +35,7 @@ export function TopicsPage() {
   const [params, setParams] = useSearchParams()
   const q = params.get('q') ?? ''
   const [input, setInput] = useState(q)
+  useEffect(() => setInput(q), [q])
   const [results, setResults] = useState<TopicSummary[] | null>(null)
   const [popular, setPopular] = useState<TopicSummary[]>([])
 

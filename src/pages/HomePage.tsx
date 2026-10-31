@@ -63,7 +63,7 @@ export function HomePage() {
       >
         <span>
           <span className="block text-xl font-semibold">Start today’s quiet time</span>
-          <span className="block text-[0.95rem] opacity-90">Pray, read, reflect: about 10 minutes</span>
+          <span className="block text-[0.95rem]">Pray, read, reflect: about 10 minutes</span>
         </span>
         <span aria-hidden="true" className="text-2xl">
           →

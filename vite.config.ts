@@ -136,6 +136,8 @@ export default defineConfig(({ mode }) => ({
         globPatterns: ['**/*.{js,css,html,svg,png,woff2}', 'bible/**/*.json'],
         maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
         navigateFallback: '/index.html',
+        // Take charge of the page on the very first visit, so offline saving works straight away.
+        clientsClaim: true,
         // Licensed translations are fetched live and never stored by the service worker.
         navigateFallbackDenylist: [/^\/api\//],
         // Study data (cross-references, word studies, dictionaries…) is saved on the

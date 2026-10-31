@@ -20,6 +20,22 @@ html[data-text-size='xl'] {
   font-size: 22px;
 }
 
+/* Keep focused items clear of the sticky header and the bottom tab bar. */
+html {
+  scroll-padding-top: 4.5rem;
+  scroll-padding-bottom: calc(5.5rem + env(safe-area-inset-bottom));
+}
+html.verse-bar-open {
+  scroll-padding-bottom: calc(22rem + env(safe-area-inset-bottom));
+}
+
+/* Text boxes inside flexible rows must be allowed to shrink on narrow phones. */
+input,
+select,
+textarea {
+  min-width: 0;
+}
+
 body {
   @apply bg-stone-50 text-stone-900 antialiased dark:bg-stone-950 dark:text-stone-100;
 }
@@ -84,4 +100,11 @@ html.theme-sepia .text-stone-700 {
 html.theme-sepia .lesson-prose {
   --tw-prose-body: #3b2f22;
   --tw-prose-headings: #2e2419;
+}
+
+/* Larger map zoom buttons for fingers */
+.leaflet-touch .leaflet-bar a {
+  width: 44px;
+  height: 44px;
+  line-height: 44px;
 }

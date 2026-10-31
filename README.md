@@ -5,12 +5,13 @@ A calm, phone-friendly Bible study app for a new Christian. It installs on your 
 ## What's inside
 
 **Learn**
-- **Five tracks, 55 short lessons** (5–7 minutes each) with a key passage, summary, quiz, "Talk it over" questions and a "Try this" step:
+- **Six tracks, 65 short lessons** (5–7 minutes each) with a key passage, summary, quiz, "Talk it over" questions, a "Try this" step and a private reflections box. Some lessons include diagrams.
   - First Steps (for brand-new believers)
   - The Big Story
   - How We Got the Bible
   - How We Got Here (church history)
   - How to Read the Bible
+  - Big Questions: doubt, the Gospels, the resurrection, suffering, science, other religions, hard passages, hell and knowing God is real
 - **Listen** to any lesson read aloud.
 - **Timeline** from Abraham to today; tap an event to open its lesson.
 - **Glossary** of 110+ terms, linked from inside the lessons.
@@ -28,18 +29,15 @@ A calm, phone-friendly Bible study app for a new Christian. It installs on your 
 - **Interlinear mode:** Hebrew or Greek words with English glosses under every verse.
 - **People and places in each chapter**, with a map.
 - **Search** the whole Bible, plus lessons, topics, the dictionary, and people and places.
-- **Reading plans:**
-  - The Big Story in 40 days
-  - The Gospels in 30 days
-  - New Testament in 90 days
-  - Proverbs in a month
-  - Whole Bible in a year
+- **Ten reading plans**, from the Sermon on the Mount in 7 days and Psalms for hard times to the life of Jesus, the New Testament in 90 days and the whole Bible in a year.
+- **A guided daily quiet time** (pray, read, reflect, pray, remember), about 10 minutes.
 
 **Study**
 - **Passage study tool:** five guided questions with smart hints (surrounding sections, cross-references, original audience). Saved as notes you can share with a mentor.
 - **Word study:** every Hebrew and Greek word, with meaning, definition, grammar and every place it appears.
 - **Bible dictionary:** Easton's, Smith's and Hitchcock's Bible Names.
 - **Topical Bible:** Nave's, 5,000+ topics.
+- **Commentary:** Matthew Henry's classic Concise Commentary on every chapter (1706), clearly labelled as an older Protestant voice.
 - **People and places:** family trees, maps and every mention.
 - **Memory verses** with spaced repetition (recall, first-letter hints, or type it out).
 - **Prayer journal** and **My Bible** (all your highlights, bookmarks and verse notes).
@@ -186,7 +184,7 @@ All the teaching content is in the **`content/`** folder, separate from the code
 | `npm run preview` | Run the finished app from `dist/` (best for testing offline mode) |
 | `npm run add-bible -- …` | Build your own Bible file into the app (section 4) |
 | `npm run build-bible` | Re-download and convert the built-in KJV, WEB and BSB |
-| `node scripts/data/<name>.mjs` | Re-build a study dataset: `xrefs`, `original`, `dictionary`, `people`, `topics` or `commentary` |
+| `node scripts/data/<name>.mjs` | Rebuild one study dataset: `xrefs`, `original`, `dictionary`, `people`, `topics` or `commentary` |
 
 ---
 
@@ -204,6 +202,7 @@ All the teaching content is in the **`content/`** folder, separate from the code
 | Hebrew and Greek words, lexicons, grammar | STEP Bible / Tyndale House Cambridge | CC BY 4.0 |
 | Bible dictionaries (Easton, Smith, Hitchcock) | CrossWire SWORD modules | Public domain |
 | Topical Bible (Nave's) | CrossWire SWORD module | Public domain |
+| Matthew Henry's Concise Commentary | CrossWire SWORD module (and CCEL) | Public domain |
 | People, places, events | Theographic Bible Metadata | CC BY-SA 4.0 |
 | Map coordinates | OpenBible.info Bible Geocoding | CC BY 4.0 |
 | Lessons, glossary, book intros, timeline | Written for this app | |

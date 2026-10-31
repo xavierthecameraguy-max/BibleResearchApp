@@ -54,13 +54,12 @@ export function MyBiblePage() {
   return (
     <div>
       <PageTitle sub="Everything you've marked while reading. Tap a verse in the Bible reader to add more.">My Bible</PageTitle>
-      <div role="tablist" aria-label="My Bible" className="mb-5 flex gap-2">
+      <div role="group" aria-label="My Bible" className="mb-5 flex flex-wrap gap-2">
         {tabs.map(([id, label, n]) => (
           <button
             key={id}
-            role="tab"
             type="button"
-            aria-selected={tab === id}
+            aria-pressed={tab === id}
             onClick={() => setTab(id)}
             className={`min-h-11 flex-1 rounded-full border px-3 text-[0.95rem] font-semibold ${
               tab === id
@@ -74,7 +73,7 @@ export function MyBiblePage() {
       </div>
 
       {tab === 'bookmarks' && (
-        <div role="tabpanel">
+        <div>
         <ul className="space-y-2">
           {!bookmarks.length && <li><Card>No bookmarks yet.</Card></li>}
           {bookmarks.map((b) => (
@@ -90,7 +89,7 @@ export function MyBiblePage() {
       )}
 
       {tab === 'highlights' && (
-        <div role="tabpanel">
+        <div>
           <div className="mb-3 flex items-center gap-2" role="group" aria-label="Filter by colour">
             <button
               type="button"
@@ -124,7 +123,7 @@ export function MyBiblePage() {
       )}
 
       {tab === 'notes' && (
-        <div role="tabpanel">
+        <div>
         <ul className="space-y-3">
           {!noteKeys.length && <li><Card>No verse notes yet.</Card></li>}
           {noteKeys.map((k) => (

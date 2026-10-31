@@ -7,13 +7,14 @@ import { searchLexicon } from '../lib/wordSearch.ts'
 import { useTitle } from '../lib/hooks.ts'
 import { Card, PageTitle, buttonClass } from '../components/ui.tsx'
 
-const STARTERS = ['love', 'grace', 'faith', 'peace', 'covenant', 'holy', 'word', 'spirit', 'shepherd', 'hesed', 'agape', 'G3056']
+const STARTERS = ['love', 'grace', 'faith', 'peace', 'covenant', 'holy', 'word', 'spirit', 'shepherd', 'chesed', 'agape', 'G3056']
 
 export function WordsPage() {
   useTitle('Word study')
   const [params, setParams] = useSearchParams()
   const q = params.get('q') ?? ''
   const [input, setInput] = useState(q)
+  useEffect(() => setInput(q), [q])
   const [results, setResults] = useState<LexiconEntry[] | null>(null)
   const [busy, setBusy] = useState(false)
 

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import { loadBook, type Translation } from '../lib/bible.ts'
 import { getCrossRefs, type CrossRef } from '../lib/data/xrefs.ts'
 import { formatReference, readerPath } from '../lib/references.ts'
-import { Sheet } from './ui.tsx'
+import { OFFLINE_DATA_MESSAGE, Sheet } from './ui.tsx'
 
 function previewText(t: Translation, ref: CrossRef): Promise<string> {
   const p = ref.passage
@@ -73,7 +73,7 @@ export function CrossRefSheet(props: {
         {!refs ? (
           <p className="text-stone-600 dark:text-stone-400">Loading…</p>
         ) : !refs.length ? (
-          <p>No cross-references for this verse.</p>
+          <p>{navigator.onLine ? 'No cross-references for this verse.' : OFFLINE_DATA_MESSAGE}</p>
         ) : (
           <>
             <p className="mb-3 text-sm text-stone-600 dark:text-stone-400">

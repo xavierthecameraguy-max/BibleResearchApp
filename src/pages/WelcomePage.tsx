@@ -86,7 +86,7 @@ export function WelcomePage() {
               ).map(([v, label]) => (
                 <label
                   key={v}
-                  className={`flex min-h-14 cursor-pointer items-center justify-center rounded-xl border-2 font-semibold ${
+                  className={`flex min-h-14 cursor-pointer items-center justify-center rounded-xl border-2 font-semibold has-[:focus-visible]:ring-4 has-[:focus-visible]:ring-amber-500 ${
                     textSize === v ? 'border-amber-700 bg-amber-50 dark:border-amber-300 dark:bg-amber-950/40' : 'border-stone-300 dark:border-stone-700'
                   }`}
                 >

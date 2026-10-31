@@ -8,9 +8,9 @@ export function ResourcesPage() {
   return (
     <div>
       <PageTitle sub={resources.intro}>Further resources</PageTitle>
-      {resources.sections.map((s) => (
-        <section key={s.title} className="mb-8" aria-labelledby={`r-${s.title}`}>
-          <h2 id={`r-${s.title}`} className="font-serif text-2xl font-semibold">
+      {resources.sections.map((s, si) => (
+        <section key={s.title} className="mb-8" aria-labelledby={`resources-${si}`}>
+          <h2 id={`resources-${si}`} className="font-serif text-2xl font-semibold">
             {s.title}
           </h2>
           {s.intro && <p className="mt-1 text-stone-600 dark:text-stone-400">{s.intro}</p>}

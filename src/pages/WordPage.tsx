@@ -117,7 +117,7 @@ export function WordPage() {
         <h2 className="font-semibold">Definition</h2>
         <p className="mt-2 whitespace-pre-line leading-relaxed">{long && !showFull ? def.slice(0, 700) + '…' : def}</p>
         {long && (
-          <button type="button" className="mt-2 text-sm font-semibold underline" onClick={() => setShowFull((s) => !s)}>
+          <button type="button" className="mt-2 min-h-11 text-sm font-semibold underline" onClick={() => setShowFull((s) => !s)}>
             {showFull ? 'Show less' : 'Show the full definition'}
           </button>
         )}

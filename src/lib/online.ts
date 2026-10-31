@@ -10,7 +10,7 @@
 
 import { get, set, del } from 'idb-keyval'
 import type { Verse } from './bibleTypes.ts'
-import { loadBook, type ChapterFailure, type ChapterText, type Translation } from './bible.ts'
+import { loadBook, notifyTranslationsChanged, type ChapterFailure, type ChapterText, type Translation } from './bible.ts'
 import { NLT_NOTICE, NLT_SHORT, nltRef, versesFromNltHtml } from './nlt.ts'
 
 // ---- Access code -----------------------------------------------------------
@@ -32,6 +32,7 @@ export function setAccessCode(code: string) {
     // ignore
   }
   onlineList = null
+  notifyTranslationsChanged()
 }
 
 function apiFetch(path: string, timeoutMs = 8_000): Promise<Response> {

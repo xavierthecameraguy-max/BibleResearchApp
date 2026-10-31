@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { getTopicsForVerse, type TopicSummary } from '../lib/data/topics.ts'
 import { formatReference } from '../lib/references.ts'
 import { TopicList } from '../pages/TopicsPage.tsx'
-import { Sheet } from './ui.tsx'
+import { OFFLINE_DATA_MESSAGE, Sheet } from './ui.tsx'
 
 export function TopicsSheet(props: { open: boolean; onClose: () => void; book: string; chapter: number; verse: number }) {
   const { open, onClose, book, chapter, verse } = props
@@ -23,7 +23,7 @@ export function TopicsSheet(props: { open: boolean; onClose: () => void; book: s
         {!topics ? (
           <p className="text-stone-600 dark:text-stone-400">Loading…</p>
         ) : !topics.length ? (
-          <p>No topics list this verse.</p>
+          <p>{navigator.onLine ? 'No topics list this verse.' : OFFLINE_DATA_MESSAGE}</p>
         ) : (
           <TopicList topics={topics.slice(0, 50)} onPick={onClose} />
         )}

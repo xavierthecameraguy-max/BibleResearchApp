@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { explainMorphSync, getVerseWords, loadMorphTable, type OriginalWord } from '../lib/data/original.ts'
 import { formatReference } from '../lib/references.ts'
-import { Sheet } from './ui.tsx'
+import { OFFLINE_DATA_MESSAGE, Sheet } from './ui.tsx'
 
 export function OriginalWordsSheet(props: { open: boolean; onClose: () => void; book: string; chapter: number; verse: number }) {
   const { open, onClose, book, chapter, verse } = props
@@ -30,7 +30,7 @@ export function OriginalWordsSheet(props: { open: boolean; onClose: () => void; 
         {!words ? (
           <p className="text-stone-600 dark:text-stone-400">Loading…</p>
         ) : !words.length ? (
-          <p>The original-language words for this verse aren't available.</p>
+          <p>{navigator.onLine ? 'The original-language words for this verse aren\'t available.' : OFFLINE_DATA_MESSAGE}</p>
         ) : (
           <>
             <p className="mb-3 text-sm text-stone-600 dark:text-stone-400">

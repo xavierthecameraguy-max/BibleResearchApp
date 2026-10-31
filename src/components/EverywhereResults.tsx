@@ -27,7 +27,7 @@ function Group({ title, more, children }: { title: string; more?: string; childr
       <h3 className="flex items-baseline justify-between font-semibold">
         {title}
         {more && (
-          <Link to={more} className="text-sm font-normal underline">
+          <Link to={more} className="inline-flex min-h-11 items-center text-sm font-normal underline">
             See all
           </Link>
         )}

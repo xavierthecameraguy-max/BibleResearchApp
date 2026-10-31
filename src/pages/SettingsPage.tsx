@@ -12,11 +12,11 @@ function Choice<T extends string>({ legend, value, options, onChange }: { legend
   return (
     <fieldset>
       <legend className="mb-2 font-semibold">{legend}</legend>
-      <div className="flex gap-2">
+      <div className="flex flex-wrap gap-2">
         {options.map(([v, label]) => (
           <label
             key={v}
-            className={`flex min-h-12 flex-1 cursor-pointer items-center justify-center rounded-xl border-2 px-3 text-center font-medium ${
+            className={`flex min-h-12 min-w-[4.5rem] flex-1 cursor-pointer items-center justify-center rounded-xl border-2 px-3 text-center font-medium has-[:focus-visible]:ring-4 has-[:focus-visible]:ring-amber-500 ${
               value === v ? 'border-amber-700 bg-amber-50 dark:border-amber-300 dark:bg-amber-950/40' : 'border-stone-300 dark:border-stone-700'
             }`}
           >
@@ -30,13 +30,15 @@ function Choice<T extends string>({ legend, value, options, onChange }: { legend
 }
 
 function ImportTranslation() {
-  const [abbr, setAbbr] = useState('NKJV')
-  const [name, setName] = useState('New King James Version')
+  const [abbr, setAbbr] = useState('')
+  const [name, setName] = useState('')
   const [busy, setBusy] = useState(false)
   const [message, setMessage] = useState<{ ok: boolean; text: string } | null>(null)
   const fileRef = useRef<HTMLInputElement>(null)
 
   const run = async (files: File[]) => {
+    // Clear the picker so choosing the same file again still works.
+    if (fileRef.current) fileRef.current.value = ''
     if (!files.length) return
     if (!abbr.trim()) {
       setMessage({ ok: false, text: 'Please enter a short name, like NKJV.' })
@@ -74,6 +76,7 @@ function ImportTranslation() {
           <span className="text-sm font-medium">Short name</span>
           <input
             value={abbr}
+            placeholder="e.g. NKJV"
             onChange={(e) => setAbbr(e.target.value.slice(0, 8))}
             className="mt-1 min-h-12 w-full rounded-xl border border-stone-300 bg-white px-3 text-base dark:border-stone-700 dark:bg-stone-900"
           />
@@ -82,6 +85,7 @@ function ImportTranslation() {
           <span className="text-sm font-medium">Full name</span>
           <input
             value={name}
+            placeholder="e.g. New King James Version"
             onChange={(e) => setName(e.target.value)}
             className="mt-1 min-h-12 w-full rounded-xl border border-stone-300 bg-white px-3 text-base dark:border-stone-700 dark:bg-stone-900"
           />
@@ -220,7 +224,7 @@ export function SettingsPage() {
                 <input
                   type="radio"
                   name="translation"
-                  className="size-5 accent-amber-700"
+                  className="size-5 shrink-0 accent-amber-700"
                   checked={current === t.id}
                   onChange={() => updateSettings({ translation: t.id })}
                 />

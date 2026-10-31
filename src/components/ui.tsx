@@ -4,6 +4,10 @@ import { useEffect, useId, useRef, type ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import { CloseIcon, ChevronIcon, InfoIcon } from './Icons.tsx'
 
+/** Shown when a study tool has no data because the device is offline and hasn't saved it yet. */
+export const OFFLINE_DATA_MESSAGE =
+  'This needs study data that isn’t saved on this device yet. Connect to the internet, or use Settings → Save study data for offline.'
+
 export function Card({ children, className = '' }: { children: ReactNode; className?: string }) {
   return (
     <div className={`rounded-2xl border border-stone-200 bg-white p-5 shadow-sm dark:border-stone-800 dark:bg-stone-900 ${className}`}>
@@ -87,12 +91,25 @@ export function MentorNote({ compact = false }: { compact?: boolean }) {
 export function Sheet({ open, onClose, title, children }: { open: boolean; onClose: () => void; title: string; children: ReactNode }) {
   const ref = useRef<HTMLDialogElement>(null)
   const titleId = useId()
+  const opener = useRef<Element | null>(null)
   useEffect(() => {
     const d = ref.current
     if (!d) return
-    if (open && !d.open) d.showModal()
-    if (!open && d.open) d.close()
-  }, [open])
+    if (open && !d.open) {
+      opener.current = document.activeElement
+      d.showModal()
+    }
+    if (!open && d.open) {
+      d.close()
+      returnFocus()
+    }
+  }, [open]) // eslint-disable-line react-hooks/exhaustive-deps
+  // Put keyboard focus back where it was (also when the sheet is removed while open).
+  const returnFocus = () => {
+    const el = opener.current as HTMLElement | null
+    if (el && el.isConnected) setTimeout(() => el.focus(), 0)
+  }
+  useEffect(() => () => returnFocus(), []) // eslint-disable-line react-hooks/exhaustive-deps
   return (
     <dialog
       ref={ref}
@@ -101,9 +118,12 @@ export function Sheet({ open, onClose, title, children }: { open: boolean; onClo
         if (e.target === ref.current) onClose()
       }}
       aria-labelledby={titleId}
-      className="m-0 mt-auto w-full max-w-none bg-transparent p-0 backdrop:bg-black/50 sm:m-auto sm:max-w-lg"
+      className="not-prose m-0 mt-auto w-full max-w-none bg-transparent p-0 backdrop:bg-black/50 sm:m-auto sm:max-w-lg"
     >
-      <div className="safe-bottom rounded-t-3xl bg-white p-6 text-stone-900 sm:rounded-3xl dark:bg-stone-900 dark:text-stone-100">
+      <div
+        className="rounded-t-3xl bg-white p-6 text-left font-sans text-base text-stone-900 sm:rounded-3xl dark:bg-stone-900 dark:text-stone-100"
+        style={{ paddingBottom: 'max(1.5rem, calc(env(safe-area-inset-bottom) + 0.75rem))' }}
+      >
         <div className="mb-3 flex items-start gap-3">
           <h2 id={titleId} className="flex-1 font-serif text-2xl font-semibold">
             {title}

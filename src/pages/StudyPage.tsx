@@ -177,6 +177,13 @@ export function StudyPage() {
     }
     setError('')
     const formatted = formatReference(p)
+    if (formatted !== passageRef) {
+      // A different passage starts a fresh note instead of overwriting the one you were editing.
+      setAnswers(EMPTY)
+      setSavedId(null)
+      setStatus('')
+      if (noteId) setSearch({ ref: formatted }, { replace: true })
+    }
     setPassageRef(formatted)
     setRefInput(formatted)
     setStep(0)

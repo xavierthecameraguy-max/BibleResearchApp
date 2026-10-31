@@ -72,6 +72,7 @@ export function LicensedSetup() {
     listOnlineWithStatus().then((r) => {
       setStatus(r.status)
       setOnline(r.list)
+      return r.status
     })
   useEffect(() => {
     refresh()
@@ -110,8 +111,10 @@ export function LicensedSetup() {
         onSubmit={(e) => {
           e.preventDefault()
           setAccessCode(code)
-          setSaved('Saved. Checking…')
-          refresh().then(() => setSaved('Saved.'))
+          setSaved('Checking…')
+          refresh().then((s) =>
+            setSaved(s === 'needs-code' ? 'That code wasn’t accepted. Check APP_ACCESS_CODE on your server.' : s === 'ok' ? 'Saved. You’re connected.' : 'Saved.'),
+          )
         }}
       >
         <label htmlFor="access-code" className="block font-semibold">

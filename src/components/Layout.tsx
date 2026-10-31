@@ -26,7 +26,7 @@ const TABS = [
 ]
 
 export function Layout({ children }: { children: ReactNode }) {
-  const { pathname, hash } = useLocation()
+  const { pathname, hash, search } = useLocation()
   const navigate = useNavigate()
   const online = useOnline()
   const mainRef = useRef<HTMLElement>(null)
@@ -35,7 +35,8 @@ export function Layout({ children }: { children: ReactNode }) {
   // On every page change, scroll to the top and move focus to the page so
   // screen readers announce the new content.
   useEffect(() => {
-    if (!hash) window.scrollTo(0, 0)
+    // Pages that jump to a spot (a #term or a highlighted ?v= verse) scroll themselves.
+    if (!hash && !/[?&]v=/.test(search)) window.scrollTo(0, 0)
     mainRef.current?.focus({ preventScroll: true })
   }, [pathname]) // eslint-disable-line react-hooks/exhaustive-deps
 

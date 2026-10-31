@@ -31,7 +31,16 @@ function ActivePlan({ plan }: { plan: Plan }) {
             <li key={day} className="flex items-start gap-3 rounded-xl bg-stone-50 p-3 dark:bg-stone-800/50">
               <button
                 type="button"
-                onClick={() => togglePlanDay(plan.id, day)}
+                id={`plan-${plan.id}-day-${day}`}
+                onClick={() => {
+                  togglePlanDay(plan.id, day)
+                  // The list moves on to the next unread day; keep focus on a day button.
+                  setTimeout(() => {
+                    const el =
+                      document.getElementById(`plan-${plan.id}-day-${day}`) ?? document.getElementById(`plan-${plan.id}-day-${day + 1}`)
+                    el?.focus()
+                  }, 0)
+                }}
                 aria-pressed={done}
                 aria-label={`Mark day ${day} ${done ? 'not done' : 'done'}`}
                 className={`flex size-9 shrink-0 items-center justify-center rounded-full border-2 ${

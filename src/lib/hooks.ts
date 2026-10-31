@@ -19,8 +19,10 @@ export function useTranslations(): Translation[] {
   const [online, setOnline] = useState<Translation[]>([])
   useEffect(() => {
     listPrivate().then(setPriv)
-    listOnline().then(setOnline)
-    const refresh = () => listImported().then(setImported)
+    const refresh = () => {
+      listImported().then(setImported)
+      listOnline().then(setOnline)
+    }
     refresh()
     return onTranslationsChanged(refresh)
   }, [])

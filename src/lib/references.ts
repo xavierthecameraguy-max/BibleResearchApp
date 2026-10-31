@@ -93,8 +93,9 @@ export function externalPassageUrl(p: Passage, version: string, site: 'biblegate
   }
   if (site === 'youversion') {
     // YouVersion uses numeric version ids; 114 is the NKJV.
-    const ids: Record<string, number> = { NKJV: 114, KJV: 1, ESV: 59, NLT: 116, CSB: 1713, NIV: 111, WEB: 206 }
-    const id = ids[version.toUpperCase()] ?? 114
+    const ids: Record<string, number> = { NKJV: 114, KJV: 1, ESV: 59, NLT: 116, CSB: 1713, NIV: 111, WEB: 206, NASB: 2692, NASB1995: 100 }
+    const id = ids[version.toUpperCase()]
+    if (!id) return externalPassageUrl(p, version, 'biblegateway')
     let ref = `${p.book}.${p.startChapter}`
     if (p.startVerse) ref += `.${p.startVerse}`
     if (p.startVerse && p.endVerse && p.endChapter === p.startChapter && p.endVerse !== p.startVerse) ref += `-${p.endVerse}`

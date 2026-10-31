@@ -36,6 +36,22 @@ const strip = (s: string) =>
     .toLowerCase()
 
 export async function searchLexicon(query: string, limit = 60): Promise<LexiconEntry[]> {
+  const scored = await scoreAll(query)
+  // Hebrew ח is written "ch" or "h" ("chesed"/"hesed"), so search both spellings.
+  if (/^h[^h]/i.test(query.trim())) {
+    for (const x of await scoreAll('c' + query.trim())) {
+      const have = scored.find((y) => y.e.strong === x.e.strong)
+      if (!have) scored.push(x)
+      else have.score = Math.max(have.score, x.score)
+    }
+  }
+  return scored
+    .sort((a, b) => b.score - a.score || Number(a.e.strong.slice(1)) - Number(b.e.strong.slice(1)))
+    .slice(0, limit)
+    .map((x) => x.e)
+}
+
+async function scoreAll(query: string): Promise<{ e: LexiconEntry; score: number }[]> {
   const q = strip(query.trim())
   if (!q) return []
   const entries = await loadAll()
@@ -52,10 +68,9 @@ export async function searchLexicon(query: string, limit = 60): Promise<LexiconE
     if (tr === q || lemma === q) score = Math.max(score, 90)
     else if (tr.startsWith(q) || lemma.startsWith(q)) score = Math.max(score, 50)
     if (!score && q.length > 3 && strip(e.definition).includes(q)) score = 10
+    // Personal and place names (glosses like "Hesed") rank below ordinary words.
+    if (score && /^[A-Z]/.test(e.gloss)) score -= 15
     if (score) scored.push({ e, score })
   }
   return scored
-    .sort((a, b) => b.score - a.score || Number(a.e.strong.slice(1)) - Number(b.e.strong.slice(1)))
-    .slice(0, limit)
-    .map((x) => x.e)
 }

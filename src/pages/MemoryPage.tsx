@@ -135,7 +135,7 @@ function Review({ card, onDone }: { card: MemoryCard; onDone: () => void }) {
             ).map(([r, label, when]) => (
               <button key={r} type="button" onClick={() => answer(r)} className={buttonClass(r === 'good' ? 'primary' : 'secondary', 'flex-col gap-0 px-1')}>
                 {label}
-                <span className="text-xs font-normal opacity-80">{when}</span>
+                <span className="text-xs font-normal">{when}</span>
               </button>
             ))}
           </div>
@@ -152,7 +152,9 @@ export function MemoryPage() {
   const today = todayStr()
   const due = cards.filter((c) => c.due <= today)
   const [reviewing, setReviewing] = useState(false)
-  const current = due[0]
+  // Verses already seen this session wait until the others have had a turn.
+  const [seen, setSeen] = useState<string[]>([])
+  const current = due.find((c) => !seen.includes(c.key)) ?? due[0]
 
   return (
     <div className="space-y-5">
@@ -161,7 +163,11 @@ export function MemoryPage() {
       </PageTitle>
 
       {reviewing && current ? (
-        <Review key={current.key + current.reps + current.lapses} card={current} onDone={() => undefined} />
+        <Review
+          key={current.key + current.reps + current.lapses}
+          card={current}
+          onDone={() => setSeen((s) => (due.every((c) => s.includes(c.key) || c.key === current.key) ? [] : [...s, current.key]))}
+        />
       ) : (
         <Card>
           <p className="text-lg font-semibold">

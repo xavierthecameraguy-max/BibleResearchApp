@@ -166,7 +166,7 @@ export function NotesPage() {
         <button
           type="button"
           className={buttonClass('ghost', 'mt-2 w-full')}
-          onClick={() => saveFile(exportNotesText(), 'text/markdown', `foundations-notes-${new Date().toISOString().slice(0, 10)}.md`)}
+          onClick={() => saveFile(exportNotesText((id) => getLesson(id)?.title), 'text/markdown', `foundations-notes-${new Date().toISOString().slice(0, 10)}.md`)}
         >
           Export notes as a text file
         </button>
@@ -181,7 +181,9 @@ export function NotesPage() {
             if (!f) return
             try {
               const r = importBackup(await f.text())
-              setMessage(`Restored ${r.notes} note(s) and ${r.lessons} lesson record(s).`)
+              setMessage(
+                `Restored ${r.notes} study note(s), ${r.lessons} lesson record(s), ${r.other} highlights, bookmarks, verse notes, memory verses and prayers, and your settings.`,
+              )
             } catch (err) {
               setMessage((err as Error).message || 'That file could not be read.')
             }

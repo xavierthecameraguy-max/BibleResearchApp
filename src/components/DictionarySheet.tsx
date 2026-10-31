@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { getEntriesForVerse, type DictionaryIndexEntry } from '../lib/data/dictionary.ts'
 import { formatReference } from '../lib/references.ts'
 import { EntryList } from '../pages/DictionaryPage.tsx'
-import { Sheet } from './ui.tsx'
+import { OFFLINE_DATA_MESSAGE, Sheet } from './ui.tsx'
 
 export function DictionarySheet(props: { open: boolean; onClose: () => void; book: string; chapter: number; verse: number }) {
   const { open, onClose, book, chapter, verse } = props
@@ -25,7 +25,7 @@ export function DictionarySheet(props: { open: boolean; onClose: () => void; boo
         {!entries ? (
           <p className="text-stone-600 dark:text-stone-400">Loading…</p>
         ) : !entries.length ? (
-          <p>No dictionary articles mention this verse.</p>
+          <p>{navigator.onLine ? 'No dictionary articles mention this verse.' : OFFLINE_DATA_MESSAGE}</p>
         ) : (
           <>
             <p className="mb-3 text-sm text-stone-600 dark:text-stone-400">Articles that mention this verse (or its chapter).</p>
