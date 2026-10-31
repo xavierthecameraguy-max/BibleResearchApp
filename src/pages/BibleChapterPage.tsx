@@ -4,7 +4,7 @@ import { ChapterJump } from '../components/ChapterJump.tsx'
 import { getBook } from '../lib/books.ts'
 import { fallbackMessage, useChapters, useCurrentTranslation, useTitle, useTranslations } from '../lib/hooks.ts'
 import { loadChapter } from '../lib/bible.ts'
-import { reportView } from '../lib/online.ts'
+import { chapterAudioUrl, reportView } from '../lib/online.ts'
 import type { Verse } from '../lib/bibleTypes.ts'
 import { setLastRead, updateSettings, useAppState, verseKey } from '../lib/storage.ts'
 import { speak, speechSupported, stopSpeaking, useSpeaking } from '../lib/speech.ts'
@@ -44,6 +44,7 @@ export function BibleChapterPage() {
   const [panel, setPanel] = useState<null | 'xrefs' | 'words' | 'dict' | 'topics'>(null)
   const [jumpOpen, setJumpOpen] = useState(false)
   const [optionsOpen, setOptionsOpen] = useState(false)
+  const [audioSrc, setAudioSrc] = useState<string | null>(null)
   const [interlinear, setInterlinear] = useState(() => sessionStorage.getItem('interlinear') === '1')
   // Parallel reading: a second translation under each verse.
   const allTranslations = useTranslations()
@@ -104,6 +105,7 @@ export function BibleChapterPage() {
     if (book && chapter >= 1 && chapter <= book.chapters) setLastRead(book.id, chapter)
     setSelected([])
     stopSpeaking()
+    setAudioSrc(null)
   }, [book, chapter])
 
   // Scroll to the highlighted verse once the text has loaded.
@@ -166,15 +168,37 @@ export function BibleChapterPage() {
         <div className="flex-1">
           <TranslationPicker compact />
         </div>
-        {speechSupported && !loading && verses.length > 0 && !used.noSpeech && (
+        {used.hasAudio && !loading ? (
           <button
             type="button"
             className={buttonClass('secondary', 'min-h-11 px-3 py-2 text-[0.95rem]')}
-            onClick={() => (speaking ? stopSpeaking() : speak(verses.map((v) => v.t)))}
-            aria-pressed={speaking}
+            onClick={async () => {
+              if (audioSrc) {
+                setAudioSrc(null)
+                return
+              }
+              const src = await chapterAudioUrl(used, book.id, chapter)
+              if (src) setAudioSrc(src)
+              else if (speechSupported) speak(verses.map((v) => v.t))
+            }}
+            aria-pressed={!!audioSrc}
           >
-            {speaking ? 'Stop' : 'Listen'}
+            {audioSrc ? 'Close audio' : 'Listen'}
           </button>
+        ) : (
+          speechSupported &&
+          !loading &&
+          verses.length > 0 &&
+          !used.noSpeech && (
+            <button
+              type="button"
+              className={buttonClass('secondary', 'min-h-11 px-3 py-2 text-[0.95rem]')}
+              onClick={() => (speaking ? stopSpeaking() : speak(verses.map((v) => v.t)))}
+              aria-pressed={speaking}
+            >
+              {speaking ? 'Stop' : 'Listen'}
+            </button>
+          )
         )}
         <button
           type="button"
@@ -185,6 +209,12 @@ export function BibleChapterPage() {
           Aa
         </button>
       </div>
+      {audioSrc && (
+        <div className="mb-4">
+          <audio src={audioSrc} controls autoPlay className="w-full" aria-label={`Audio of ${book.name} ${chapter}`} />
+          <p className="mt-1 text-xs text-stone-600 dark:text-stone-400">Official {used.abbr} audio recording.</p>
+        </div>
+      )}
       <Sheet open={optionsOpen} onClose={() => setOptionsOpen(false)} title="Reading options">
         <div className="max-h-[65vh] space-y-5 overflow-y-auto">
           <label className="block">

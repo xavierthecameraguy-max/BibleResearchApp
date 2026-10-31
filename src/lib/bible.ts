@@ -27,6 +27,8 @@ export interface Translation {
   noSpeech?: boolean
   /** online: full copyright statement for the Copyright page */
   copyrightPage?: string
+  /** online: official narrated audio is available */
+  hasAudio?: boolean
   /** Shown under the text */
   notice: string
   /** Books available (imported translations may be partial) */

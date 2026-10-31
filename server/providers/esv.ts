@@ -128,6 +128,7 @@ export const esv: Provider = {
         cacheSeconds: 7 * 86400,
         attributionUrl: 'https://www.esv.org',
         copyrightPage: ESV_NOTICE,
+        hasAudio: true,
       },
     ]
   },
@@ -162,5 +163,19 @@ export const esv: Provider = {
     const body = (await res.json()) as { passages?: string[] }
     const verses = versesFromEsvHtml((body.passages ?? []).join('\n'))
     return { verses, notice: 'ESV® Bible © 2001 by Crossway. Used by permission.', attributionUrl: 'https://www.esv.org' }
+  },
+
+  // Crossway's official narrated audio: the API answers with a redirect to an MP3.
+  async audio(env, _id, book, chapter) {
+    const bb = String(BOOK_IDS.indexOf(book) + 1).padStart(2, '0')
+    const cc = String(chapter).padStart(3, '0')
+    const res = await fetch(`https://api.esv.org/v3/passage/audio/?q=${bb}${cc}001-${bb}${cc}999`, {
+      headers: { Authorization: `Token ${env.ESV_API_KEY}` },
+      redirect: 'manual',
+      signal: AbortSignal.timeout(10_000),
+    })
+    const location = res.headers.get('location')
+    if (location) return new URL(location, 'https://api.esv.org').toString()
+    return res.ok ? res.url : null
   },
 }

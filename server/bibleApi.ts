@@ -59,5 +59,19 @@ export async function handleBibleApi(req: Request, env: Env): Promise<Response> 
     }
   }
 
+  if (/\/audio\/?$/.test(url.pathname)) {
+    const id = url.searchParams.get('t') ?? ''
+    const book = getBook((url.searchParams.get('book') ?? '').toUpperCase())
+    const chapter = Number(url.searchParams.get('c'))
+    const match = allTranslations(env).find(({ t }) => t.id === id)
+    if (!book || !match?.p.audio || !match.t.hasAudio) return json({ error: 'No audio for this translation' }, 404)
+    try {
+      const src = await match.p.audio(env, id, book.id, chapter)
+      return src ? json({ url: src }) : json({ error: 'Not found' }, 404)
+    } catch (e) {
+      return json({ error: (e as Error).message }, 502)
+    }
+  }
+
   return json({ error: 'Not found' }, 404)
 }

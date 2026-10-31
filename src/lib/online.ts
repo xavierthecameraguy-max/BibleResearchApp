@@ -202,6 +202,18 @@ export async function loadOnlineChapter(t: Translation, book: string, chapter: n
   }
 }
 
+/** The URL of a translation's official chapter audio (e.g. the ESV), or null. */
+export async function chapterAudioUrl(t: Translation, book: string, chapter: number): Promise<string | null> {
+  if (!t.hasAudio) return null
+  try {
+    const r = await apiFetch(`/api/bible/audio?t=${encodeURIComponent(t.id)}&book=${book}&c=${chapter}`)
+    if (!r.ok) return null
+    return ((await r.json()) as { url?: string }).url ?? null
+  } catch {
+    return null
+  }
+}
+
 // ---- API.Bible view reporting (FUMS) ---------------------------------------
 
 let fumsScript: Promise<void> | null = null

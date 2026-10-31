@@ -22,6 +22,8 @@ export interface OnlineTranslationInfo {
   noSpeech?: boolean
   /** Full copyright statement for the Copyright page */
   copyrightPage?: string
+  /** True when the provider offers official narrated audio */
+  hasAudio?: boolean
 }
 
 export interface ChapterResult {
@@ -38,4 +40,6 @@ export interface Provider {
   /** Translations this provider can serve with the keys in env (empty if not configured) */
   translations(env: Env): OnlineTranslationInfo[]
   chapter(env: Env, translationId: string, book: string, chapter: number): Promise<ChapterResult | null>
+  /** Optional: a playable audio URL for a chapter */
+  audio?(env: Env, translationId: string, book: string, chapter: number): Promise<string | null>
 }
