@@ -4,7 +4,7 @@ import { BackIcon, BookIcon, HomeIcon, LearnIcon, MenuIcon, PenIcon } from './Ic
 import { useOnline } from '../lib/hooks.ts'
 
 /** Pages that belong to the Study tab */
-const STUDY_PATHS = ['/study', '/notes', '/memory', '/prayer', '/my-bible', '/words', '/word/', '/dictionary', '/topics', '/people', '/places']
+const STUDY_PATHS = ['/study', '/notes', '/memory', '/prayer', '/my-bible', '/words', '/word/', '/dictionary', '/topics', '/people', '/places', '/map']
 
 const TABS = [
   { to: '/', label: 'Home', icon: HomeIcon, match: (p: string) => p === '/' },

@@ -38,6 +38,9 @@ export function ChapterEntities({ book, chapter }: { book: string; chapter: numb
       )}
       {data.places.length > 0 && (
         <>
+          <Link to={`/map?book=${book}&chapter=${chapter}`} className="mt-3 inline-block font-semibold text-amber-800 underline underline-offset-2 dark:text-amber-300">
+            Map this chapter
+          </Link>
           <h3 className="mb-2 mt-3 text-sm font-semibold uppercase tracking-wide text-stone-600 dark:text-stone-400">Places</h3>
           <ul className="flex flex-wrap gap-2">
             {data.places.map(({ place, verses }) => (

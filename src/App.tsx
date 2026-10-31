@@ -1,3 +1,4 @@
+import { lazy, Suspense } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { Layout } from './components/Layout.tsx'
 import { HomePage } from './pages/HomePage.tsx'
@@ -29,6 +30,9 @@ import { WordsPage } from './pages/WordsPage.tsx'
 import { DictionaryEntryPage, DictionaryPage } from './pages/DictionaryPage.tsx'
 import { PeoplePage, PersonPage, PlacePage } from './pages/PeoplePage.tsx'
 
+// The map pulls in a map library, so it's only loaded when opened.
+const MapPage = lazy(() => import('./pages/MapPage.tsx').then((m) => ({ default: m.MapPage })))
+
 export function App() {
   return (
     <Layout>
@@ -52,6 +56,14 @@ export function App() {
         <Route path="/people" element={<PeoplePage />} />
         <Route path="/people/:id" element={<PersonPage />} />
         <Route path="/places/:id" element={<PlacePage />} />
+        <Route
+          path="/map"
+          element={
+            <Suspense fallback={<p>Loading map…</p>}>
+              <MapPage />
+            </Suspense>
+          }
+        />
         <Route path="/dictionary/:id" element={<DictionaryEntryPage />} />
         <Route path="/word/:strong" element={<WordPage />} />
         <Route path="/prayer" element={<PrayerPage />} />
