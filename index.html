@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content="Learn the Bible from the ground up: its story, how we got it, church history and how to read it." />
+    <meta name="theme-color" content="#fafaf9" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#1c1917" media="(prefers-color-scheme: dark)" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Foundations" />
+    <link rel="icon" href="/BibleResearchApp/icons/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/BibleResearchApp/icons/apple-touch-icon.png" />
+    <title>Foundations</title>
+    <script>
+      // Apply the saved theme before the page draws, to avoid a flash.
+      try {
+        var s = JSON.parse(localStorage.getItem('foundations:v1') || '{}').settings || {}
+        var dark = s.theme === 'dark' || (s.theme !== 'light' && matchMedia('(prefers-color-scheme: dark)').matches)
+        if (dark) document.documentElement.classList.add('dark')
+        if (s.theme === 'sepia') document.documentElement.classList.add('theme-sepia')
+        document.documentElement.dataset.textSize = s.textSize || 'md'
+      } catch (e) {}
+    </script>
+    <script type="module" crossorigin src="/BibleResearchApp/assets/index-Czqg6Yrc.js"></script>
+    <link rel="stylesheet" crossorigin href="/BibleResearchApp/assets/index-UTrMAJet.css">
+  <link rel="manifest" href="/BibleResearchApp/manifest.webmanifest"></head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
