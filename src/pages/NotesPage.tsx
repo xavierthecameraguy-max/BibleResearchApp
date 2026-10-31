@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { deleteNote, exportBackup, exportNotesText, importBackup, useAppState, type Note, type StudyAnswers } from '../lib/storage.ts'
 import { useTitle } from '../lib/hooks.ts'
 import { Card, PageTitle, buttonClass } from '../components/ui.tsx'
+import { getLesson } from '../lib/content.ts'
 
 const LABELS: Record<keyof StudyAnswers, string> = {
   genre: 'What kind of writing is this?',
@@ -34,7 +35,16 @@ async function shareNote(n: Note) {
 
 export function NotesPage() {
   useTitle('Notes')
-  const notes = useAppState((s) => s.notes)
+  const allNotes = useAppState((s) => s.notes)
+  const lessonNotes = useAppState((s) => s.lessonNotes)
+  const [q, setQ] = useState('')
+  const ql = q.trim().toLowerCase()
+  const matches = (t: string) => !ql || t.toLowerCase().includes(ql)
+  const notes = allNotes.filter((n) => matches(n.passageRef + ' ' + Object.values(n.answers).join(' ')))
+  const reflections = Object.entries(lessonNotes)
+    .map(([id, v]) => ({ id, ...v, lesson: getLesson(id) }))
+    .filter((r) => r.lesson && matches(r.lesson.title + ' ' + r.text))
+    .sort((a, b) => b.updatedAt.localeCompare(a.updatedAt))
   const fileRef = useRef<HTMLInputElement>(null)
   const [message, setMessage] = useState('')
 
@@ -56,9 +66,25 @@ export function NotesPage() {
         Study a new passage
       </Link>
 
+      {(allNotes.length > 0 || reflections.length > 0) && (
+        <div className="mb-4">
+          <label htmlFor="nq" className="sr-only">
+            Search your notes
+          </label>
+          <input
+            id="nq"
+            type="search"
+            value={q}
+            onChange={(e) => setQ(e.target.value)}
+            placeholder="Search your notes"
+            className="min-h-12 w-full rounded-xl border border-stone-300 bg-white px-4 text-base dark:border-stone-700 dark:bg-stone-900"
+          />
+        </div>
+      )}
+
       {notes.length === 0 ? (
         <Card>
-          <p>No notes yet. When you study a passage, your answers will appear here.</p>
+          <p>{ql ? `No study notes match "${q}".` : "No notes yet. When you study a passage, your answers will appear here."}</p>
         </Card>
       ) : (
         <ul className="space-y-4">
@@ -100,6 +126,26 @@ export function NotesPage() {
             </li>
           ))}
         </ul>
+      )}
+
+      {reflections.length > 0 && (
+        <section aria-labelledby="refl" className="mt-8">
+          <h2 id="refl" className="mb-3 font-serif text-2xl font-semibold">
+            Lesson reflections
+          </h2>
+          <ul className="space-y-3">
+            {reflections.map((r) => (
+              <li key={r.id}>
+                <Card>
+                  <Link to={`/lesson/${r.id}`} className="font-semibold text-amber-800 underline underline-offset-2 dark:text-amber-300">
+                    {r.lesson!.title}
+                  </Link>
+                  <p className="mt-2 whitespace-pre-line leading-relaxed">{r.text}</p>
+                </Card>
+              </li>
+            ))}
+          </ul>
+        </section>
       )}
 
       <section aria-labelledby="backup" className="mt-8">
