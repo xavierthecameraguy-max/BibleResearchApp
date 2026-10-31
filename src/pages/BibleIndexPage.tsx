@@ -62,8 +62,23 @@ export function BibleIndexPage() {
         </p>
       )}
 
-      <div className="mb-6">
+      <div className="mb-4">
         <TranslationPicker />
+      </div>
+
+      <div className="mb-6 grid grid-cols-2 gap-2">
+        <Link to="/search" className={buttonClass('secondary')}>
+          Search
+        </Link>
+        <Link to="/my-bible" className={buttonClass('secondary')}>
+          My Bible
+        </Link>
+        <Link to="/plans" className={buttonClass('secondary')}>
+          Reading plans
+        </Link>
+        <Link to="/compare" className={buttonClass('secondary')}>
+          Compare
+        </Link>
       </div>
 
       {lastRead && (

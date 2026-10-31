@@ -6,9 +6,9 @@ import { useOnline } from '../lib/hooks.ts'
 const TABS = [
   { to: '/', label: 'Home', icon: HomeIcon, match: (p: string) => p === '/' },
   { to: '/learn', label: 'Learn', icon: LearnIcon, match: (p: string) => p.startsWith('/learn') || p.startsWith('/lesson') },
-  { to: '/bible', label: 'Bible', icon: BookIcon, match: (p: string) => p.startsWith('/bible') },
+  { to: '/bible', label: 'Bible', icon: BookIcon, match: (p: string) => ['/bible', '/compare', '/search'].some((x) => p.startsWith(x)) },
   { to: '/study', label: 'Study', icon: PenIcon, match: (p: string) => p.startsWith('/study') || p.startsWith('/notes') },
-  { to: '/more', label: 'More', icon: MenuIcon, match: (p: string) => !['/', '/learn', '/lesson', '/bible', '/study', '/notes'].some((x) => (x === '/' ? p === '/' : p.startsWith(x))) },
+  { to: '/more', label: 'More', icon: MenuIcon, match: (p: string) => !['/', '/learn', '/lesson', '/bible', '/compare', '/search', '/study', '/notes'].some((x) => (x === '/' ? p === '/' : p.startsWith(x))) },
 ]
 
 export function Layout({ children }: { children: ReactNode }) {

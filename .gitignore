@@ -7,3 +7,6 @@ dev-dist
 private/
 # Bible text built from your own files (npm run add-bible) - never commit it.
 public/bible/private/
+# Your private API keys - never commit them.
+.env
+.netlify

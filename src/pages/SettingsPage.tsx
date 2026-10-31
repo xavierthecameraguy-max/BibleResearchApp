@@ -169,6 +169,8 @@ export function SettingsPage() {
                       ? 'Built in · works offline'
                       : t.kind === 'private'
                         ? 'Built in from your own file · works offline'
+                        : t.kind === 'online'
+                          ? `Licensed · via ${t.provider} · needs internet`
                         : `Imported · ${t.books?.length ?? 0} books · on this device only`}
                   </span>
                 </span>

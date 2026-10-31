@@ -1,12 +1,39 @@
-import { defineConfig } from 'vite'
+import { defineConfig, loadEnv, type Connect, type Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import { VitePWA } from 'vite-plugin-pwa'
+import { handleBibleApi } from './server/bibleApi.ts'
 
-export default defineConfig({
+/**
+ * Serves the Bible proxy at /api/bible/* while developing (`npm run dev`)
+ * and previewing (`npm run preview`), using API keys from the .env file.
+ * On Netlify the same code runs as a Function instead.
+ */
+function bibleApi(env: Record<string, string>): Plugin {
+  const middleware: Connect.NextHandleFunction = async (req, res, next) => {
+    if (!req.url?.startsWith('/api/bible/')) return next()
+    try {
+      const response = await handleBibleApi(new Request(`http://localhost${req.url}`, { method: req.method }), env)
+      res.statusCode = response.status
+      response.headers.forEach((value, key) => res.setHeader(key, value))
+      res.end(await response.text())
+    } catch (e) {
+      res.statusCode = 500
+      res.end(String(e))
+    }
+  }
+  return {
+    name: 'foundations-bible-api',
+    configureServer: (server) => void server.middlewares.use(middleware),
+    configurePreviewServer: (server) => void server.middlewares.use(middleware),
+  }
+}
+
+export default defineConfig(({ mode }) => ({
   // The lessons are bundled into the app so they work offline; that makes the main file large, which is fine.
   build: { chunkSizeWarningLimit: 1600 },
   plugins: [
+    bibleApi(loadEnv(mode, process.cwd(), '')),
     react(),
     tailwindcss(),
     VitePWA({
@@ -32,7 +59,9 @@ export default defineConfig({
         globPatterns: ['**/*.{js,css,html,svg,png,woff2}', 'bible/**/*.json'],
         maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
         navigateFallback: '/index.html',
+        // Licensed translations are fetched live and never stored by the service worker.
+        navigateFallbackDenylist: [/^\/api\//],
       },
     }),
   ],
-})
+}))

@@ -16,6 +16,10 @@ import { AboutPage } from './pages/AboutPage.tsx'
 import { SettingsPage } from './pages/SettingsPage.tsx'
 import { MorePage } from './pages/MorePage.tsx'
 import { NotFoundPage } from './pages/NotFoundPage.tsx'
+import { ComparePage } from './pages/ComparePage.tsx'
+import { MyBiblePage } from './pages/MyBiblePage.tsx'
+import { SearchPage } from './pages/SearchPage.tsx'
+import { PlansPage } from './pages/PlansPage.tsx'
 
 export function App() {
   return (
@@ -29,6 +33,10 @@ export function App() {
         <Route path="/bible" element={<BibleIndexPage />} />
         <Route path="/bible/:bookId" element={<BibleBookPage />} />
         <Route path="/bible/:bookId/:chapter" element={<BibleChapterPage />} />
+        <Route path="/compare" element={<ComparePage />} />
+        <Route path="/search" element={<SearchPage />} />
+        <Route path="/my-bible" element={<MyBiblePage />} />
+        <Route path="/plans" element={<PlansPage />} />
         <Route path="/study" element={<StudyPage />} />
         <Route path="/notes" element={<NotesPage />} />
         <Route path="/glossary" element={<GlossaryPage />} />

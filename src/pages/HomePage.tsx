@@ -5,12 +5,16 @@ import { useTitle } from '../lib/hooks.ts'
 import { getBook } from '../lib/books.ts'
 import { Card, MentorNote, ProgressBar, buttonClass } from '../components/ui.tsx'
 import { ClockIcon } from '../components/Icons.tsx'
+import { PLANS, todayIndex } from '../lib/plans.ts'
+import { formatReference, readerPath } from '../lib/references.ts'
 
 export function HomePage() {
   useTitle('')
   const progress = useAppState((s) => s.progress)
   const lastLesson = useAppState((s) => s.lastLesson)
   const lastRead = useAppState((s) => s.lastRead)
+  const plans = useAppState((s) => s.plans)
+  const activePlan = PLANS.find((p) => plans[p.id])
   const next = suggestedLesson(progress, lastLesson)
   const doneCount = Object.keys(progress).filter((id) => getLesson(id)).length
   const isNew = doneCount === 0 && !lastLesson
@@ -50,6 +54,36 @@ export function HomePage() {
         </Card>
       )}
 
+      {activePlan &&
+        (() => {
+          const pr = plans[activePlan.id]
+          // The next day you haven't ticked off (reading ahead is fine).
+          const show = activePlan.days.findIndex((_, i) => !pr.done.includes(i + 1)) + 1 || activePlan.days.length
+          const day = todayIndex(pr.startedAt, activePlan.days.length)
+          return (
+            <Card>
+              <p className="text-sm font-semibold uppercase tracking-wide text-stone-600 dark:text-stone-400">
+                Today's reading · {activePlan.title}
+              </p>
+              <p className="mt-1 font-semibold">
+                Day {show}
+                {show > day && <span className="font-normal text-stone-600 dark:text-stone-400"> · you're ahead!</span>}
+                {show < day && <span className="font-normal text-stone-600 dark:text-stone-400"> · catching up (today is day {day})</span>}
+              </p>
+              <p className="mt-1 flex flex-wrap gap-x-3">
+                {activePlan.days[show - 1].map((p) => (
+                  <Link key={formatReference(p)} to={readerPath(p)} className="text-lg text-amber-800 underline underline-offset-2 dark:text-amber-300">
+                    {formatReference(p)}
+                  </Link>
+                ))}
+              </p>
+              <Link to="/plans" className="mt-2 inline-block text-sm underline underline-offset-2">
+                Open plan
+              </Link>
+            </Card>
+          )
+        })()}
+
       <section aria-labelledby="progress-title">
         <h2 id="progress-title" className="mb-3 font-serif text-2xl font-semibold">
           Your progress
@@ -84,6 +118,14 @@ export function HomePage() {
         </Link>
         <Link to="/timeline" className={buttonClass('secondary')}>
           Timeline
+        </Link>
+        {!activePlan && (
+          <Link to="/plans" className={buttonClass('secondary')}>
+            Reading plans
+          </Link>
+        )}
+        <Link to="/my-bible" className={buttonClass('secondary')}>
+          My Bible
         </Link>
       </div>
 

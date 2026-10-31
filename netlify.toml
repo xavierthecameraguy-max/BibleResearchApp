@@ -2,6 +2,15 @@
   command = "npm run build"
   publish = "dist"
 
+[functions]
+  node_bundler = "esbuild"
+
+# The Bible proxy (licensed translations such as the NKJV, ESV and NLT).
+[[redirects]]
+  from = "/api/bible/*"
+  to = "/.netlify/functions/bible/:splat"
+  status = 200
+
 # Send every page address to the app so links and refreshes work.
 [[redirects]]
   from = "/*"
