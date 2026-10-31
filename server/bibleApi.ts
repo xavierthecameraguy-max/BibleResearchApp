@@ -1,5 +1,6 @@
-// The Bible proxy's router. Runs as a Netlify Function in production and as
-// Vite middleware during `npm run dev` / `npm run preview` (see vite.config.ts).
+// The Bible proxy's router. Runs as a Netlify Function in production, as
+// Vite middleware during `npm run dev` / `npm run preview` (see vite.config.ts),
+// and inside the app itself when keys are saved on the phone (src/lib/online.ts).
 //
 //   GET /api/bible/translations                 → configured online translations
 //   GET /api/bible/chapter?t=esv&book=JHN&c=3    → { verses, notice }

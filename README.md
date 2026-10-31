@@ -78,25 +78,46 @@ Next time, just repeat steps 3 and 4.
 
 ---
 
-## 2. Put it on your iPhone (free, with Netlify)
+## 2. Put it on your iPhone
 
-An iPhone can only install an app to the home screen with offline use from a secure `https://` address, so the app needs to be online somewhere. Netlify does that for free.
+An iPhone can only install an app to the home screen with offline use from a secure `https://` address, so the app needs to be online somewhere. There are two free ways.
 
-1. **Put the project on GitHub.** If you're reading this on GitHub, it already is.
-2. **Sign up at <https://www.netlify.com>** with your GitHub account.
-3. Click **Add new site → Import an existing project → GitHub**, choose this repository, and pick the **`foundations`** branch.
-4. Netlify reads `netlify.toml` and fills everything in. Click **Deploy**. After a minute you'll get an address like `https://something.netlify.app`.
-5. **On your iPhone, open that address in Safari.** Tap **Share → Add to Home Screen**.
+### Option A: GitHub Pages (already set up)
 
-> Use the GitHub import above, not Netlify's drag-and-drop "Drop" page. Drag-and-drop doesn't include the small server part that the NKJV, ESV and NLT keys need.
+Every time the `foundations` branch changes, GitHub builds the app and publishes it at:
 
-The home-screen app keeps its own storage, separate from Safari. Use **Notes → Save backup / Restore** to move notes and progress between devices.
+**<https://xavierthecameraguy-max.github.io/BibleResearchApp/>**
+
+1. Open that address in **Safari** on your iPhone.
+2. Tap **Share → Add to Home Screen → Add**.
+3. Open the app from its new icon while you're online once, so it saves itself for offline use.
+
+GitHub Pages has no server part, so the NKJV and ESV keys are saved on your phone instead (section 3).
+
+How it works, if you ever need it:
+- The **Publish to GitHub Pages** action (`.github/workflows/pages.yml`) builds the app and puts it on the `gh-pages` branch.
+- **Settings → Pages** on GitHub should show **Deploy from a branch → `gh-pages` / root**.
+- To publish by hand, open the **Actions** tab, choose **Publish to GitHub Pages**, then **Run workflow**.
+- Your own Bible files (section 4) are never included in this public copy.
+
+### Option B: Netlify
+
+Netlify can also run the small server part, which keeps your keys off your phone.
+
+1. **Sign up at <https://www.netlify.com>** with your GitHub account.
+2. Click **Add new project** (it may say **Add new site**), then **Import an existing project → GitHub**. Choose this repository and the **`foundations`** branch.
+3. Netlify reads `netlify.toml` and fills everything in. Click **Deploy**. After a minute you'll get an address like `https://something.netlify.app`.
+4. **On your iPhone, open that address in Safari.** Tap **Share → Add to Home Screen**.
+
+> Use the GitHub import above, not Netlify's drag-and-drop "Drop" page. Drag-and-drop doesn't include the server part.
+
+Either way, the home-screen app keeps its own storage, separate from Safari. Use **Notes → Save backup / Restore** to move notes and progress between devices.
 
 ---
 
 ## 3. NKJV, ESV and NLT (free, licensed)
 
-These translations are copyrighted. The app reads them online, one chapter at a time, under each publisher's free non-commercial terms. It keeps a few recent chapters on your phone for a short time, as the terms allow. Your API keys stay on the server and are never put into the app or GitHub.
+These translations are copyrighted. The app reads them online, one chapter at a time, under each publisher's free non-commercial terms. It keeps a few recent chapters on your phone for a short time, as the terms allow. Your API keys are never put into the app's files or GitHub.
 
 ### NKJV: free through API.Bible
 1. Sign up at <https://api.bible/sign-up> as an individual and choose the free **Starter** plan.
@@ -122,6 +143,11 @@ The free plan allows 5,000 chapter loads a month, plenty for one person. Rules t
 The NLT already works with no sign-up, using Tyndale's free anonymous access. For higher limits, register at <https://api.nlt.to> for a free key.
 
 ### Where the keys go
+- **On your phone (GitHub Pages, or any copy):**
+  1. Open the app → **More → Settings → Licensed translations**.
+  2. Paste each key under **Keys on this phone**, then tap **Save and check**. The app tells you if a key is wrong or the NKJV isn't on your API.Bible plan yet.
+
+  The keys are saved only in this app on this phone and sent only to API.Bible, Crossway or Tyndale. They aren't in backups. Each phone or computer needs them typed in once. **Remove keys** deletes them, along with the chapters they loaded.
 - **On Netlify:**
   1. Go to **Site configuration → Environment variables** and add:
      - `API_BIBLE_KEY`: your API.Bible key
@@ -183,6 +209,7 @@ All the teaching content is in the **`content/`** folder, separate from the code
 | `npm run build` | Build the finished app into `dist/` |
 | `npm run preview` | Run the finished app from `dist/` (best for testing offline mode) |
 | `npm run add-bible -- …` | Build your own Bible file into the app (section 4) |
+| `BASE_PATH=/BibleResearchApp/ VITE_STATIC_HOST=1 npm run build` | Build the GitHub Pages version (the action does this for you) |
 | `npm run build-bible` | Re-download and convert the built-in KJV, WEB and BSB |
 | `node scripts/data/<name>.mjs` | Rebuild one study dataset: `xrefs`, `original`, `dictionary`, `people`, `topics` or `commentary` |
 
@@ -223,6 +250,6 @@ The lessons are a friendly introduction, not the final word. They follow mainstr
 - React, TypeScript, Vite and Tailwind CSS
 - vite-plugin-pwa for offline use and installing
 - Leaflet for maps
-- One small Netlify Function (`netlify/functions/bible.mts`, code in `server/`) for the licensed translations
+- One small Netlify Function (`netlify/functions/bible.mts`, code in `server/`) for the licensed translations. On GitHub Pages the same code runs inside the app, with keys saved on the phone.
 
 Lesson content is in `content/`, data build scripts in `scripts/`, and the app in `src/`.

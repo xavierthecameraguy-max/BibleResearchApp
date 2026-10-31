@@ -9,6 +9,7 @@ import { get, set, del } from 'idb-keyval'
 import { loadOnlineChapter } from './online.ts'
 import type { BookText, Verse } from './bibleTypes.ts'
 import type { BookMap } from './bibleImport.ts'
+import { STATIC_HOST, publicUrl } from './paths.ts'
 
 export interface Translation {
   id: string
@@ -68,7 +69,9 @@ export const BUNDLED: Translation[] = [
  */
 let privateList: Promise<Translation[]> | null = null
 export function listPrivate(): Promise<Translation[]> {
-  privateList ??= fetch('/bible/private/translations.json')
+  // Never part of a GitHub Pages copy (see vite.config.ts).
+  if (STATIC_HOST) return Promise.resolve([])
+  privateList ??= fetch(publicUrl('bible/private/translations.json'))
     .then((r) => (r.ok ? r.json() : []))
     .then((list: Omit<Translation, 'kind'>[]) => (Array.isArray(list) ? list.map((t) => ({ ...t, kind: 'private' as const })) : []))
     .catch(() => [])
@@ -127,7 +130,7 @@ export function loadBook(translationId: string, book: string): Promise<BookText 
       ? get(bookKey(translationId, book)).then((b) => (b as BookText | undefined) ?? null)
       : listPrivate()
           .then((priv) => priv.find((t) => t.id === translationId)?.dir ?? translationId)
-          .then((dir) => fetch(`/bible/${dir}/${book}.json`)).then((r) => (r.ok ? (r.json() as Promise<BookText>) : null))
+          .then((dir) => fetch(publicUrl(`bible/${dir}/${book}.json`))).then((r) => (r.ok ? (r.json() as Promise<BookText>) : null))
     p = p.catch(() => null)
     cache.set(key, p)
     p.then((b) => {

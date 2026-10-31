@@ -3,6 +3,7 @@
 
 import { useState } from 'react'
 import { buttonClass } from './ui.tsx'
+import { publicUrl } from '../lib/paths.ts'
 
 interface FileInfo {
   path: string
@@ -26,7 +27,7 @@ export function OfflineData() {
       if (!navigator.serviceWorker?.controller) {
         throw new Error('The app needs to be reloaded once before it can save data for offline. Close and reopen it, then try again.')
       }
-      const r = await fetch('/data-manifest.json')
+      const r = await fetch(publicUrl('data-manifest.json'))
       if (!r.ok) throw new Error('The list of study data could not be loaded.')
       const files = (await r.json()) as FileInfo[]
       const bytes = files.reduce((n, f) => n + f.bytes, 0)
@@ -39,7 +40,7 @@ export function OfflineData() {
         while (queue.length) {
           const f = queue.shift()!
           try {
-            const res = await fetch(f.path)
+            const res = await fetch(publicUrl(f.path))
             if (!res.ok) failed++
           } catch {
             failed++ // keep going; tapping again later fills the gaps

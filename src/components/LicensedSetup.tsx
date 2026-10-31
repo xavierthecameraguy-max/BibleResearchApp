@@ -1,10 +1,28 @@
-// Settings → Licensed translations: status, access code and step-by-step
-// setup for the NKJV (API.Bible), ESV and NLT.
+// Settings → Licensed translations: status, keys saved on this phone, the
+// server's access code, and step-by-step setup for the NKJV (API.Bible), ESV and NLT.
 
 import { useEffect, useState } from 'react'
-import { getAccessCode, listOnlineWithStatus, setAccessCode, type ServerStatus } from '../lib/online.ts'
+import {
+  NLT_OPEN,
+  checkOnlineTranslation,
+  clearOnlineCache,
+  getAccessCode,
+  getDeviceKeys,
+  listOnlineWithStatus,
+  setAccessCode,
+  setDeviceKeys,
+  usingDeviceKeys,
+  type DeviceKeys,
+  type ServerStatus,
+} from '../lib/online.ts'
+import { STATIC_HOST } from '../lib/paths.ts'
 import type { Translation } from '../lib/bible.ts'
 import { ExternalA, buttonClass } from './ui.tsx'
+
+const inputClass = 'min-h-12 w-full rounded-xl border border-stone-300 bg-white px-3 text-base dark:border-stone-700 dark:bg-stone-900'
+
+/** Settings for typing a key: no auto-capitals or corrections on the phone keyboard. */
+const keyInput = { autoComplete: 'off', autoCapitalize: 'none', autoCorrect: 'off', spellCheck: false } as const
 
 const GUIDES: { abbr: string; title: string; env: string; steps: React.ReactNode[] }[] = [
   {
@@ -24,7 +42,8 @@ const GUIDES: { abbr: string; title: string; env: string; steps: React.ReactNode
         Starter plan allows up to 3 licensed Bibles).
       </>,
       <>
-        Copy your API key and put it in the <code>API_BIBLE_KEY</code> setting (see “Where keys go” below).
+        Copy your API key and paste it under <strong>Keys on this phone</strong>. (On a Netlify copy you can use the{' '}
+        <code>API_BIBLE_KEY</code> setting instead.)
       </>,
     ],
   },
@@ -41,7 +60,7 @@ const GUIDES: { abbr: string; title: string; env: string; steps: React.ReactNode
         , then choose <strong>Create an API Application</strong> (intended use: personal study).
       </>,
       <>
-        Copy the key and put it in the <code>ESV_API_KEY</code> setting.
+        Copy the key and paste it under <strong>Keys on this phone</strong> (or use the <code>ESV_API_KEY</code> setting on Netlify).
       </>,
     ],
   },
@@ -56,11 +75,117 @@ const GUIDES: { abbr: string; title: string; env: string; steps: React.ReactNode
         <ExternalA href="https://api.nlt.to" className="underline">
           api.nlt.to
         </ExternalA>{' '}
-        for a free key (higher limits) and put it in the <code>NLT_API_KEY</code> setting.
+        for a free key (higher limits) and paste it under <strong>Keys on this phone</strong>.
       </>,
     ],
   },
 ]
+
+type ListResult = { list: Translation[]; status: ServerStatus }
+
+/** Keys saved on this phone: used instead of a server (needed on GitHub Pages). */
+function DeviceKeysForm({ online, onChange }: { online: Translation[]; onChange: () => Promise<ListResult> }) {
+  const [keys, setKeys] = useState<DeviceKeys>(getDeviceKeys)
+  const [haveSaved, setHaveSaved] = useState(() => usingDeviceKeys())
+  const [busy, setBusy] = useState(false)
+  const [message, setMessage] = useState('')
+  const [checks, setChecks] = useState<{ abbr: string; problem: string | null }[]>([])
+  const field = (name: keyof DeviceKeys) => ({
+    value: keys[name] ?? '',
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => setKeys((k) => ({ ...k, [name]: e.target.value })),
+  })
+
+  const save = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setDeviceKeys(keys)
+    const now = usingDeviceKeys()
+    setHaveSaved(now)
+    setChecks([])
+    if (!now) {
+      await onChange()
+      setMessage('Paste at least one key, then tap Save.')
+      return
+    }
+    setBusy(true)
+    setMessage('Saved. Checking each key…')
+    const { list } = await onChange()
+    const results = await Promise.all(
+      list.filter((t) => t.id !== NLT_OPEN.id).map(async (t) => ({ abbr: t.abbr, problem: await checkOnlineTranslation(t) })),
+    )
+    setChecks(results)
+    setBusy(false)
+    setMessage(results.every((r) => !r.problem) ? 'Saved. Everything works.' : 'Saved, but something needs fixing:')
+  }
+
+  const remove = async () => {
+    // The publishers' terms: once a key is gone, so is the text it fetched.
+    await clearOnlineCache(online.filter((t) => t.id !== NLT_OPEN.id).map((t) => t.id))
+    setDeviceKeys({})
+    setKeys({})
+    setHaveSaved(false)
+    setChecks([])
+    await onChange()
+    setMessage('Keys removed from this phone, along with the chapters they loaded.')
+  }
+
+  return (
+    <form className="mt-4" onSubmit={save} aria-labelledby="device-keys-title">
+      <h4 id="device-keys-title" className="font-semibold">
+        Keys on this phone
+      </h4>
+      <p className="text-sm leading-relaxed text-stone-600 dark:text-stone-400">
+        Saved only in this app on this phone (not in backups), and sent only to API.Bible, Crossway or Tyndale. The steps below show
+        how to get each free key.
+      </p>
+      <label htmlFor="key-apibible" className="mt-3 block font-semibold">
+        API.Bible key <span className="font-normal text-stone-600 dark:text-stone-400">(for the NKJV)</span>
+      </label>
+      <input id="key-apibible" type="password" className={inputClass} {...keyInput} {...field('API_BIBLE_KEY')} />
+      <label htmlFor="key-esv" className="mt-3 block font-semibold">
+        ESV API key
+      </label>
+      <input id="key-esv" type="password" className={inputClass} {...keyInput} {...field('ESV_API_KEY')} />
+      <label htmlFor="key-nlt" className="mt-3 block font-semibold">
+        NLT API key <span className="font-normal text-stone-600 dark:text-stone-400">(optional)</span>
+      </label>
+      <input id="key-nlt" type="password" className={inputClass} {...keyInput} {...field('NLT_API_KEY')} />
+      <details className="mt-3" open={!!keys.API_BIBLE_BIBLES}>
+        <summary className="min-h-11 cursor-pointer py-2 font-semibold">More Bibles from API.Bible (advanced)</summary>
+        <p className="text-sm leading-relaxed text-stone-600 dark:text-stone-400">
+          Leave this empty for just the NKJV. The free plan allows up to 3 licensed Bibles. List each one as ABBR=Bible ID|Full name,
+          with commas between them. Each Bible’s ID is shown on its page in your API.Bible dashboard. For example:{' '}
+          <code className="break-all">NKJV=63097d2a0a2f7db3-01|New King James Version, CSB=…|Christian Standard Bible</code>
+        </p>
+        <label htmlFor="key-bibles" className="mt-2 block font-semibold">
+          API.Bible Bibles
+        </label>
+        <input id="key-bibles" type="text" className={inputClass} {...keyInput} {...field('API_BIBLE_BIBLES')} />
+      </details>
+      <div className="mt-3 flex flex-wrap gap-2">
+        <button className={buttonClass('primary')} disabled={busy}>
+          Save and check
+        </button>
+        {haveSaved && (
+          <button type="button" className={buttonClass('secondary')} onClick={remove} disabled={busy}>
+            Remove keys
+          </button>
+        )}
+      </div>
+      <div role="status" className="mt-2 text-sm">
+        {message && <p>{message}</p>}
+        {checks.length > 0 && (
+          <ul className="mt-1 space-y-1">
+            {checks.map((c) => (
+              <li key={c.abbr} className={c.problem ? 'text-red-700 dark:text-red-400' : 'text-emerald-700 dark:text-emerald-400'}>
+                <strong>{c.abbr}:</strong> {c.problem ?? 'working'}
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+    </form>
+  )
+}
 
 export function LicensedSetup() {
   const [status, setStatus] = useState<ServerStatus | null>(null)
@@ -72,13 +197,15 @@ export function LicensedSetup() {
     listOnlineWithStatus().then((r) => {
       setStatus(r.status)
       setOnline(r.list)
-      return r.status
+      return r
     })
   useEffect(() => {
     refresh()
   }, [])
 
   const has = (abbr: string) => online.some((t) => t.abbr === abbr)
+  // With no server (GitHub Pages), keys on the phone are the way in; otherwise they're an alternative.
+  const phoneFirst = STATIC_HOST || status === 'device' || status === 'no-server'
 
   return (
     <div id="licensed" className="mt-6 scroll-mt-20 rounded-xl border border-stone-200 p-4 dark:border-stone-800">
@@ -102,44 +229,63 @@ export function LicensedSetup() {
       </ul>
       {status === 'unavailable' && (
         <p className="mt-2 text-sm text-stone-600 dark:text-stone-400">
-          The app's server part isn't reachable right now (you may be offline, or running a build without it).
+          {usingDeviceKeys()
+            ? 'The Bible services can’t be reached right now. You may be offline.'
+            : 'The app’s server part isn’t reachable right now (you may be offline, or running a copy without it).'}
+        </p>
+      )}
+      {status === 'no-server' && (
+        <p className="mt-2 text-sm leading-relaxed text-stone-600 dark:text-stone-400">
+          This copy runs on GitHub Pages, which has no server part, so the NKJV and ESV use keys saved on this phone. The NLT works
+          without one.
         </p>
       )}
 
-      <form
-        className="mt-4"
-        onSubmit={(e) => {
-          e.preventDefault()
-          setAccessCode(code)
-          setSaved('Checking…')
-          refresh().then((s) =>
-            setSaved(s === 'needs-code' ? 'That code wasn’t accepted. Check APP_ACCESS_CODE on your server.' : s === 'ok' ? 'Saved. You’re connected.' : 'Saved.'),
-          )
-        }}
-      >
-        <label htmlFor="access-code" className="block font-semibold">
-          Access code
-        </label>
-        <p className="text-sm text-stone-600 dark:text-stone-400">
-          {status === 'needs-code'
-            ? 'Your server asks for an access code. Type the APP_ACCESS_CODE you chose.'
-            : 'Only needed if you set APP_ACCESS_CODE on your server (recommended once the app is online).'}
-        </p>
-        <div className="mt-2 flex gap-2">
-          <input
-            id="access-code"
-            type="password"
-            autoComplete="off"
-            value={code}
-            onChange={(e) => setCode(e.target.value)}
-            className="min-h-12 flex-1 rounded-xl border border-stone-300 bg-white px-3 text-base dark:border-stone-700 dark:bg-stone-900"
-          />
-          <button className={buttonClass('secondary')}>Save</button>
-        </div>
-        <p role="status" className="mt-1 text-sm text-emerald-700 dark:text-emerald-400">
-          {saved}
-        </p>
-      </form>
+      {phoneFirst && <DeviceKeysForm online={online} onChange={refresh} />}
+
+      {!STATIC_HOST && status !== 'device' && (
+        <form
+          className="mt-4"
+          onSubmit={(e) => {
+            e.preventDefault()
+            setAccessCode(code)
+            setSaved('Checking…')
+            refresh().then(({ status: s }) =>
+              setSaved(s === 'needs-code' ? 'That code wasn’t accepted. Check APP_ACCESS_CODE on your server.' : s === 'ok' ? 'Saved. You’re connected.' : 'Saved.'),
+            )
+          }}
+        >
+          <label htmlFor="access-code" className="block font-semibold">
+            Access code
+          </label>
+          <p className="text-sm text-stone-600 dark:text-stone-400">
+            {status === 'needs-code'
+              ? 'Your server asks for an access code. Type the APP_ACCESS_CODE you chose.'
+              : 'Only needed if you set APP_ACCESS_CODE on your server (recommended once the app is online).'}
+          </p>
+          <div className="mt-2 flex gap-2">
+            <input
+              id="access-code"
+              type="password"
+              {...keyInput}
+              value={code}
+              onChange={(e) => setCode(e.target.value)}
+              className="min-h-12 flex-1 rounded-xl border border-stone-300 bg-white px-3 text-base dark:border-stone-700 dark:bg-stone-900"
+            />
+            <button className={buttonClass('secondary')}>Save</button>
+          </div>
+          <p role="status" className="mt-1 text-sm text-emerald-700 dark:text-emerald-400">
+            {saved}
+          </p>
+        </form>
+      )}
+
+      {!phoneFirst && (
+        <details className="mt-3 rounded-xl bg-stone-100 p-4 dark:bg-stone-800/60">
+          <summary className="cursor-pointer font-semibold">Or save keys on this phone instead</summary>
+          <DeviceKeysForm online={online} onChange={refresh} />
+        </details>
+      )}
 
       {GUIDES.map((g) => (
         <details key={g.abbr} className="mt-3 rounded-xl bg-stone-100 p-4 dark:bg-stone-800/60">
@@ -155,6 +301,10 @@ export function LicensedSetup() {
         <summary className="cursor-pointer font-semibold">Where keys go</summary>
         <ul className="mt-2 list-disc space-y-1.5 pl-5 leading-relaxed">
           <li>
+            <strong>On this phone</strong> (the only way on GitHub Pages): paste them under <strong>Keys on this phone</strong>. They stay
+            in this app on this phone and go only to the Bible services. Each phone or computer needs them typed in once.
+          </li>
+          <li>
             <strong>On your computer:</strong> copy the file <code>.env.example</code> to <code>.env</code> in the project folder and paste
             the keys after the = signs. Restart <code>npm run dev</code>.
           </li>
@@ -163,7 +313,7 @@ export function LicensedSetup() {
             <code>API_BIBLE_KEY</code>) with its key, then redeploy. Also add <code>APP_ACCESS_CODE</code> with a private code and type
             it above.
           </li>
-          <li>Keys stay on the server. They are never put into the app itself or sent to GitHub.</li>
+          <li>Keys are never put into the app’s files or sent to GitHub.</li>
         </ul>
       </details>
     </div>

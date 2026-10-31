@@ -17,6 +17,7 @@
 
 import { BOOK_IDS } from '../books.ts'
 import type { Passage } from '../references.ts'
+import { publicUrl } from '../paths.ts'
 
 export type DictionarySource = 'easton' | 'smith' | 'hitchcock'
 
@@ -122,7 +123,7 @@ export type DictionarySegment =
   | { kind: 'ref'; text: string; ref: Passage }
   | { kind: 'link'; text: string; id: string }
 
-const BASE = '/data/dictionary'
+const BASE = publicUrl('data/dictionary')
 const SOURCES = new Set<string>(SOURCE_ORDER)
 const RANK: Record<DictionarySource, number> = { easton: 0, smith: 1, hitchcock: 2 }
 

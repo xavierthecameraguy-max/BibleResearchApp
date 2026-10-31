@@ -19,8 +19,9 @@
 // Every function returns null or [] when data is missing or offline.
 
 import { BOOKS, findBook, getBook, type BookInfo } from '../books.ts'
+import { publicUrl } from '../paths.ts'
 
-const BASE = '/data/original'
+const BASE = publicUrl('data/original')
 const BUCKET_SIZE = 500
 
 export const ORIGINAL_CREDIT = {

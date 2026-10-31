@@ -2,6 +2,7 @@
 
 import { BOOKS } from '../books.ts'
 import type { Passage } from '../references.ts'
+import { publicUrl } from '../paths.ts'
 
 export interface CrossRef {
   passage: Passage
@@ -14,7 +15,7 @@ const cache = new Map<string, Promise<{ c: Record<string, Entry[]>[] } | null>>(
 function loadBookRefs(book: string) {
   let p = cache.get(book)
   if (!p) {
-    p = fetch(`/data/xrefs/${book}.json`)
+    p = fetch(publicUrl(`data/xrefs/${book}.json`))
       .then((r) => (r.ok ? r.json() : null))
       .catch(() => null)
     cache.set(book, p)

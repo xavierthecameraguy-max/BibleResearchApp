@@ -19,6 +19,7 @@
 
 import { findBook } from '../books.ts'
 import type { Passage } from '../references.ts'
+import { publicUrl } from '../paths.ts'
 
 export const COMMENTARY_TITLE = "Matthew Henry's Concise Commentary"
 
@@ -147,7 +148,7 @@ interface RawBook {
   c: RawChapter[]
 }
 
-const BASE = '/data/commentary'
+const BASE = publicUrl('data/commentary')
 
 // ---- Fetching ------------------------------------------------------------------------
 

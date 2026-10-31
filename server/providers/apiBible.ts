@@ -3,7 +3,8 @@
 // up to 3 copyrighted Bibles, 5,000 calls a month.
 //
 // Terms we follow (api.bible/terms-and-conditions, docs.api.bible):
-//  - key kept server-side (this file), never sent to the browser
+//  - key kept on the server, or (on GitHub Pages) saved only on your own phone
+//    and sent only to API.Bible; never put into the app's files
 //  - visible credit + link to https://api.bible, and a copyright page
 //  - FUMS view tracking: we pass each response's fumsToken to the app
 //  - no text-to-speech of the text; cached text refreshed within 14 days

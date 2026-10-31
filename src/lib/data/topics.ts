@@ -17,6 +17,7 @@
 
 import { BOOK_IDS } from '../books.ts'
 import type { Passage } from '../references.ts'
+import { publicUrl } from '../paths.ts'
 
 export interface TopicSummary {
   id: string
@@ -62,7 +63,7 @@ export interface TopicsMeta {
 
 type ByVerse = Record<string, Record<string, string[]>>
 
-const BASE = '/data/topics'
+const BASE = publicUrl('data/topics')
 
 /** Fetches JSON; a failed request is not cached, so it can be retried later (e.g. back online). */
 function cached<T>(cache: Map<string, Promise<T | null>>, key: string, path: string): Promise<T | null> {

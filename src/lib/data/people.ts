@@ -23,8 +23,9 @@
 
 import { BOOKS } from '../books.ts'
 import type { Passage } from '../references.ts'
+import { publicUrl } from '../paths.ts'
 
-const BASE = '/data/people'
+const BASE = publicUrl('data/people')
 
 export interface VerseRef {
   book: string // USFM id

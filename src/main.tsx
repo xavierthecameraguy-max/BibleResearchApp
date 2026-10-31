@@ -5,6 +5,7 @@ import { registerSW } from 'virtual:pwa-register'
 import { App } from './App.tsx'
 import { applySettingsToDocument } from './lib/storage.ts'
 import './index.css'
+import { BASE } from './lib/paths.ts'
 
 applySettingsToDocument()
 // Follow the phone's light/dark setting when the theme is "system".
@@ -21,7 +22,7 @@ const updateSW = registerSW({
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename={BASE.replace(/\/$/, '') || '/'}>
       <App />
     </BrowserRouter>
   </StrictMode>,

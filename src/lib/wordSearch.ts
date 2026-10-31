@@ -2,6 +2,7 @@
 // transliteration, original spelling or Strong's number.
 
 import type { LexiconEntry } from './data/original.ts'
+import { publicUrl } from './paths.ts'
 
 let all: Promise<LexiconEntry[]> | null = null
 let loaded = false
@@ -16,7 +17,7 @@ function loadAll(): Promise<LexiconEntry[]> {
       ...Array.from({ length: 20 }, (_, i) => `H${i}`),
       ...Array.from({ length: 44 }, (_, i) => `G${i}`),
     ].map((b) =>
-      fetch(`/data/original/lexicon/${b}.json`)
+      fetch(publicUrl(`data/original/lexicon/${b}.json`))
         .then((r) => (r.ok && (r.headers.get('content-type') ?? '').includes('json') ? r.json() : {}))
         .catch(() => ({})),
     ),

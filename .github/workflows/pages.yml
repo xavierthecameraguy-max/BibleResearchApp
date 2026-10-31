@@ -1,0 +1,51 @@
+# Builds the app for GitHub Pages and publishes it to the gh-pages branch,
+# every time the foundations branch changes (or when run by hand from the
+# Actions tab). The site is then at https://<your-name>.github.io/<repo-name>/
+#
+# GitHub Pages has no server part, so the NKJV and ESV use keys you save on
+# your phone (in the app: More → Settings → Licensed translations).
+
+name: Publish to GitHub Pages
+
+on:
+  push:
+    branches: [foundations]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Build for GitHub Pages
+        run: npm run build
+        env:
+          BASE_PATH: /${{ github.event.repository.name }}/
+          VITE_STATIC_HOST: '1'
+
+      - name: Publish the built app to the gh-pages branch
+        working-directory: dist
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git init -q -b gh-pages
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Publish ${GITHUB_SHA::7}"
+          git push -q -f "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git" gh-pages

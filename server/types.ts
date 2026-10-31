@@ -1,6 +1,7 @@
-// Shared shapes for the server-side Bible proxy (a Netlify Function).
-// The app never sees API keys: it asks /api/bible/... and this code adds
-// the key, calls the provider, and returns verses in the app's own format.
+// Shared shapes for the Bible proxy. It runs as a Netlify Function (keys in
+// the site's settings), or inside the app with keys saved on the phone (for
+// GitHub Pages). Either way it adds the key, calls the provider, and returns
+// verses in the app's own format.
 
 import type { Verse } from '../src/lib/bibleTypes.ts'
 
