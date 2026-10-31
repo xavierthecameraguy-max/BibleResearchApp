@@ -12,6 +12,8 @@ import { CrossRefSheet } from '../components/CrossRefSheet.tsx'
 import { OriginalWordsSheet } from '../components/OriginalWordsSheet.tsx'
 import { DictionarySheet } from '../components/DictionarySheet.tsx'
 import { ChapterEntities } from '../components/ChapterEntities.tsx'
+import { InterlinearRow } from '../components/Interlinear.tsx'
+import { getChapterWords, type OriginalWord } from '../lib/data/original.ts'
 import { Chip } from '../components/VerseActions.tsx'
 import { BUNDLED } from '../lib/bible.ts'
 import { formatReference } from '../lib/references.ts'
@@ -37,6 +39,22 @@ export function BibleChapterPage() {
   const speaking = useSpeaking()
   const [panel, setPanel] = useState<null | 'xrefs' | 'words' | 'dict'>(null)
   const [jumpOpen, setJumpOpen] = useState(false)
+  const [interlinear, setInterlinear] = useState(() => sessionStorage.getItem('interlinear') === '1')
+  const [orig, setOrig] = useState<OriginalWord[][] | null>(null)
+  useEffect(() => {
+    try {
+      sessionStorage.setItem('interlinear', interlinear ? '1' : '0')
+    } catch {
+      // ignore
+    }
+    if (!interlinear || !book) return
+    let cancelled = false
+    setOrig(null)
+    getChapterWords(book.id, chapter).then((w) => !cancelled && setOrig(w))
+    return () => {
+      cancelled = true
+    }
+  }, [interlinear, book, chapter])
   const navigate = useNavigate()
   // Swipe left/right to change chapter (ignored while verses are selected).
   const touch = useRef<{ x: number; y: number; t: number } | null>(null)
@@ -116,6 +134,14 @@ export function BibleChapterPage() {
 
       <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
         <TranslationPicker />
+        <button
+          type="button"
+          className={buttonClass('secondary', 'min-h-11 px-4 py-2 text-[0.95rem]')}
+          aria-pressed={interlinear}
+          onClick={() => setInterlinear((x) => !x)}
+        >
+          {interlinear ? 'Hide' : 'Show'} {book.testament === 'OT' ? 'Hebrew' : 'Greek'}
+        </button>
         {speechSupported && !loading && verses.length > 0 && !used.noSpeech && (
           <button
             type="button"
@@ -153,7 +179,8 @@ export function BibleChapterPage() {
                 hasNote={!!verseNotes[verseKey(book.id, chapter, v.v)]}
                 onToggle={() => setSelected((s) => (s.includes(v.v) ? s.filter((x) => x !== v.v) : [...s, v.v]))}
               />{' '}
-              {v.t.includes('\n') && <span className="block" />}
+              {v.t.includes('\n') && !interlinear && <span className="block" />}
+              {interlinear && <InterlinearRow words={orig?.[v.v]} />}
             </span>
           ))}
         </div>
