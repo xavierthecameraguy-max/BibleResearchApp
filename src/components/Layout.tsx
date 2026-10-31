@@ -2,6 +2,7 @@ import { useEffect, useRef, type ReactNode } from 'react'
 import { NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { BackIcon, BookIcon, HomeIcon, LearnIcon, MenuIcon, PenIcon } from './Icons.tsx'
 import { useOnline } from '../lib/hooks.ts'
+import { UpdateBanner } from './UpdateBanner.tsx'
 
 /** Pages that belong to the Study tab */
 const STUDY_PATHS = ['/study', '/notes', '/memory', '/prayer', '/my-bible', '/words', '/word/', '/dictionary', '/topics', '/people', '/places', '/map', '/commentary']
@@ -40,6 +41,7 @@ export function Layout({ children }: { children: ReactNode }) {
 
   return (
     <div className="mx-auto flex min-h-dvh max-w-2xl flex-col">
+      <UpdateBanner />
       <a
         href="#main"
         className="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-50 focus:rounded-lg focus:bg-amber-200 focus:px-4 focus:py-2 focus:text-stone-950"

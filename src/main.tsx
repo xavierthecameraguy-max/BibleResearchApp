@@ -10,8 +10,14 @@ applySettingsToDocument()
 // Follow the phone's light/dark setting when the theme is "system".
 matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applySettingsToDocument)
 
-// Save the app on the device so it works offline.
-registerSW({ immediate: true })
+// Save the app on the device so it works offline. When a new version is
+// ready, show a small banner instead of reloading while you might be typing.
+const updateSW = registerSW({
+  immediate: true,
+  onNeedRefresh() {
+    window.dispatchEvent(new CustomEvent('foundations:update-ready', { detail: () => updateSW(true) }))
+  },
+})
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
