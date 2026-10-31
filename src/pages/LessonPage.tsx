@@ -3,7 +3,9 @@ import { Link, useParams } from 'react-router-dom'
 import { getLesson, getTrack, nextLessonAfter, previousLessonBefore, trackStyle } from '../lib/content.ts'
 import { completeLesson, resetLesson, setLastLesson, useAppState } from '../lib/storage.ts'
 import { useTitle } from '../lib/hooks.ts'
-import { formatReference } from '../lib/references.ts'
+import { formatReference, readerPath } from '../lib/references.ts'
+import { getBook } from '../lib/books.ts'
+import { ChapterEntities } from '../components/ChapterEntities.tsx'
 import { LessonMarkdown } from '../components/LessonMarkdown.tsx'
 import { PassageText } from '../components/PassageText.tsx'
 import { Quiz } from '../components/Quiz.tsx'
@@ -92,6 +94,37 @@ export function LessonPage() {
       <div className="mt-6">
         <PassageText passage={lesson.passage} />
       </div>
+
+      <details className="mt-4 rounded-2xl border border-stone-200 bg-white p-4 dark:border-stone-800 dark:bg-stone-900">
+        <summary className="cursor-pointer font-semibold">Go deeper into {formatReference(lesson.passage)}</summary>
+        <ul className="mt-3 grid grid-cols-2 gap-2 text-[0.95rem]">
+          <li>
+            <Link className="underline underline-offset-2" to={readerPath(lesson.passage)}>
+              Read the whole chapter
+            </Link>
+          </li>
+          <li>
+            <Link className="underline underline-offset-2" to={`/compare?ref=${encodeURIComponent(formatReference(lesson.passage))}`}>
+              Compare translations
+            </Link>
+          </li>
+          <li>
+            <Link className="underline underline-offset-2" to={`/map?book=${lesson.passage.book}&chapter=${lesson.passage.startChapter}`}>
+              Map the places
+            </Link>
+          </li>
+          <li>
+            <Link className="underline underline-offset-2" to={`/study/passage?ref=${encodeURIComponent(formatReference(lesson.passage))}`}>
+              Study it step by step
+            </Link>
+          </li>
+        </ul>
+        <p className="mt-3 text-sm text-stone-600 dark:text-stone-400">
+          In the reader, tap any verse for cross-references, the {getBook(lesson.passage.book)?.testament === 'NT' ? 'Greek' : 'Hebrew'},
+          topics and dictionary articles.
+        </p>
+        <ChapterEntities book={lesson.passage.book} chapter={lesson.passage.startChapter} />
+      </details>
 
       <div className="mt-8">
         {body === null ? <p className="text-stone-600 dark:text-stone-400">Loading…</p> : <LessonMarkdown source={body} />}
