@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { deleteNote, exportBackup, importBackup, useAppState, type Note, type StudyAnswers } from '../lib/storage.ts'
+import { deleteNote, exportBackup, exportNotesText, importBackup, useAppState, type Note, type StudyAnswers } from '../lib/storage.ts'
 import { useTitle } from '../lib/hooks.ts'
 import { Card, PageTitle, buttonClass } from '../components/ui.tsx'
 
@@ -38,14 +38,15 @@ export function NotesPage() {
   const fileRef = useRef<HTMLInputElement>(null)
   const [message, setMessage] = useState('')
 
-  const download = () => {
-    const blob = new Blob([exportBackup()], { type: 'application/json' })
+  const saveFile = (text: string, type: string, name: string) => {
+    const blob = new Blob([text], { type })
     const a = document.createElement('a')
     a.href = URL.createObjectURL(blob)
-    a.download = `foundations-backup-${new Date().toISOString().slice(0, 10)}.json`
+    a.download = name
     a.click()
     URL.revokeObjectURL(a.href)
   }
+  const download = () => saveFile(exportBackup(), 'application/json', `foundations-backup-${new Date().toISOString().slice(0, 10)}.json`)
 
   return (
     <div>
@@ -116,6 +117,13 @@ export function NotesPage() {
             Restore
           </button>
         </div>
+        <button
+          type="button"
+          className={buttonClass('ghost', 'mt-2 w-full')}
+          onClick={() => saveFile(exportNotesText(), 'text/markdown', `foundations-notes-${new Date().toISOString().slice(0, 10)}.md`)}
+        >
+          Export notes as a text file
+        </button>
         <input
           ref={fileRef}
           type="file"

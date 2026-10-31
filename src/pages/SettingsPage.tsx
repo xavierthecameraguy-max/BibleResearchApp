@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { useLocation } from 'react-router-dom'
-import { updateSettings, useAppState, type LineSpacing, type ReaderFont, type TextSize, type Theme } from '../lib/storage.ts'
+import { eraseEverything, updateSettings, useAppState, type LineSpacing, type ReaderFont, type TextSize, type Theme } from '../lib/storage.ts'
 import { useCurrentTranslation, useTitle, useTranslations } from '../lib/hooks.ts'
 import { removeImported, saveImported } from '../lib/bible.ts'
 import { countVerses, parseBibleFiles } from '../lib/bibleImport.ts'
@@ -187,6 +187,26 @@ export function SettingsPage() {
 
       <Card>
         <OfflineData />
+      </Card>
+
+      <Card>
+        <h2 className="font-serif text-xl font-semibold">Start over</h2>
+        <p className="mt-1 text-[0.95rem] text-stone-700 dark:text-stone-300">
+          Erase all progress, notes, highlights, memory verses, prayers, imported translations and saved study data from this device. Make a
+          backup first (Notes → Save backup) if you might want them later.
+        </p>
+        <button
+          type="button"
+          className={buttonClass('secondary', 'mt-3 w-full text-rose-700 dark:text-rose-400')}
+          onClick={async () => {
+            if (!confirm('Erase everything on this device? This cannot be undone.')) return
+            if (!confirm('Are you sure? Your notes and progress will be gone.')) return
+            await eraseEverything()
+            location.assign('/')
+          }}
+        >
+          Erase everything on this device
+        </button>
       </Card>
 
       <Card>

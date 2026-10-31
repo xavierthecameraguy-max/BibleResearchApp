@@ -422,6 +422,63 @@ export function importBackup(text: string): { notes: number; lessons: number } {
   return { notes: notes.length, lessons: Object.keys(progress).length }
 }
 
+/** All your study notes, verse notes and prayers as readable text (Markdown). */
+export function exportNotesText(): string {
+  const s = state
+  const out: string[] = ['# My Foundations notes', `Exported ${new Date().toLocaleDateString()}`, '']
+  if (s.notes.length) {
+    out.push('## Passage studies', '')
+    for (const n of s.notes) {
+      out.push(`### ${n.passageRef}`)
+      const labels: Record<keyof StudyAnswers, string> = {
+        genre: 'What kind of writing is this?',
+        context: 'What comes before and after it?',
+        audience: 'What did it mean to the original audience?',
+        story: "Where does it fit in the Bible's larger story?",
+        today: 'What does it mean for me today?',
+      }
+      for (const k of Object.keys(labels) as (keyof StudyAnswers)[]) if (n.answers[k]?.trim()) out.push(`**${labels[k]}**`, n.answers[k].trim(), '')
+    }
+  }
+  const vn = Object.entries(s.verseNotes)
+  if (vn.length) {
+    out.push('## Verse notes', '')
+    for (const [k, v] of vn) out.push(`**${k.replace(/\./g, ' ').replace(/ (\d+) (\d+)/, ' $1:$2')}**`, v.text, '')
+  }
+  if (s.prayers.length) {
+    out.push('## Prayer journal', '')
+    for (const p of s.prayers) {
+      out.push(`- **${p.title}**${p.answeredAt ? ` (answered ${new Date(p.answeredAt).toLocaleDateString()})` : ''}`)
+      if (p.details) out.push(`  ${p.details}`)
+      if (p.answerNote) out.push(`  Answer: ${p.answerNote}`)
+    }
+  }
+  return out.join('\n')
+}
+
+/** Remove everything this app has stored on the device. */
+export async function eraseEverything() {
+  try {
+    localStorage.clear()
+    sessionStorage.clear()
+  } catch {
+    // ignore
+  }
+  try {
+    const { clear } = await import('idb-keyval')
+    await clear()
+  } catch {
+    // ignore
+  }
+  try {
+    for (const k of await caches.keys()) if (k === 'study-data') await caches.delete(k)
+  } catch {
+    // ignore
+  }
+  state = { ...DEFAULT_STATE }
+  listeners.forEach((l) => l())
+}
+
 export function applySettingsToDocument() {
   const { theme, textSize } = state.settings
   const dark = theme === 'dark' || (theme === 'system' && matchMedia('(prefers-color-scheme: dark)').matches)
