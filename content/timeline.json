@@ -1,0 +1,551 @@
+[
+  {
+    "id": "abraham-called",
+    "year": -1900,
+    "when": "c. 2000–1800 BC",
+    "title": "God calls Abraham",
+    "description": "God calls Abraham to leave his home and promises to bless the whole world through his family. Dates for this period are very approximate.",
+    "kind": "biblical",
+    "lessonId": "big-story-04"
+  },
+  {
+    "id": "joseph-in-egypt",
+    "year": -1700,
+    "when": "c. 1800–1600 BC",
+    "title": "Joseph in Egypt",
+    "description": "Sold by his brothers, Joseph rises to power in Egypt and saves his family from famine, bringing Israel's ancestors to Egypt.",
+    "kind": "biblical",
+    "lessonId": "big-story-04"
+  },
+  {
+    "id": "exodus",
+    "year": -1350,
+    "when": "c. 1446 BC or c. 1260 BC",
+    "title": "The Exodus from Egypt",
+    "description": "God frees Israel from slavery under Moses. Some scholars favour a 15th-century BC date and others a 13th-century date; the debate is still open.",
+    "kind": "biblical",
+    "lessonId": "big-story-05"
+  },
+  {
+    "id": "sinai-covenant",
+    "year": -1349,
+    "when": "Soon after the Exodus",
+    "title": "The covenant at Mount Sinai",
+    "description": "At Sinai God gives Israel the Ten Commandments and his law, and the people agree to be his covenant people.",
+    "kind": "biblical",
+    "lessonId": "big-story-06"
+  },
+  {
+    "id": "conquest-judges",
+    "year": -1200,
+    "when": "c. 1400–1050 BC",
+    "title": "Into the land; the time of the judges",
+    "description": "Under Joshua, Israel settles in Canaan. For generations afterwards, leaders called judges rescue the tribes in times of crisis.",
+    "kind": "biblical",
+    "lessonId": "big-story-07"
+  },
+  {
+    "id": "saul-david",
+    "year": -1010,
+    "when": "c. 1050–970 BC",
+    "title": "Saul and David become king",
+    "description": "Israel asks for a king. Saul is the first, then David unites the tribes around 1000 BC and receives God's promise of an everlasting dynasty.",
+    "kind": "biblical",
+    "lessonId": "big-story-08"
+  },
+  {
+    "id": "solomon-temple",
+    "year": -960,
+    "when": "c. 960 BC",
+    "title": "Solomon builds the temple",
+    "description": "David's son Solomon builds the first temple in Jerusalem, the centre of Israel's worship.",
+    "kind": "biblical",
+    "lessonId": "big-story-08"
+  },
+  {
+    "id": "kingdom-divides",
+    "year": -930,
+    "when": "c. 930 BC",
+    "title": "The kingdom divides",
+    "description": "After Solomon's death the ten northern tribes break away, forming Israel in the north and Judah in the south.",
+    "kind": "biblical",
+    "lessonId": "big-story-08"
+  },
+  {
+    "id": "fall-of-samaria",
+    "year": -722,
+    "when": "722 BC",
+    "title": "Fall of Samaria",
+    "description": "Assyria conquers the northern kingdom of Israel and its capital Samaria, scattering many of its people, as prophets like Amos and Hosea had warned.",
+    "kind": "biblical",
+    "lessonId": "big-story-09"
+  },
+  {
+    "id": "josiah-reform",
+    "year": -622,
+    "when": "c. 622 BC",
+    "title": "Josiah's reforms",
+    "description": "King Josiah of Judah finds a book of the law in the temple and leads the nation back to worshipping the Lord alone.",
+    "kind": "biblical",
+    "lessonId": "big-story-09"
+  },
+  {
+    "id": "fall-of-jerusalem",
+    "year": -586,
+    "when": "587/586 BC",
+    "title": "Jerusalem falls to Babylon",
+    "description": "Babylon destroys Jerusalem and Solomon's temple and takes many of Judah's people into exile.",
+    "kind": "biblical",
+    "lessonId": "big-story-09"
+  },
+  {
+    "id": "return-from-exile",
+    "year": -530,
+    "when": "538–516 BC",
+    "title": "Return from exile and the second temple",
+    "description": "Cyrus of Persia lets the Jewish exiles go home, and by about 516 BC they finish a new, simpler temple in Jerusalem.",
+    "kind": "biblical",
+    "lessonId": "big-story-09"
+  },
+  {
+    "id": "ezra-nehemiah",
+    "year": -450,
+    "when": "c. 458–430 BC",
+    "title": "Ezra and Nehemiah",
+    "description": "Ezra teaches God's law and Nehemiah rebuilds Jerusalem's walls, renewing the community after the exile. Malachi prophesies around this time.",
+    "kind": "biblical",
+    "lessonId": "big-story-09"
+  },
+  {
+    "id": "septuagint",
+    "year": -250,
+    "when": "3rd century BC onward",
+    "title": "The Septuagint translation begins",
+    "description": "Jews in Alexandria, Egypt, begin translating the Hebrew Scriptures into Greek. This Greek Old Testament became the Bible of many early Christians.",
+    "kind": "biblical",
+    "lessonId": "bible-origins-08"
+  },
+  {
+    "id": "dead-sea-scrolls-copied",
+    "year": -200,
+    "when": "c. 250 BC–AD 70",
+    "title": "The Dead Sea Scrolls are copied",
+    "description": "Jewish scribes copy Scriptures and other writings that will be hidden in caves near the Dead Sea, to be found again almost 2,000 years later.",
+    "kind": "biblical",
+    "lessonId": "bible-origins-04"
+  },
+  {
+    "id": "maccabees",
+    "year": -165,
+    "when": "167–164 BC",
+    "title": "The Maccabean revolt",
+    "description": "Jews led by the Maccabee family rebel against the Greek king Antiochus IV and rededicate the temple, an event remembered at Hanukkah.",
+    "kind": "biblical",
+    "lessonId": "big-story-09"
+  },
+  {
+    "id": "birth-of-jesus",
+    "year": -5,
+    "when": "c. 6–4 BC",
+    "title": "Jesus is born",
+    "description": "Jesus is born in Bethlehem near the end of Herod the Great's reign. Our calendar's starting point was miscalculated by a few years.",
+    "kind": "biblical",
+    "lessonId": "big-story-10"
+  },
+  {
+    "id": "jesus-ministry",
+    "year": 28,
+    "when": "c. AD 27–30",
+    "title": "Jesus' public ministry",
+    "description": "Jesus is baptised, calls disciples, teaches about God's kingdom and heals the sick across Galilee and Judea, for about one to three years.",
+    "kind": "biblical",
+    "lessonId": "big-story-10"
+  },
+  {
+    "id": "crucifixion-resurrection",
+    "year": 31,
+    "when": "c. AD 30 or 33",
+    "title": "Jesus' death and resurrection",
+    "description": "Jesus is crucified in Jerusalem under Pontius Pilate at Passover time. Three days later his followers find the tomb empty and meet him risen.",
+    "kind": "biblical",
+    "lessonId": "big-story-11"
+  },
+  {
+    "id": "pentecost",
+    "year": 32,
+    "when": "c. AD 30 or 33",
+    "title": "Pentecost: the church is born",
+    "description": "Fifty days after Passover, the Holy Spirit comes on Jesus' followers in Jerusalem, Peter preaches, and about three thousand are baptised.",
+    "kind": "biblical",
+    "lessonId": "church-history-01"
+  },
+  {
+    "id": "council-of-jerusalem",
+    "year": 49,
+    "when": "c. AD 49",
+    "title": "The Council of Jerusalem",
+    "description": "Church leaders agree that Gentile believers do not need to become Jewish or keep the whole law of Moses to follow Jesus.",
+    "kind": "biblical",
+    "lessonId": "church-history-01"
+  },
+  {
+    "id": "pauls-journeys",
+    "year": 50,
+    "when": "c. AD 46–62",
+    "title": "Paul's journeys and letters",
+    "description": "Paul travels across Asia Minor and Greece planting churches, and writes letters to them, the earliest writings in the New Testament (c. 48–62).",
+    "kind": "biblical",
+    "lessonId": "big-story-11"
+  },
+  {
+    "id": "nero-persecution",
+    "year": 64,
+    "when": "AD 64",
+    "title": "Nero persecutes Christians",
+    "description": "After a great fire in Rome, Emperor Nero blames Christians. Tradition says Peter and Paul were killed in Rome around this time.",
+    "kind": "biblical",
+    "lessonId": "church-history-02"
+  },
+  {
+    "id": "temple-destroyed",
+    "year": 70,
+    "when": "AD 70",
+    "title": "The temple is destroyed",
+    "description": "Roman armies crush a Jewish revolt and destroy Jerusalem and its temple.",
+    "kind": "biblical",
+    "lessonId": "church-history-01"
+  },
+  {
+    "id": "gospels-written",
+    "year": 80,
+    "when": "c. AD 65–95 (debated)",
+    "title": "The Gospels are written",
+    "description": "Mark, Matthew, Luke and John are written down, drawing on eyewitness memory. Scholars debate the exact dates; Mark is usually thought to be first.",
+    "kind": "biblical",
+    "lessonId": "bible-origins-02"
+  },
+  {
+    "id": "revelation-written",
+    "year": 95,
+    "when": "c. AD 95",
+    "title": "Revelation is written",
+    "description": "On the island of Patmos, John records his visions of Jesus' final victory, probably the last New Testament book to be written.",
+    "kind": "biblical",
+    "lessonId": "big-story-12"
+  },
+  {
+    "id": "polycarp-martyred",
+    "year": 155,
+    "when": "c. AD 155",
+    "title": "Polycarp is martyred",
+    "description": "Polycarp, an elderly bishop said to have known the apostle John, is burned in Smyrna for refusing to deny Christ.",
+    "kind": "church",
+    "lessonId": "church-history-02"
+  },
+  {
+    "id": "decius-persecution",
+    "year": 280,
+    "when": "AD 250–311",
+    "title": "Empire-wide persecutions",
+    "description": "Emperor Decius (250) orders everyone to sacrifice to the Roman gods, and later Diocletian (from 303) destroys churches and burns Scriptures in the harshest persecution of all.",
+    "kind": "church",
+    "lessonId": "church-history-02"
+  },
+  {
+    "id": "constantine-milan",
+    "year": 312,
+    "when": "AD 312–313",
+    "title": "Constantine and the Edict of Milan",
+    "description": "Constantine wins the Battle of the Milvian Bridge, believing Christ helped him, and in 313 he and his co-emperor grant Christians freedom to worship.",
+    "kind": "church",
+    "lessonId": "church-history-03"
+  },
+  {
+    "id": "council-of-nicaea",
+    "year": 325,
+    "when": "AD 325 and 381",
+    "title": "Nicaea and Constantinople",
+    "description": "At Nicaea (325) bishops declare that the Son is fully God with the Father. At Constantinople (381) they affirm the Holy Spirit too and complete the Nicene Creed most churches still say.",
+    "kind": "church",
+    "lessonId": "church-history-04"
+  },
+  {
+    "id": "athanasius-list",
+    "year": 367,
+    "when": "AD 367–397",
+    "title": "The New Testament list is settled",
+    "description": "In 367 Bishop Athanasius lists exactly the 27 New Testament books we have today, and regional councils at Hippo (393) and Carthage (397) confirm the same list.",
+    "kind": "church",
+    "lessonId": "bible-origins-06"
+  },
+  {
+    "id": "vulgate",
+    "year": 393,
+    "when": "c. AD 382–405",
+    "title": "Jerome's Latin Vulgate",
+    "description": "Jerome translates the Bible into everyday Latin. His Vulgate becomes the standard Bible of Western Christianity for over a thousand years.",
+    "kind": "church",
+    "lessonId": "bible-origins-08"
+  },
+  {
+    "id": "augustine",
+    "year": 400,
+    "when": "AD 354–430",
+    "title": "Augustine of Hippo",
+    "description": "Augustine, converted in 386, becomes a bishop in North Africa. His writings, like Confessions and City of God, shape Western Christianity deeply.",
+    "kind": "church",
+    "lessonId": "church-history-05"
+  },
+  {
+    "id": "patrick-ireland",
+    "year": 440,
+    "when": "c. AD 430s–460s",
+    "title": "Patrick in Ireland",
+    "description": "Patrick, once a captive in Ireland, returns as a missionary and helps spread the faith across the island.",
+    "kind": "church",
+    "lessonId": "church-history-06"
+  },
+  {
+    "id": "council-of-chalcedon",
+    "year": 451,
+    "when": "AD 451",
+    "title": "The Council of Chalcedon",
+    "description": "The council teaches that Jesus is one person who is fully God and fully human. Some Eastern churches did not accept its wording, and remain separate today.",
+    "kind": "church",
+    "lessonId": "church-history-05"
+  },
+  {
+    "id": "benedict-rule",
+    "year": 530,
+    "when": "c. AD 530",
+    "title": "Benedict's Rule for monks",
+    "description": "Benedict of Nursia writes a balanced rule of prayer, work and community life that shapes Western monasteries for centuries.",
+    "kind": "church",
+    "lessonId": "church-history-06"
+  },
+  {
+    "id": "masoretes",
+    "year": 800,
+    "when": "c. AD 500–1000",
+    "title": "The Masoretes preserve the Hebrew text",
+    "description": "Jewish scholars called Masoretes carefully copy the Hebrew Scriptures, adding vowel marks and notes. Their text is the basis of most Old Testament translations.",
+    "kind": "church",
+    "lessonId": "bible-origins-03"
+  },
+  {
+    "id": "cyril-methodius",
+    "year": 863,
+    "when": "AD 863",
+    "title": "Cyril and Methodius reach the Slavs",
+    "description": "Two brothers from Byzantium create an alphabet for Slavic peoples and translate Scripture and worship into their language.",
+    "kind": "church",
+    "lessonId": "bible-origins-08"
+  },
+  {
+    "id": "east-west-schism",
+    "year": 1054,
+    "when": "AD 1054 and 1204",
+    "title": "The East–West Schism",
+    "description": "Tensions between Rome and Constantinople lead to mutual excommunications in 1054, and the sack of Constantinople by Western crusaders in 1204 deepens the split between Catholic and Orthodox churches.",
+    "kind": "church",
+    "lessonId": "church-history-07"
+  },
+  {
+    "id": "chapter-divisions",
+    "year": 1227,
+    "when": "c. AD 1227",
+    "title": "Chapter divisions added",
+    "description": "Stephen Langton, later Archbishop of Canterbury, develops the chapter divisions still used today. Verse numbers came later, in the 1550s.",
+    "kind": "church",
+    "lessonId": "bible-origins-01"
+  },
+  {
+    "id": "wycliffe-bible",
+    "year": 1382,
+    "when": "1380s",
+    "title": "The Wycliffe Bible",
+    "description": "John Wycliffe and his followers produce the first complete Bible in English, translated by hand from the Latin Vulgate.",
+    "kind": "church",
+    "lessonId": "bible-origins-09"
+  },
+  {
+    "id": "jan-hus",
+    "year": 1415,
+    "when": "1415",
+    "title": "Jan Hus is burned",
+    "description": "The Czech reformer Jan Hus, who called for church reform and preaching in the people's language, is executed at the Council of Constance.",
+    "kind": "church",
+    "lessonId": "church-history-08"
+  },
+  {
+    "id": "gutenberg-bible",
+    "year": 1455,
+    "when": "c. 1455",
+    "title": "The Gutenberg Bible",
+    "description": "Johannes Gutenberg prints a Latin Bible with movable type, making books, and later Bibles in many languages, far cheaper and more common.",
+    "kind": "church",
+    "lessonId": "bible-origins-03"
+  },
+  {
+    "id": "ninety-five-theses",
+    "year": 1517,
+    "when": "1517–1521",
+    "title": "Luther's 95 Theses",
+    "description": "Martin Luther challenges the sale of indulgences in 1517, starting the Protestant Reformation. In 1521 at Worms he refuses to take back his writings unless shown wrong by Scripture and plain reason.",
+    "kind": "church",
+    "lessonId": "church-history-08"
+  },
+  {
+    "id": "anabaptists",
+    "year": 1525,
+    "when": "1525",
+    "title": "The first Anabaptists",
+    "description": "In Zurich, a group baptise one another as believing adults, beginning the movement behind today's Mennonites, Amish and others.",
+    "kind": "church",
+    "lessonId": "church-history-09"
+  },
+  {
+    "id": "tyndale-nt",
+    "year": 1526,
+    "when": "1526",
+    "title": "Tyndale's New Testament",
+    "description": "William Tyndale's English New Testament, translated from Greek and printed, is smuggled into England. He is executed in 1536, but his wording shapes later English Bibles.",
+    "kind": "church",
+    "lessonId": "bible-origins-09"
+  },
+  {
+    "id": "english-reformation",
+    "year": 1534,
+    "when": "1534",
+    "title": "The English Reformation begins",
+    "description": "King Henry VIII breaks with Rome and becomes head of the Church of England, opening the way for wider reform.",
+    "kind": "church",
+    "lessonId": "church-history-09"
+  },
+  {
+    "id": "calvin-geneva",
+    "year": 1541,
+    "when": "1536–1564",
+    "title": "Calvin in Geneva",
+    "description": "John Calvin publishes his Institutes and leads reform in Geneva, shaping the Reformed and Presbyterian traditions.",
+    "kind": "church",
+    "lessonId": "church-history-09"
+  },
+  {
+    "id": "council-of-trent",
+    "year": 1554,
+    "when": "1545–1563",
+    "title": "The Council of Trent",
+    "description": "The Catholic Church responds to the Reformation, renews its own life and formally confirms its list of biblical books, including the deuterocanonical books.",
+    "kind": "church",
+    "lessonId": "bible-origins-07"
+  },
+  {
+    "id": "geneva-bible",
+    "year": 1560,
+    "when": "1560",
+    "title": "The Geneva Bible",
+    "description": "English Protestant exiles in Geneva produce a popular study Bible with verse numbers and notes, the Bible of Shakespeare and the Pilgrims.",
+    "kind": "church",
+    "lessonId": "bible-origins-09"
+  },
+  {
+    "id": "king-james-version",
+    "year": 1611,
+    "when": "1611",
+    "title": "The King James Version",
+    "description": "Scholars commissioned by King James I complete a new English translation that shapes English-speaking Christianity for centuries.",
+    "kind": "church",
+    "lessonId": "bible-origins-09"
+  },
+  {
+    "id": "peace-of-westphalia",
+    "year": 1648,
+    "when": "1648",
+    "title": "Peace of Westphalia",
+    "description": "Treaties end the Thirty Years' War in Europe, accepting that Catholic, Lutheran and Reformed regions would live side by side.",
+    "kind": "church",
+    "lessonId": "church-history-09"
+  },
+  {
+    "id": "great-awakening",
+    "year": 1740,
+    "when": "1730s–1740s",
+    "title": "The Great Awakening",
+    "description": "Revival spreads through Britain and the American colonies through preachers like Jonathan Edwards, George Whitefield and John Wesley, whose work gives birth to the Methodist movement.",
+    "kind": "church",
+    "lessonId": "church-history-11"
+  },
+  {
+    "id": "william-carey",
+    "year": 1793,
+    "when": "1793",
+    "title": "William Carey sails to India",
+    "description": "The English shoemaker-turned-missionary helps start the modern Protestant missions movement and translates the Bible into many Indian languages.",
+    "kind": "church",
+    "lessonId": "church-history-11"
+  },
+  {
+    "id": "abolition",
+    "year": 1820,
+    "when": "1807 and 1833",
+    "title": "Abolition of the slave trade and slavery",
+    "description": "Campaigners such as William Wilberforce, many driven by their faith, help Britain end the slave trade in 1807 and slavery across most of its empire in 1833.",
+    "kind": "church",
+    "lessonId": "church-history-11"
+  },
+  {
+    "id": "hudson-taylor",
+    "year": 1865,
+    "when": "1865",
+    "title": "Hudson Taylor founds the China Inland Mission",
+    "description": "Hudson Taylor sends missionaries deep into inland China, adopting Chinese dress and customs to share the gospel.",
+    "kind": "church",
+    "lessonId": "church-history-11"
+  },
+  {
+    "id": "azusa-street",
+    "year": 1906,
+    "when": "1906",
+    "title": "The Azusa Street Revival",
+    "description": "A revival in Los Angeles led by William Seymour helps launch the Pentecostal movement, now one of the largest in world Christianity.",
+    "kind": "church",
+    "lessonId": "church-history-11"
+  },
+  {
+    "id": "dead-sea-scrolls-found",
+    "year": 1947,
+    "when": "1947",
+    "title": "The Dead Sea Scrolls are found",
+    "description": "Bedouin shepherds discover ancient scrolls near Qumran, including Old Testament copies about a thousand years older than any known before.",
+    "kind": "church",
+    "lessonId": "bible-origins-04"
+  },
+  {
+    "id": "vatican-ii",
+    "year": 1963,
+    "when": "1962–1965",
+    "title": "The Second Vatican Council",
+    "description": "The Catholic Church allows worship in local languages, encourages Bible reading and reaches out to other Christians. In 1965 Pope Paul VI and Patriarch Athenagoras also lift the mutual excommunications of 1054.",
+    "kind": "church",
+    "lessonId": "church-history-12"
+  },
+  {
+    "id": "modern-translations",
+    "year": 1980,
+    "when": "1970s–1980s",
+    "title": "Modern English translations",
+    "description": "New translations such as the NIV (1978) and NKJV (1982) use older manuscripts and up-to-date English, joining many others since.",
+    "kind": "church",
+    "lessonId": "bible-origins-10"
+  },
+  {
+    "id": "global-church-today",
+    "year": 2025,
+    "when": "Today",
+    "title": "A worldwide church",
+    "description": "There are now over two billion Christians, with most living in Africa, Latin America and Asia, and the Bible translated in full into more than 700 languages.",
+    "kind": "church",
+    "lessonId": "church-history-12"
+  }
+]
