@@ -593,6 +593,9 @@ function prepare(markup) {
     .replace(/#\((\d[\d,;:\s–-]*)\)/g, '$1') // CCEL's link marker: "ver. #(18)" → "ver. 18"
     .replace(/#\(/g, '(')
     .replace(/\s*--\s*/g, '—')
+    // The module's conversion abbreviated the tribe "Dan." like the book ("Zebulun,
+    // Issachar, Dn", "either of Zebulun or Dn We"); CCEL reads "Dan." in each place.
+    .replace(/\bDn\b\.?(?![.\s]*\d)/g, 'Dan.')
 }
 
 /** Plain text and tagged references of a piece of OSIS markup. */
@@ -1124,10 +1127,17 @@ function finishChapter(chapter, book, c, ccelChapter) {
     }
   }
   // Titles: the outline items that start inside the section (Rev 18 "Verses 1-8"
-  // covers the outline's 1-3 and 4-8).
+  // covers the outline's 1-3 and 4-8), except an item that starts another section
+  // ("Verses 32-39" ends on the verse where "David takes Abigail to wife. (39-44)"
+  // begins; that title is the next section's).
   for (const s of secs) {
     if (s.title) continue
-    const items = outline.filter((o) => inRanges(s.ranges, o.r[0][0]))
+    const items = outline.filter((o) => {
+      const start = o.r[0][0]
+      if (!inRanges(s.ranges, start)) return false
+      const owner = secs.find((x) => x.ranges[0][0] === start)
+      return !owner || owner === s
+    })
     if (items.length) s.title = sectionTitle(items.map((o) => o.t).join(' '))
   }
   const uncovered = []

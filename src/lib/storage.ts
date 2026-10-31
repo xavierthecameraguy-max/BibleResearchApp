@@ -115,6 +115,8 @@ export interface AppState {
   activity: string[]
   /** True once the welcome screens have been seen */
   onboarded?: boolean
+  /** Your own reflections on each lesson (lesson id → text) */
+  lessonNotes: Record<string, VerseNote>
 }
 
 const DEFAULT_STATE: AppState = {
@@ -127,6 +129,7 @@ const DEFAULT_STATE: AppState = {
   memory: {},
   prayers: [],
   activity: [],
+  lessonNotes: {},
   settings: {
     theme: 'system',
     textSize: 'md',
@@ -378,6 +381,15 @@ export function stopPlan(planId: string) {
   })
 }
 
+export function setLessonNote(id: string, text: string) {
+  setState((s) => {
+    const lessonNotes = { ...s.lessonNotes }
+    if (text.trim()) lessonNotes[id] = { text, updatedAt: new Date().toISOString() }
+    else delete lessonNotes[id]
+    return { ...s, lessonNotes }
+  })
+}
+
 export function finishOnboarding() {
   setState((s) => ({ ...s, onboarded: true }))
 }
@@ -413,6 +425,7 @@ export function importBackup(text: string): { notes: number; lessons: number } {
       bookmarks: [...marks.values()],
       plans: { ...s.plans, ...obj<PlanProgress>(data.plans) },
       memory: { ...s.memory, ...obj<MemoryCard>(data.memory) },
+      lessonNotes: { ...s.lessonNotes, ...obj<VerseNote>(data.lessonNotes) },
       prayers: Array.isArray(data.prayers)
         ? [...data.prayers.filter((p) => !s.prayers.some((x) => x.id === p.id)), ...s.prayers]
         : s.prayers,
@@ -444,6 +457,11 @@ export function exportNotesText(): string {
   if (vn.length) {
     out.push('## Verse notes', '')
     for (const [k, v] of vn) out.push(`**${k.replace(/\./g, ' ').replace(/ (\d+) (\d+)/, ' $1:$2')}**`, v.text, '')
+  }
+  const ln = Object.entries(s.lessonNotes)
+  if (ln.length) {
+    out.push('## Lesson reflections', '')
+    for (const [id, v] of ln) out.push(`**${id}**`, v.text, '')
   }
   if (s.prayers.length) {
     out.push('## Prayer journal', '')

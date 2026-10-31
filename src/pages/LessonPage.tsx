@@ -6,6 +6,8 @@ import { useTitle } from '../lib/hooks.ts'
 import { formatReference, readerPath } from '../lib/references.ts'
 import { getBook } from '../lib/books.ts'
 import { ChapterEntities } from '../components/ChapterEntities.tsx'
+import { LessonJournal } from '../components/LessonJournal.tsx'
+import { lessonsInTrack } from '../lib/content.ts'
 import { LessonMarkdown } from '../components/LessonMarkdown.tsx'
 import { PassageText } from '../components/PassageText.tsx'
 import { Quiz } from '../components/Quiz.tsx'
@@ -30,6 +32,7 @@ export function LessonPage() {
   const { lessonId = '' } = useParams()
   const lesson = getLesson(lessonId)
   const progress = useAppState((s) => s.progress[lessonId])
+  const allProgress = useAppState((s) => s.progress)
   const [retake, setRetake] = useState(false)
   const speaking = useSpeaking()
   const [body, setBody] = useState<string | null>(null)
@@ -52,6 +55,7 @@ export function LessonPage() {
   const track = getTrack(lesson.track)!
   const style = trackStyle(lesson.track)
   const next = nextLessonAfter(lesson.id)
+  const trackDone = lessonsInTrack(lesson.track).every((l) => allProgress[l.id])
   const prev = previousLessonBefore(lesson.id)
 
   return (
@@ -151,6 +155,7 @@ export function LessonPage() {
               <p className="mt-1 leading-relaxed">{lesson.apply}</p>
             </div>
           )}
+          <LessonJournal lessonId={lesson.id} />
         </section>
       )}
 
@@ -168,6 +173,11 @@ export function LessonPage() {
           <p className="flex items-center gap-2 text-lg font-semibold text-emerald-900 dark:text-emerald-200">
             <CheckIcon /> Lesson complete
           </p>
+          {trackDone && (
+            <p className="mt-2 rounded-xl bg-white/70 p-3 font-semibold text-emerald-900 dark:bg-emerald-950/60 dark:text-emerald-100" role="status">
+              🎉 You've finished every lesson in {track.title}! Well done. Choose another track from Learn, or go back over a favourite.
+            </p>
+          )}
           <p className="mt-1 text-emerald-900 dark:text-emerald-200">
             Quiz score: {progress.quizScore} of {progress.quizTotal}
           </p>
