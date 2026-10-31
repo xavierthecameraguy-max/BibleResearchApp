@@ -29,6 +29,7 @@ import { WordPage } from './pages/WordPage.tsx'
 import { WordsPage } from './pages/WordsPage.tsx'
 import { DictionaryEntryPage, DictionaryPage } from './pages/DictionaryPage.tsx'
 import { PeoplePage, PersonPage, PlacePage } from './pages/PeoplePage.tsx'
+import { WelcomePage } from './pages/WelcomePage.tsx'
 
 // The map pulls in a map library, so it's only loaded when opened.
 const MapPage = lazy(() => import('./pages/MapPage.tsx').then((m) => ({ default: m.MapPage })))
@@ -38,6 +39,7 @@ export function App() {
     <Layout>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/welcome" element={<WelcomePage />} />
         <Route path="/learn" element={<LearnPage />} />
         <Route path="/learn/:trackId" element={<TrackPage />} />
         <Route path="/lesson/:lessonId" element={<LessonPage />} />

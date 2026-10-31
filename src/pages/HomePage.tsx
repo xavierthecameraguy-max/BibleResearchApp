@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, Navigate } from 'react-router-dom'
 import { lessonsInTrack, suggestedLesson, tracks, trackStyle, getTrack, getLesson } from '../lib/content.ts'
 import { useAppState } from '../lib/storage.ts'
 import { useTitle } from '../lib/hooks.ts'
@@ -21,9 +21,13 @@ export function HomePage() {
   const memory = useAppState((s) => s.memory)
   const streak = currentStreak(activity)
   const dueCards = Object.values(memory).filter((c) => c.due <= todayStr()).length
+  const onboarded = useAppState((s) => s.onboarded)
   const next = suggestedLesson(progress, lastLesson)
   const doneCount = Object.keys(progress).filter((id) => getLesson(id)).length
   const isNew = doneCount === 0 && !lastLesson
+
+  // First visit (nothing done yet): show the welcome screens.
+  if (!onboarded && isNew && !Object.keys(memory).length) return <Navigate to="/welcome" replace />
 
   return (
     <div className="space-y-6">

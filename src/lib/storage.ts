@@ -113,6 +113,8 @@ export interface AppState {
   prayers: PrayerItem[]
   /** Days (YYYY-MM-DD) with any reading or study, for the streak */
   activity: string[]
+  /** True once the welcome screens have been seen */
+  onboarded?: boolean
 }
 
 const DEFAULT_STATE: AppState = {
@@ -374,6 +376,10 @@ export function stopPlan(planId: string) {
     delete plans[planId]
     return { ...s, plans }
   })
+}
+
+export function finishOnboarding() {
+  setState((s) => ({ ...s, onboarded: true }))
 }
 
 export function newId(): string {
