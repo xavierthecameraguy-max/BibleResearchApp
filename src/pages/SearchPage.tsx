@@ -8,6 +8,7 @@ import { BOOKS } from '../lib/books.ts'
 import { useCurrentTranslation, useTitle, useTranslations } from '../lib/hooks.ts'
 import { formatReference, parseReference, readerPath } from '../lib/references.ts'
 import { PageTitle, buttonClass } from '../components/ui.tsx'
+import { EverywhereResults } from '../components/EverywhereResults.tsx'
 
 interface Hit {
   book: string
@@ -95,7 +96,7 @@ export function SearchPage() {
   return (
     <div>
       <PageTitle sub="Find any word or phrase. Put a phrase in quotes for an exact match, or type a reference like John 3:16.">
-        Search the Bible
+        Search
       </PageTitle>
       <form
         role="search"
@@ -148,6 +149,9 @@ export function SearchPage() {
         Searching the {searchIn.abbr}
         {current.kind === 'online' && ` (${current.abbr} can't be searched offline)`}.
       </p>
+
+      {q.trim().length >= 2 && <EverywhereResults q={q} />}
+      {q.trim().length >= 2 && <h2 className="mt-6 font-serif text-2xl font-semibold">In the Bible text</h2>}
 
       <div aria-live="polite" className="mt-4">
         {busy && <p className="text-stone-600 dark:text-stone-400">Searching… {progress}%</p>}

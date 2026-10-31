@@ -4,6 +4,10 @@
 import type { LexiconEntry } from './data/original.ts'
 
 let all: Promise<LexiconEntry[]> | null = null
+let loaded = false
+
+/** True once the lexicon has been downloaded in this session. */
+export const lexiconLoaded = () => loaded
 
 /** Load every lexicon bucket (about 6 MB, cached on the device after the first time). */
 function loadAll(): Promise<LexiconEntry[]> {
@@ -16,11 +20,12 @@ function loadAll(): Promise<LexiconEntry[]> {
         .then((r) => (r.ok && (r.headers.get('content-type') ?? '').includes('json') ? r.json() : {}))
         .catch(() => ({})),
     ),
-  ).then((buckets) =>
-    buckets.flatMap((b: Record<string, LexiconEntry & { senses?: unknown }>) =>
+  ).then((buckets) => {
+    loaded = true
+    return buckets.flatMap((b: Record<string, LexiconEntry & { senses?: unknown }>) =>
       Object.entries(b).map(([strong, e]) => ({ ...e, strong, senses: (e.senses as LexiconEntry['senses']) ?? [] })),
-    ),
-  )
+    )
+  })
   return all
 }
 
