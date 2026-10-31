@@ -11,6 +11,7 @@ import { TextCredit } from '../components/TextCredit.tsx'
 import { CrossRefSheet } from '../components/CrossRefSheet.tsx'
 import { OriginalWordsSheet } from '../components/OriginalWordsSheet.tsx'
 import { DictionarySheet } from '../components/DictionarySheet.tsx'
+import { TopicsSheet } from '../components/TopicsSheet.tsx'
 import { ChapterEntities } from '../components/ChapterEntities.tsx'
 import { InterlinearRow } from '../components/Interlinear.tsx'
 import { getChapterWords, type OriginalWord } from '../lib/data/original.ts'
@@ -37,7 +38,7 @@ export function BibleChapterPage() {
   const highlights = useAppState((s) => s.highlights)
   const verseNotes = useAppState((s) => s.verseNotes)
   const speaking = useSpeaking()
-  const [panel, setPanel] = useState<null | 'xrefs' | 'words' | 'dict'>(null)
+  const [panel, setPanel] = useState<null | 'xrefs' | 'words' | 'dict' | 'topics'>(null)
   const [jumpOpen, setJumpOpen] = useState(false)
   const [interlinear, setInterlinear] = useState(() => sessionStorage.getItem('interlinear') === '1')
   const [orig, setOrig] = useState<OriginalWord[][] | null>(null)
@@ -220,9 +221,19 @@ export function BibleChapterPage() {
               <Chip onClick={() => setPanel('xrefs')}>
                 Cross-refs{selected.length > 1 ? ` (v${Math.min(...selected)})` : ''}
               </Chip>
+              <Chip onClick={() => setPanel('topics')}>Topics</Chip>
               <Chip onClick={() => setPanel('dict')}>Dictionary</Chip>
             </>
           }
+        />
+      )}
+      {selected.length > 0 && (
+        <TopicsSheet
+          open={panel === 'topics'}
+          onClose={() => setPanel(null)}
+          book={book.id}
+          chapter={chapter}
+          verse={Math.min(...selected)}
         />
       )}
       {selected.length > 0 && (

@@ -30,6 +30,11 @@ export const CREDITS: Credit[] = [
     title: 'Lessons, glossary and timeline',
     text: 'Written for Foundations. Book introductions and lesson text are original to this app.',
   },
+  {
+    title: "Nave's Topical Bible",
+    text: 'Nave\'s Topical Bible by Orville J. Nave (1896). Public domain. Text from the CrossWire Bible Society SWORD module "Nave" (from CCEL). Changes: markup removed, scripture references re-read and checked against the KJV, duplicate topics merged.',
+    url: 'https://www.crosswire.org/sword/modules/ModInfo.jsp?modName=Nave',
+  },
   ...PEOPLE_CREDITS.map((c) => ({ title: c.title, text: c.text, url: c.url })),
   ...SOURCE_ORDER.map((id) => ({ title: DICTIONARY_SOURCES[id].title, text: DICTIONARY_SOURCES[id].credit, url: DICTIONARY_SOURCES[id].url })),
 ]

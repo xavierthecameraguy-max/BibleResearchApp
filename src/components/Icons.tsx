@@ -177,3 +177,10 @@ export const PeopleIcon = (p: P) => (
     <path d="M15.5 14.2c3 .4 5.5 2.9 5.5 5.8" />
   </Svg>
 )
+export const TopicIcon = (p: P) => (
+  <Svg {...p}>
+    <path d="M4 6h16M4 12h10M4 18h7" />
+    <circle cx="18" cy="16" r="3" />
+    <path d="M20.2 18.2L22 20" />
+  </Svg>
+)
