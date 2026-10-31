@@ -8,7 +8,7 @@
 import type { BookText, Verse } from './bibleTypes.ts'
 
 const PARAGRAPH = /^(p|m|pi\d?|mi|nb|pc|pm|pmo|pmc|pmr|li\d?|cls|b)$/
-const POETRY = /^(q\d?|qr|qc|qm\d?|qa)$/
+const POETRY = /^(q\d?|qr|qc|qm\d?)$/
 
 function cleanInline(text: string): string {
   return (
@@ -74,7 +74,7 @@ export function parseUsfm(src: string): BookText | null {
       if (verse && rest) verse.t += '\n' + rest
       else if (verse) verse.t += '\n'
       else if (rest) pendingH = (pendingH ? pendingH + ' ' : '') + rest
-    } else if (marker === 'd' || /^s\d?$/.test(marker) || /^ms\d?$/.test(marker)) {
+    } else if (marker === 'd' || marker === 'qa' || /^s\d?$/.test(marker) || /^ms\d?$/.test(marker)) {
       const heading = cleanInline(rest).trim()
       if (heading) pendingH = heading
       pendingP = true

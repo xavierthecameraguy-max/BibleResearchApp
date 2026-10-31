@@ -43,6 +43,14 @@ export const BUNDLED: Translation[] = [
     notice: 'King James Version (1769 standard text). Public domain outside the UK. Source: eBible.org.',
   },
   {
+    id: 'bsb',
+    abbr: 'BSB',
+    name: 'Berean Standard Bible',
+    kind: 'bundled',
+    notice:
+      'The Holy Bible, Berean Standard Bible, BSB is produced in cooperation with Bible Hub, Discovery Bible, OpenBible.com, and the Berean Bible Translation Committee. This text of God’s Word has been dedicated to the public domain.',
+  },
+  {
     id: 'web',
     abbr: 'WEB',
     name: 'World English Bible',

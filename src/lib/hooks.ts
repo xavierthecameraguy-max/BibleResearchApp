@@ -30,7 +30,7 @@ export function useTranslations(): Translation[] {
 /**
  * The translation chosen in Settings. "auto" (the default) means the NKJV if
  * it's available (online or built in), then any private translation, then
- * the KJV.
+ * the Berean Standard Bible (modern English, offline).
  */
 export function useCurrentTranslation(): Translation {
   const id = useAppState((s) => s.settings.translation)
@@ -39,6 +39,7 @@ export function useCurrentTranslation(): Translation {
     all.find((t) => t.id === id) ??
     all.find((t) => t.abbr === 'NKJV') ??
     all.find((t) => t.kind === 'private') ??
+    all.find((t) => t.id === 'bsb') ??
     BUNDLED[0]
   )
 }

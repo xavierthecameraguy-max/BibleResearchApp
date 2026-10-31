@@ -7,6 +7,9 @@ import { speak, speechSupported, stopSpeaking, useSpeaking } from '../lib/speech
 import { HIGHLIGHT_STYLES, VerseActions } from '../components/VerseActions.tsx'
 import { NotesIcon } from '../components/Icons.tsx'
 import { TextCredit } from '../components/TextCredit.tsx'
+import { CrossRefSheet } from '../components/CrossRefSheet.tsx'
+import { Chip } from '../components/VerseActions.tsx'
+import { BUNDLED } from '../lib/bible.ts'
 import { formatReference } from '../lib/references.ts'
 import { TranslationPicker } from '../components/TranslationPicker.tsx'
 import { OpenOnlineLink } from '../components/OpenOnlineLink.tsx'
@@ -28,6 +31,7 @@ export function BibleChapterPage() {
   const highlights = useAppState((s) => s.highlights)
   const verseNotes = useAppState((s) => s.verseNotes)
   const speaking = useSpeaking()
+  const [panel, setPanel] = useState<null | 'xrefs'>(null)
   useTitle(book ? formatReference({ book: book.id, startChapter: chapter, endChapter: chapter }) : 'Not found')
 
   const [hlStart, hlEnd] = (search.get('v') ?? '').split('-').map((n) => parseInt(n, 10))
@@ -138,6 +142,21 @@ export function BibleChapterPage() {
           translationAbbr={used.abbr}
           noSpeech={used.noSpeech}
           onClear={() => setSelected([])}
+          extra={
+            <Chip onClick={() => setPanel('xrefs')}>
+              Cross-refs{selected.length > 1 ? ` (v${Math.min(...selected)})` : ''}
+            </Chip>
+          }
+        />
+      )}
+      {selected.length > 0 && (
+        <CrossRefSheet
+          open={panel === 'xrefs'}
+          onClose={() => setPanel(null)}
+          book={book.id}
+          chapter={chapter}
+          verse={Math.min(...selected)}
+          previewIn={used.kind === 'online' ? (BUNDLED.find((t) => t.id === 'bsb') ?? BUNDLED[0]) : used}
         />
       )}
 

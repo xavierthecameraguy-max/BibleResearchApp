@@ -61,6 +61,15 @@ export default defineConfig(({ mode }) => ({
         navigateFallback: '/index.html',
         // Licensed translations are fetched live and never stored by the service worker.
         navigateFallbackDenylist: [/^\/api\//],
+        // Study data (cross-references, word studies, dictionaries…) is saved on the
+        // device the first time it's used, or all at once from Settings.
+        runtimeCaching: [
+          {
+            urlPattern: ({ url }) => url.pathname.startsWith('/data/'),
+            handler: 'CacheFirst',
+            options: { cacheName: 'study-data', expiration: { maxEntries: 2000 } },
+          },
+        ],
       },
     }),
   ],
