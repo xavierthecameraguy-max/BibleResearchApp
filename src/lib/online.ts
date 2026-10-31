@@ -11,7 +11,7 @@
 //   limits: never more than 400 verses per translation, and only for the
 //   time the provider allows (at most 14 days).
 
-import { get, set, del } from 'idb-keyval'
+import { get, set, del, keys as storedKeys } from 'idb-keyval'
 import type { Verse } from './bibleTypes.ts'
 import { loadBook, notifyTranslationsChanged, type ChapterFailure, type ChapterText, type Translation } from './bible.ts'
 import { NLT_NOTICE, NLT_SHORT, nltRef, versesFromNltHtml } from './nlt.ts'
@@ -222,9 +222,30 @@ async function cachePut(t: Translation, key: string, text: ChapterText) {
 export async function clearOnlineCache(translationIds: string[]) {
   memory.clear()
   for (const id of translationIds) {
-    const index = ((await get(indexKey(id))) as CacheEntry[] | undefined) ?? []
-    await Promise.all(index.map((e) => del(e.key)))
-    await del(indexKey(id))
+    try {
+      const index = ((await get(indexKey(id))) as CacheEntry[] | undefined) ?? []
+      await Promise.all(index.map((e) => del(e.key)))
+      await del(indexKey(id))
+    } catch {
+      // storage unavailable: the entries expire on their own
+    }
+  }
+}
+
+/**
+ * Remove stored chapters of every online translation except those listed:
+ * the publishers' terms mean text loaded with a key that's gone goes too.
+ */
+export async function pruneOnlineCache(keepIds: string[]) {
+  const keep = new Set(keepIds)
+  const translationOf = (key: string) => key.split(':')[1]
+  for (const key of memory.keys()) if (!keep.has(translationOf(key))) memory.delete(key)
+  try {
+    const all = (await storedKeys()).map(String)
+    const gone = all.filter((k) => (k.startsWith('online:') || k.startsWith('online-index:')) && !keep.has(translationOf(k)))
+    await Promise.all(gone.map((k) => del(k)))
+  } catch {
+    // storage unavailable: the entries expire on their own
   }
 }
 
@@ -275,43 +296,78 @@ export async function loadOnlineChapter(t: Translation, book: string, chapter: n
  */
 export async function checkOnlineTranslation(t: Translation): Promise<string | null> {
   const service = t.provider ?? t.abbr
+  const badKey = `${service} didn’t accept the key. Check that you copied all of it.`
+  const unreachable = `${service} couldn’t be reached. Check your connection and try again.`
   try {
     const r = await apiFetch(`/api/bible/chapter?t=${encodeURIComponent(t.id)}&book=JHN&c=1`, 20_000)
     if (r.ok) return null
-    const body = (await r.json().catch(() => ({}))) as { error?: string }
-    const code = Number(/replied (\d{3})/.exec(body.error ?? '')?.[1] ?? r.status)
-    const apiBible = /api\.bible/i.test(service)
-    if (code === 401 || (code === 403 && !apiBible)) return `${service} didn’t accept the key. Check that you copied all of it.`
-    if (code === 403) return `Your API.Bible key doesn’t include the ${t.abbr} yet. In your API.Bible dashboard, add it to your plan’s Bibles.`
+    const error = ((await r.json().catch(() => ({}))) as { error?: string }).error ?? ''
+    const replied = /replied (\d{3})/.exec(error)
+    // Some services refuse a wrong key in a way a web page isn't allowed to read, so it looks
+    // like a network failure. If the service itself can be reached, it was the key.
+    if (!replied && r.status === 502 && usingDeviceKeys()) return (await reachable(service)) ? badKey : unreachable
+    const code = Number(replied?.[1] ?? r.status)
+    if (code === 401 || /invalid (api |application )?key|unauthori[sz]ed/i.test(error)) return badKey
+    if (code === 403) {
+      return /api\.bible/i.test(service)
+        ? `Your API.Bible key doesn’t include the ${t.abbr} yet. In your API.Bible dashboard, add it to your plan’s Bibles.`
+        : badKey
+    }
     if (code === 404) return `${service} couldn’t find the ${t.abbr}. Check its Bible ID.`
     if (code === 429) return `${service} says the key has been used too much for now. Try again later.`
-    return `${service} couldn’t be reached. Check your connection and try again.`
+    return unreachable
   } catch {
-    return `${service} couldn’t be reached. Check your connection and try again.`
+    return unreachable
   }
 }
 
-let audioObjectUrl: string | null = null
+const SERVICE_ORIGINS: [RegExp, string][] = [
+  [/api\.bible/i, 'https://rest.api.bible/'],
+  [/esv/i, 'https://api.esv.org/'],
+  [/nlt/i, 'https://api.nlt.to/'],
+]
 
-/** The ESV's official audio, fetched with a key saved on this device. */
+/** Can this phone reach the service at all? (A plain request that needs no key.) */
+async function reachable(service: string): Promise<boolean> {
+  if (typeof navigator !== 'undefined' && !navigator.onLine) return false
+  const origin = SERVICE_ORIGINS.find(([re]) => re.test(service))?.[1]
+  if (!origin) return false
+  try {
+    await fetch(origin, { mode: 'no-cors', cache: 'no-store', signal: AbortSignal.timeout(8_000) })
+    return true
+  } catch {
+    return false
+  }
+}
+
+/**
+ * The ESV's official audio with a key saved on this device. The page can't
+ * download Crossway's MP3 itself, but it can play it, so ask the ESV API for
+ * the chapter's audio link and play that.
+ */
 async function deviceEsvAudio(book: string, chapter: number): Promise<string | null> {
   const key = getDeviceKeys().ESV_API_KEY
   if (!key) return null
   const bb = String(BOOK_IDS.indexOf(book) + 1).padStart(2, '0')
   const cc = String(chapter).padStart(3, '0')
-  const r = await fetch(`https://api.esv.org/v3/passage/audio/?q=${bb}${cc}001-${bb}${cc}999`, {
+  const params = new URLSearchParams({
+    q: `${bb}${cc}001-${bb}${cc}999`,
+    'include-audio-link': 'true',
+    'include-passage-references': 'true',
+    'include-headings': 'false',
+    'include-footnotes': 'false',
+    'include-short-copyright': 'false',
+    'include-copyright': 'false',
+  })
+  const r = await fetch(`https://api.esv.org/v3/passage/html/?${params}`, {
     headers: { Authorization: `Token ${key}` },
-    signal: AbortSignal.timeout(60_000),
+    signal: AbortSignal.timeout(15_000),
   })
   if (!r.ok) return null
-  // Crossway sends the browser on to the MP3 itself: play it from there.
-  if (r.redirected && r.url) {
-    void r.body?.cancel()
-    return r.url
-  }
-  if (audioObjectUrl) URL.revokeObjectURL(audioObjectUrl)
-  audioObjectUrl = URL.createObjectURL(await r.blob())
-  return audioObjectUrl
+  const html = (((await r.json()) as { passages?: string[] }).passages ?? []).join('\n')
+  const link = /<a\b[^>]*\bmp3link\b[^>]*>/i.exec(html)?.[0] ?? ''
+  const href = /href="([^"]+)"/i.exec(link)?.[1] ?? /href="([^"]+\.mp3[^"]*)"/i.exec(html)?.[1]
+  return href ? new URL(href.replace(/&amp;/g, '&'), 'https://api.esv.org/').toString().replace(/^http:/, 'https:') : null
 }
 
 /** The URL of a translation's official chapter audio (e.g. the ESV), or null. */

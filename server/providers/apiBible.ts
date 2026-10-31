@@ -159,7 +159,7 @@ export const apiBible: Provider = {
       signal: AbortSignal.timeout(10_000),
     })
     if (res.status === 404) return null
-    if (!res.ok) throw new Error(`API.Bible replied ${res.status}`)
+    if (!res.ok) throw new Error(`API.Bible replied ${res.status}: ${(await res.text().catch(() => '')).slice(0, 200)}`)
     const body = (await res.json()) as { data?: { content?: Node[]; copyright?: string }; meta?: { fumsToken?: string } }
     const verses = versesFromApiBibleJson(body.data?.content ?? [])
     return {

@@ -7,6 +7,7 @@ import { countVerses, parseBibleFiles } from '../lib/bibleImport.ts'
 import { Card, PageTitle, buttonClass } from '../components/ui.tsx'
 import { LicensedSetup } from '../components/LicensedSetup.tsx'
 import { OfflineData } from '../components/OfflineData.tsx'
+import { BASE } from '../lib/paths.ts'
 
 function Choice<T extends string>({ legend, value, options, onChange }: { legend: string; value: T; options: [T, string][]; onChange: (v: T) => void }) {
   return (
@@ -206,7 +207,7 @@ export function SettingsPage() {
             if (!confirm('Erase everything on this device? This cannot be undone.')) return
             if (!confirm('Are you sure? Your notes and progress will be gone.')) return
             await eraseEverything()
-            location.assign('/')
+            location.assign(BASE)
           }}
         >
           Erase everything on this device

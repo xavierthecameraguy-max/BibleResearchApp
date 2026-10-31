@@ -5,10 +5,10 @@ import { useEffect, useState } from 'react'
 import {
   NLT_OPEN,
   checkOnlineTranslation,
-  clearOnlineCache,
   getAccessCode,
   getDeviceKeys,
   listOnlineWithStatus,
+  pruneOnlineCache,
   setAccessCode,
   setDeviceKeys,
   usingDeviceKeys,
@@ -84,9 +84,11 @@ const GUIDES: { abbr: string; title: string; env: string; steps: React.ReactNode
 type ListResult = { list: Translation[]; status: ServerStatus }
 
 /** Keys saved on this phone: used instead of a server (needed on GitHub Pages). */
-function DeviceKeysForm({ online, onChange }: { online: Translation[]; onChange: () => Promise<ListResult> }) {
+function DeviceKeysForm({ onChange }: { onChange: () => Promise<ListResult> }) {
   const [keys, setKeys] = useState<DeviceKeys>(getDeviceKeys)
   const [haveSaved, setHaveSaved] = useState(() => usingDeviceKeys())
+  // Open at first if it's in use; after that it opens and closes only when tapped.
+  const [biblesOpen] = useState(() => !!getDeviceKeys().API_BIBLE_BIBLES)
   const [busy, setBusy] = useState(false)
   const [message, setMessage] = useState('')
   const [checks, setChecks] = useState<{ abbr: string; problem: string | null }[]>([])
@@ -95,20 +97,30 @@ function DeviceKeysForm({ online, onChange }: { online: Translation[]; onChange:
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => setKeys((k) => ({ ...k, [name]: e.target.value })),
   })
 
+  /** Save keys, then remove any chapters loaded with a key that's no longer there (the publishers' terms). */
+  const apply = async (next: DeviceKeys) => {
+    setDeviceKeys(next)
+    const result = await onChange()
+    await pruneOnlineCache(result.list.map((t) => t.id))
+    return result
+  }
+  const removed = 'Keys removed from this phone, along with the chapters they loaded.'
+
   const save = async (e: React.FormEvent) => {
     e.preventDefault()
-    setDeviceKeys(keys)
+    const hadKeys = haveSaved
+    setBusy(true)
+    setChecks([])
+    setMessage('Saving…')
+    const { list } = await apply(keys)
     const now = usingDeviceKeys()
     setHaveSaved(now)
-    setChecks([])
     if (!now) {
-      await onChange()
-      setMessage('Paste at least one key, then tap Save.')
+      setBusy(false)
+      setMessage(hadKeys ? removed : 'Paste at least one key, then tap Save and check.')
       return
     }
-    setBusy(true)
     setMessage('Saved. Checking each key…')
-    const { list } = await onChange()
     const results = await Promise.all(
       list.filter((t) => t.id !== NLT_OPEN.id).map(async (t) => ({ abbr: t.abbr, problem: await checkOnlineTranslation(t) })),
     )
@@ -118,14 +130,13 @@ function DeviceKeysForm({ online, onChange }: { online: Translation[]; onChange:
   }
 
   const remove = async () => {
-    // The publishers' terms: once a key is gone, so is the text it fetched.
-    await clearOnlineCache(online.filter((t) => t.id !== NLT_OPEN.id).map((t) => t.id))
-    setDeviceKeys({})
+    setBusy(true)
     setKeys({})
-    setHaveSaved(false)
     setChecks([])
-    await onChange()
-    setMessage('Keys removed from this phone, along with the chapters they loaded.')
+    await apply({})
+    setHaveSaved(false)
+    setBusy(false)
+    setMessage(removed)
   }
 
   return (
@@ -149,7 +160,7 @@ function DeviceKeysForm({ online, onChange }: { online: Translation[]; onChange:
         NLT API key <span className="font-normal text-stone-600 dark:text-stone-400">(optional)</span>
       </label>
       <input id="key-nlt" type="password" className={inputClass} {...keyInput} {...field('NLT_API_KEY')} />
-      <details className="mt-3" open={!!keys.API_BIBLE_BIBLES}>
+      <details className="mt-3" open={biblesOpen}>
         <summary className="min-h-11 cursor-pointer py-2 font-semibold">More Bibles from API.Bible (advanced)</summary>
         <p className="text-sm leading-relaxed text-stone-600 dark:text-stone-400">
           Leave this empty for just the NKJV. The free plan allows up to 3 licensed Bibles. List each one as ABBR=Bible ID|Full name,
@@ -204,8 +215,10 @@ export function LicensedSetup() {
   }, [])
 
   const has = (abbr: string) => online.some((t) => t.abbr === abbr)
-  // With no server (GitHub Pages), keys on the phone are the way in; otherwise they're an alternative.
-  const phoneFirst = STATIC_HOST || status === 'device' || status === 'no-server'
+  // With no server (GitHub Pages) or keys already saved, keys on the phone come first; otherwise
+  // they're an alternative. Decided once, so the form doesn't jump (and lose its messages) on Save.
+  const [phoneFirst] = useState(() => STATIC_HOST || usingDeviceKeys())
+  const keysForm = <DeviceKeysForm onChange={refresh} />
 
   return (
     <div id="licensed" className="mt-6 scroll-mt-20 rounded-xl border border-stone-200 p-4 dark:border-stone-800">
@@ -241,7 +254,7 @@ export function LicensedSetup() {
         </p>
       )}
 
-      {phoneFirst && <DeviceKeysForm online={online} onChange={refresh} />}
+      {phoneFirst && keysForm}
 
       {!STATIC_HOST && status !== 'device' && (
         <form
@@ -283,7 +296,7 @@ export function LicensedSetup() {
       {!phoneFirst && (
         <details className="mt-3 rounded-xl bg-stone-100 p-4 dark:bg-stone-800/60">
           <summary className="cursor-pointer font-semibold">Or save keys on this phone instead</summary>
-          <DeviceKeysForm online={online} onChange={refresh} />
+          {keysForm}
         </details>
       )}
 
