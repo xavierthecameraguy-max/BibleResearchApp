@@ -3,6 +3,7 @@
 
 import { DICTIONARY_SOURCES, SOURCE_ORDER } from './data/dictionary.ts'
 import { PEOPLE_CREDITS } from './data/people.ts'
+import { COMMENTARY_CREDIT, COMMENTARY_TITLE } from './data/commentary.ts'
 
 export interface Credit {
   title: string
@@ -30,6 +31,7 @@ export const CREDITS: Credit[] = [
     title: 'Lessons, glossary and timeline',
     text: 'Written for Foundations. Book introductions and lesson text are original to this app.',
   },
+  { title: COMMENTARY_TITLE, text: COMMENTARY_CREDIT, url: 'https://www.crosswire.org/sword/modules/ModInfo.jsp?modName=MHCC' },
   {
     title: "Nave's Topical Bible",
     text: 'Nave\'s Topical Bible by Orville J. Nave (1896). Public domain. Text from the CrossWire Bible Society SWORD module "Nave" (from CCEL). Changes: markup removed, scripture references re-read and checked against the KJV, duplicate topics merged.',

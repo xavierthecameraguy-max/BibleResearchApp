@@ -1,0 +1,427 @@
+{
+ "title": "Matthew Henry's Concise Commentary on the Whole Bible",
+ "short": "Matthew Henry",
+ "author": "Matthew Henry",
+ "year": 1706,
+ "license": "Public Domain",
+ "credit": "Matthew Henry's Concise Commentary on the Whole Bible, the one-volume abridgment of Matthew Henry's Exposition of the Old and New Testaments (1706). Public domain. Text from the CrossWire Bible Society SWORD module \"MHCC\" (from CCEL), with a few passages the module lost restored from CCEL's edition. Changes: markup removed, scripture references linked.",
+ "source": {
+  "module": "MHCC",
+  "moduleVersion": "2.0",
+  "moduleDate": "2021-02-14",
+  "distributionLicense": "Public Domain",
+  "url": "https://www.crosswire.org/sword/modules/ModInfo.jsp?modName=MHCC",
+  "textSource": "https://ccel.org/ccel/h/henry/mhcc/cache/mhcc.txt",
+  "repairsFrom": "https://ccel.org/ccel/h/henry/mhcc/cache/mhcc.txt"
+ },
+ "built": "2026-10-31",
+ "books": {
+  "GEN": {
+   "chapters": 50,
+   "sections": 195,
+   "refs": 115,
+   "intro": true
+  },
+  "EXO": {
+   "chapters": 40,
+   "sections": 130,
+   "refs": 85,
+   "intro": true
+  },
+  "LEV": {
+   "chapters": 27,
+   "sections": 69,
+   "refs": 38,
+   "intro": true
+  },
+  "NUM": {
+   "chapters": 36,
+   "sections": 111,
+   "refs": 38,
+   "intro": true
+  },
+  "DEU": {
+   "chapters": 34,
+   "sections": 108,
+   "refs": 40,
+   "intro": true
+  },
+  "JOS": {
+   "chapters": 24,
+   "sections": 71,
+   "refs": 21,
+   "intro": true
+  },
+  "JDG": {
+   "chapters": 21,
+   "sections": 66,
+   "refs": 13,
+   "intro": true
+  },
+  "RUT": {
+   "chapters": 4,
+   "sections": 13,
+   "refs": 4,
+   "intro": true
+  },
+  "1SA": {
+   "chapters": 31,
+   "sections": 99,
+   "refs": 20,
+   "intro": true
+  },
+  "2SA": {
+   "chapters": 24,
+   "sections": 77,
+   "refs": 22,
+   "intro": true
+  },
+  "1KI": {
+   "chapters": 22,
+   "sections": 76,
+   "refs": 12,
+   "intro": true
+  },
+  "2KI": {
+   "chapters": 25,
+   "sections": 80,
+   "refs": 13,
+   "intro": false
+  },
+  "1CH": {
+   "chapters": 29,
+   "sections": 44,
+   "refs": 11,
+   "intro": true
+  },
+  "2CH": {
+   "chapters": 36,
+   "sections": 54,
+   "refs": 12,
+   "intro": false
+  },
+  "EZR": {
+   "chapters": 10,
+   "sections": 25,
+   "refs": 1,
+   "intro": true
+  },
+  "NEH": {
+   "chapters": 13,
+   "sections": 31,
+   "refs": 4,
+   "intro": true
+  },
+  "EST": {
+   "chapters": 10,
+   "sections": 21,
+   "refs": 8,
+   "intro": true
+  },
+  "JOB": {
+   "chapters": 42,
+   "sections": 127,
+   "refs": 34,
+   "intro": true
+  },
+  "PSA": {
+   "chapters": 150,
+   "sections": 337,
+   "refs": 58,
+   "intro": true
+  },
+  "PRO": {
+   "chapters": 31,
+   "sections": 534,
+   "refs": 8,
+   "intro": true
+  },
+  "ECC": {
+   "chapters": 12,
+   "sections": 41,
+   "refs": 4,
+   "intro": true
+  },
+  "SNG": {
+   "chapters": 8,
+   "sections": 25,
+   "refs": 18,
+   "intro": true
+  },
+  "ISA": {
+   "chapters": 66,
+   "sections": 175,
+   "refs": 45,
+   "intro": true
+  },
+  "JER": {
+   "chapters": 52,
+   "sections": 148,
+   "refs": 20,
+   "intro": true
+  },
+  "LAM": {
+   "chapters": 5,
+   "sections": 14,
+   "refs": 1,
+   "intro": true
+  },
+  "EZK": {
+   "chapters": 48,
+   "sections": 105,
+   "refs": 10,
+   "intro": true
+  },
+  "DAN": {
+   "chapters": 12,
+   "sections": 37,
+   "refs": 10,
+   "intro": true
+  },
+  "HOS": {
+   "chapters": 14,
+   "sections": 33,
+   "refs": 7,
+   "intro": true
+  },
+  "JOL": {
+   "chapters": 3,
+   "sections": 9,
+   "refs": 0,
+   "intro": true
+  },
+  "AMO": {
+   "chapters": 9,
+   "sections": 19,
+   "refs": 1,
+   "intro": true
+  },
+  "OBA": {
+   "chapters": 1,
+   "sections": 2,
+   "refs": 0,
+   "intro": true
+  },
+  "JON": {
+   "chapters": 4,
+   "sections": 10,
+   "refs": 4,
+   "intro": true
+  },
+  "MIC": {
+   "chapters": 7,
+   "sections": 17,
+   "refs": 1,
+   "intro": true
+  },
+  "NAM": {
+   "chapters": 3,
+   "sections": 6,
+   "refs": 1,
+   "intro": true
+  },
+  "HAB": {
+   "chapters": 3,
+   "sections": 8,
+   "refs": 0,
+   "intro": true
+  },
+  "ZEP": {
+   "chapters": 3,
+   "sections": 8,
+   "refs": 0,
+   "intro": true
+  },
+  "HAG": {
+   "chapters": 2,
+   "sections": 5,
+   "refs": 1,
+   "intro": true
+  },
+  "ZEC": {
+   "chapters": 14,
+   "sections": 34,
+   "refs": 5,
+   "intro": true
+  },
+  "MAL": {
+   "chapters": 4,
+   "sections": 9,
+   "refs": 0,
+   "intro": true
+  },
+  "MAT": {
+   "chapters": 28,
+   "sections": 144,
+   "refs": 57,
+   "intro": true
+  },
+  "MRK": {
+   "chapters": 16,
+   "sections": 76,
+   "refs": 11,
+   "intro": true
+  },
+  "LUK": {
+   "chapters": 24,
+   "sections": 118,
+   "refs": 19,
+   "intro": true
+  },
+  "JHN": {
+   "chapters": 21,
+   "sections": 116,
+   "refs": 27,
+   "intro": true
+  },
+  "ACT": {
+   "chapters": 28,
+   "sections": 119,
+   "refs": 11,
+   "intro": true
+  },
+  "ROM": {
+   "chapters": 16,
+   "sections": 70,
+   "refs": 16,
+   "intro": true
+  },
+  "1CO": {
+   "chapters": 16,
+   "sections": 58,
+   "refs": 19,
+   "intro": true
+  },
+  "2CO": {
+   "chapters": 13,
+   "sections": 38,
+   "refs": 3,
+   "intro": true
+  },
+  "GAL": {
+   "chapters": 6,
+   "sections": 28,
+   "refs": 5,
+   "intro": true
+  },
+  "EPH": {
+   "chapters": 6,
+   "sections": 25,
+   "refs": 0,
+   "intro": true
+  },
+  "PHP": {
+   "chapters": 4,
+   "sections": 15,
+   "refs": 3,
+   "intro": true
+  },
+  "COL": {
+   "chapters": 4,
+   "sections": 15,
+   "refs": 0,
+   "intro": true
+  },
+  "1TH": {
+   "chapters": 5,
+   "sections": 17,
+   "refs": 0,
+   "intro": true
+  },
+  "2TH": {
+   "chapters": 3,
+   "sections": 10,
+   "refs": 0,
+   "intro": true
+  },
+  "1TI": {
+   "chapters": 6,
+   "sections": 20,
+   "refs": 1,
+   "intro": true
+  },
+  "2TI": {
+   "chapters": 4,
+   "sections": 15,
+   "refs": 2,
+   "intro": true
+  },
+  "TIT": {
+   "chapters": 3,
+   "sections": 9,
+   "refs": 2,
+   "intro": true
+  },
+  "PHM": {
+   "chapters": 1,
+   "sections": 4,
+   "refs": 0,
+   "intro": true
+  },
+  "HEB": {
+   "chapters": 13,
+   "sections": 45,
+   "refs": 7,
+   "intro": true
+  },
+  "JAS": {
+   "chapters": 5,
+   "sections": 15,
+   "refs": 2,
+   "intro": true
+  },
+  "1PE": {
+   "chapters": 5,
+   "sections": 17,
+   "refs": 3,
+   "intro": true
+  },
+  "2PE": {
+   "chapters": 3,
+   "sections": 9,
+   "refs": 5,
+   "intro": true
+  },
+  "1JN": {
+   "chapters": 5,
+   "sections": 21,
+   "refs": 4,
+   "intro": true
+  },
+  "2JN": {
+   "chapters": 1,
+   "sections": 4,
+   "refs": 0,
+   "intro": true
+  },
+  "3JN": {
+   "chapters": 1,
+   "sections": 3,
+   "refs": 0,
+   "intro": true
+  },
+  "JUD": {
+   "chapters": 1,
+   "sections": 5,
+   "refs": 4,
+   "intro": true
+  },
+  "REV": {
+   "chapters": 22,
+   "sections": 62,
+   "refs": 5,
+   "intro": true
+  }
+ },
+ "sections": 4051,
+ "references": 891,
+ "repairs": [
+  "1SA 25:39-44 — section 39-44 missing from the module (75 words)",
+  "PSA 95:7-11 — section 7-11 missing from the module (201 words)"
+ ],
+ "uncovered": [
+  "PRO 14:13",
+  "PRO 16:10,20",
+  "PRO 22:29"
+ ]
+}

@@ -31,6 +31,7 @@ import { DictionaryEntryPage, DictionaryPage } from './pages/DictionaryPage.tsx'
 import { PeoplePage, PersonPage, PlacePage } from './pages/PeoplePage.tsx'
 import { WelcomePage } from './pages/WelcomePage.tsx'
 import { TopicPage, TopicsPage } from './pages/TopicsPage.tsx'
+import { CommentaryIndexPage, CommentaryPage } from './pages/CommentaryPage.tsx'
 
 // The map pulls in a map library, so it's only loaded when opened.
 const MapPage = lazy(() => import('./pages/MapPage.tsx').then((m) => ({ default: m.MapPage })))
@@ -56,6 +57,8 @@ export function App() {
         <Route path="/memory" element={<MemoryPage />} />
         <Route path="/words" element={<WordsPage />} />
         <Route path="/dictionary" element={<DictionaryPage />} />
+        <Route path="/commentary" element={<CommentaryIndexPage />} />
+        <Route path="/commentary/:book/:chapter" element={<CommentaryPage />} />
         <Route path="/topics" element={<TopicsPage />} />
         <Route path="/topics/:id" element={<TopicPage />} />
         <Route path="/people" element={<PeoplePage />} />

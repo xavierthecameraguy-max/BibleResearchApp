@@ -11,8 +11,11 @@
 // (version 3.0, 2021, re-made from CCEL's edition at https://ccel.org/ccel/n/nave/bible.xml).
 // The module's own .conf file says "DistributionLicense=Public Domain"; the script checks
 // that line and refuses to continue if it ever changes. The download is pinned by SHA-256.
-// (CCEL's edition adds a few modern glosses, e.g. "Ass (Donkey)"; CCEL makes no copyright
-// claim on it — see https://www.ccel.org/about/copyright.html.)
+// (CCEL's edition adds a few modern glosses, e.g. "Ass (Donkey)". Its XML carries only a
+// generic "Copyright Christian Classics Ethereal Library" comment and no rights statement on
+// the book's page; https://www.ccel.org/about/copyright.html says its editions of
+// public-domain books may be used for personal purposes and asks to be contacted before
+// republishing them or using them commercially. This app is for personal use.)
 //   https://www.crosswire.org/ftpmirror/pub/sword/packages/rawzip/Nave.zip
 //
 // (OpenBible.info's crowd-voted topical data, CC BY 4.0, was also evaluated. It has no
@@ -450,15 +453,23 @@ function entryLines(body) {
     else if (lines.length && !(inList && lines[lines.length - 1].kind === 'item')) lines[lines.length - 1].html += tok
     else if (tok.trim()) lines.push({ kind: 'lb', html: tok })
   }
-  return lines.map((l) => {
-    let html = l.html.replace(/\s+/g, ' ').trim()
+  const out = []
+  for (const l of lines) {
+    // A stray "&gt;" in CCEL's e-text ("See DEATH&amp;gt;", "See &amp;gt;GOD, GOODNESS OF").
+    let html = l.html.replace(/&amp;gt;/g, '').replace(/\s+/g, ' ').trim()
     let level = 1
     if (l.kind === 'lb') {
       if (/^→/.test(html) || /^\d+\.\s/.test(html)) level = 0
       html = html.replace(/^→\s*/, '')
     }
-    return { level, html }
-  })
+    // CCEL marks indented lines with a leading "."; in 28 places the conversion ran a line
+    // into the one before it ("Incorruptible .Balaam Nu 22:18", "INSTANCES OF .Abraham Ge 13:8").
+    // Split them back into a heading and an indented line (never inside a tag).
+    const parts = html.split(/\s+\.(?=[A-Z(])(?![^<]*>)/)
+    out.push({ level, html: parts[0] })
+    for (const p of parts.slice(1)) out.push({ level: 1, html: p })
+  }
+  return out
 }
 
 /** Repairs small faults in the module's text before references are read. */
@@ -516,6 +527,15 @@ const ALIAS = {
   ANGELS: 'ANGEL (A SPIRIT)',
   GRACE: 'GRACE OF GOD',
   'MINISTER, PRIME': 'MINISTER, CIVIL',
+  // SHISHA "See SERIAH, number one": David's scribe Seraiah (2Sa 8:17), not Serah, which is
+  // equally close by spelling.
+  SERIAH: 'SERAIAH',
+  'RAB-SHAKEH': 'RAB-SHAKEH (RABSHAKEH)',
+  AFFILICTION: 'AFFLICTIONS AND ADVERSITIES',
+  BACKSLIDING: 'BACKSLIDERS',
+  DOUBT: 'DOUBTING',
+  MIDWIFE: 'MIDWIFERY',
+  'PRUNING-HOOK': 'PRUNING',
 }
 /** Levenshtein distance, stopping early once it is over `max`. */
 function editDistance(a, b, max) {
