@@ -33,5 +33,12 @@
     "tagline": "Context, genre and audience",
     "description": "Learn to read each part of the Bible the way it was meant to be read, and avoid the most common mistakes.",
     "color": "violet"
+  },
+  {
+    "id": "big-questions",
+    "title": "Big Questions",
+    "tagline": "Honest answers to hard questions",
+    "description": "Suffering, science, other religions, the reliability of the Gospels, the resurrection and doubt: what thoughtful Christians have said, fairly and honestly.",
+    "color": "sky"
   }
 ]

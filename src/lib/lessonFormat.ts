@@ -31,7 +31,7 @@ export interface Lesson {
 /** Everything about a lesson except its text */
 export type LessonMeta = Omit<Lesson, 'body'>
 
-export const TRACK_IDS = ['big-story', 'bible-origins', 'church-history', 'reading-bible', 'first-steps']
+export const TRACK_IDS = ['big-story', 'bible-origins', 'church-history', 'reading-bible', 'first-steps', 'big-questions']
 
 /** Matches [[term]] and [[term|shown text]] */
 export const GLOSSARY_LINK = /\[\[([a-z0-9-]+)(?:\|([^\]]+))?\]\]/g

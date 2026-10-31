@@ -22,7 +22,7 @@ option that does not exist).
 ```markdown
 ---
 id: big-story-01            # <track>-<two digit number>; must be unique
-track: big-story            # first-steps | big-story | bible-origins | church-history | reading-bible
+track: big-story            # first-steps | big-story | bible-origins | church-history | reading-bible | big-questions
 order: 1
 title: "In the Beginning"
 minutes: 6                  # estimated reading time

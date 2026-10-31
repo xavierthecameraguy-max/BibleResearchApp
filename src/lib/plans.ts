@@ -52,12 +52,56 @@ function parseDay(s: string): Passage[] {
   return s.split(';').map((x) => parseReference(x.trim())!).filter(Boolean)
 }
 
+// Psalms for hard times: honest prayers for when life is difficult.
+const HARD_TIMES = [
+  'Psalm 13', 'Psalm 23', 'Psalm 27', 'Psalm 31', 'Psalm 34', 'Psalm 40', 'Psalm 42-43',
+  'Psalm 46', 'Psalm 62', 'Psalm 77', 'Psalm 86', 'Psalm 91', 'Psalm 121', 'Psalm 139',
+]
+
+// The life of Jesus in order, weaving the four Gospels together (a common harmony).
+const LIFE_OF_JESUS = [
+  'John 1:1-18; Luke 1', 'Luke 2; Matthew 2', 'Matthew 3-4', 'John 1:19-2:25', 'John 3-4', 'Mark 1-2', 'Luke 5-6',
+  'Matthew 5', 'Matthew 6-7', 'Luke 7-8', 'Mark 4-5', 'Matthew 10; Mark 6', 'John 6', 'Matthew 15-16', 'Mark 9; Matthew 18',
+  'John 7-8', 'Luke 10-11', 'John 9-10', 'Luke 12-13', 'Luke 14-15', 'Luke 16-17', 'John 11', 'Luke 18-19',
+  'Matthew 21-22', 'Matthew 23-25', 'John 13-14', 'John 15-17', 'Mark 14; Luke 22', 'John 18-19', 'Luke 24; John 20-21',
+]
+
 export const PLANS: Plan[] = [
   {
     id: 'big-story-40',
     title: 'The Big Story in 40 days',
     description: 'Key chapters from creation to new creation, following the Big Story lessons. About 10 minutes a day.',
     days: BIG_STORY_DAYS.map(parseDay),
+  },
+  {
+    id: 'john-21',
+    title: 'John in 21 days',
+    description: 'One chapter a day through the Gospel of John: a beautiful place to meet Jesus.',
+    days: spread(chaptersOf(['JHN']), 21),
+  },
+  {
+    id: 'life-of-jesus-30',
+    title: 'The life of Jesus in 30 days',
+    description: 'The story of Jesus in the order it happened, weaving Matthew, Mark, Luke and John together.',
+    days: LIFE_OF_JESUS.map(parseDay),
+  },
+  {
+    id: 'sermon-mount-7',
+    title: 'The Sermon on the Mount in 7 days',
+    description: 'Jesus’ most famous teaching (Matthew 5–7), a few paragraphs a day to read slowly.',
+    days: ['Matthew 5:1-16', 'Matthew 5:17-32', 'Matthew 5:33-48', 'Matthew 6:1-18', 'Matthew 6:19-34', 'Matthew 7:1-14', 'Matthew 7:15-29'].map(parseDay),
+  },
+  {
+    id: 'hard-times-14',
+    title: 'Psalms for hard times',
+    description: 'Fourteen honest prayers for when life is heavy: lament, trust and hope.',
+    days: HARD_TIMES.map(parseDay),
+  },
+  {
+    id: 'acts-28',
+    title: 'Acts in 28 days',
+    description: 'How the church began and the good news spread, one chapter a day.',
+    days: spread(chaptersOf(['ACT']), 28),
   },
   {
     id: 'gospels-30',
