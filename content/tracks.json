@@ -1,5 +1,12 @@
 [
   {
+    "id": "first-steps",
+    "title": "First Steps",
+    "tagline": "Living as a new Christian",
+    "description": "Short, practical lessons for the first weeks of following Jesus: who God is, grace, prayer, reading the Bible, church, baptism and communion, and living it out.",
+    "color": "rose"
+  },
+  {
     "id": "big-story",
     "title": "The Big Story",
     "tagline": "From creation to new creation",

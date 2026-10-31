@@ -138,6 +138,11 @@ export const TRACK_STYLES: Record<string, { bar: string; chip: string; ring: str
     chip: 'bg-emerald-100 text-emerald-900 dark:bg-emerald-900/40 dark:text-emerald-200',
     ring: 'border-emerald-300 dark:border-emerald-700',
   },
+  rose: {
+    bar: 'bg-rose-600 dark:bg-rose-400',
+    chip: 'bg-rose-100 text-rose-900 dark:bg-rose-900/40 dark:text-rose-200',
+    ring: 'border-rose-300 dark:border-rose-700',
+  },
   violet: {
     bar: 'bg-violet-600 dark:bg-violet-400',
     chip: 'bg-violet-100 text-violet-900 dark:bg-violet-900/40 dark:text-violet-200',

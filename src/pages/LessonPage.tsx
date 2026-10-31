@@ -88,6 +88,30 @@ export function LessonPage() {
         <LessonMarkdown source={lesson.body} />
       </div>
 
+      {(lesson.discuss.length > 0 || lesson.apply) && (
+        <section aria-labelledby="talk" className="mt-8 rounded-2xl border border-stone-200 bg-white p-5 dark:border-stone-800 dark:bg-stone-900">
+          {lesson.discuss.length > 0 && (
+            <>
+              <h2 id="talk" className="font-serif text-2xl font-semibold">
+                Talk it over
+              </h2>
+              <p className="mt-1 text-stone-600 dark:text-stone-400">With a mentor, a friend or a small group, or in your journal.</p>
+              <ol className="mt-3 list-decimal space-y-2 pl-6 leading-relaxed">
+                {lesson.discuss.map((q, i) => (
+                  <li key={i}>{q}</li>
+                ))}
+              </ol>
+            </>
+          )}
+          {lesson.apply && (
+            <div className={lesson.discuss.length ? 'mt-5' : ''}>
+              <h3 className="font-semibold">Try this</h3>
+              <p className="mt-1 leading-relaxed">{lesson.apply}</p>
+            </div>
+          )}
+        </section>
+      )}
+
       <div className="mt-8">
         <Link
           to={`/study/passage?ref=${encodeURIComponent(formatReference(lesson.passage))}`}

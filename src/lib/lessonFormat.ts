@@ -21,10 +21,14 @@ export interface Lesson {
   passage: Passage
   summary: string
   quiz: QuizQuestion[]
+  /** "Talk it over" questions for a mentor, small group or journal (optional) */
+  discuss: string[]
+  /** One small, practical step to try this week (optional) */
+  apply?: string
   body: string
 }
 
-export const TRACK_IDS = ['big-story', 'bible-origins', 'church-history', 'reading-bible']
+export const TRACK_IDS = ['big-story', 'bible-origins', 'church-history', 'reading-bible', 'first-steps']
 
 /** Matches [[term]] and [[term|shown text]] */
 export const GLOSSARY_LINK = /\[\[([a-z0-9-]+)(?:\|([^\]]+))?\]\]/g
@@ -85,6 +89,11 @@ export function parseLesson(source: string, fileName: string, glossaryIds?: Set<
     })
   }
 
+  if (fm.discuss !== undefined && (!Array.isArray(fm.discuss) || fm.discuss.some((d) => typeof d !== 'string'))) {
+    problems.push(`${fileName}: "discuss" must be a list of questions`)
+  }
+  if (fm.apply !== undefined && typeof fm.apply !== 'string') problems.push(`${fileName}: "apply" must be text`)
+
   if (glossaryIds) {
     for (const g of body.matchAll(GLOSSARY_LINK)) {
       if (!glossaryIds.has(g[1])) problems.push(`${fileName}: glossary term [[${g[1]}]] is not in glossary.json`)
@@ -104,6 +113,8 @@ export function parseLesson(source: string, fileName: string, glossaryIds?: Set<
       passage: passage!,
       summary: (fm.summary as string).trim(),
       quiz,
+      discuss: Array.isArray(fm.discuss) ? (fm.discuss as string[]) : [],
+      apply: typeof fm.apply === 'string' ? fm.apply.trim() : undefined,
       body,
     },
     problems,

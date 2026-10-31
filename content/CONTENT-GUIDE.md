@@ -22,7 +22,7 @@ option that does not exist).
 ```markdown
 ---
 id: big-story-01            # <track>-<two digit number>; must be unique
-track: big-story            # big-story | bible-origins | church-history | reading-bible
+track: big-story            # first-steps | big-story | bible-origins | church-history | reading-bible
 order: 1
 title: "In the Beginning"
 minutes: 6                  # estimated reading time
@@ -37,6 +37,10 @@ quiz:
       - "Third option"
     answer: 1               # counts from 0, so 1 = "Second option"
     explain: "One or two sentences explaining the right answer."
+discuss:                    # optional "Talk it over" questions (2-3)
+  - "An open question to talk over with a mentor or small group?"
+apply: >                    # optional: one small, practical step for this week
+  One sentence suggesting something concrete to try.
 ---
 
 Lesson text in Markdown.
