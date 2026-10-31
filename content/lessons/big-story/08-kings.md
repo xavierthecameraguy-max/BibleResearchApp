@@ -42,6 +42,13 @@ quiz:
       - "It split into Israel in the north and Judah in the south"
     answer: 3
     explain: "Under Solomon's son Rehoboam, the ten northern tribes broke away (1 Kings 12), leaving two kingdoms: Israel and Judah."
+discuss:
+  - "God told Samuel that he looks at the heart, not at outward appearance. How might that change the way you see yourself and other people?"
+  - "Israel wanted a king so they could be like all the other nations. Where do you feel pressure to fit in rather than be the person God is calling you to be?"
+  - "When Nathan confronted him, David confessed instead of making excuses. What helps a person respond to correction with honesty?"
+apply: >
+  Read Psalm 51, the prayer traditionally linked to David's confession, and pray
+  one or two of its lines in your own words, trusting in God's mercy.
 ---
 
 Last time we saw Israel settle in the promised land under Joshua, then slide into

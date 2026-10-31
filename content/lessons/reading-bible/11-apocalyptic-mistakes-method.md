@@ -49,6 +49,14 @@ quiz:
       - "Only read verses that feel encouraging"
     answer: 0
     explain: "The Bible was given to a community. Reading with others, and with experienced guides, helps us see more and avoid mistakes."
+discuss:
+  - "Revelation was written to give hope to weary believers. Which part of its message (God on the throne, the Lamb's victory, all things made new) do you most need to hear right now?"
+  - "Which of the six common mistakes do you think you are most likely to make, and what might help you avoid it?"
+  - "Who could you read the Bible with regularly, whether a friend, a group or a mentor, and what would help you take that step?"
+apply: >
+  Read Revelation 1:1-8 aloud, as its first hearers did, then work through
+  the five study questions with it, writing one sentence for each. If you
+  can, share what you found with a friend, mentor or small group.
 ---
 
 You have reached the final lesson in this track. We will look at the most unusual kind of writing in the Bible, then gather everything together: the mistakes to avoid and a simple method you can use for the rest of your life.

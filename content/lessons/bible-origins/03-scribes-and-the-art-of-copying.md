@@ -40,6 +40,14 @@ quiz:
       - "By comparing many manuscripts from different places and times"
     answer: 3
     explain: "Because so many copies survive from different regions and centuries, scholars can compare them and usually see where a slip happened."
+discuss:
+  - "Generations of scribes spent countless hours copying Scripture by hand because they believed it was worth preserving. What does their patient care stir in you?"
+  - "In Nehemiah 8, Ezra read the Law aloud while helpers explained it so everyone could understand. Who has helped explain the Bible to you, or who might you ask?"
+  - "Small copying slips did creep in, but comparing many copies usually shows where they happened. How does knowing that affect the way you trust the Bible you read today?"
+apply: >
+  Copy out a short passage, such as Psalm 23, slowly by hand this week, and as
+  you write, thank God for the many people who copied his word so that it could
+  reach you.
 ---
 
 Today, if you want a new Bible, you can download one in seconds or pick one up at a shop. For most of history, it was nothing like that. Before the printing press arrived in Europe around 1450, every single copy of the Bible was written out by hand, letter by letter. The people who did this work deserve our gratitude.

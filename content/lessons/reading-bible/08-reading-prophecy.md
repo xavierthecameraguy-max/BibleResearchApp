@@ -41,6 +41,14 @@ quiz:
       - "A prophecy can have a meaning in the prophet's own time and a fuller fulfilment later"
     answer: 2
     explain: "For example, Isaiah 7:14 spoke to King Ahaz's day, and Matthew sees its fullest meaning in the birth of Jesus."
+discuss:
+  - "Micah 6:8 sums up what God wants: to act justly, love mercy and walk humbly. Which of these comes most naturally to you, and which feels hardest?"
+  - "Jonah was angry that God showed mercy to Nineveh. Is there anyone you would find it hard to see God forgive?"
+  - "Christians share the same hope about Jesus' return but differ on the details. What helps you hold firmly to the hope and humbly to the details?"
+apply: >
+  Read Jonah 3 and 4 this week. Each morning, pray Micah 6:8 as a short
+  prayer, asking God to help you act justly, love mercy and walk humbly
+  with him.
 ---
 
 When people hear the word "prophecy," they often think of crystal balls and predictions. Some imagine the prophets of the Bible as mysterious figures who mainly forecast the distant future.

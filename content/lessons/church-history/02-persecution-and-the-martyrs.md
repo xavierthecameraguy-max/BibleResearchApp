@@ -40,6 +40,14 @@ quiz:
       - "That the martyrs' faithfulness actually helped the church grow"
     answer: 3
     explain: "Tertullian's point, usually paraphrased as 'the blood of the martyrs is the seed of the church', was that persecution drew new people to faith."
+discuss:
+  - "Polycarp said he had served Christ for eighty-six years and Christ had never wronged him. Looking back over your own life so far, where have you seen God's faithfulness?"
+  - "After the persecution under Decius, most churches welcomed back believers who had given in, once they had truly repented. What does that tell you about how God responds when we fail him?"
+  - "Most of us will never face an arena, but following Jesus can still cost something. Where in your life does being faithful feel costly or uncomfortable right now?"
+apply: >
+  Choose one country where Christians face pressure or danger today and pray
+  for the believers there each day this week, asking God to give them courage,
+  comfort and hope.
 ---
 
 Jesus warned his followers that they would face hostility because of him (John 15:20). Within a generation, that warning came true. For roughly two and a half centuries, being a Christian in the Roman Empire could cost you your job, your home, or your life.

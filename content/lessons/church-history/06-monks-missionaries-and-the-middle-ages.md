@@ -41,6 +41,13 @@ quiz:
       - "Because the Roman Empire never declined"
     answer: 2
     explain: "The period had real hardships, but also great achievements. Monasteries copied books, ran schools and cared for the needy."
+discuss:
+  - "Benedict's Rule shaped each day around prayer, work and reading. What does the rhythm of your own day look like, and where might there be room for God in it?"
+  - "Patrick went back as a missionary to the very people who had enslaved him. What do you think gave him the strength to do that, and what does his story say to you about forgiveness?"
+  - "Cyril and Methodius wanted people to hear God's word in their own language. Who first explained the Christian faith to you in a way you could understand?"
+apply: >
+  Like Benedict's monks, who paused their work at set times to pray, choose
+  one set time each day this week, even just five minutes, to stop and pray.
 ---
 
 When people hear "the Middle Ages", they sometimes picture a gloomy time of ignorance between the glory of Rome and the brilliance of the Renaissance. Historians today rarely see it that way. This was also an age of courageous missionaries, beautiful art, careful scholarship and deep prayer. Much of it centred on a surprising group of people: monks.

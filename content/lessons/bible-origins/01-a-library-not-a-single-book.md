@@ -41,6 +41,13 @@ quiz:
       - "Poetry and Wisdom"
     answer: 3
     explain: "In most English Bibles, Job, Psalms, Proverbs, Ecclesiastes and Song of Songs are grouped together as poetry and wisdom books."
+discuss:
+  - "Thinking of the Bible as a library with many kinds of writing, which shelf are you most curious to explore first, and why?"
+  - "Chapter and verse numbers were added much later. Have you ever heard a single verse quoted on its own and later found it meant something fuller in its setting?"
+  - "Christians believe these many books, written over more than a thousand years, tell one great story. What questions do you have about how the different parts fit together?"
+apply: >
+  Look at the contents page of your Bible and find where each main section
+  begins, then read the first chapter of Mark or John to meet Jesus in a Gospel.
 ---
 
 The first time you open a Bible, it can feel a little overwhelming. It is thick, the pages are thin, and the print is small. It looks like one very long book. But here is a secret that makes everything easier: the Bible is not really a single book at all. It is a library.

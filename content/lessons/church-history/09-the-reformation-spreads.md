@@ -41,6 +41,14 @@ quiz:
       - "The Thirty Years' War, one of the most destructive of Europe's wars of religion"
     answer: 2
     explain: "The treaties of 1648 ended the Thirty Years' War and helped close an era of religious wars in Europe."
+discuss:
+  - "Luther and Zwingli agreed on a great deal but could not agree about the Lord's Supper. How can Christians who disagree on something important still treat each other with love and respect?"
+  - "This era saw real renewal through people like Calvin, Ignatius of Loyola and Teresa of Ávila, but also terrible violence in the name of religion. How do you feel reading about Christians harming one another, and what lessons do you take from it?"
+  - "Ignatius of Loyola turned to God while recovering from a battle wound. Has a hard or unexpected season ever made you more open to God?"
+apply: >
+  Read Ephesians 4:1-16 this week, and if there is a Christian you find it
+  hard to agree with, pray for them by name, asking God to help you show
+  patience, gentleness and love.
 ---
 
 Once Luther had opened the door, others rushed through it, and not all in the same direction. Within a generation, Western Christianity had divided into several streams. At the same time, the Catholic Church was going through a great renewal of its own. This lesson tells both stories, including some painful chapters.

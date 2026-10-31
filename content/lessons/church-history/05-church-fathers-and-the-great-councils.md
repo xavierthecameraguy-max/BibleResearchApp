@@ -41,6 +41,14 @@ quiz:
       - "Twenty-one"
     answer: 2
     explain: "Both accept the seven councils from Nicaea (325) to Nicaea II (787). Catholics also count later councils, making 21 in all."
+discuss:
+  - "Augustine spent years chasing success and pleasure before he found rest in God. Which part of his story, or of another church father's story, do you relate to most?"
+  - "Chalcedon taught that Jesus is fully God and fully human. Which of these do you find easier to picture, and how does the other one change the way you see him?"
+  - "Orthodox, Catholic and Protestant Christians all value the church fathers, though they weigh their authority differently. What do you think we gain by listening to believers from long ago?"
+apply: >
+  Read Philippians 2:5-11 and pick one small way to follow Christ's humility
+  this week, such as letting someone else go first or serving quietly without
+  being noticed.
 ---
 
 After the apostles died, who explained the faith to the next generations? Much of that work fell to a remarkable group of pastors, bishops and scholars. Christians call them the [[church-fathers|church fathers]]. They were not perfect, and they did not always agree, but their writings are a window into how the early church read the Bible, worshipped and lived.

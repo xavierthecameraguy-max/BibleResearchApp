@@ -41,6 +41,14 @@ quiz:
       - "Around AD 100"
     answer: 3
     explain: "The apostolic age is usually said to end around AD 100, when the last of the apostles, traditionally John, had died."
+discuss:
+  - "The first believers learned from the apostles, shared meals, prayed together and looked after one another (Acts 2:42-47). Which of these would you most like to grow in, and what makes it easier or harder for you?"
+  - "Only weeks before Pentecost, Peter had denied knowing Jesus. What does his story suggest about how God can use people who have failed?"
+  - "At the Council of Jerusalem the early church worked through a hard disagreement by listening to Scripture, to one another and to the Spirit. What could you learn from their example the next time you disagree with another Christian?"
+apply: >
+  Read Acts 2:37-47 slowly this week and choose one thing the first believers
+  did, such as sharing a meal, praying with someone or helping a person in
+  need, to try for yourself.
 ---
 
 Welcome to the story of the church. Over these twelve lessons you will travel two thousand years, from a room full of frightened friends in Jerusalem to a family of believers on every continent. This is your family history. Every Christian you meet today is connected, through a long chain of people, to the events in this first lesson.

@@ -41,6 +41,14 @@ quiz:
       - "The Law of Moses, the Prophets and the Psalms"
     answer: 3
     explain: "Jesus refers to the Law of Moses, the Prophets and the Psalms, a phrase that seems to reflect the three-part shape of the Hebrew Scriptures."
+discuss:
+  - "The Old Testament was the Bible Jesus read, quoted and prayed. How might knowing that change the way you approach books like Deuteronomy or the Psalms?"
+  - "After his resurrection, Jesus opened his disciples' minds to understand the Scriptures. Which part of the Old Testament do you find hardest to understand, and what might help you with it?"
+  - "God's people came to recognise these books gradually, over a long time, rather than in a single vote. What do you make of God working through a slow process like that?"
+apply: >
+  Each time you open your Bible this week, pray a short prayer asking God to
+  open your mind to understand it, as Jesus did for his disciples in Luke 24:45,
+  and then read one psalm.
 ---
 
 In earlier lessons we saw how the books of the Bible were written and copied. But who decided which books belonged? Why these books and not others? The word for the list of books a community recognises as Scripture is [[canon]], from a Greek word for a measuring rod. It is the "measuring stick" for faith and life.

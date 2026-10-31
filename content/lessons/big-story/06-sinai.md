@@ -42,6 +42,13 @@ quiz:
       - "He judged the sin but renewed the covenant, revealing himself as compassionate and gracious"
     answer: 3
     explain: "After Moses pleads with him, God renews the covenant and describes himself as merciful, gracious, slow to anger and abounding in love (Exodus 34:6-7)."
+discuss:
+  - "God reminded Israel that he had already rescued them before he gave a single commandment. How is obeying out of gratitude different from obeying to earn love?"
+  - "Which of the Ten Commandments do you find most meaningful, or most challenging, at this point in your life?"
+  - "Even after the golden calf, God described himself as compassionate, gracious and slow to anger. How does that picture of God compare with what you used to imagine?"
+apply: >
+  Read Exodus 34:6-7 each morning this week and let it shape how you pray,
+  thanking God that he is compassionate, gracious and slow to anger.
 ---
 
 Last time we watched God rescue Israel from slavery in Egypt. Through the

@@ -41,6 +41,14 @@ quiz:
       - "Look for the main point and notice how it surprises or challenges the listeners"
     answer: 2
     explain: "Parables usually make one or a few main points, often with a twist that challenges the hearers. Not every detail needs a separate meaning."
+discuss:
+  - "Which of the four Gospel portraits of Jesus are you most drawn to so far, and what does it show you about him?"
+  - "Jesus announced that the kingdom of God had come near and called people to repent and believe. What does that invitation mean for you today?"
+  - "Which parable of Jesus has surprised or challenged you, and how do you think its first listeners might have reacted?"
+apply: >
+  Set aside about an hour this week to read the whole of Mark in one or
+  two sittings. Notice where the story is heading, and jot down one moment
+  that stays with you.
 ---
 
 At the heart of the Christian faith is a person: Jesus of Nazareth. Almost everything we know about his life comes from four books at the start of the New Testament: Matthew, Mark, Luke and John. We call them the Gospels.

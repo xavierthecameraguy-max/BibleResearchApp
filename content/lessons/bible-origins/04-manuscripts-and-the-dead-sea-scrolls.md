@@ -41,6 +41,14 @@ quiz:
       - "Because the verses were added in the twentieth century"
     answer: 1
     explain: "Some of the oldest manuscripts end Mark's Gospel at 16:8. Modern Bibles usually still print the longer ending but add a note so readers know the situation."
+discuss:
+  - "The Great Isaiah Scroll, about a thousand years older than the Hebrew copies known before, agreed with them closely. How does a discovery like that make you feel about the Bible you hold?"
+  - "Modern Bibles openly mark passages, such as Mark 16:9-20, that are missing from some early manuscripts. Why might that kind of honesty build trust rather than weaken it?"
+  - "Isaiah 40 says the grass withers and the flower fades, but God's word endures. What in your life feels as if it is fading right now, and what would it mean to lean on something that lasts?"
+apply: >
+  Find the note at Mark 16:8 or John 7:53 in your Bible and read what it says
+  about the manuscripts, then read Isaiah 40:1-8 and thank God that his word
+  endures.
 ---
 
 In the last lesson we saw that, for centuries, the Bible was copied by hand. That naturally raises a question: how do we know the Bible we read today matches what was first written? The answer is one of the most fascinating stories in the history of the Bible, and it involves a goat, a cave and a shepherd.

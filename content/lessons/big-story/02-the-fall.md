@@ -41,6 +41,14 @@ quiz:
       - "Because it first hints that a descendant of Eve will defeat evil, which Christians see fulfilled in Jesus"
     answer: 3
     explain: "The verse speaks of a struggle in which the woman's offspring crushes the serpent's head. Christians from early on have read this as pointing ahead to Jesus' victory."
+discuss:
+  - "The serpent made God sound stingy instead of generous. When do you find it hardest to believe that God is good and wants the best for you?"
+  - "Adam and Eve hid and then blamed someone else. Why do you think honesty with God and with other people can feel so difficult?"
+  - "God came looking for them with the question 'Where are you?' What would it mean for you to hear that question as an invitation rather than a threat?"
+apply: >
+  Read Genesis 3:8-21 slowly, then tell God honestly about something that has
+  been weighing on you, remembering that he came looking for Adam and Eve with
+  kindness.
 ---
 
 Last time we saw the world as God made it: good, ordered, full of life, with

@@ -41,6 +41,14 @@ quiz:
       - "Mostly by showing events and letting the story speak, rarely stopping to comment"
     answer: 3
     explain: "Hebrew narrative is often spare. Narrators show rather than tell, so we pay close attention to details, speech and repetition."
+discuss:
+  - "How does it change the story of David and Goliath to see God, rather than David, as the main character?"
+  - "The lesson suggests most of us are more like the frightened Israelites than like David. Where in your life do you need someone else to fight for you?"
+  - "Is there a Bible story you have found troubling? How might the difference between describing and approving help you think it through?"
+apply: >
+  Read 1 Samuel 17 this week and keep asking one simple question as you
+  go: what is God doing here? Jot down one thing the story shows you about
+  God rather than about David.
 ---
 
 If you have ever been read a bedtime story, you already know something important about the Bible. More of it is story, or narrative, than any other kind of writing. Genesis, Exodus, Joshua, Judges, Ruth, Samuel, Kings, Chronicles, Ezra, Nehemiah, Esther, the Gospels and Acts are mostly narrative. Story is the backbone that holds the rest of the Bible together.

@@ -42,6 +42,14 @@ quiz:
       - "Always choose the oldest translation available"
     answer: 1
     explain: "No translation is perfect. Reading one regularly, comparing others, and asking for guidance from your church is a wise way forward."
+discuss:
+  - "Like the Ethiopian official, have you ever read a passage and wondered what it meant? Who could be a Philip for you, someone you could ask to guide you?"
+  - "Right now, do you find it more helpful to read a translation that keeps the original wording and pictures, or one that makes the meaning clear in natural English? Why?"
+  - "When two translations of a verse differ, how might that open up the passage for you rather than confuse you?"
+apply: >
+  Choose a verse you like, such as 1 Peter 1:13, and read it in two or three
+  translations from different parts of the spectrum in a Bible app, noticing
+  what each one brings out.
 ---
 
 You have reached the last lesson in this track. We have travelled from ancient scrolls to modern bookshops. Now comes a very practical question: which Bible should you read?

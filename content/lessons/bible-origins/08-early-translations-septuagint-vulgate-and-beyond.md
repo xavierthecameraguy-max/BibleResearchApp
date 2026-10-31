@@ -42,6 +42,14 @@ quiz:
       - "Because from early on Christians translated Scripture into the languages of each new people"
     answer: 3
     explain: "Christians have believed God's word can be truly heard in every language, so they have translated it again and again as the faith spread."
+discuss:
+  - "At Pentecost, each visitor heard about God's great deeds in their own language. What does it mean to you that God wants to speak to people in the words of their own hearts?"
+  - "Translators like Jerome, Ulfilas, and Cyril and Methodius worked for years, sometimes even creating alphabets, so others could read Scripture. Whose patient work has helped you come to know God or understand the Bible?"
+  - "Christianity has always moved into new languages and cultures. What do you think stays the same about the good news, and what can rightly change as it is expressed in new ways?"
+apply: >
+  Read Acts 2:1-12 and pray this week for Bible translators and for people who
+  do not yet have the Scriptures in their own language. If you like, look up a
+  favourite verse in another language in a Bible app.
 ---
 
 Imagine trying to follow Jesus without being able to read a single word of the Bible in a language you understand. For much of history, and for many people even today, that has been a real problem. The story of early Bible translations is the story of Christians working hard to solve it.

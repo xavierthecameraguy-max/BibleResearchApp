@@ -42,6 +42,14 @@ quiz:
       - "People wanted to make a name for themselves and reach heaven on their own terms"
     answer: 3
     explain: "The builders wanted to make a name for themselves and avoid being scattered (Genesis 11:4). It is human pride trying to grasp what only God can give."
+discuss:
+  - "Cain asked whether he was his brother's keeper. Who are the people in your life that God might be asking you to look out for?"
+  - "Genesis says God was grieved by the violence in the world. How does it affect you to picture God as deeply hurt by evil rather than distant from it?"
+  - "The builders at Babel wanted to make a name for themselves. In what ways are people today tempted to find their worth in their own achievements?"
+apply: >
+  Think of one person you could look out for this week, as Cain should have done
+  for Abel, and do one small, kind thing for them, such as sending a message,
+  sharing a meal or simply listening.
 ---
 
 Last time we saw the first humans turn from God in the garden, and the damage

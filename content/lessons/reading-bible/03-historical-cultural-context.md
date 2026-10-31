@@ -40,6 +40,14 @@ quiz:
       - "Hospitality was a matter of family honour, so it would have shamed the hosts"
     answer: 3
     explain: "Weddings could last days, and providing well for guests reflected on the family's honour. Jesus' sign spared them public embarrassment."
+discuss:
+  - "Who might be a 'Samaritan' for you, someone you find it hard to see as a neighbour? What could loving them look like?"
+  - "Which part of the ancient world (honour and shame, family households, farming, Roman rule) surprised you most, and how might it change the way you read?"
+  - "Have you ever misunderstood someone because you did not know their background? How might that help you read the Bible with patience?"
+apply: >
+  Read Luke 10:25-37 this week, then look up Samaritans in a study Bible
+  note or Bible dictionary. Notice how the background changes the way the
+  story lands for you.
 ---
 
 When you read a novel set in Victorian London, you quickly pick up that people travel by carriage, write letters with ink, and care a great deal about manners. The author does not stop to explain; they assume you will catch on.

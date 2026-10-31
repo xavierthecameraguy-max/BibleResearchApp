@@ -41,6 +41,14 @@ quiz:
       - "As a gradual drift over centuries, with 1054 as a symbolic date"
     answer: 2
     explain: "Most historians see 1054 as one moment in a long process of separation. Many ordinary believers hardly noticed it at the time."
+discuss:
+  - "Many of the differences between East and West grew out of language, culture and misunderstanding rather than the gospel itself. Where have you seen misunderstandings pull Christians, friends or families apart?"
+  - "In 1965 the pope and the patriarch lifted excommunications that had stood for over nine hundred years. What does that gesture teach you about reconciliation, even before full agreement is reached?"
+  - "Jesus prayed that his followers would be one. What do you think Christian unity can look like when churches still disagree on important things?"
+apply: >
+  Read Jesus' prayer in John 17:20-23, then spend a few minutes this week
+  praying for Christians of a tradition different from your own, asking God to
+  bless them and draw his people closer together.
 ---
 
 On the night before he died, Jesus prayed that his followers would be one (John 17:20-23). It is painful, then, to tell the story of how the church split into two great halves. But this story helps explain why your Catholic and Orthodox neighbours worship differently, and why many on both sides long to be reunited.

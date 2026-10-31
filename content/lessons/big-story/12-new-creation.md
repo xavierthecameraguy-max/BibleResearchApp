@@ -42,6 +42,14 @@ quiz:
       - "Only church buildings are important"
     answer: 0
     explain: "Because God plans to heal his world, acts of love, justice and care now are signs of the future, and part of the story God is writing."
+discuss:
+  - "Were you surprised that the Bible ends with God renewing this world rather than people escaping it? How does that change your picture of the Christian hope?"
+  - "If acts of kindness, honesty and care are small signs of the world to come, what small sign could you offer in your everyday life?"
+  - "Looking back over the whole story, from creation to new creation, which part has meant the most to you, and where do you see yourself in it?"
+apply: >
+  Each day this week, pray the Bible's closing prayer, "Come, Lord Jesus", and
+  do one small act of care for a person or for God's world as a sign of the new
+  creation.
 ---
 
 Last time we reached the centre of the story: Jesus' death and resurrection, the

@@ -41,6 +41,14 @@ quiz:
       - "Whether the Israelites went to Rome"
     answer: 1
     explain: "Some date the exodus to about 1446 BC based on 1 Kings 6:1. Many others prefer about 1250 BC, partly because of the city named Rameses in Exodus 1:11."
+discuss:
+  - "God says he saw his people's misery and heard their cry. How does it feel to know that God notices people who are suffering, including you?"
+  - "The Israelites did not free themselves; God rescued them. Why can it be hard for us to accept help or grace we have not earned?"
+  - "Moses told the frightened people to be still while the LORD fought for them. Is there a situation in your life right now that calls for that kind of stillness and trust?"
+apply: >
+  Israel kept the Passover so they would never forget God's rescue. This week,
+  write down one way you have seen God's help or kindness in your life, however
+  small, and share it with a friend or mentor.
 ---
 
 Last time we followed Abraham's family through Isaac, Jacob and Joseph. Genesis

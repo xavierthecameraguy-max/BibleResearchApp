@@ -40,6 +40,13 @@ quiz:
       - "The printing press allowed cheap pamphlets to be produced and spread rapidly"
     answer: 2
     explain: "Gutenberg's press (about 1450) meant Luther's writings could be printed in huge numbers. He was one of the first bestselling authors of the print age."
+discuss:
+  - "Luther struggled for years with guilt and fear before God until he came to see God's righteousness as a gift. Have you ever felt you had to earn God's love, and how does the idea of grace as a free gift sit with you?"
+  - "Protestants and Catholics both teach that salvation is God's gift of grace, but they describe how faith, love and good works fit together in different ways. How would you describe the link between being saved and living a changed life?"
+  - "Luther said his conscience was captive to God's word. What helps you decide what is right when people you respect disagree?"
+apply: >
+  Read Romans 3:21-28 slowly, then thank God in your own words for the gift of
+  being made right with him through Jesus.
 ---
 
 On 31 October 1517, a monk and university teacher in the small German town of Wittenberg published a list of points for debate. He probably had no idea that he was about to change the Western world. His name was Martin Luther, and the movement that followed is called the [[reformation]].

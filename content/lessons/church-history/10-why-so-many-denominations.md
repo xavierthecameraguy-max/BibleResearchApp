@@ -41,6 +41,14 @@ quiz:
       - "The government chooses the pastors"
     answer: 1
     explain: "Episcopal comes from the Greek for 'overseer'. Orthodox, Catholic, Anglican and some Lutheran and Methodist churches are led by bishops."
+discuss:
+  - "When you see so many different churches in one town, what questions or feelings does that raise for you?"
+  - "This lesson lists a great deal of common ground that nearly all Christians share. Which of those shared beliefs means the most to you right now, and why?"
+  - "The saying goes: in essentials unity, in non-essentials liberty, in all things love. Which differences between churches do you think are essentials, and which are not?"
+apply: >
+  Ask a pastor or mentor at the church you attend, or are exploring, what it
+  believes about baptism and the Lord's Supper and why, so you can understand
+  your own tradition a little better.
 ---
 
 If you drive through almost any town, you may pass a Baptist church, a Catholic parish, a Methodist chapel and a Pentecostal fellowship, all within a few streets. For a new believer, this can be bewildering. Are they all Christian? Which one is right? Why can't they just agree?

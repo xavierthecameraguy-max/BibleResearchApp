@@ -40,6 +40,14 @@ quiz:
       - "It grew out of an early baptismal creed used in the church at Rome"
     answer: 2
     explain: "Despite its name, scholars trace it to the 'Old Roman Creed' used at baptisms, which developed over several centuries into its present form."
+discuss:
+  - "The early church believed it mattered deeply that Jesus is truly God and not only a great creature. How does that make a difference to the way you pray to Jesus and trust him?"
+  - "Christians admit that the Trinity is a mystery bigger than our minds can fully grasp. How do you feel about believing something you cannot completely explain?"
+  - "Athanasius kept holding to what he believed was true even when he seemed to stand almost alone. What helps you hold on to your faith when it feels unpopular?"
+apply: >
+  Find the Nicene Creed (many church websites and prayer books include it) and
+  read it aloud slowly once this week. Note any line you would like to ask a
+  pastor or mentor about.
 ---
 
 Imagine a group of friends who have all met the same remarkable person. They agree he was wonderful. But when someone asks, "Who exactly is he?" they discover they mean very different things.

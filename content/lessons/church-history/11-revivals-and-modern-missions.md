@@ -41,6 +41,14 @@ quiz:
       - "William Wilberforce gave a speech against slavery"
     answer: 2
     explain: "The Azusa Street revival, led by an African American preacher, drew people of many races and helped spread Pentecostalism worldwide."
+discuss:
+  - "John Wesley felt his heart 'strangely warmed' when he heard about faith in Christ. Has there been a moment when your faith felt especially real or personal to you?"
+  - "Missionaries did great good and sometimes real harm, and the faith often spread most through local believers. What do you think it looks like to share your faith while respecting other people and their culture?"
+  - "Revival in Britain helped lead to the end of the slave trade. Where do you think following Jesus might lead Christians to work for justice or care for others today?"
+apply: >
+  Many revivals began with ordinary people praying, so this week pray each day
+  for one person you know who does not yet follow Jesus, and ask God for a
+  natural chance to show them kindness.
 ---
 
 The key passage, Matthew 28:16-20, records Jesus sending his followers to make [[disciple|disciples]] of all nations. Christians have always taken that command seriously, but in the last three centuries something remarkable happened. Waves of renewal swept through the churches, and believers set out in greater numbers than ever before to take the good news to every part of the world.

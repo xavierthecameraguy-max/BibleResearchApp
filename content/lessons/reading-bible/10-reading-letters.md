@@ -41,6 +41,15 @@ quiz:
       - "Study carefully, listen to your church and other traditions, and hold your view with humility"
     answer: 2
     explain: "Sincere, Bible-loving Christians draw these lines differently on some issues. Careful study and humility help us learn from one another."
+discuss:
+  - "Paul appealed to Philemon in love rather than giving an order. When has a gentle appeal changed you more than a command would have?"
+  - "Onesimus was to be welcomed as a dear brother. Who in your church or community might need a fuller welcome, especially someone others tend to overlook?"
+  - "When sincere Christians disagree about whether an instruction is timeless or cultural, what helps you stay humble and kind?"
+apply: >
+  Read Philemon in one sitting (it takes only a few minutes) and write
+  down two or three things you can work out about the situation behind it.
+  Then pray for one relationship in your own life that could use some
+  reconciliation.
 ---
 
 Have you ever read someone else's mail? Not snooping, but perhaps a letter in a museum, or one written by a famous person to a friend. You quickly realise you are only hearing half of a conversation. The writer refers to people, events and earlier messages that you know nothing about.

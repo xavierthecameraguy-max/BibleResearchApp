@@ -41,6 +41,13 @@ quiz:
       - "Some joined for status, and rulers were tempted to use the church for political ends"
     answer: 3
     explain: "Once being Christian helped your career, motives became mixed, and church and state power became tangled together."
+discuss:
+  - "Constantine's support gave the church freedom and influence, but it also brought mixed motives and tangled power. Do you think it was mostly a blessing, mostly a danger, or both, and why?"
+  - "Jesus said to give Caesar what belongs to Caesar and God what belongs to God. What do you think belongs to God alone in your own life?"
+  - "How can Christians today be good citizens without letting a government, political party or nation take the place that belongs to Jesus?"
+apply: >
+  Read Matthew 22:15-22, then take a few minutes this week to pray for your
+  local and national leaders by name, whether or not you agree with them.
 ---
 
 In the last lesson, the church faced its fiercest persecution under Diocletian. Within just a few years, the situation turned completely around. An emperor began to support the church, and within a lifetime Christianity went from being a hunted minority to the faith of the empire.

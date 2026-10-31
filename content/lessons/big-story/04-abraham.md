@@ -42,6 +42,13 @@ quiz:
       - "It was Pharaoh's fault"
     answer: 2
     explain: "In Genesis 50:20 Joseph says God worked through even their evil act to save many lives. It is a key theme of the whole story."
+discuss:
+  - "Abraham set out without knowing exactly where he was going. Is there an area of your life where you are being asked to trust God one step at a time?"
+  - "God worked through a family of liars, schemers and jealous brothers. Does that encourage you or surprise you, and why?"
+  - "Joseph said God meant for good what others meant for harm. Looking back, can you see a hard season that God used for good, while still admitting the hurt was real?"
+apply: >
+  Read Genesis 12:1-9, then write down one worry you are carrying and pray a
+  simple prayer asking God for the faith to trust him with it, as Abraham did.
 ---
 
 Last time we ended in a scattered world. After the flood and the tower of Babel,

@@ -40,6 +40,14 @@ quiz:
       - "Only church leaders were ever persecuted"
     answer: 1
     explain: "Some researchers estimate that more Christians were killed for their faith in the 20th century than in any earlier century, though the figures are debated."
+discuss:
+  - "Revelation 7 pictures a vast crowd from every nation and language worshipping God together. How does it feel to know you now belong to that worldwide family?"
+  - "A typical Christian today is more likely to be a young woman in Nigeria, Brazil or the Philippines than an elderly man in Europe. Does that surprise you, and what might you learn from believers in other parts of the world?"
+  - "Looking back over these twelve lessons, which person or moment from church history has encouraged you most, and why?"
+apply: >
+  Read Revelation 7:9-12, then this week learn a little about Christians in
+  one country in Africa, Latin America or Asia, or chat with a believer from
+  another culture at your church, and pray for them.
 ---
 
 You have travelled a long way in these lessons: from a room in Jerusalem, through persecution and councils, monasteries and reformations, revivals and missions. Now we arrive at the present day, and at you.

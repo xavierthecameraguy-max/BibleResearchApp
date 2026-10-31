@@ -40,6 +40,14 @@ quiz:
       - "God cares for the poor and the foreigner and builds generosity into daily life"
     answer: 2
     explain: "Leaving the edges of fields and fallen grapes for the poor and foreigner made care for the vulnerable part of ordinary work."
+discuss:
+  - "God rescued Israel before giving the Law. How does that order shape the way you think about obeying God?"
+  - "Leviticus 19 brings holiness into farming, business and the way vulnerable people are treated. Where in your ordinary week might holiness look like generosity or fairness?"
+  - "Jesus summed up the Law as love for God and love for neighbour. Which of the two do you find harder to live out right now?"
+apply: >
+  Read Leviticus 19:9-18 slowly and choose one command to practise this
+  week, such as being generous to someone in need or speaking fairly about
+  someone you find difficult. Ask God each morning to help you with it.
 ---
 
 For many new readers, the books of Exodus, Leviticus, Numbers and Deuteronomy are where Bible reading plans go to die. After the drama of the [[exodus]], suddenly there are pages of rules about sacrifices, skin diseases, mildew and fabric. What are we supposed to do with all this?

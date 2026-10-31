@@ -41,6 +41,14 @@ quiz:
       - "Tradition names authors, but scholars debate some, such as parts of Isaiah and a few letters"
     answer: 3
     explain: "Church and Jewish tradition name authors for most books. For some, such as the Pentateuch, Isaiah and a few New Testament letters, scholars hold a range of views."
+discuss:
+  - "Christians believe God worked through real people with their own voices, feelings and styles. How does it feel to think of the Bible as both truly human writing and truly God's word?"
+  - "The New Testament was written in the everyday Greek of markets and letters, not a special religious language. What does that suggest to you about how God wants to speak to ordinary people?"
+  - "Scholars hold different views on who wrote some books. How might you hold questions like these with honesty and peace, and who could you talk them over with?"
+apply: >
+  Read Luke 1:1-4 and notice how carefully Luke says he investigated his story,
+  then thank God for the real people who wrote down what they had seen and
+  heard.
 ---
 
 When you read your Bible in English, you are reading a [[translation]]. The books were first written long ago in languages very different from ours. Knowing a little about those languages, and the people who wrote in them, helps the Bible come alive.

@@ -42,6 +42,13 @@ quiz:
       - "The first Orthodox Bible in English"
     answer: 1
     explain: "English Catholic scholars in exile produced the Douay-Rheims Bible from the Latin Vulgate. It served English-speaking Catholics for centuries."
+discuss:
+  - "People like Wycliffe's followers and Tyndale took great risks, and Tyndale gave his life, so that ordinary people could read the Bible in English. How does that history affect the way you think about the Bible on your shelf or phone?"
+  - "Tyndale hoped that even a ploughboy would know Scripture well. What helps you, as an ordinary believer, grow in knowing God's word, and what tends to get in the way?"
+  - "Psalm 119 calls God's word sweeter than honey and a lamp to our feet. Is there a verse or passage that has been like a lamp for you so far?"
+apply: >
+  Read Psalm 119:97-105 slowly, then thank God by name for the people who worked
+  and suffered so that you could read the Bible in your own language.
 ---
 
 Today there are dozens of English Bibles on the shelf. It is easy to forget that, for centuries, ordinary English speakers could not read the Bible in their own language at all. The story of how that changed is full of courage, scholarship and, sometimes, sacrifice.

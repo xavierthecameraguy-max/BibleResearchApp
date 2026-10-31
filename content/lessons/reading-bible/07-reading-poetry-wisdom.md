@@ -42,6 +42,14 @@ quiz:
       - "Both wrestle honestly with hard questions about suffering and meaning"
     answer: 3
     explain: "These books face the parts of life that simple formulas cannot explain, and point us to trust God even then."
+discuss:
+  - "Psalm 13 moves from 'How long?' to trust without pretending the pain was not real. Have you ever felt free to be that honest with God?"
+  - "Have you ever treated a proverb as a guarantee? How does reading proverbs as wise patterns rather than promises change things for you?"
+  - "Which picture of God in the Psalms (rock, shepherd, fortress, sheltering bird) speaks to you most at the moment, and why?"
+apply: >
+  Read Psalm 13 aloud this week, then write your own short prayer in the
+  same shape: an honest question, a request, and a choice to trust. You do
+  not need to show it to anyone.
 ---
 
 If you open your Bible somewhere in the middle, chances are you will land in poetry. The Psalms, Proverbs, Job, Ecclesiastes, Song of Songs, Lamentations and large parts of the prophets are all written as poems. Roughly a third of the Old Testament is poetry.

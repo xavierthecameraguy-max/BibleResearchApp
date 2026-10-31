@@ -40,6 +40,14 @@ quiz:
       - "Each part serves the book's larger aim, so the purpose shapes the meaning"
     answer: 3
     explain: "Authors write books with a goal in mind. Knowing that goal helps us see what each part is contributing."
+discuss:
+  - "Is there a favourite verse you first met on its own, on a card or online? What might the paragraph around it add?"
+  - "Paul learned to be content with plenty and with little. Which is harder for you right now, and what might Christ's strength look like there?"
+  - "How do you feel when a familiar verse turns out to mean something a little different from what you thought?"
+apply: >
+  Pick one verse you know well, read the whole paragraph it sits in, then
+  skim the chapter before and after. Write down one thing the context
+  showed you that you had not noticed before.
 ---
 
 If someone overheard you say, "I could kill for a cup of tea," and reported only the words "I could kill," they would give a very wrong impression. Words take their meaning from the words around them. Writers call this [[context]], and it is the first and most useful tool for reading the Bible well.

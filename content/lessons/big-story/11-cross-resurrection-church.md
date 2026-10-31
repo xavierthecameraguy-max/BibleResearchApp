@@ -42,6 +42,13 @@ quiz:
       - "Whether Gentiles could pray"
     answer: 2
     explain: "At the Jerusalem council (Acts 15), the apostles agreed that Gentiles are welcomed by God's grace through faith in Jesus, without first becoming Jewish."
+discuss:
+  - "The two disciples on the road to Emmaus did not recognise Jesus at first. Have you ever realised that God was with you only when you looked back?"
+  - "The New Testament uses several pictures for what Jesus did on the cross: a sacrifice, a ransom, a victory over evil and Jesus taking our place. Which picture means the most to you, and why?"
+  - "The first believers shared meals, prayed together and cared for the poor. What part of that early church life would you most like to experience?"
+apply: >
+  Read Luke 24:1-35 slowly this week, then ask a pastor, mentor or Christian
+  friend what Jesus' resurrection means to them personally.
 ---
 
 Last time we met Jesus, the King Israel had waited for. He announced the kingdom

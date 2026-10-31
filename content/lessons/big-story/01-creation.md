@@ -41,6 +41,13 @@ quiz:
       - "Christians hold several views, but agree that God is the Creator and the world is good"
     answer: 3
     explain: "Faithful Christians read the days in different ways, from literal days to long ages to a literary framework. They share the core truths the chapter teaches."
+discuss:
+  - "Genesis keeps saying that the world God made is good. Where do you most notice that goodness in your everyday life?"
+  - "How might it change the way you treat other people, or yourself, to believe that every person bears God's image?"
+  - "What does real rest look like for you right now, and what makes it hard to stop and enjoy what God has given?"
+apply: >
+  Once a day this week, pause to notice one thing in creation, such as the sky,
+  a good meal or a friend's face, and quietly thank God for it.
 ---
 
 Welcome to the very beginning. The Bible is a big book, really a library of 66

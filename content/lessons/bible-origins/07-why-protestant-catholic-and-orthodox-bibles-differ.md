@@ -42,6 +42,13 @@ quiz:
       - "The 27 books of the New Testament"
     answer: 3
     explain: "All three traditions accept the same 27 New Testament books. The differences are only in the Old Testament."
+discuss:
+  - "Sincere Christians in different traditions hold different views about the deuterocanonical books. How can we disagree about important things while still treating one another with patience and respect?"
+  - "Each tradition gives careful reasons for its view. Which reasons did you find most interesting or surprising, and what questions do you still have?"
+  - "In Romans 15, Paul prays that believers would glorify God with one voice. Where have you seen Christians from different churches pray, serve or worship together well?"
+apply: >
+  Ask your pastor or a mentor which books your church's Bible includes and why
+  it holds that view, and listen with curiosity to the reasons they give.
 ---
 
 If you visit a Catholic friend and open their Bible, you might be surprised to find books you have never heard of, such as Tobit or Sirach. An Orthodox friend's Bible might contain a few more. Is someone adding books? Is someone taking them away?

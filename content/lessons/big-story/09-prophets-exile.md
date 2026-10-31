@@ -42,6 +42,14 @@ quiz:
       - "King David returned to the throne"
     answer: 1
     explain: "Cyrus allowed exiled peoples to go home (Ezra 1). Groups returned to Judah, and a rebuilt temple was finished around 516 BC."
+discuss:
+  - "Micah sums up what God wants as doing what is fair, loving faithful kindness and walking humbly with God. Which of those comes most naturally to you, and which feels hardest?"
+  - "Jeremiah told the exiles to seek the good of the city where they lived. What might it look like for you to seek the good of your own neighbourhood or workplace?"
+  - "God promised to write his law on people's hearts. What is the difference between following rules from the outside and being changed from the inside?"
+apply: >
+  Read Micah 6:8 and choose one simple way to live it out this week, such as
+  treating someone fairly, showing a small kindness, or spending a quiet moment
+  with God in prayer.
 ---
 
 Last time we watched Israel rise to its high point under David and Solomon, and

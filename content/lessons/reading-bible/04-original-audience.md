@@ -41,6 +41,14 @@ quiz:
       - "What comes before and after?"
     answer: 2
     explain: "The five questions are genre, before and after, original audience, place in the big story, and meaning for me today. Word counting can be interesting but is not one of them."
+discuss:
+  - "The exiles were told to build homes and seek the good of a city they did not choose. Is there a place or season in your life that feels a little like exile?"
+  - "How does it feel to hear that Jeremiah 29:11 was a promise for a long, hard season rather than a quick fix? Does that make it more or less comforting to you?"
+  - "Which of the five study questions do you think you are most likely to skip, and why?"
+apply: >
+  This week, pray for the town or city where you live, as Jeremiah urged
+  the exiles to pray for Babylon. Ask God to show you one small way to do
+  good for someone nearby.
 ---
 
 Imagine reading a text message on someone else's phone that says, "Don't worry, I'm on my way." Who is on their way? Where? Why might the other person be worried? Without knowing who sent it and who received it, the words float free.

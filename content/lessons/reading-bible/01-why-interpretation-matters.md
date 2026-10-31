@@ -40,6 +40,14 @@ quiz:
       - "The study of how to interpret texts well"
     answer: 3
     explain: "Hermeneutics is the art and skill of interpretation: the principles we use to move from the words on the page to their meaning."
+discuss:
+  - "Before this lesson, how did you usually approach a Bible passage, and what might change if you first asked what the writer meant?"
+  - "Can you think of a time when you, or someone you know, read your own ideas into a verse? What helped you notice?"
+  - "Which of the four helps (humility, prayer, the church, patience) do you most need right now as a reader, and why?"
+apply: >
+  Before you read the Bible each day this week, pray a short prayer asking
+  God to help you understand. After reading, ask yourself: what did the
+  writer want his first readers to understand?
 ---
 
 Imagine finding an old letter in your grandmother's attic. It begins, "My dear Ruth," talks about rationing, mentions someone called Tom who is "away," and ends with a promise to "be home by Christmas." You are not Ruth, and you have never met Tom. Yet you can still learn a great deal from that letter, if you take time to understand who wrote it, when, and why.

@@ -42,6 +42,14 @@ quiz:
       - "She writes the book of Judges"
     answer: 2
     explain: "Ruth's loyalty brings her into Israel, and her son Obed is the grandfather of David (Ruth 4:17). God's blessing reaches beyond Israel."
+discuss:
+  - "Judges describes a time when everyone did what was right in their own eyes. Where do you notice that same attitude in our culture, or in your own heart?"
+  - "The conquest stories in Joshua are hard for many readers. What questions do they raise for you, and how can we keep reading and learning while we wrestle with hard passages?"
+  - "Ruth's story has no miracles, only quiet faithfulness and kindness. Where might God be at work in the ordinary parts of your week?"
+apply: >
+  Like Ruth and Boaz, show one practical act of kindness or loyalty this week to
+  someone who is struggling or new, such as a newcomer at church, a neighbour or
+  a lonely friend.
 ---
 
 Last time we stood at Mount Sinai, where God made a covenant with Israel, gave

@@ -42,6 +42,13 @@ quiz:
       - "Hebrews, James, 2 Peter and Revelation"
     answer: 3
     explain: "A few books, including Hebrews, James, 2 Peter and Revelation, were doubted in some regions before being accepted everywhere."
+discuss:
+  - "The early church saw itself as recognising books that already carried the apostles' authority, like a jeweller recognising real gold. What does that picture help you understand?"
+  - "Protestant, Catholic and Orthodox Christians, who differ on many things, all read the same 27 New Testament books. What does it mean to you to share these books with believers around the world and across the centuries?"
+  - "Have you heard claims that the New Testament was picked for political reasons? What questions did that leave you with, and how does this lesson's story compare?"
+apply: >
+  Read 2 Peter 3:14-18 and choose one small way to grow in the grace and
+  knowledge of Jesus this week, such as reading a chapter of a Gospel each day.
 ---
 
 In the last lesson we saw how the Old Testament came to be recognised. Now we turn to the New Testament. How did 27 books, written mainly in the first century AD, come to stand alongside the ancient Scriptures of Israel?

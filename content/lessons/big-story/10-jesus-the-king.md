@@ -42,6 +42,14 @@ quiz:
       - "He spent forty days tested in the wilderness and chose twelve disciples"
     answer: 3
     explain: "Israel was tested forty years in the wilderness and had twelve tribes. Jesus' forty days and his twelve disciples deliberately echo that story."
+discuss:
+  - "Jesus called fishermen to leave their nets and follow him. What might following Jesus look like in your ordinary, everyday life?"
+  - "Jesus welcomed people others rejected and said he came for the sick, not the healthy. Who might feel unwelcome in your community, and how do you think Jesus sees them?"
+  - "Which of Jesus' parables, such as the lost sheep or the lost son, speaks to you most right now, and why?"
+apply: >
+  Read the parable of the lost son in Luke 15:11-32 and notice how the father
+  responds, then thank God that he runs to welcome everyone who comes home to
+  him.
 ---
 
 Last time we saw Israel's long story reach a painful point. The kingdoms fell,
