@@ -2,8 +2,11 @@ import { useEffect, useRef, useState } from 'react'
 import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import { ChapterJump } from '../components/ChapterJump.tsx'
 import { getBook } from '../lib/books.ts'
-import { fallbackMessage, useChapters, useCurrentTranslation, useTitle } from '../lib/hooks.ts'
-import { setLastRead, useAppState, verseKey } from '../lib/storage.ts'
+import { fallbackMessage, useChapters, useCurrentTranslation, useTitle, useTranslations } from '../lib/hooks.ts'
+import { loadChapter } from '../lib/bible.ts'
+import { reportView } from '../lib/online.ts'
+import type { Verse } from '../lib/bibleTypes.ts'
+import { setLastRead, updateSettings, useAppState, verseKey } from '../lib/storage.ts'
 import { speak, speechSupported, stopSpeaking, useSpeaking } from '../lib/speech.ts'
 import { HIGHLIGHT_STYLES, VerseActions } from '../components/VerseActions.tsx'
 import { NotesIcon } from '../components/Icons.tsx'
@@ -21,7 +24,7 @@ import { formatReference } from '../lib/references.ts'
 import { TranslationPicker } from '../components/TranslationPicker.tsx'
 import { OpenOnlineLink } from '../components/OpenOnlineLink.tsx'
 import { BookIntroCard } from '../components/BookIntroCard.tsx'
-import { buttonClass } from '../components/ui.tsx'
+import { Sheet, buttonClass } from '../components/ui.tsx'
 import { BackIcon, ChevronIcon } from '../components/Icons.tsx'
 import { NotFoundPage } from './NotFoundPage.tsx'
 import { BOOKS } from '../lib/books.ts'
@@ -40,7 +43,33 @@ export function BibleChapterPage() {
   const speaking = useSpeaking()
   const [panel, setPanel] = useState<null | 'xrefs' | 'words' | 'dict' | 'topics'>(null)
   const [jumpOpen, setJumpOpen] = useState(false)
+  const [optionsOpen, setOptionsOpen] = useState(false)
   const [interlinear, setInterlinear] = useState(() => sessionStorage.getItem('interlinear') === '1')
+  // Parallel reading: a second translation under each verse.
+  const allTranslations = useTranslations()
+  const [parallelId, setParallelId] = useState(() => sessionStorage.getItem('parallel') ?? '')
+  const parallelT = allTranslations.find((t) => t.id === parallelId)
+  const [parallel, setParallel] = useState<{ verses: Verse[]; notice?: string } | null>(null)
+  useEffect(() => {
+    try {
+      sessionStorage.setItem('parallel', parallelId)
+    } catch {
+      // ignore
+    }
+    if (!parallelT || !book) {
+      setParallel(null)
+      return
+    }
+    let cancelled = false
+    loadChapter(parallelT, book.id, chapter).then((r) => {
+      if (cancelled) return
+      setParallel(typeof r === 'string' ? { verses: [] } : r)
+      if (typeof r !== 'string') reportView(r.fumsToken)
+    })
+    return () => {
+      cancelled = true
+    }
+  }, [parallelT?.id, book, chapter]) // eslint-disable-line react-hooks/exhaustive-deps
   const [orig, setOrig] = useState<OriginalWord[][] | null>(null)
   useEffect(() => {
     try {
@@ -133,30 +162,137 @@ export function BibleChapterPage() {
         </div>
       )}
 
-      <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
-        <TranslationPicker />
-        <button
-          type="button"
-          className={buttonClass('secondary', 'min-h-11 px-4 py-2 text-[0.95rem]')}
-          aria-pressed={interlinear}
-          onClick={() => setInterlinear((x) => !x)}
-        >
-          {interlinear ? 'Hide' : 'Show'} {book.testament === 'OT' ? 'Hebrew' : 'Greek'}
-        </button>
+      <div className="mb-4 flex items-end gap-2">
+        <div className="flex-1">
+          <TranslationPicker compact />
+        </div>
         {speechSupported && !loading && verses.length > 0 && !used.noSpeech && (
           <button
             type="button"
-            className={buttonClass('secondary', 'min-h-11 px-4 py-2 text-[0.95rem]')}
+            className={buttonClass('secondary', 'min-h-11 px-3 py-2 text-[0.95rem]')}
             onClick={() => (speaking ? stopSpeaking() : speak(verses.map((v) => v.t)))}
             aria-pressed={speaking}
           >
             {speaking ? 'Stop' : 'Listen'}
           </button>
         )}
+        <button
+          type="button"
+          className={buttonClass('secondary', 'min-h-11 px-3 py-2 font-serif text-lg')}
+          onClick={() => setOptionsOpen(true)}
+          aria-label="Reading options"
+        >
+          Aa
+        </button>
       </div>
-      <p className="mb-3 text-sm text-stone-600 dark:text-stone-400">
-        Tap a verse for highlights, notes, cross-references and more. Swipe to change chapter.
-      </p>
+      <Sheet open={optionsOpen} onClose={() => setOptionsOpen(false)} title="Reading options">
+        <div className="max-h-[65vh] space-y-5 overflow-y-auto">
+          <label className="block">
+            <span className="font-semibold">Parallel translation</span>
+            <span className="block text-sm text-stone-600 dark:text-stone-400">Shown in smaller type under each verse.</span>
+            <select
+              value={parallelId}
+              onChange={(e) => setParallelId(e.target.value)}
+              className="mt-2 min-h-12 w-full rounded-xl border border-stone-300 bg-white px-3 text-base dark:border-stone-700 dark:bg-stone-950"
+            >
+              <option value="">None</option>
+              {allTranslations
+                .filter((t) => t.id !== used.id)
+                .map((t) => (
+                  <option key={t.id} value={t.id}>
+                    {t.abbr}: {t.name}
+                  </option>
+                ))}
+            </select>
+          </label>
+          <label className="flex min-h-12 items-center justify-between gap-3">
+            <span>
+              <span className="block font-semibold">{book.testament === 'OT' ? 'Hebrew' : 'Greek'} under each verse</span>
+              <span className="block text-sm text-stone-600 dark:text-stone-400">Original words with English glosses (interlinear).</span>
+            </span>
+            <input type="checkbox" className="size-6 accent-amber-700" checked={interlinear} onChange={(e) => setInterlinear(e.target.checked)} />
+          </label>
+          <label className="flex min-h-12 items-center justify-between gap-3">
+            <span className="font-semibold">Verse numbers</span>
+            <input
+              type="checkbox"
+              className="size-6 accent-amber-700"
+              checked={settings.showVerseNumbers}
+              onChange={(e) => updateSettings({ showVerseNumbers: e.target.checked })}
+            />
+          </label>
+          <label className="flex min-h-12 items-center justify-between gap-3">
+            <span className="font-semibold">Section headings</span>
+            <input
+              type="checkbox"
+              className="size-6 accent-amber-700"
+              checked={settings.showHeadings}
+              onChange={(e) => updateSettings({ showHeadings: e.target.checked })}
+            />
+          </label>
+          <div>
+            <span className="font-semibold">Font</span>
+            <div className="mt-2 grid grid-cols-2 gap-2">
+              {(
+                [
+                  ['serif', 'Classic'],
+                  ['sans', 'Modern'],
+                ] as const
+              ).map(([v, label]) => (
+                <button
+                  key={v}
+                  type="button"
+                  aria-pressed={settings.readerFont === v}
+                  onClick={() => updateSettings({ readerFont: v })}
+                  className={`min-h-11 rounded-xl border-2 ${v === 'serif' ? 'font-serif' : 'font-sans'} ${
+                    settings.readerFont === v ? 'border-amber-700 dark:border-amber-300' : 'border-stone-300 dark:border-stone-700'
+                  }`}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+          </div>
+          <div>
+            <span className="font-semibold">Text size</span>
+            <div className="mt-2 grid grid-cols-3 gap-2">
+              {(
+                [
+                  ['md', 'A'],
+                  ['lg', 'A+'],
+                  ['xl', 'A++'],
+                ] as const
+              ).map(([v, label]) => (
+                <button
+                  key={v}
+                  type="button"
+                  aria-pressed={settings.textSize === v}
+                  aria-label={`Text size ${label}`}
+                  onClick={() => updateSettings({ textSize: v })}
+                  className={`min-h-11 rounded-xl border-2 ${
+                    settings.textSize === v ? 'border-amber-700 dark:border-amber-300' : 'border-stone-300 dark:border-stone-700'
+                  }`}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+          </div>
+          {!allTranslations.some((t) => t.abbr === 'NKJV') && (
+            <Link to="/settings#licensed" className="block font-semibold text-amber-800 underline dark:text-amber-300" onClick={() => setOptionsOpen(false)}>
+              Set up the NKJV (free)
+            </Link>
+          )}
+          <Link to="/settings" className="block text-sm underline" onClick={() => setOptionsOpen(false)}>
+            More settings (theme, line spacing, translations)
+          </Link>
+        </div>
+      </Sheet>
+      {Object.keys(highlights).length < 3 && (
+        <p className="mb-3 text-sm text-stone-600 dark:text-stone-400">
+          Tap a verse for highlights, notes, cross-references and more. Swipe to change chapter.
+        </p>
+      )}
 
       {loading ? (
         <p className="text-stone-500">Loading…</p>
@@ -182,6 +318,12 @@ export function BibleChapterPage() {
               />{' '}
               {v.t.includes('\n') && !interlinear && <span className="block" />}
               {interlinear && <InterlinearRow words={orig?.[v.v]} />}
+              {parallelT && parallel && (
+                <span className="mb-3 mt-1 block border-l-4 border-stone-300 pl-3 font-sans text-[0.95rem] leading-relaxed text-stone-700 dark:border-stone-700 dark:text-stone-300">
+                  <span className="mr-1 text-xs font-semibold text-stone-600 dark:text-stone-400">{parallelT.abbr}</span>
+                  {parallel.verses.find((x) => x.v === v.v)?.t.replace(/\n/g, ' ') ?? '—'}
+                </span>
+              )}
             </span>
           ))}
         </div>
@@ -194,6 +336,11 @@ export function BibleChapterPage() {
         {fellBack && <span className="mt-1 block font-semibold">{fallbackMessage(chosen.abbr, fellBack)}</span>}
       </p>
 
+      {parallelT && parallel && parallelT.kind === 'online' && (
+        <p className="mt-2 text-sm text-stone-600 dark:text-stone-400">
+          <TextCredit used={parallelT} notice={parallel.notice ?? parallelT.notice} />
+        </p>
+      )}
       <ChapterEntities book={book.id} chapter={chapter} />
 
       <div className="mt-6 grid gap-2">
