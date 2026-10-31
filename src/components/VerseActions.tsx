@@ -151,7 +151,7 @@ export function VerseActions({ book, chapter, selected, verses, translationAbbr,
           <Chip onClick={copy}>Copy</Chip>
           <ChipLink to={`/compare?ref=${encodeURIComponent(key)}`}>Compare</ChipLink>
           {extra}
-          <ChipLink to={`/study?ref=${encodeURIComponent(ref)}`}>Study</ChipLink>
+          <ChipLink to={`/study/passage?ref=${encodeURIComponent(ref)}`}>Study</ChipLink>
           {speechSupported && !noSpeech && (
             <Chip onClick={() => speak(sorted.map((n) => verses.find((v) => v.v === n)?.t ?? ''))}>Listen</Chip>
           )}

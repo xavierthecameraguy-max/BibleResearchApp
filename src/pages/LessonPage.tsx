@@ -65,7 +65,7 @@ export function LessonPage() {
 
       <div className="mt-8">
         <Link
-          to={`/study?ref=${encodeURIComponent(formatReference(lesson.passage))}`}
+          to={`/study/passage?ref=${encodeURIComponent(formatReference(lesson.passage))}`}
           className={buttonClass('secondary', 'w-full')}
         >
           Study {formatReference(lesson.passage)} yourself

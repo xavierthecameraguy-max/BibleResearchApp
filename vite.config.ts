@@ -2,6 +2,8 @@ import { defineConfig, loadEnv, type Connect, type Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import { VitePWA } from 'vite-plugin-pwa'
+import { existsSync, readdirSync, statSync } from 'node:fs'
+import { join, relative, sep } from 'node:path'
 import { handleBibleApi } from './server/bibleApi.ts'
 
 /**
@@ -29,11 +31,37 @@ function bibleApi(env: Record<string, string>): Plugin {
   }
 }
 
+/**
+ * Writes data-manifest.json listing every study-data file (public/data/**),
+ * so Settings can offer "Save study data for offline" in one tap.
+ */
+function dataManifest(): Plugin {
+  return {
+    name: 'foundations-data-manifest',
+    apply: 'build',
+    generateBundle() {
+      const root = join(process.cwd(), 'public', 'data')
+      const files: { path: string; bytes: number }[] = []
+      const walk = (dir: string) => {
+        if (!existsSync(dir)) return
+        for (const name of readdirSync(dir)) {
+          const full = join(dir, name)
+          if (statSync(full).isDirectory()) walk(full)
+          else if (name.endsWith('.json')) files.push({ path: '/data/' + relative(root, full).split(sep).join('/'), bytes: statSync(full).size })
+        }
+      }
+      walk(root)
+      this.emitFile({ type: 'asset', fileName: 'data-manifest.json', source: JSON.stringify(files) })
+    },
+  }
+}
+
 export default defineConfig(({ mode }) => ({
   // The lessons are bundled into the app so they work offline; that makes the main file large, which is fine.
   build: { chunkSizeWarningLimit: 1600 },
   plugins: [
     bibleApi(loadEnv(mode, process.cwd(), '')),
+    dataManifest(),
     react(),
     tailwindcss(),
     VitePWA({

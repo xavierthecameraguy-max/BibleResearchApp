@@ -31,7 +31,7 @@ export function NotesPage() {
     <div>
       <PageTitle sub="Your passage studies. They're stored only in this browser, so make a backup now and then.">Notes</PageTitle>
 
-      <Link to="/study" className={buttonClass('primary', 'mb-6 w-full')}>
+      <Link to="/study/passage" className={buttonClass('primary', 'mb-6 w-full')}>
         Study a new passage
       </Link>
 
@@ -59,7 +59,7 @@ export function NotesPage() {
                     ))}
                 </dl>
                 <div className="mt-4 flex gap-2">
-                  <Link to={`/study?note=${n.id}`} className={buttonClass('secondary', 'flex-1')}>
+                  <Link to={`/study/passage?note=${n.id}`} className={buttonClass('secondary', 'flex-1')}>
                     Edit
                   </Link>
                   <button

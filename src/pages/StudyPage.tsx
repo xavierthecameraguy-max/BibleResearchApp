@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 import { getIntro, getLesson } from '../lib/content.ts'
+import { sectionsAround, type Section } from '../lib/context.ts'
+import { getCrossRefs, type CrossRef } from '../lib/data/xrefs.ts'
 import { formatReference, parseReference, readerPath, type Passage } from '../lib/references.ts'
 import { newId, saveNote, useAppState, type StudyAnswers } from '../lib/storage.ts'
 import { useTitle } from '../lib/hooks.ts'
@@ -13,6 +15,57 @@ interface Step {
   prompt: string
   hint: (p: Passage) => React.ReactNode
   lesson: string
+}
+
+function ContextHint({ p }: { p: Passage }) {
+  const [ctx, setCtx] = useState<Awaited<ReturnType<typeof sectionsAround>> | null>(null)
+  useEffect(() => {
+    sectionsAround(p).then(setCtx)
+  }, [p])
+  if (!ctx) return null
+  const link = (s?: Section) =>
+    s ? (
+      <Link className="underline underline-offset-2" to={readerPath({ book: p.book, startChapter: s.chapter, startVerse: s.verse, endChapter: s.chapter })}>
+        {s.heading}
+      </Link>
+    ) : (
+      '—'
+    )
+  return (
+    <span className="mt-2 block rounded-lg bg-white p-3 dark:bg-stone-950">
+      <span className="block">
+        <strong>Before:</strong> {link(ctx.before)}
+      </span>
+      <span className="block">
+        <strong>This section:</strong> {link(ctx.current)}
+      </span>
+      <span className="block">
+        <strong>After:</strong> {link(ctx.after)}
+      </span>
+      <span className="mt-1 block text-xs text-stone-600 dark:text-stone-400">Section headings from the Berean Standard Bible.</span>
+    </span>
+  )
+}
+
+function StoryHint({ p }: { p: Passage }) {
+  const [refs, setRefs] = useState<CrossRef[]>([])
+  useEffect(() => {
+    getCrossRefs(p.book, p.startChapter, p.startVerse ?? 1).then((r) => setRefs(r.slice(0, 6)))
+  }, [p])
+  if (!refs.length) return null
+  return (
+    <span className="mt-2 block">
+      <strong>Connected passages elsewhere in the Bible:</strong>{' '}
+      {refs.map((r, i) => (
+        <span key={i}>
+          {i > 0 && ', '}
+          <Link className="underline underline-offset-2" to={readerPath(r.passage)}>
+            {formatReference(r.passage)}
+          </Link>
+        </span>
+      ))}
+    </span>
+  )
 }
 
 const STEPS: Step[] = [
@@ -42,6 +95,7 @@ const STEPS: Step[] = [
           whole chapter in the reader
         </Link>{' '}
         and read a little before and after the highlighted verses.
+        <ContextHint p={p} />
       </>
     ),
     lesson: 'reading-bible-02',
@@ -68,7 +122,12 @@ const STEPS: Step[] = [
     prompt: 'Creation, fall, Abraham, exodus, kings, exile and return, Jesus, the church, new creation. Where is this, and how does it point to Jesus?',
     hint: (p) => {
       const i = getIntro(p.book)
-      return i ? <>{i.storyPlace}</> : null
+      return (
+        <>
+          {i?.storyPlace}
+          <StoryHint p={p} />
+        </>
+      )
     },
     lesson: 'big-story-12',
   },

@@ -133,7 +133,7 @@ export function BibleChapterPage() {
 
       <div className="mt-6 grid gap-2">
         <OpenOnlineLink passage={passage} className={buttonClass('secondary', 'w-full')} />
-        <Link to={`/study?ref=${encodeURIComponent(formatReference(passage))}`} className={buttonClass('secondary', 'w-full')}>
+        <Link to={`/study/passage?ref=${encodeURIComponent(formatReference(passage))}`} className={buttonClass('secondary', 'w-full')}>
           Study this chapter
         </Link>
       </div>
