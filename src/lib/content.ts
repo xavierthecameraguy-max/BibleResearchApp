@@ -6,9 +6,12 @@ import timelineJson from '../../content/timeline.json'
 import introsJson from '../../content/book-intros.json'
 import resourcesJson from '../../content/resources.json'
 import votdJson from '../../content/verses-of-the-day.json'
-import { parseLesson, type Lesson } from './lessonFormat.ts'
+import { lessonMeta, bodies } from 'virtual:lessons'
+import type { LessonMeta } from './lessonFormat.ts'
 
-export type { Lesson, QuizQuestion } from './lessonFormat.ts'
+export type { QuizQuestion } from './lessonFormat.ts'
+/** A lesson's details; its text is loaded separately with loadLessonBody(). */
+export type Lesson = LessonMeta
 
 export interface Track {
   id: string
@@ -68,18 +71,22 @@ export const bookIntros = introsJson as BookIntro[]
 export const resources = resourcesJson as Resources
 export const versesOfTheDay = votdJson as string[]
 
-const files = import.meta.glob('../../content/lessons/*/*.md', { query: '?raw', import: 'default', eager: true }) as Record<string, string>
-
-const glossaryIds = new Set(glossary.map((g) => g.id))
-
-export const lessons: Lesson[] = Object.entries(files)
-  .map(([path, src]) => {
-    const { lesson, problems } = parseLesson(src, path.replace('../../content/', ''), glossaryIds)
-    if (problems.length) console.warn(problems.join('\n'))
-    return lesson
-  })
-  .filter((l): l is Lesson => !!l)
+export const lessons: Lesson[] = (lessonMeta as Lesson[])
+  .slice()
   .sort((a, b) => tracks.findIndex((t) => t.id === a.track) - tracks.findIndex((t) => t.id === b.track) || a.order - b.order)
+
+const bodyCache = new Map<string, Promise<string>>()
+/** A lesson's text (Markdown), loaded when the lesson is opened. */
+export function loadLessonBody(id: string): Promise<string> {
+  let p = bodyCache.get(id)
+  if (!p) {
+    const load = (bodies as Record<string, () => Promise<{ default: string }>>)[id]
+    p = load ? load().then((m) => m.default) : Promise.resolve('')
+    p.catch(() => bodyCache.delete(id))
+    bodyCache.set(id, p)
+  }
+  return p
+}
 
 const lessonById = new Map(lessons.map((l) => [l.id, l]))
 const termById = new Map(glossary.map((g) => [g.id, g]))

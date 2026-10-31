@@ -11,7 +11,7 @@ import { MentorNote, buttonClass } from '../components/ui.tsx'
 import { CheckIcon, ClockIcon } from '../components/Icons.tsx'
 import { NotFoundPage } from './NotFoundPage.tsx'
 import { speak, speechSupported, stopSpeaking, useSpeaking } from '../lib/speech.ts'
-import { getTerm } from '../lib/content.ts'
+import { getTerm, loadLessonBody } from '../lib/content.ts'
 
 /** Lesson Markdown as plain sentences for reading aloud. */
 function speakable(md: string): string[] {
@@ -30,6 +30,15 @@ export function LessonPage() {
   const progress = useAppState((s) => s.progress[lessonId])
   const [retake, setRetake] = useState(false)
   const speaking = useSpeaking()
+  const [body, setBody] = useState<string | null>(null)
+  useEffect(() => {
+    let cancelled = false
+    setBody(null)
+    if (lessonId) loadLessonBody(lessonId).then((b) => !cancelled && setBody(b))
+    return () => {
+      cancelled = true
+    }
+  }, [lessonId])
   useTitle(lesson?.title ?? 'Not found')
 
   useEffect(() => {
@@ -69,7 +78,7 @@ export function LessonPage() {
           type="button"
           className={buttonClass('secondary', 'mt-4 min-h-11 px-4 py-2 text-[0.95rem]')}
           aria-pressed={speaking}
-          onClick={() => (speaking ? stopSpeaking() : speak([lesson.title, lesson.summary, ...speakable(lesson.body)]))}
+          onClick={() => (speaking ? stopSpeaking() : speak([lesson.title, lesson.summary, ...speakable(body ?? '')]))}
         >
           {speaking ? 'Stop reading' : 'Listen to this lesson'}
         </button>
@@ -85,7 +94,7 @@ export function LessonPage() {
       </div>
 
       <div className="mt-8">
-        <LessonMarkdown source={lesson.body} />
+        {body === null ? <p className="text-stone-600 dark:text-stone-400">Loading…</p> : <LessonMarkdown source={body} />}
       </div>
 
       {(lesson.discuss.length > 0 || lesson.apply) && (
