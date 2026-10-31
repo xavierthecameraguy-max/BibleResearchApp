@@ -5,7 +5,7 @@ import { updateSettings } from '../lib/storage.ts'
 export function TranslationPicker() {
   const all = useTranslations()
   const current = useCurrentTranslation().id
-  const hasNkjv = all.some((t) => t.kind !== 'bundled')
+  const hasNkjv = all.some((t) => t.abbr === 'NKJV')
   return (
     <div className="flex flex-wrap items-center gap-2">
       <label htmlFor="translation" className="text-sm font-medium text-stone-600 dark:text-stone-400">
@@ -24,8 +24,8 @@ export function TranslationPicker() {
         ))}
       </select>
       {!hasNkjv && (
-        <Link to="/settings#translations" className="text-sm text-amber-800 underline underline-offset-2 dark:text-amber-300">
-          Add your NKJV
+        <Link to="/settings#licensed" className="text-sm text-amber-800 underline underline-offset-2 dark:text-amber-300">
+          Set up the NKJV
         </Link>
       )}
     </div>

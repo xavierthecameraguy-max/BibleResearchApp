@@ -6,6 +6,7 @@ import { fallbackMessage, useChapters, useCurrentTranslation } from '../lib/hook
 import { formatReference, readerPath, type Passage } from '../lib/references.ts'
 import type { Verse } from '../lib/bibleTypes.ts'
 import { OpenOnlineLink } from './OpenOnlineLink.tsx'
+import { TextCredit } from './TextCredit.tsx'
 import { buttonClass } from './ui.tsx'
 
 /** chapters[0] is p.startChapter */
@@ -53,7 +54,7 @@ export function PassageText({ passage, maxVerses = 60 }: { passage: Passage; max
       )}
 
       <p className="mt-4 text-sm text-stone-600 dark:text-stone-400">
-        {used.kind === 'online' ? notice : used.abbr}
+        {used.kind === 'online' ? <TextCredit used={used} notice={notice} /> : used.abbr}
         {fellBack && <span className="block">{fallbackMessage(chosen.abbr, fellBack)}</span>}
       </p>
       <div className="mt-4 flex flex-col gap-2 sm:flex-row">

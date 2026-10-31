@@ -20,6 +20,7 @@ import { ComparePage } from './pages/ComparePage.tsx'
 import { MyBiblePage } from './pages/MyBiblePage.tsx'
 import { SearchPage } from './pages/SearchPage.tsx'
 import { PlansPage } from './pages/PlansPage.tsx'
+import { CopyrightPage } from './pages/CopyrightPage.tsx'
 
 export function App() {
   return (
@@ -37,6 +38,7 @@ export function App() {
         <Route path="/search" element={<SearchPage />} />
         <Route path="/my-bible" element={<MyBiblePage />} />
         <Route path="/plans" element={<PlansPage />} />
+        <Route path="/copyright" element={<CopyrightPage />} />
         <Route path="/study" element={<StudyPage />} />
         <Route path="/notes" element={<NotesPage />} />
         <Route path="/glossary" element={<GlossaryPage />} />

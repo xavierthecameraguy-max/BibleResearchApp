@@ -10,6 +10,7 @@ import type { Verse } from '../lib/bibleTypes.ts'
 import { passageFromKey } from '../components/VerseActions.tsx'
 import { Card, PageTitle, buttonClass } from '../components/ui.tsx'
 import { Link } from 'react-router-dom'
+import { TextCredit } from '../components/TextCredit.tsx'
 
 function TranslationColumn({ t, passage }: { t: Translation; passage: Passage }) {
   const [state, setState] = useState<{ verses: Verse[]; notice?: string; error?: string } | null>(null)
@@ -53,7 +54,11 @@ function TranslationColumn({ t, passage }: { t: Translation; passage: Passage })
           ))}
         </p>
       )}
-      {state?.notice && t.kind === 'online' && <p className="mt-2 text-xs text-stone-600 dark:text-stone-400">{state.notice}</p>}
+      {state?.notice && t.kind === 'online' && (
+        <p className="mt-2 text-xs text-stone-600 dark:text-stone-400">
+          <TextCredit used={t} notice={state.notice} />
+        </p>
+      )}
     </Card>
   )
 }

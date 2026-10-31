@@ -16,14 +16,22 @@ export interface OnlineTranslationInfo {
   notice: string
   /** How long the app may keep a chapter (seconds). 0 = only while the app is open. */
   cacheSeconds: number
+  /** Link the provider requires on every page that shows its text */
+  attributionUrl?: string
+  /** True when the terms don't allow reading the text aloud with text-to-speech */
+  noSpeech?: boolean
+  /** Full copyright statement for the Copyright page */
+  copyrightPage?: string
 }
 
 export interface ChapterResult {
   verses: Verse[]
   /** Copyright line to display under the text */
   notice: string
-  /** Optional extra HTML/JS-free attribution, e.g. a link */
+  /** Link the provider requires next to its text */
   attributionUrl?: string
+  /** API.Bible usage-tracking token (FUMS); the app reports a view when shown */
+  fumsToken?: string
 }
 
 export interface Provider {

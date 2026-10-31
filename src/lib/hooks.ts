@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
+import { listOnline, reportView } from './online.ts'
 import {
   BUNDLED,
   listImported,
-  listOnline,
   listPrivate,
   loadChapter,
   onTranslationsChanged,
@@ -84,6 +84,8 @@ export function useChapters(bookId: string | undefined, from: number, to: number
       const chapters = results.map((r) => (typeof r === 'string' ? [] : r.verses))
       const notice = results.map((r) => (typeof r === 'string' ? undefined : r.notice)).find(Boolean) ?? used.notice
       setState({ chapters, verses: chapters[0] ?? [], loading: false, used, fellBack, notice })
+      // API.Bible asks apps to report each time its text is shown.
+      for (const r of results) if (typeof r !== 'string') reportView(r.fumsToken)
     })()
     return () => {
       cancelled = true

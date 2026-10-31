@@ -6,6 +6,7 @@ import { setLastRead, useAppState, verseKey } from '../lib/storage.ts'
 import { speak, speechSupported, stopSpeaking, useSpeaking } from '../lib/speech.ts'
 import { HIGHLIGHT_STYLES, VerseActions } from '../components/VerseActions.tsx'
 import { NotesIcon } from '../components/Icons.tsx'
+import { TextCredit } from '../components/TextCredit.tsx'
 import { formatReference } from '../lib/references.ts'
 import { TranslationPicker } from '../components/TranslationPicker.tsx'
 import { OpenOnlineLink } from '../components/OpenOnlineLink.tsx'
@@ -75,7 +76,7 @@ export function BibleChapterPage() {
 
       <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
         <TranslationPicker />
-        {speechSupported && !loading && verses.length > 0 && (
+        {speechSupported && !loading && verses.length > 0 && !used.noSpeech && (
           <button
             type="button"
             className={buttonClass('secondary', 'min-h-11 px-4 py-2 text-[0.95rem]')}
@@ -117,7 +118,7 @@ export function BibleChapterPage() {
       )}
 
       <p className="mt-6 text-sm text-stone-600 dark:text-stone-400">
-        {notice}
+        <TextCredit used={used} notice={notice} />
         {fellBack && <span className="mt-1 block font-semibold">{fallbackMessage(chosen.abbr, fellBack)}</span>}
       </p>
 
@@ -135,6 +136,7 @@ export function BibleChapterPage() {
           selected={selected}
           verses={verses}
           translationAbbr={used.abbr}
+          noSpeech={used.noSpeech}
           onClear={() => setSelected([])}
         />
       )}

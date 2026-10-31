@@ -46,12 +46,14 @@ interface Props {
   selected: number[]
   verses: Verse[]
   translationAbbr: string
+  /** The translation's terms don't allow read-aloud */
+  noSpeech?: boolean
   onClear: () => void
   /** Extra actions (cross-references, original words) added by the reader */
   extra?: React.ReactNode
 }
 
-export function VerseActions({ book, chapter, selected, verses, translationAbbr, onClear, extra }: Props) {
+export function VerseActions({ book, chapter, selected, verses, translationAbbr, noSpeech, onClear, extra }: Props) {
   const [noteOpen, setNoteOpen] = useState(false)
   const [status, setStatus] = useState('')
   const sorted = [...selected].sort((a, b) => a - b)
@@ -69,6 +71,11 @@ export function VerseActions({ book, chapter, selected, verses, translationAbbr,
   const allSameColor = keys.every((k) => highlights[k] && highlights[k] === highlights[keys[0]]) ? highlights[keys[0]] : undefined
 
   const copy = async () => {
+    // Licensed translations limit copying to small amounts; 100 verses is the strictest limit we follow.
+    if (sorted.length > 100) {
+      setStatus('Select 100 verses or fewer to copy')
+      return
+    }
     try {
       await navigator.clipboard.writeText(`“${text}”\n${ref} (${translationAbbr})`)
       setStatus('Copied')
@@ -134,7 +141,7 @@ export function VerseActions({ book, chapter, selected, verses, translationAbbr,
           <ChipLink to={`/compare?ref=${encodeURIComponent(key)}`}>Compare</ChipLink>
           {extra}
           <ChipLink to={`/study?ref=${encodeURIComponent(ref)}`}>Study</ChipLink>
-          {speechSupported && (
+          {speechSupported && !noSpeech && (
             <Chip onClick={() => speak(sorted.map((n) => verses.find((v) => v.v === n)?.t ?? ''))}>Listen</Chip>
           )}
         </div>

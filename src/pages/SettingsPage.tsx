@@ -5,6 +5,7 @@ import { useCurrentTranslation, useTitle, useTranslations } from '../lib/hooks.t
 import { removeImported, saveImported } from '../lib/bible.ts'
 import { countVerses, parseBibleFiles } from '../lib/bibleImport.ts'
 import { Card, PageTitle, buttonClass } from '../components/ui.tsx'
+import { LicensedSetup } from '../components/LicensedSetup.tsx'
 
 function Choice<T extends string>({ legend, value, options, onChange }: { legend: string; value: T; options: [T, string][]; onChange: (v: T) => void }) {
   return (
@@ -191,6 +192,7 @@ export function SettingsPage() {
             </li>
           ))}
         </ul>
+        <LicensedSetup />
         <ImportTranslation />
 
         <div className="mt-6 space-y-4">

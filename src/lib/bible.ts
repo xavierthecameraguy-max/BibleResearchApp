@@ -6,6 +6,7 @@
 //   time through the app's own server proxy, following each provider's terms
 
 import { get, set, del } from 'idb-keyval'
+import { loadOnlineChapter } from './online.ts'
 import type { BookText, Verse } from './bibleTypes.ts'
 import type { BookMap } from './bibleImport.ts'
 
@@ -20,6 +21,12 @@ export interface Translation {
   provider?: string
   /** online: how long a fetched chapter may be kept, in seconds (0 = this session only) */
   cacheSeconds?: number
+  /** online: link the provider requires wherever its text is shown */
+  attributionUrl?: string
+  /** online: true when its terms don't allow text-to-speech */
+  noSpeech?: boolean
+  /** online: full copyright statement for the Copyright page */
+  copyrightPage?: string
   /** Shown under the text */
   notice: string
   /** Books available (imported translations may be partial) */
@@ -56,39 +63,6 @@ export function listPrivate(): Promise<Translation[]> {
     .then((list: Omit<Translation, 'kind'>[]) => (Array.isArray(list) ? list.map((t) => ({ ...t, kind: 'private' as const })) : []))
     .catch(() => [])
   return privateList
-}
-
-/**
- * Licensed translations the server proxy is set up for (it has the API
- * keys). The last list seen is remembered so the picker still shows them
- * when offline; reading them then falls back to the KJV.
- */
-const ONLINE_LIST_KEY = 'foundations:online-translations'
-let onlineList: Promise<Translation[]> | null = null
-export function listOnline(): Promise<Translation[]> {
-  const remembered = (): Translation[] => {
-    try {
-      return JSON.parse(localStorage.getItem(ONLINE_LIST_KEY) ?? '[]')
-    } catch {
-      return []
-    }
-  }
-  onlineList ??= fetch('/api/bible/translations')
-    .then((r) => {
-      const type = r.headers.get('content-type') ?? ''
-      return r.ok && type.includes('json') ? r.json() : Promise.reject(new Error('unavailable'))
-    })
-    .then((list: Omit<Translation, 'kind'>[]) => {
-      const out = Array.isArray(list) ? list.map((t) => ({ ...t, kind: 'online' as const })) : []
-      try {
-        localStorage.setItem(ONLINE_LIST_KEY, JSON.stringify(out))
-      } catch {
-        // storage full or blocked: fine, we just won't remember the list
-      }
-      return out
-    })
-    .catch(() => remembered())
-  return onlineList
 }
 
 const IMPORTED_LIST_KEY = 'translations'
@@ -157,44 +131,25 @@ export interface ChapterText {
   verses: Verse[]
   /** Copyright line to show under the text (online translations) */
   notice?: string
+  /** API.Bible view-tracking token */
+  fumsToken?: string
 }
 
 export type ChapterFailure = 'offline' | 'missing' | 'error'
 
-const chapterCache = new Map<string, { at: number; text: ChapterText }>()
-
 /**
- * Load one chapter. Online translations are fetched through the proxy and
- * kept only as long as the provider allows (in memory, for this session at
- * most); everything else comes from the offline book files.
+ * Load one chapter. Online translations come through online.ts (within each
+ * provider's caching limits); everything else from the offline book files.
  */
 export async function loadChapter(
   translation: Translation,
   book: string,
   chapter: number,
 ): Promise<ChapterText | ChapterFailure> {
-  if (translation.kind !== 'online') {
-    const b = await loadBook(translation.id, book)
-    const verses = b?.chapters[chapter - 1]
-    return verses?.length ? { verses } : 'missing'
-  }
-  const key = `${translation.id}:${book}:${chapter}`
-  const hit = chapterCache.get(key)
-  const maxAge = (translation.cacheSeconds ?? 0) * 1000
-  if (hit && (maxAge === 0 || Date.now() - hit.at < maxAge)) return hit.text
-  if (typeof navigator !== 'undefined' && !navigator.onLine) return 'offline'
-  try {
-    const r = await fetch(`/api/bible/chapter?t=${encodeURIComponent(translation.id)}&book=${book}&c=${chapter}`)
-    if (r.status === 404) return 'missing'
-    if (!r.ok) return 'error'
-    const text = (await r.json()) as ChapterText
-    chapterCache.set(key, { at: Date.now(), text })
-    // Keep only a few recent chapters in memory.
-    if (chapterCache.size > 12) chapterCache.delete(chapterCache.keys().next().value!)
-    return text
-  } catch {
-    return typeof navigator !== 'undefined' && !navigator.onLine ? 'offline' : 'error'
-  }
+  if (translation.kind === 'online') return loadOnlineChapter(translation, book, chapter)
+  const b = await loadBook(translation.id, book)
+  const verses = b?.chapters[chapter - 1]
+  return verses?.length ? { verses } : 'missing'
 }
 
 // Tiny change notification so screens can refresh their translation list.
