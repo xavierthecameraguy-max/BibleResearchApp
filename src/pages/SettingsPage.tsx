@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import { updateSettings, useAppState, type TextSize, type Theme } from '../lib/storage.ts'
-import { useTitle, useTranslations } from '../lib/hooks.ts'
+import { useCurrentTranslation, useTitle, useTranslations } from '../lib/hooks.ts'
 import { removeImported, saveImported } from '../lib/bible.ts'
 import { countVerses, parseBibleFiles } from '../lib/bibleImport.ts'
 import { Card, PageTitle, buttonClass } from '../components/ui.tsx'
@@ -108,6 +108,7 @@ export function SettingsPage() {
   useTitle('Settings')
   const settings = useAppState((s) => s.settings)
   const translations = useTranslations()
+  const current = useCurrentTranslation().id
   const { hash } = useLocation()
 
   useEffect(() => {
@@ -156,7 +157,7 @@ export function SettingsPage() {
                   type="radio"
                   name="translation"
                   className="size-5 accent-amber-700"
-                  checked={settings.translation === t.id}
+                  checked={current === t.id}
                   onChange={() => updateSettings({ translation: t.id })}
                 />
                 <span>
@@ -164,7 +165,11 @@ export function SettingsPage() {
                     {t.abbr}: {t.name}
                   </span>
                   <span className="block text-sm text-stone-600 dark:text-stone-400">
-                    {t.kind === 'bundled' ? 'Built in · works offline' : `Imported · ${t.books?.length ?? 0} books · on this device only`}
+                    {t.kind === 'bundled'
+                      ? 'Built in · works offline'
+                      : t.kind === 'private'
+                        ? 'Built in from your own file · works offline'
+                        : `Imported · ${t.books?.length ?? 0} books · on this device only`}
                   </span>
                 </span>
               </label>
@@ -175,7 +180,7 @@ export function SettingsPage() {
                   onClick={async () => {
                     if (!confirm(`Remove ${t.abbr} from this device?`)) return
                     await removeImported(t.id)
-                    if (settings.translation === t.id) updateSettings({ translation: 'kjv' })
+                    if (settings.translation === t.id) updateSettings({ translation: 'auto' })
                   }}
                 >
                   Remove

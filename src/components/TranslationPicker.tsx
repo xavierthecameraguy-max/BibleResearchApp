@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom'
-import { useTranslations } from '../lib/hooks.ts'
-import { updateSettings, useAppState } from '../lib/storage.ts'
+import { useCurrentTranslation, useTranslations } from '../lib/hooks.ts'
+import { updateSettings } from '../lib/storage.ts'
 
 export function TranslationPicker() {
   const all = useTranslations()
-  const current = useAppState((s) => s.settings.translation)
-  const hasImported = all.some((t) => t.kind === 'imported')
+  const current = useCurrentTranslation().id
+  const hasNkjv = all.some((t) => t.kind !== 'bundled')
   return (
     <div className="flex flex-wrap items-center gap-2">
       <label htmlFor="translation" className="text-sm font-medium text-stone-600 dark:text-stone-400">
@@ -13,7 +13,7 @@ export function TranslationPicker() {
       </label>
       <select
         id="translation"
-        value={all.some((t) => t.id === current) ? current : 'kjv'}
+        value={current}
         onChange={(e) => updateSettings({ translation: e.target.value })}
         className="min-h-11 rounded-xl border border-stone-300 bg-white px-3 text-base dark:border-stone-700 dark:bg-stone-900"
       >
@@ -23,7 +23,7 @@ export function TranslationPicker() {
           </option>
         ))}
       </select>
-      {!hasImported && (
+      {!hasNkjv && (
         <Link to="/settings#translations" className="text-sm text-amber-800 underline underline-offset-2 dark:text-amber-300">
           Add your NKJV
         </Link>

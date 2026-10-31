@@ -56,6 +56,34 @@ Phones only allow **"Add to Home Screen" with offline use** for apps served over
 
 ## 2. Adding your NKJV (or ESV, NLT, CSB…)
 
+There are two ways to do this. **Option A** builds it into the app so it's the default everywhere. **Option B** imports it on one device.
+
+### Option A: build your NKJV into the app (recommended)
+
+Use this for your own private copy of the app.
+
+1. Make a folder called `private` inside the project folder and put your NKJV file in it, for example `private/nkjv.zip`. This folder is ignored by Git, so it never goes to GitHub.
+2. In the terminal, run:
+
+   ```
+   npm run add-bible -- NKJV "New King James Version" private/nkjv.zip
+   ```
+
+   It should say something like `Added NKJV: 66 books, 31,102 verses.`
+3. Run `npm run dev` (or `npm run build`). The app now opens in the NKJV everywhere and works offline. You can still switch to the KJV or WEB.
+
+The converted text goes in `public/bible/private/`, which Git also ignores. To remove it, run:
+
+```
+npm run add-bible -- --remove NKJV
+```
+
+This option accepts USFM (`.usfm`/`.sfm` or a `.zip` of them), JSON and text-line files. For XML files, use Option B.
+
+**Putting this version on Netlify:** the NKJV is not in GitHub, so a Netlify site built from GitHub won't include it. To publish your private build, run `npm run build`, then drag the `dist` folder onto <https://app.netlify.com/drop>. Anyone who has that address can see the site, so keep the link to yourself. Before sharing it more widely, get permission from the publisher (HarperCollins Christian Publishing for the NKJV).
+
+### Option B: import it inside the app
+
 The NKJV, ESV, NLT and CSB are copyrighted, so they can't be built into the app. You can import a copy **you already have** for your own personal study:
 
 1. In the app, go to **More → Settings → Bible translations**.
@@ -145,6 +173,7 @@ It explains any mistake in plain English, such as a quiz answer pointing to an o
 | `npm run check-content` | Check the lesson and content files for mistakes |
 | `npm run build` | Make the finished, optimised app in the `dist/` folder |
 | `npm run preview` | Run the finished app from `dist/`. This is the best way to test offline mode locally. |
+| `npm run add-bible -- NKJV "New King James Version" private/nkjv.zip` | Build your own Bible file into the app (see section 2) |
 | `npm run build-bible` | Re-download and re-convert the built-in KJV and WEB. Rarely needed. |
 
 ---

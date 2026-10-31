@@ -5,3 +5,5 @@ dev-dist
 *.local
 # Any Bible text you have personally (e.g. an NKJV file) - never commit it.
 private/
+# Bible text built from your own files (npm run add-bible) - never commit it.
+public/bible/private/

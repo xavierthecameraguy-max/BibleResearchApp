@@ -33,7 +33,11 @@ export interface Note {
 export interface Settings {
   theme: Theme
   textSize: TextSize
-  /** Translation id, e.g. "kjv", "web" or an imported one like "user-nkjv" */
+  /**
+   * Translation id, e.g. "kjv", "web", "nkjv" (built in from your own file)
+   * or an imported one like "user-nkjv". "auto" picks your built-in private
+   * translation if there is one, otherwise the KJV.
+   */
   translation: string
   /** The translation used for "Open in …" links to other Bible sites */
   linkVersion: string
@@ -52,7 +56,7 @@ export interface AppState {
 const DEFAULT_STATE: AppState = {
   progress: {},
   notes: [],
-  settings: { theme: 'system', textSize: 'md', translation: 'kjv', linkVersion: 'NKJV', linkSite: 'biblegateway' },
+  settings: { theme: 'system', textSize: 'md', translation: 'auto', linkVersion: 'NKJV', linkSite: 'biblegateway' },
 }
 
 function load(): AppState {

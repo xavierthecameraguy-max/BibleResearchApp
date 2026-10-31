@@ -7,9 +7,11 @@ import type { BookMap } from './bibleImport.ts'
 
 export interface Translation {
   id: string
+  /** Folder under /bible/ holding the book files (bundled and private translations) */
+  dir?: string
   abbr: string
   name: string
-  kind: 'bundled' | 'imported'
+  kind: 'bundled' | 'private' | 'imported'
   /** Shown under the text */
   notice: string
   /** Books available (imported translations may be partial) */
@@ -33,6 +35,20 @@ export const BUNDLED: Translation[] = [
     notice: 'World English Bible. Public domain. Source: eBible.org.',
   },
 ]
+
+/**
+ * Translations built into this copy of the app from your own files with
+ * `npm run add-bible` (see README). They live in public/bible/private/,
+ * which is never committed to Git.
+ */
+let privateList: Promise<Translation[]> | null = null
+export function listPrivate(): Promise<Translation[]> {
+  privateList ??= fetch('/bible/private/translations.json')
+    .then((r) => (r.ok ? r.json() : []))
+    .then((list: Omit<Translation, 'kind'>[]) => (Array.isArray(list) ? list.map((t) => ({ ...t, kind: 'private' as const })) : []))
+    .catch(() => [])
+  return privateList
+}
 
 const IMPORTED_LIST_KEY = 'translations'
 const bookKey = (tid: string, book: string) => `bible:${tid}:${book}`
@@ -84,7 +100,9 @@ export function loadBook(translationId: string, book: string): Promise<BookText 
   if (!p) {
     p = translationId.startsWith('user-')
       ? get(bookKey(translationId, book)).then((b) => (b as BookText | undefined) ?? null)
-      : fetch(`/bible/${translationId}/${book}.json`).then((r) => (r.ok ? (r.json() as Promise<BookText>) : null))
+      : listPrivate()
+          .then((priv) => priv.find((t) => t.id === translationId)?.dir ?? translationId)
+          .then((dir) => fetch(`/bible/${dir}/${book}.json`)).then((r) => (r.ok ? (r.json() as Promise<BookText>) : null))
     p = p.catch(() => null)
     cache.set(key, p)
     p.then((b) => {

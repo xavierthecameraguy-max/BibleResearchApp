@@ -1,24 +1,29 @@
 import { useEffect, useState } from 'react'
-import { BUNDLED, listImported, loadBook, onTranslationsChanged, type Translation } from './bible.ts'
+import { BUNDLED, listImported, listPrivate, loadBook, onTranslationsChanged, type Translation } from './bible.ts'
 import type { BookText } from './bibleTypes.ts'
 import { useAppState } from './storage.ts'
 
 /** All translations available on this device. */
 export function useTranslations(): Translation[] {
   const [imported, setImported] = useState<Translation[]>([])
+  const [priv, setPriv] = useState<Translation[]>([])
   useEffect(() => {
+    listPrivate().then(setPriv)
     const refresh = () => listImported().then(setImported)
     refresh()
     return onTranslationsChanged(refresh)
   }, [])
-  return [...imported, ...BUNDLED]
+  return [...priv, ...imported, ...BUNDLED]
 }
 
-/** The translation chosen in Settings (falls back to KJV if it's gone). */
+/**
+ * The translation chosen in Settings. "auto" (the default) means your
+ * built-in private translation if there is one, otherwise the KJV.
+ */
 export function useCurrentTranslation(): Translation {
   const id = useAppState((s) => s.settings.translation)
   const all = useTranslations()
-  return all.find((t) => t.id === id) ?? BUNDLED[0]
+  return all.find((t) => t.id === id) ?? all.find((t) => t.kind === 'private') ?? BUNDLED[0]
 }
 
 export interface BookState {
