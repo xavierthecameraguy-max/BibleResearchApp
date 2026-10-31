@@ -53,6 +53,19 @@ export function HomePage() {
         </div>
       )}
 
+      <Link
+        to="/today"
+        className="flex items-center justify-between gap-3 rounded-2xl bg-amber-700 p-5 text-white shadow-sm hover:bg-amber-800 dark:bg-amber-300 dark:text-stone-950 dark:hover:bg-amber-200"
+      >
+        <span>
+          <span className="block text-xl font-semibold">Start today’s quiet time</span>
+          <span className="block text-[0.95rem] opacity-90">Pray, read, reflect: about 10 minutes</span>
+        </span>
+        <span aria-hidden="true" className="text-2xl">
+          →
+        </span>
+      </Link>
+
       <VerseOfTheDay />
 
       {next ? (

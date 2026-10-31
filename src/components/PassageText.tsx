@@ -22,7 +22,7 @@ function versesFor(chapters: Verse[][], p: Passage): { chapter: number; verse: V
   return out
 }
 
-export function PassageText({ passage, maxVerses = 60 }: { passage: Passage; maxVerses?: number }) {
+export function PassageText({ passage, maxVerses = 60, label = 'Key passage' }: { passage: Passage; maxVerses?: number; label?: string }) {
   const chosen = useCurrentTranslation()
   const { chapters, loading, used, fellBack, notice } = useChapters(passage.book, passage.startChapter, passage.endChapter)
   const verses = versesFor(chapters, passage)
@@ -30,8 +30,8 @@ export function PassageText({ passage, maxVerses = 60 }: { passage: Passage; max
   const ref = formatReference(passage)
 
   return (
-    <section aria-label={`Key passage: ${ref}`} className="rounded-2xl border border-stone-200 bg-white p-5 dark:border-stone-800 dark:bg-stone-900">
-      <p className="text-sm font-semibold uppercase tracking-wide text-stone-600 dark:text-stone-400">Key passage</p>
+    <section aria-label={`${label}: ${ref}`} className="rounded-2xl border border-stone-200 bg-white p-5 dark:border-stone-800 dark:bg-stone-900">
+      <p className="text-sm font-semibold uppercase tracking-wide text-stone-600 dark:text-stone-400">{label}</p>
       <h2 className="mt-1 font-serif text-2xl font-semibold">{ref}</h2>
 
       {loading ? (

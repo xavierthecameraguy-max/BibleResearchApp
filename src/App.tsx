@@ -32,6 +32,7 @@ import { PeoplePage, PersonPage, PlacePage } from './pages/PeoplePage.tsx'
 import { WelcomePage } from './pages/WelcomePage.tsx'
 import { TopicPage, TopicsPage } from './pages/TopicsPage.tsx'
 import { CommentaryIndexPage, CommentaryPage } from './pages/CommentaryPage.tsx'
+import { QuietTimePage } from './pages/QuietTimePage.tsx'
 
 // The map pulls in a map library, so it's only loaded when opened.
 const MapPage = lazy(() => import('./pages/MapPage.tsx').then((m) => ({ default: m.MapPage })))
@@ -42,6 +43,7 @@ export function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/welcome" element={<WelcomePage />} />
+        <Route path="/today" element={<QuietTimePage />} />
         <Route path="/learn" element={<LearnPage />} />
         <Route path="/learn/:trackId" element={<TrackPage />} />
         <Route path="/lesson/:lessonId" element={<LessonPage />} />
