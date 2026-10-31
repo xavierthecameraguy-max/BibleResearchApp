@@ -5,6 +5,7 @@ import glossaryJson from '../../content/glossary.json'
 import timelineJson from '../../content/timeline.json'
 import introsJson from '../../content/book-intros.json'
 import resourcesJson from '../../content/resources.json'
+import votdJson from '../../content/verses-of-the-day.json'
 import { parseLesson, type Lesson } from './lessonFormat.ts'
 
 export type { Lesson, QuizQuestion } from './lessonFormat.ts'
@@ -65,6 +66,7 @@ export const glossary = (glossaryJson as GlossaryTerm[]).slice().sort((a, b) => 
 export const timeline = (timelineJson as TimelineEvent[]).slice().sort((a, b) => a.year - b.year)
 export const bookIntros = introsJson as BookIntro[]
 export const resources = resourcesJson as Resources
+export const versesOfTheDay = votdJson as string[]
 
 const files = import.meta.glob('../../content/lessons/*/*.md', { query: '?raw', import: 'default', eager: true }) as Record<string, string>
 

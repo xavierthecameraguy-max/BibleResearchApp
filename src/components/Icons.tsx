@@ -150,3 +150,16 @@ export const CompareIcon = (p: P) => (
     <rect x="14" y="4" width="7" height="16" rx="1.5" />
   </Svg>
 )
+export const BrainIcon = (p: P) => (
+  <Svg {...p}>
+    <path d="M12 4a3 3 0 0 0-5.6 1.5A3 3 0 0 0 4 9a3 3 0 0 0 1 5.2A3 3 0 0 0 9 19a3 3 0 0 0 3-1z" />
+    <path d="M12 4a3 3 0 0 1 5.6 1.5A3 3 0 0 1 20 9a3 3 0 0 1-1 5.2A3 3 0 0 1 15 19a3 3 0 0 1-3-1z" />
+    <path d="M12 4v14" />
+  </Svg>
+)
+export const PrayIcon = (p: P) => (
+  <Svg {...p}>
+    <path d="M12 3c-1 2-4 6-4 10v5l-3 3M12 3c1 2 4 6 4 10v5l3 3" />
+    <path d="M12 3v15" />
+  </Svg>
+)

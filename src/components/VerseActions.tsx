@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import type { Verse } from '../lib/bibleTypes.ts'
 import { formatReference, type Passage } from '../lib/references.ts'
 import {
+  addMemoryCard,
   setHighlight,
   setVerseNote,
   toggleBookmark,
@@ -60,6 +61,7 @@ export function VerseActions({ book, chapter, selected, verses, translationAbbr,
   const keys = sorted.map((v) => verseKey(book, chapter, v))
   const highlights = useAppState((s) => s.highlights)
   const bookmarks = useAppState((s) => s.bookmarks)
+  const memory = useAppState((s) => s.memory)
   const notes = useAppState((s) => s.verseNotes)
   const key = rangeKey(book, chapter, sorted)
   const passage = passageFromKey(key)!
@@ -136,6 +138,15 @@ export function VerseActions({ book, chapter, selected, verses, translationAbbr,
             }}
           >
             {notes[noteKey] ? 'Edit note' : 'Note'}
+          </Chip>
+          <Chip
+            onClick={() => {
+              addMemoryCard(key)
+              setStatus('Added to memory verses')
+            }}
+            pressed={!!memory[key]}
+          >
+            {memory[key] ? 'Memorizing' : 'Memorize'}
           </Chip>
           <Chip onClick={copy}>Copy</Chip>
           <ChipLink to={`/compare?ref=${encodeURIComponent(key)}`}>Compare</ChipLink>

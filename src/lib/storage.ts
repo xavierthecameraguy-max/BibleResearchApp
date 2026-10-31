@@ -51,6 +51,32 @@ export interface PlanProgress {
   done: number[]
 }
 
+/** A memory verse, reviewed with spaced repetition */
+export interface MemoryCard {
+  /** "JHN.3.16" or "JHN.3.16-17" */
+  key: string
+  addedAt: string
+  /** Next review date, YYYY-MM-DD */
+  due: string
+  /** Days until the next review after a good answer */
+  interval: number
+  ease: number
+  reps: number
+  lapses: number
+}
+
+export interface PrayerItem {
+  id: string
+  title: string
+  details: string
+  createdAt: string
+  answeredAt?: string
+  answerNote?: string
+}
+
+export type ReaderFont = 'serif' | 'sans'
+export type LineSpacing = 'normal' | 'relaxed' | 'loose'
+
 export interface Settings {
   theme: Theme
   textSize: TextSize
@@ -65,6 +91,10 @@ export interface Settings {
   linkVersion: string
   /** Which site those links go to */
   linkSite: 'biblegateway' | 'youversion'
+  readerFont: ReaderFont
+  lineSpacing: LineSpacing
+  showVerseNumbers: boolean
+  showHeadings: boolean
 }
 
 export interface AppState {
@@ -79,6 +109,10 @@ export interface AppState {
   verseNotes: Record<string, VerseNote>
   bookmarks: Bookmark[]
   plans: Record<string, PlanProgress>
+  memory: Record<string, MemoryCard>
+  prayers: PrayerItem[]
+  /** Days (YYYY-MM-DD) with any reading or study, for the streak */
+  activity: string[]
 }
 
 const DEFAULT_STATE: AppState = {
@@ -88,6 +122,9 @@ const DEFAULT_STATE: AppState = {
   verseNotes: {},
   bookmarks: [],
   plans: {},
+  memory: {},
+  prayers: [],
+  activity: [],
   settings: {
     theme: 'system',
     textSize: 'md',
@@ -95,6 +132,10 @@ const DEFAULT_STATE: AppState = {
     compare: ['kjv', 'web'],
     linkVersion: 'NKJV',
     linkSite: 'biblegateway',
+    readerFont: 'serif',
+    lineSpacing: 'relaxed',
+    showVerseNumbers: true,
+    showHeadings: true,
   },
 }
 
@@ -157,6 +198,7 @@ export function useAppState<T>(select: (s: AppState) => T): T {
 // ---- Actions ---------------------------------------------------------------
 
 export function completeLesson(id: string, quizScore: number, quizTotal: number) {
+  recordActivity()
   setState((s) => ({
     ...s,
     progress: { ...s.progress, [id]: { completedAt: new Date().toISOString(), quizScore, quizTotal } },
@@ -177,6 +219,84 @@ export function setLastLesson(id: string) {
 
 export function setLastRead(book: string, chapter: number) {
   setState((s) => ({ ...s, lastRead: { book, chapter } }))
+  recordActivity()
+}
+
+// ---- Daily activity (for the streak) ---------------------------------------
+
+export const todayStr = (d = new Date()) =>
+  `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
+
+export function recordActivity() {
+  const t = todayStr()
+  if (state.activity.at(-1) === t) return
+  setState((s) => ({ ...s, activity: [...s.activity.filter((d) => d !== t), t].slice(-400) }))
+}
+
+/** Consecutive days up to today (or yesterday, so the streak isn't lost before you read today). */
+export function currentStreak(activity: string[]): number {
+  const days = new Set(activity)
+  const d = new Date()
+  if (!days.has(todayStr(d))) d.setDate(d.getDate() - 1)
+  let n = 0
+  while (days.has(todayStr(d))) {
+    n++
+    d.setDate(d.getDate() - 1)
+  }
+  return n
+}
+
+// ---- Memory verses (spaced repetition, a simplified SM-2) ------------------
+
+export function addMemoryCard(key: string) {
+  if (state.memory[key]) return
+  const card: MemoryCard = { key, addedAt: new Date().toISOString(), due: todayStr(), interval: 0, ease: 2.5, reps: 0, lapses: 0 }
+  setState((s) => ({ ...s, memory: { ...s.memory, [key]: card } }))
+}
+
+export function removeMemoryCard(key: string) {
+  setState((s) => {
+    const memory = { ...s.memory }
+    delete memory[key]
+    return { ...s, memory }
+  })
+}
+
+export type Recall = 'again' | 'hard' | 'good' | 'easy'
+
+/** Schedule the next review based on how well you remembered. */
+export function reviewMemoryCard(key: string, recall: Recall) {
+  const c = state.memory[key]
+  if (!c) return
+  let { interval, ease, reps, lapses } = c
+  if (recall === 'again') {
+    interval = 0
+    lapses++
+    reps = 0
+    ease = Math.max(1.3, ease - 0.2)
+  } else {
+    reps++
+    if (recall === 'hard') ease = Math.max(1.3, ease - 0.15)
+    if (recall === 'easy') ease += 0.15
+    if (reps === 1) interval = recall === 'easy' ? 3 : 1
+    else if (reps === 2) interval = recall === 'hard' ? 2 : recall === 'easy' ? 7 : 4
+    else interval = Math.round(interval * (recall === 'hard' ? 1.2 : recall === 'easy' ? ease * 1.3 : ease))
+  }
+  const due = new Date()
+  due.setDate(due.getDate() + interval)
+  setState((s) => ({ ...s, memory: { ...s.memory, [key]: { ...c, interval, ease, reps, lapses, due: todayStr(due) } } }))
+  recordActivity()
+}
+
+// ---- Prayer journal --------------------------------------------------------
+
+export function savePrayer(item: Omit<PrayerItem, 'id' | 'createdAt'> & { id?: string; createdAt?: string }) {
+  const full: PrayerItem = { ...item, id: item.id ?? newId(), createdAt: item.createdAt ?? new Date().toISOString() }
+  setState((s) => ({ ...s, prayers: [full, ...s.prayers.filter((p) => p.id !== full.id)] }))
+}
+
+export function deletePrayer(id: string) {
+  setState((s) => ({ ...s, prayers: s.prayers.filter((p) => p.id !== id) }))
 }
 
 export function updateSettings(patch: Partial<Settings>) {
@@ -243,6 +363,7 @@ export function togglePlanDay(planId: string, day: number) {
     const p = s.plans[planId]
     if (!p) return s
     const done = p.done.includes(day) ? p.done.filter((d) => d !== day) : [...p.done, day].sort((a, b) => a - b)
+    if (!p.done.includes(day)) queueMicrotask(recordActivity)
     return { ...s, plans: { ...s.plans, [planId]: { ...p, done } } }
   })
 }
@@ -285,6 +406,11 @@ export function importBackup(text: string): { notes: number; lessons: number } {
       verseNotes: { ...s.verseNotes, ...obj<VerseNote>(data.verseNotes) },
       bookmarks: [...marks.values()],
       plans: { ...s.plans, ...obj<PlanProgress>(data.plans) },
+      memory: { ...s.memory, ...obj<MemoryCard>(data.memory) },
+      prayers: Array.isArray(data.prayers)
+        ? [...data.prayers.filter((p) => !s.prayers.some((x) => x.id === p.id)), ...s.prayers]
+        : s.prayers,
+      activity: [...new Set([...s.activity, ...(Array.isArray(data.activity) ? data.activity : [])])].sort().slice(-400),
     }
   })
   return { notes: notes.length, lessons: Object.keys(progress).length }

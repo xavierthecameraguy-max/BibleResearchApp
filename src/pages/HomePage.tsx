@@ -7,6 +7,8 @@ import { Card, MentorNote, ProgressBar, buttonClass } from '../components/ui.tsx
 import { ClockIcon } from '../components/Icons.tsx'
 import { PLANS, todayIndex } from '../lib/plans.ts'
 import { formatReference, readerPath } from '../lib/references.ts'
+import { VerseOfTheDay } from '../components/VerseOfTheDay.tsx'
+import { currentStreak, todayStr } from '../lib/storage.ts'
 
 export function HomePage() {
   useTitle('')
@@ -15,6 +17,10 @@ export function HomePage() {
   const lastRead = useAppState((s) => s.lastRead)
   const plans = useAppState((s) => s.plans)
   const activePlan = PLANS.find((p) => plans[p.id])
+  const activity = useAppState((s) => s.activity)
+  const memory = useAppState((s) => s.memory)
+  const streak = currentStreak(activity)
+  const dueCards = Object.values(memory).filter((c) => c.due <= todayStr()).length
   const next = suggestedLesson(progress, lastLesson)
   const doneCount = Object.keys(progress).filter((id) => getLesson(id)).length
   const isNew = doneCount === 0 && !lastLesson
@@ -29,6 +35,21 @@ export function HomePage() {
             : `You've completed ${doneCount} lesson${doneCount === 1 ? '' : 's'}. Keep going.`}
         </p>
       </div>
+
+      {(streak > 0 || dueCards > 0) && (
+        <div className="grid grid-cols-2 gap-3">
+          <Card className="p-4">
+            <p className="text-3xl font-semibold">{streak}</p>
+            <p className="text-sm text-stone-600 dark:text-stone-400">day{streak === 1 ? '' : 's'} in a row</p>
+          </Card>
+          <Link to="/memory" className="block rounded-2xl border border-stone-200 bg-white p-4 shadow-sm hover:bg-stone-50 dark:border-stone-800 dark:bg-stone-900 dark:hover:bg-stone-800">
+            <p className="text-3xl font-semibold">{dueCards}</p>
+            <p className="text-sm text-stone-600 dark:text-stone-400">memory verse{dueCards === 1 ? '' : 's'} to review</p>
+          </Link>
+        </div>
+      )}
+
+      <VerseOfTheDay />
 
       {next ? (
         <Card className={`border-2 ${trackStyle(next.track).ring}`}>

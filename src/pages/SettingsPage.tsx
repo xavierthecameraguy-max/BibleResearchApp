@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { useLocation } from 'react-router-dom'
-import { updateSettings, useAppState, type TextSize, type Theme } from '../lib/storage.ts'
+import { updateSettings, useAppState, type LineSpacing, type ReaderFont, type TextSize, type Theme } from '../lib/storage.ts'
 import { useCurrentTranslation, useTitle, useTranslations } from '../lib/hooks.ts'
 import { removeImported, saveImported } from '../lib/bible.ts'
 import { countVerses, parseBibleFiles } from '../lib/bibleImport.ts'
@@ -132,6 +132,43 @@ export function SettingsPage() {
               ['xl', 'Largest'],
             ]}
             onChange={(textSize) => updateSettings({ textSize })}
+          />
+          <Choice<ReaderFont>
+            legend="Bible text font"
+            value={settings.readerFont}
+            options={[
+              ['serif', 'Classic'],
+              ['sans', 'Modern'],
+            ]}
+            onChange={(readerFont) => updateSettings({ readerFont })}
+          />
+          <Choice<LineSpacing>
+            legend="Line spacing"
+            value={settings.lineSpacing}
+            options={[
+              ['normal', 'Snug'],
+              ['relaxed', 'Comfy'],
+              ['loose', 'Airy'],
+            ]}
+            onChange={(lineSpacing) => updateSettings({ lineSpacing })}
+          />
+          <Choice<'on' | 'off'>
+            legend="Verse numbers"
+            value={settings.showVerseNumbers ? 'on' : 'off'}
+            options={[
+              ['on', 'Show'],
+              ['off', 'Hide'],
+            ]}
+            onChange={(v) => updateSettings({ showVerseNumbers: v === 'on' })}
+          />
+          <Choice<'on' | 'off'>
+            legend="Section headings"
+            value={settings.showHeadings ? 'on' : 'off'}
+            options={[
+              ['on', 'Show'],
+              ['off', 'Hide'],
+            ]}
+            onChange={(v) => updateSettings({ showHeadings: v === 'on' })}
           />
           <Choice<Theme>
             legend="Appearance"

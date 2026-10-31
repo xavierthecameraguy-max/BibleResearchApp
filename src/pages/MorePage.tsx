@@ -1,10 +1,12 @@
 import { useTitle } from '../lib/hooks.ts'
 import { PageTitle, RowLink } from '../components/ui.tsx'
-import { BookmarkIcon, CalendarIcon, CompareIcon, SearchIcon, GlossaryIcon, InfoIcon, LinkIcon, NotesIcon, SettingsIcon, TimelineIcon } from '../components/Icons.tsx'
+import { BrainIcon, PrayIcon, BookmarkIcon, CalendarIcon, CompareIcon, SearchIcon, GlossaryIcon, InfoIcon, LinkIcon, NotesIcon, SettingsIcon, TimelineIcon } from '../components/Icons.tsx'
 
 const ITEMS = [
   { to: '/my-bible', label: 'My Bible', desc: 'Your bookmarks, highlights and verse notes', icon: BookmarkIcon },
   { to: '/plans', label: 'Reading plans', desc: 'Read through the Bible, the New Testament or the Gospels', icon: CalendarIcon },
+  { to: '/memory', label: 'Memory verses', desc: 'Learn verses by heart with spaced repetition', icon: BrainIcon },
+  { to: '/prayer', label: 'Prayer journal', desc: 'What you’re praying for, and how God answered', icon: PrayIcon },
   { to: '/search', label: 'Search', desc: 'Find any word or phrase in the Bible', icon: SearchIcon },
   { to: '/compare', label: 'Compare translations', desc: 'See a passage in several translations', icon: CompareIcon },
   { to: '/timeline', label: 'Timeline', desc: 'Bible and church history, from Abraham to today', icon: TimelineIcon },

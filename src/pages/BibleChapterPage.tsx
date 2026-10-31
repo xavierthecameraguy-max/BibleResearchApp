@@ -32,6 +32,9 @@ export function BibleChapterPage() {
   const verseNotes = useAppState((s) => s.verseNotes)
   const speaking = useSpeaking()
   const [panel, setPanel] = useState<null | 'xrefs'>(null)
+  const settings = useAppState((s) => s.settings)
+  const leading = { normal: 'leading-[1.6]', relaxed: 'leading-[1.85]', loose: 'leading-[2.1]' }[settings.lineSpacing]
+  const fontClass = settings.readerFont === 'sans' ? 'font-sans' : 'font-serif'
   useTitle(book ? formatReference({ book: book.id, startChapter: chapter, endChapter: chapter }) : 'Not found')
 
   const [hlStart, hlEnd] = (search.get('v') ?? '').split('-').map((n) => parseInt(n, 10))
@@ -96,16 +99,18 @@ export function BibleChapterPage() {
       {loading ? (
         <p className="text-stone-500">Loading…</p>
       ) : verses.length ? (
-        <div className="font-serif text-[1.15rem] leading-[1.85]">
+        <div className={`${fontClass} text-[1.15rem] ${leading}`}>
           {verses.map((v, i) => (
             <span key={v.v}>
-              {v.h && (
+              {v.h && settings.showHeadings && (
                 <span className="mb-2 mt-4 block font-sans text-base italic text-stone-600 dark:text-stone-400">{v.h}</span>
               )}
               {v.p && i > 0 && !v.h && <span className="block h-3" aria-hidden="true" />}
               <VerseButton
                 id={`v${v.v}`}
                 num={v.v}
+                showNumber={settings.showVerseNumbers}
+                fontClass={fontClass}
                 text={v.t}
                 selected={selected.includes(v.v)}
                 linked={highlight(v.v)}
@@ -181,6 +186,8 @@ export function BibleChapterPage() {
 function VerseButton(props: {
   id: string
   num: number
+  showNumber: boolean
+  fontClass: string
   text: string
   selected: boolean
   linked: boolean
@@ -188,7 +195,7 @@ function VerseButton(props: {
   hasNote: boolean
   onToggle: () => void
 }) {
-  const { id, num, text, selected, linked, color, hasNote, onToggle } = props
+  const { id, num, showNumber, fontClass, text, selected, linked, color, hasNote, onToggle } = props
   const bg = color ? HIGHLIGHT_STYLES[color].bg : linked ? 'bg-amber-100 dark:bg-amber-900/50' : ''
   return (
     <button
@@ -196,11 +203,15 @@ function VerseButton(props: {
       id={id}
       onClick={onToggle}
       aria-pressed={selected}
-      className={`inline cursor-pointer rounded box-decoration-clone px-0.5 text-left font-serif ${bg} ${
+      className={`inline cursor-pointer rounded box-decoration-clone px-0.5 text-left ${fontClass} ${bg} ${
         selected ? 'underline decoration-amber-600 decoration-dashed decoration-2 underline-offset-[6px] dark:decoration-amber-300' : ''
       }`}
     >
-      <sup className="mr-1 font-sans text-xs font-semibold text-stone-600 dark:text-stone-400">{num}</sup>
+      {showNumber ? (
+        <sup className="mr-1 font-sans text-xs font-semibold text-stone-600 dark:text-stone-400">{num}</sup>
+      ) : (
+        <span className="sr-only">Verse {num}. </span>
+      )}
       <span className={text.includes('\n') ? 'whitespace-pre-line' : ''}>{text}</span>
       {hasNote && (
         <>

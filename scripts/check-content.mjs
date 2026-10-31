@@ -6,6 +6,7 @@ import { join, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { parseLesson, TRACK_IDS } from '../src/lib/lessonFormat.ts'
 import { BOOK_IDS } from '../src/lib/books.ts'
+import { parseReference } from '../src/lib/references.ts'
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..', 'content')
 const problems = []
@@ -73,6 +74,9 @@ for (const b of intros) {
 }
 
 if (!Array.isArray(resources.sections)) problems.push('resources.json: needs a "sections" list')
+
+const votd = readJson('verses-of-the-day.json')
+for (const r of votd) if (!parseReference(r)) problems.push(`verses-of-the-day.json: "${r}" is not a Bible reference the app understands`)
 
 if (problems.length) {
   console.error(`\nFound ${problems.length} problem(s) in the content folder:\n`)

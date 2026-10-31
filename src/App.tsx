@@ -21,6 +21,8 @@ import { MyBiblePage } from './pages/MyBiblePage.tsx'
 import { SearchPage } from './pages/SearchPage.tsx'
 import { PlansPage } from './pages/PlansPage.tsx'
 import { CopyrightPage } from './pages/CopyrightPage.tsx'
+import { MemoryPage } from './pages/MemoryPage.tsx'
+import { PrayerPage } from './pages/PrayerPage.tsx'
 
 export function App() {
   return (
@@ -39,6 +41,8 @@ export function App() {
         <Route path="/my-bible" element={<MyBiblePage />} />
         <Route path="/plans" element={<PlansPage />} />
         <Route path="/copyright" element={<CopyrightPage />} />
+        <Route path="/memory" element={<MemoryPage />} />
+        <Route path="/prayer" element={<PrayerPage />} />
         <Route path="/study" element={<StudyPage />} />
         <Route path="/notes" element={<NotesPage />} />
         <Route path="/glossary" element={<GlossaryPage />} />
