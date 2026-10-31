@@ -163,3 +163,9 @@ export const PrayIcon = (p: P) => (
     <path d="M12 3v15" />
   </Svg>
 )
+export const LanguageIcon = (p: P) => (
+  <Svg {...p}>
+    <path d="M4 5h8M8 3v2M6 5c0 4 3 7 6 8M10 5c0 3-2 6-6 8" />
+    <path d="M13 21l4-9 4 9M14.5 18h5" />
+  </Svg>
+)

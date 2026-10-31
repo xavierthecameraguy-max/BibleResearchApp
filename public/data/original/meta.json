@@ -1,0 +1,24 @@
+{
+ "name": "Original-language words, lexicon and grammar (Hebrew, Aramaic, Greek)",
+ "source": "STEPBible-Data (TAHOT, TAGNT, TBESH, TBESG, TEHMC, TEGMC)",
+ "creator": "Tyndale House Cambridge, curated by STEPBible.org",
+ "url": "https://github.com/STEPBible/STEPBible-Data",
+ "commit": "be4191f0082aeedddb0eff0c02c966292b2bd641",
+ "license": "CC BY 4.0",
+ "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+ "credit": "Original-language data from STEP Bible (www.STEPBible.org), created by Tyndale House Cambridge, CC BY 4.0.",
+ "notes": [
+  "Reformatted to JSON, verse numbers mapped to the KJV, HTML removed and long definitions shortened.",
+  "Hebrew definitions are based on the Abridged BDB by Online Bible (Larry Pierce); Greek definitions on Abbott-Smith, Manual Greek Lexicon of the New Testament.",
+  "Greek glosses are based on the Berean Study Bible."
+ ],
+ "hebrewMeanings": true,
+ "built": "2026-10-31",
+ "counts": {
+  "hebrewWords": 305634,
+  "greekWords": 141812,
+  "lexiconEntries": 14325,
+  "strongsWithOccurrences": 13945,
+  "morphCodes": 1878
+ }
+}
