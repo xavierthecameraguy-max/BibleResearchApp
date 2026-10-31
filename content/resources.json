@@ -1,0 +1,184 @@
+{
+  "intro": "Foundations is only a starting point. These trusted resources go deeper. The links open other websites. Book links go to Open Library, so you can find a copy at a library or bookshop.",
+  "sections": [
+    {
+      "title": "Free websites and video",
+      "items": [
+        {
+          "title": "BibleProject",
+          "url": "https://bibleproject.com",
+          "description": "Free animated videos, podcasts and classes that walk through every book of the Bible and its big themes. A wonderful companion to this app."
+        },
+        {
+          "title": "BiblicalTraining.org",
+          "url": "https://www.biblicaltraining.org",
+          "description": "Free seminary-level classes from respected teachers, on the Bible, theology and church history. Great for when you want to go much deeper."
+        },
+        {
+          "title": "Christian History Institute",
+          "url": "https://christianhistoryinstitute.org",
+          "description": "Free issues of Christian History magazine, readable articles on people and events from every era."
+        }
+      ]
+    },
+    {
+      "title": "Reading and comparing translations",
+      "items": [
+        {
+          "title": "Bible Gateway",
+          "url": "https://www.biblegateway.com",
+          "description": "Read and compare dozens of translations, including the NKJV, ESV, NLT and CSB, side by side."
+        },
+        {
+          "title": "YouVersion Bible App",
+          "url": "https://www.bible.com",
+          "description": "A free Bible app with many translations, audio Bibles and reading plans."
+        },
+        {
+          "title": "STEP Bible",
+          "url": "https://www.stepbible.org",
+          "description": "Free study tools from Tyndale House, Cambridge, that let you see the Hebrew and Greek words behind any English translation."
+        },
+        {
+          "title": "Blue Letter Bible",
+          "url": "https://www.blueletterbible.org",
+          "description": "Free word-study tools, commentaries and original-language helps."
+        }
+      ]
+    },
+    {
+      "title": "Manuscripts and the history of the text",
+      "items": [
+        {
+          "title": "Leon Levy Dead Sea Scrolls Digital Library",
+          "url": "https://www.deadseascrolls.org.il",
+          "description": "High-resolution images of the Dead Sea Scrolls from the Israel Antiquities Authority."
+        },
+        {
+          "title": "Center for the Study of New Testament Manuscripts",
+          "url": "https://www.csntm.org",
+          "description": "Photographs of ancient Greek New Testament manuscripts that you can browse for free."
+        }
+      ]
+    },
+    {
+      "title": "Books: the big story",
+      "items": [
+        {
+          "title": "The Drama of Scripture",
+          "by": "Craig Bartholomew and Michael Goheen",
+          "url": "https://openlibrary.org/search?q=The+Drama+of+Scripture+Craig+Bartholomew+and+Michael+Goheen",
+          "description": "The whole Bible told as one unfolding story in six acts."
+        },
+        {
+          "title": "God's Big Picture",
+          "by": "Vaughan Roberts",
+          "url": "https://openlibrary.org/search?q=God%27s+Big+Picture+Vaughan+Roberts",
+          "description": "A short, clear overview of how the Bible fits together around the theme of God's kingdom."
+        },
+        {
+          "title": "Basic Christianity",
+          "by": "John Stott",
+          "url": "https://openlibrary.org/search?q=Basic+Christianity+John+Stott",
+          "description": "A classic, short introduction to who Jesus is and what it means to follow him."
+        }
+      ]
+    },
+    {
+      "title": "Books: how to read the Bible",
+      "items": [
+        {
+          "title": "How to Read the Bible for All Its Worth",
+          "by": "Gordon Fee and Douglas Stuart",
+          "url": "https://openlibrary.org/search?q=How+to+Read+the+Bible+for+All+Its+Worth+Gordon+Fee+and+Douglas+Stuart",
+          "description": "The best-known beginner's guide to reading each genre of the Bible well."
+        },
+        {
+          "title": "How to Read the Bible Book by Book",
+          "by": "Gordon Fee and Douglas Stuart",
+          "url": "https://openlibrary.org/search?q=How+to+Read+the+Bible+Book+by+Book+Gordon+Fee+and+Douglas+Stuart",
+          "description": "A guided tour of every book: what it is about and how to read it."
+        },
+        {
+          "title": "Grasping God's Word",
+          "by": "J. Scott Duvall and J. Daniel Hays",
+          "url": "https://openlibrary.org/search?q=Grasping+God%27s+Word+J.+Scott+Duvall+and+J.+Daniel+Hays",
+          "description": "A hands-on workbook for learning to study a passage step by step."
+        }
+      ]
+    },
+    {
+      "title": "Books: how we got the Bible",
+      "items": [
+        {
+          "title": "How We Got the Bible",
+          "by": "Neil R. Lightfoot",
+          "url": "https://openlibrary.org/search?q=How+We+Got+the+Bible+Neil+R.+Lightfoot",
+          "description": "A friendly introduction to manuscripts, canon and translation."
+        },
+        {
+          "title": "The Canon of Scripture",
+          "by": "F. F. Bruce",
+          "url": "https://openlibrary.org/search?q=The+Canon+of+Scripture+F.+F.+Bruce",
+          "description": "A respected scholar's account of how the books of the Bible were recognised."
+        },
+        {
+          "title": "Myths and Mistakes in New Testament Textual Criticism",
+          "by": "Elijah Hixson and Peter Gurry (editors)",
+          "url": "https://openlibrary.org/search?q=Myths+and+Mistakes+in+New+Testament+Textual+Criticism+Elijah+Hixson+and+Peter+Gurry+%28editors%29",
+          "description": "For later: careful scholars correct common misunderstandings about manuscripts.",
+          "tag": "Going deeper"
+        }
+      ]
+    },
+    {
+      "title": "Books: church history",
+      "items": [
+        {
+          "title": "Church History in Plain Language",
+          "by": "Bruce Shelley",
+          "url": "https://openlibrary.org/search?q=Church+History+in+Plain+Language+Bruce+Shelley",
+          "description": "Two thousand years of church history told clearly for ordinary readers."
+        },
+        {
+          "title": "The Story of Christianity",
+          "by": "Justo L. González",
+          "url": "https://openlibrary.org/search?q=The+Story+of+Christianity+Justo+L.+Gonz%C3%A1lez",
+          "description": "A highly readable two-volume history of the church from the early centuries to today."
+        },
+        {
+          "title": "Turning Points: Decisive Moments in the History of Christianity",
+          "by": "Mark A. Noll",
+          "url": "https://openlibrary.org/search?q=Turning+Points%3A+Decisive+Moments+in+the+History+of+Christianity+Mark+A.+Noll",
+          "description": "Twelve key moments that shaped the church, explained by a leading historian."
+        }
+      ]
+    },
+    {
+      "title": "Understanding each tradition in its own words",
+      "intro": "Learning how each tradition explains itself is one of the fairest ways to understand Christians who differ from you.",
+      "items": [
+        {
+          "title": "The Orthodox Church",
+          "by": "Timothy (Kallistos) Ware",
+          "url": "https://openlibrary.org/search?q=The+Orthodox+Church+Timothy+%28Kallistos%29+Ware",
+          "description": "The classic introduction to Eastern Orthodox history and belief, by an Orthodox bishop.",
+          "tag": "Orthodox"
+        },
+        {
+          "title": "Catechism of the Catholic Church",
+          "url": "https://www.vatican.va/archive/ENG0015/_INDEX.HTM",
+          "description": "The official summary of Catholic teaching, free on the Vatican website.",
+          "tag": "Catholic"
+        },
+        {
+          "title": "Christianity's Dangerous Idea",
+          "by": "Alister McGrath",
+          "url": "https://openlibrary.org/search?q=Christianity%27s+Dangerous+Idea+Alister+McGrath",
+          "description": "A history of Protestantism, from the Reformation to today's global movements.",
+          "tag": "Protestant"
+        }
+      ]
+    }
+  ]
+}

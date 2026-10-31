@@ -1,0 +1,43 @@
+import { Route, Routes } from 'react-router-dom'
+import { Layout } from './components/Layout.tsx'
+import { HomePage } from './pages/HomePage.tsx'
+import { LearnPage } from './pages/LearnPage.tsx'
+import { TrackPage } from './pages/TrackPage.tsx'
+import { LessonPage } from './pages/LessonPage.tsx'
+import { TimelinePage } from './pages/TimelinePage.tsx'
+import { BibleIndexPage } from './pages/BibleIndexPage.tsx'
+import { BibleBookPage } from './pages/BibleBookPage.tsx'
+import { BibleChapterPage } from './pages/BibleChapterPage.tsx'
+import { StudyPage } from './pages/StudyPage.tsx'
+import { NotesPage } from './pages/NotesPage.tsx'
+import { GlossaryPage } from './pages/GlossaryPage.tsx'
+import { ResourcesPage } from './pages/ResourcesPage.tsx'
+import { AboutPage } from './pages/AboutPage.tsx'
+import { SettingsPage } from './pages/SettingsPage.tsx'
+import { MorePage } from './pages/MorePage.tsx'
+import { NotFoundPage } from './pages/NotFoundPage.tsx'
+
+export function App() {
+  return (
+    <Layout>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/learn" element={<LearnPage />} />
+        <Route path="/learn/:trackId" element={<TrackPage />} />
+        <Route path="/lesson/:lessonId" element={<LessonPage />} />
+        <Route path="/timeline" element={<TimelinePage />} />
+        <Route path="/bible" element={<BibleIndexPage />} />
+        <Route path="/bible/:bookId" element={<BibleBookPage />} />
+        <Route path="/bible/:bookId/:chapter" element={<BibleChapterPage />} />
+        <Route path="/study" element={<StudyPage />} />
+        <Route path="/notes" element={<NotesPage />} />
+        <Route path="/glossary" element={<GlossaryPage />} />
+        <Route path="/resources" element={<ResourcesPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/settings" element={<SettingsPage />} />
+        <Route path="/more" element={<MorePage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </Layout>
+  )
+}

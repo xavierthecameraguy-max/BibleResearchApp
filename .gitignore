@@ -1,0 +1,7 @@
+node_modules
+dist
+dev-dist
+.DS_Store
+*.local
+# Any Bible text you have personally (e.g. an NKJV file) - never commit it.
+private/

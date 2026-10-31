@@ -1,0 +1,30 @@
+[
+  {
+    "id": "big-story",
+    "title": "The Big Story",
+    "tagline": "From creation to new creation",
+    "description": "The Bible is one long story about God, his people and his world. Walk through it from the first page to the last and see how it all fits together.",
+    "color": "amber"
+  },
+  {
+    "id": "bible-origins",
+    "title": "How We Got the Bible",
+    "tagline": "Writers, scribes, canon and translations",
+    "description": "Who wrote the Bible, how it was copied and collected, why different churches have different lists of books, and how it reached English.",
+    "color": "sky"
+  },
+  {
+    "id": "church-history",
+    "title": "How We Got Here",
+    "tagline": "Church history in twelve steps",
+    "description": "From a handful of believers in Jerusalem to a worldwide family of churches: persecution, creeds, splits, reform and mission.",
+    "color": "emerald"
+  },
+  {
+    "id": "reading-bible",
+    "title": "How to Read the Bible",
+    "tagline": "Context, genre and audience",
+    "description": "Learn to read each part of the Bible the way it was meant to be read, and avoid the most common mistakes.",
+    "color": "violet"
+  }
+]

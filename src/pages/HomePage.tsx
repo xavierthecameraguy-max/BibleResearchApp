@@ -1,0 +1,93 @@
+import { Link } from 'react-router-dom'
+import { lessonsInTrack, suggestedLesson, tracks, trackStyle, getTrack, getLesson } from '../lib/content.ts'
+import { useAppState } from '../lib/storage.ts'
+import { useTitle } from '../lib/hooks.ts'
+import { getBook } from '../lib/books.ts'
+import { Card, MentorNote, ProgressBar, buttonClass } from '../components/ui.tsx'
+import { ClockIcon } from '../components/Icons.tsx'
+
+export function HomePage() {
+  useTitle('')
+  const progress = useAppState((s) => s.progress)
+  const lastLesson = useAppState((s) => s.lastLesson)
+  const lastRead = useAppState((s) => s.lastRead)
+  const next = suggestedLesson(progress, lastLesson)
+  const doneCount = Object.keys(progress).filter((id) => getLesson(id)).length
+  const isNew = doneCount === 0 && !lastLesson
+
+  return (
+    <div className="space-y-6">
+      <div>
+        <h1 className="font-serif text-3xl font-semibold leading-tight">{isNew ? 'Welcome' : 'Welcome back'}</h1>
+        <p className="mt-2 text-stone-600 dark:text-stone-400">
+          {isNew
+            ? 'Learn the Bible from the ground up: its big story, how we got it, how the church got here, and how to read it well.'
+            : `You've completed ${doneCount} lesson${doneCount === 1 ? '' : 's'}. Keep going.`}
+        </p>
+      </div>
+
+      {next ? (
+        <Card className={`border-2 ${trackStyle(next.track).ring}`}>
+          <p className="text-sm font-semibold uppercase tracking-wide text-stone-600 dark:text-stone-400">
+            {isNew ? 'Start here' : 'Suggested next'}
+          </p>
+          <h2 className="mt-1 font-serif text-2xl font-semibold">{next.title}</h2>
+          <p className="mt-1 flex items-center gap-2 text-stone-600 dark:text-stone-400">
+            <span>{getTrack(next.track)?.title}</span>
+            <span aria-hidden="true">·</span>
+            <ClockIcon width="1em" height="1em" />
+            <span>{next.minutes} min</span>
+          </p>
+          <p className="mt-3">{next.summary}</p>
+          <Link to={`/lesson/${next.id}`} className={buttonClass('primary', 'mt-5 w-full')}>
+            {progress[next.id] ? 'Review lesson' : 'Start lesson'}
+          </Link>
+        </Card>
+      ) : (
+        <Card>
+          <h2 className="font-serif text-2xl font-semibold">You've finished every lesson!</h2>
+          <p className="mt-2">What a journey. Keep reading the Bible, use the Study tool, and explore the Further Resources.</p>
+        </Card>
+      )}
+
+      <section aria-labelledby="progress-title">
+        <h2 id="progress-title" className="mb-3 font-serif text-2xl font-semibold">
+          Your progress
+        </h2>
+        <ul className="space-y-3">
+          {tracks.map((t) => {
+            const all = lessonsInTrack(t.id)
+            const done = all.filter((l) => progress[l.id]).length
+            return (
+              <li key={t.id}>
+                <Link
+                  to={`/learn/${t.id}`}
+                  className="block rounded-2xl border border-stone-200 bg-white p-4 hover:bg-stone-50 dark:border-stone-800 dark:bg-stone-900 dark:hover:bg-stone-800"
+                >
+                  <div className="mb-2 flex items-baseline justify-between gap-3">
+                    <span className="font-semibold">{t.title}</span>
+                    <span className="text-sm text-stone-600 dark:text-stone-400">
+                      {done} / {all.length}
+                    </span>
+                  </div>
+                  <ProgressBar value={done} max={all.length} label={`${t.title} progress`} barClass={trackStyle(t.id).bar} />
+                </Link>
+              </li>
+            )
+          })}
+        </ul>
+      </section>
+
+      <div className="grid grid-cols-2 gap-3">
+        <Link to={lastRead ? `/bible/${lastRead.book}/${lastRead.chapter}` : '/bible'} className={buttonClass('secondary')}>
+          {lastRead ? `${getBook(lastRead.book)?.name} ${lastRead.chapter}` : 'Read the Bible'}
+        </Link>
+        <Link to="/timeline" className={buttonClass('secondary')}>
+          Timeline
+        </Link>
+      </div>
+
+      <MentorNote />
+    </div>
+  )
+}

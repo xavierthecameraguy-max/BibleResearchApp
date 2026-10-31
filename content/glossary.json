@@ -1,0 +1,562 @@
+[
+  {
+    "id": "abrahamic-covenant",
+    "term": "Abrahamic covenant",
+    "definition": "God's promise to Abraham (Genesis 12, 15, 17) to give him descendants, a land, and to bless all nations through his family. Much of the Bible traces how that promise is kept."
+  },
+  {
+    "id": "allegory",
+    "term": "Allegory",
+    "definition": "Reading a story as a set of symbols, where each detail stands for something else. Some biblical passages are allegories, but treating every passage that way can lead readers far from what the author meant."
+  },
+  {
+    "id": "anabaptist",
+    "term": "Anabaptist",
+    "definition": "A Reformation-era movement (1520s onward) that baptised believers rather than infants and stressed a separated, peaceful community. Mennonites, Amish and Hutterites come from this stream."
+  },
+  {
+    "id": "anglican",
+    "term": "Anglican",
+    "definition": "The family of churches that grew from the Church of England's Reformation, including Episcopal churches. Anglicans keep bishops and set prayers (the Book of Common Prayer) alongside Protestant teaching."
+  },
+  {
+    "id": "apocalyptic",
+    "term": "Apocalyptic",
+    "definition": "A type of writing that uses vivid symbols, visions and numbers to reveal God's view of history and his final victory over evil. Daniel 7–12 and Revelation are the main biblical examples."
+  },
+  {
+    "id": "apocrypha",
+    "term": "Apocrypha",
+    "definition": "Literally 'hidden things'. Protestants use the word for the Jewish books written roughly 300 BC–AD 100 that appear in Catholic and Orthodox Old Testaments but not in the Hebrew Bible. Catholics call most of them the deuterocanonical books."
+  },
+  {
+    "id": "apostle",
+    "term": "Apostle",
+    "definition": "Greek for 'one who is sent'. Usually means the Twelve whom Jesus chose, plus Paul and a few others who were sent out as eyewitnesses and founding leaders of the church."
+  },
+  {
+    "id": "aramaic",
+    "term": "Aramaic",
+    "definition": "A language closely related to Hebrew, widely spoken in the ancient Near East. Parts of Daniel and Ezra are written in it, and it was the everyday language Jesus most likely spoke."
+  },
+  {
+    "id": "arianism",
+    "term": "Arianism",
+    "definition": "The 4th-century teaching of Arius that the Son of God was a created being, not fully God. The Council of Nicaea (325) rejected it."
+  },
+  {
+    "id": "ascension",
+    "term": "Ascension",
+    "definition": "Jesus' return to the Father forty days after his resurrection (Acts 1). Christians believe he now reigns and will come again."
+  },
+  {
+    "id": "atonement",
+    "term": "Atonement",
+    "definition": "The way God deals with sin and restores a broken relationship ('at-one-ment'). Christians believe it centres on Jesus' death and resurrection, and they describe it with several pictures: sacrifice, ransom, victory and substitution."
+  },
+  {
+    "id": "baptism",
+    "term": "Baptism",
+    "definition": "Washing with water as a sign of joining Christ and his people. Traditions differ on its meaning and on whether infants or only believers should be baptised."
+  },
+  {
+    "id": "bishop",
+    "term": "Bishop",
+    "definition": "From a Greek word meaning 'overseer'. In many churches, a senior leader who oversees the churches of a region."
+  },
+  {
+    "id": "canon",
+    "term": "Canon",
+    "definition": "From a Greek word for a measuring rod. The list of books a church community recognises as Scripture, the 'measuring stick' for faith and life."
+  },
+  {
+    "id": "catholic",
+    "term": "Catholic",
+    "definition": "With a small c, 'universal': the worldwide church. With a capital C, the Roman Catholic Church, led by the Bishop of Rome (the Pope)."
+  },
+  {
+    "id": "church",
+    "term": "Church",
+    "definition": "From the Greek ekklesia, 'assembly'. In the New Testament it means God's gathered people, not a building, whether a local congregation or all believers everywhere."
+  },
+  {
+    "id": "church-fathers",
+    "term": "Church fathers",
+    "definition": "Influential Christian teachers and writers of the first several centuries, such as Ignatius, Irenaeus, Athanasius, Augustine and John Chrysostom."
+  },
+  {
+    "id": "codex",
+    "term": "Codex",
+    "definition": "An early book made of folded, stacked pages, as opposed to a scroll. Early Christians adopted the codex very early for copying Scripture."
+  },
+  {
+    "id": "context",
+    "term": "Context",
+    "definition": "Everything around a passage that shapes its meaning: the surrounding verses and book (literary context) and the time, place, culture and situation in which it was written (historical context)."
+  },
+  {
+    "id": "council",
+    "term": "Church council",
+    "definition": "A meeting of church leaders called to settle questions of belief or practice. Acts 15 records the first one, in Jerusalem."
+  },
+  {
+    "id": "covenant",
+    "term": "Covenant",
+    "definition": "A binding, committed relationship with promises and responsibilities on both sides. In the Bible, God makes a series of covenants (with Noah, Abraham, Israel at Sinai and David, and the new covenant in Jesus) that drive the whole story forward."
+  },
+  {
+    "id": "creed",
+    "term": "Creed",
+    "definition": "From the Latin credo, 'I believe'. A short summary of core Christian beliefs, such as the Apostles' Creed or the Nicene Creed, often said aloud together in worship."
+  },
+  {
+    "id": "davidic-covenant",
+    "term": "Davidic covenant",
+    "definition": "God's promise to King David (2 Samuel 7) that one of his descendants would reign forever. The New Testament presents Jesus as that promised King."
+  },
+  {
+    "id": "dead-sea-scrolls",
+    "term": "Dead Sea Scrolls",
+    "definition": "About 900 ancient scrolls, many in fragments, found from 1947 onward in caves near Qumran by the Dead Sea. Dating from roughly 250 BC to AD 70, they include the oldest known copies of Old Testament books."
+  },
+  {
+    "id": "denomination",
+    "term": "Denomination",
+    "definition": "A named family of churches that share beliefs, practices and organisation, such as Baptist, Lutheran, Methodist, Presbyterian or Pentecostal."
+  },
+  {
+    "id": "deuterocanonical",
+    "term": "Deuterocanonical books",
+    "definition": "'Second canon'. The Catholic and Orthodox name for books such as Tobit, Judith, Wisdom, Sirach, Baruch and 1–2 Maccabees, which they include in the Old Testament. Protestants usually call them the Apocrypha."
+  },
+  {
+    "id": "disciple",
+    "term": "Disciple",
+    "definition": "A student or follower who learns to live like their teacher. Anyone who follows Jesus is his disciple."
+  },
+  {
+    "id": "dynamic-equivalence",
+    "term": "Thought-for-thought (dynamic equivalence)",
+    "definition": "A translation approach that aims to give the meaning of each sentence in natural modern language, even if the word order and wording change. The NLT and Good News Bible lean this way."
+  },
+  {
+    "id": "ecumenical-council",
+    "term": "Ecumenical council",
+    "definition": "A council meant to represent the whole church. The Orthodox and Catholic churches both accept the first seven, held from Nicaea (325) to Nicaea II (787), and Catholics recognise later ones too."
+  },
+  {
+    "id": "ecumenism",
+    "term": "Ecumenism",
+    "definition": "Efforts by different churches to understand one another, pray together and seek greater unity."
+  },
+  {
+    "id": "eisegesis",
+    "term": "Eisegesis",
+    "definition": "Reading your own ideas into a passage. The opposite of exegesis, and something careful readers try to avoid."
+  },
+  {
+    "id": "epistle",
+    "term": "Epistle",
+    "definition": "An old word for a letter. Twenty-one New Testament books are letters written to churches or individuals."
+  },
+  {
+    "id": "eucharist",
+    "term": "Lord's Supper (Eucharist, Communion)",
+    "definition": "The meal of bread and wine that Jesus gave his followers on the night before he died. Christians understand how Christ is present in it differently, but nearly all churches celebrate it."
+  },
+  {
+    "id": "evangelical",
+    "term": "Evangelical",
+    "definition": "From the Greek for 'good news'. A broad Protestant movement that stresses personal conversion, the authority of the Bible, the cross, and sharing the faith."
+  },
+  {
+    "id": "excommunication",
+    "term": "Excommunication",
+    "definition": "Formally cutting someone off from a church's fellowship and sacraments, usually in the hope that they will repent."
+  },
+  {
+    "id": "exegesis",
+    "term": "Exegesis",
+    "definition": "Careful study that draws the meaning out of a text, asking what the author meant for the original readers."
+  },
+  {
+    "id": "exile",
+    "term": "Exile",
+    "definition": "Being forced away from home. Usually means the Babylonian exile (587/586–539 BC), when Jerusalem was destroyed and many Judeans were taken to Babylon."
+  },
+  {
+    "id": "exodus",
+    "term": "Exodus",
+    "definition": "'Going out'. God's rescue of Israel from slavery in Egypt, and the book that tells that story. It becomes the Bible's main picture of salvation."
+  },
+  {
+    "id": "faith",
+    "term": "Faith",
+    "definition": "Trust: relying on God and his promises. In the Bible, faith is more than agreeing with facts. It is loyal confidence that shapes how you live."
+  },
+  {
+    "id": "filioque",
+    "term": "Filioque",
+    "definition": "Latin for 'and the Son'. A phrase added in the West to the Nicene Creed (the Spirit proceeds 'from the Father and the Son'). Eastern churches rejected the addition, and it became a key issue in the East–West split."
+  },
+  {
+    "id": "formal-equivalence",
+    "term": "Word-for-word (formal equivalence)",
+    "definition": "A translation approach that follows the original words and structure as closely as English allows. The KJV, NKJV, ESV and NASB lean this way."
+  },
+  {
+    "id": "genre",
+    "term": "Genre",
+    "definition": "A type or style of writing, such as narrative, poetry, law, prophecy, letter or apocalyptic. Each genre works by its own rules and is read differently."
+  },
+  {
+    "id": "gentile",
+    "term": "Gentile",
+    "definition": "Anyone who is not Jewish. A major New Testament theme is that Gentiles are welcomed into God's family through Jesus."
+  },
+  {
+    "id": "gospel",
+    "term": "Gospel",
+    "definition": "'Good news'. The message that God's kingdom has come in Jesus, who died for sins and rose again. Also the name for the four books (Matthew, Mark, Luke, John) that tell his story."
+  },
+  {
+    "id": "grace",
+    "term": "Grace",
+    "definition": "God's undeserved kindness and favour, given freely rather than earned."
+  },
+  {
+    "id": "hebrew",
+    "term": "Hebrew",
+    "definition": "The language in which most of the Old Testament was written."
+  },
+  {
+    "id": "heresy",
+    "term": "Heresy",
+    "definition": "A teaching that the church judged to contradict a core truth of the faith, such as who Jesus is."
+  },
+  {
+    "id": "hermeneutics",
+    "term": "Hermeneutics",
+    "definition": "The study of how to interpret. In Bible study, it means the principles we use to understand what a passage meant and what it means now."
+  },
+  {
+    "id": "holy-spirit",
+    "term": "Holy Spirit",
+    "definition": "The third person of the Trinity: God present and active, who gives life, inspires Scripture, lives in believers and makes them more like Jesus."
+  },
+  {
+    "id": "image-of-god",
+    "term": "Image of God",
+    "definition": "The Latin phrase is imago Dei. Genesis 1 teaches that humans are made in God's image: reflecting his character and caring for creation on his behalf, with a dignity every person shares."
+  },
+  {
+    "id": "incarnation",
+    "term": "Incarnation",
+    "definition": "'Becoming flesh'. The belief that the eternal Son of God became fully human in Jesus while remaining fully God (John 1:14)."
+  },
+  {
+    "id": "indulgence",
+    "term": "Indulgence",
+    "definition": "In medieval Catholic teaching, a release from some of the temporal punishment due for sins already forgiven. Abuses in selling indulgences sparked Luther's protest in 1517."
+  },
+  {
+    "id": "inspiration",
+    "term": "Inspiration",
+    "definition": "The belief that God worked through human authors so that Scripture is truly his word, while still reflecting their own personalities, languages and settings (2 Timothy 3:16)."
+  },
+  {
+    "id": "intertestamental-period",
+    "term": "Intertestamental period",
+    "definition": "The roughly 400 years between the last Old Testament prophets and the time of Jesus, when Persian, Greek and then Roman powers ruled Judea."
+  },
+  {
+    "id": "israel",
+    "term": "Israel",
+    "definition": "The new name God gave Jacob, then his descendants (the twelve tribes), and later the northern kingdom after the nation split around 930 BC."
+  },
+  {
+    "id": "justification",
+    "term": "Justification",
+    "definition": "Being declared right with God. During the Reformation, Protestants and Catholics disagreed over how justification relates to faith, grace and good works."
+  },
+  {
+    "id": "kingdom-of-god",
+    "term": "Kingdom of God",
+    "definition": "God's rule breaking into the world. Jesus' central message was that this kingdom had arrived in him, is growing now, and will come in fullness when he returns."
+  },
+  {
+    "id": "koine-greek",
+    "term": "Koine Greek",
+    "definition": "'Common' Greek, the everyday language of the eastern Roman Empire. The New Testament and the Septuagint were written in it."
+  },
+  {
+    "id": "lament",
+    "term": "Lament",
+    "definition": "A prayer or song of sorrow or complaint brought honestly to God. About a third of the Psalms are laments."
+  },
+  {
+    "id": "law",
+    "term": "Law (Torah)",
+    "definition": "The instructions God gave Israel, mainly in Exodus to Deuteronomy. The Hebrew word torah means 'instruction' or 'teaching', not only rules."
+  },
+  {
+    "id": "liturgy",
+    "term": "Liturgy",
+    "definition": "A set pattern of public worship: prayers, readings, songs and sacraments shared by a congregation."
+  },
+  {
+    "id": "manuscript",
+    "term": "Manuscript",
+    "definition": "A handwritten copy of a text. Before printing (about 1450), every Bible was copied by hand."
+  },
+  {
+    "id": "martyr",
+    "term": "Martyr",
+    "definition": "Greek for 'witness'. A person killed because of their faith."
+  },
+  {
+    "id": "masoretic-text",
+    "term": "Masoretic Text",
+    "definition": "The standard Hebrew text of the Old Testament, carefully preserved by Jewish scholars called Masoretes (about AD 600–1000), who added vowel marks and notes. Most English Old Testaments are translated from it."
+  },
+  {
+    "id": "messiah",
+    "term": "Messiah",
+    "definition": "Hebrew for 'anointed one'. 'Christ' is the Greek equivalent. The promised king from David's line whom God would send to rescue his people. Christians believe Jesus is the Messiah."
+  },
+  {
+    "id": "missions",
+    "term": "Missions",
+    "definition": "The church's work of sharing the good news of Jesus and serving people across cultures and nations."
+  },
+  {
+    "id": "monasticism",
+    "term": "Monasticism",
+    "definition": "A way of life in which men (monks) or women (nuns) devote themselves to prayer, work and community, often under a shared rule of life."
+  },
+  {
+    "id": "new-covenant",
+    "term": "New covenant",
+    "definition": "The covenant promised in Jeremiah 31, in which God writes his law on hearts and forgives sins. Jesus said his death begins this new covenant (Luke 22:20)."
+  },
+  {
+    "id": "new-creation",
+    "term": "New creation",
+    "definition": "The Bible's hope that God will heal and renew the whole world, not abandon it, with heaven and earth joined and death gone forever (Revelation 21–22)."
+  },
+  {
+    "id": "oriental-orthodox",
+    "term": "Oriental Orthodox",
+    "definition": "Ancient churches such as the Coptic, Ethiopian, Armenian and Syriac Orthodox, which did not accept the Council of Chalcedon (451). Recent dialogues suggest the disagreement was largely about wording."
+  },
+  {
+    "id": "orthodox",
+    "term": "Eastern Orthodox",
+    "definition": "The family of churches, such as the Greek, Russian and Antiochian, that continue the tradition of the eastern Roman Empire. They are led by bishops and patriarchs, with the Patriarch of Constantinople honoured as 'first among equals'."
+  },
+  {
+    "id": "papyrus",
+    "term": "Papyrus",
+    "definition": "An early writing material made from reeds that grew along the Nile. Many of the earliest New Testament fragments are on papyrus."
+  },
+  {
+    "id": "parable",
+    "term": "Parable",
+    "definition": "A short story drawn from everyday life that teaches a truth about God's kingdom. Jesus often taught this way."
+  },
+  {
+    "id": "parallelism",
+    "term": "Parallelism",
+    "definition": "The main feature of Hebrew poetry: a second line echoes, contrasts or builds on the first, as in many Psalms and Proverbs."
+  },
+  {
+    "id": "paraphrase",
+    "term": "Paraphrase",
+    "definition": "A very free rendering that restates the meaning in fresh, everyday words, such as The Message. Useful alongside a translation, but less precise."
+  },
+  {
+    "id": "parchment",
+    "term": "Parchment",
+    "definition": "Writing material made from specially prepared animal skin. It lasts longer than papyrus and was used for many important manuscripts."
+  },
+  {
+    "id": "passover",
+    "term": "Passover",
+    "definition": "The yearly festival remembering God's rescue from Egypt, when the plague of death 'passed over' homes marked with lambs' blood. Jesus' Last Supper was a Passover meal."
+  },
+  {
+    "id": "patriarch",
+    "term": "Patriarch",
+    "definition": "Either one of Israel's founding fathers (Abraham, Isaac and Jacob) or a senior bishop of a major ancient city, such as Constantinople, in the Orthodox Church."
+  },
+  {
+    "id": "pentateuch",
+    "term": "Pentateuch",
+    "definition": "Greek for 'five scrolls'. The first five books of the Bible (Genesis to Deuteronomy), also called the Torah."
+  },
+  {
+    "id": "pentecost",
+    "term": "Pentecost",
+    "definition": "A Jewish harvest festival fifty days after Passover. At the Pentecost after Jesus' resurrection, the Holy Spirit came on his followers (Acts 2), often called the church's birthday."
+  },
+  {
+    "id": "pentecostal",
+    "term": "Pentecostal and charismatic",
+    "definition": "Christians who stress the present-day work and gifts of the Holy Spirit, such as healing, prophecy and speaking in tongues. The movement grew rapidly after the Azusa Street revival (1906)."
+  },
+  {
+    "id": "pope",
+    "term": "Pope",
+    "definition": "The Bishop of Rome, whom Catholics see as Peter's successor and the visible head of the whole church on earth. Orthodox and Protestant Christians do not accept that role."
+  },
+  {
+    "id": "proof-texting",
+    "term": "Proof-texting",
+    "definition": "Pulling a verse out of its context to 'prove' a point, without checking what it meant where it was written."
+  },
+  {
+    "id": "prophet",
+    "term": "Prophet",
+    "definition": "Someone who speaks God's message to people. Old Testament prophets mainly called Israel back to the covenant, warning of judgement and promising restoration. Predicting the future was only part of their work."
+  },
+  {
+    "id": "protestant",
+    "term": "Protestant",
+    "definition": "Christians and churches that trace their roots to the 16th-century Reformation, such as Lutheran, Reformed, Anglican, Baptist, Methodist and Pentecostal."
+  },
+  {
+    "id": "purgatory",
+    "term": "Purgatory",
+    "definition": "In Catholic teaching, a final purification after death for those who die in God's grace. Orthodox Christians describe the state after death differently, and Protestants generally reject the idea."
+  },
+  {
+    "id": "reformation",
+    "term": "Reformation",
+    "definition": "The 16th-century movement, begun in 1517 with Martin Luther, that sought to reform the Western church and led to the Protestant churches. The Catholic Church also carried out its own reform."
+  },
+  {
+    "id": "repentance",
+    "term": "Repentance",
+    "definition": "Turning around: changing your mind and direction, away from sin and toward God."
+  },
+  {
+    "id": "resurrection",
+    "term": "Resurrection",
+    "definition": "Being raised bodily to new, never-ending life. Jesus' resurrection is the centre of Christian faith and the promise of our own (1 Corinthians 15)."
+  },
+  {
+    "id": "revival",
+    "term": "Revival",
+    "definition": "A season of renewed spiritual life in which many people turn to God and churches are awakened, such as the Great Awakening of the 1730s–40s."
+  },
+  {
+    "id": "sabbath",
+    "term": "Sabbath",
+    "definition": "The seventh day of rest, from Friday sunset to Saturday sunset, which God gave Israel as a gift and a sign of the covenant."
+  },
+  {
+    "id": "sacrament",
+    "term": "Sacrament",
+    "definition": "A sacred act that is a visible sign of God's grace, such as baptism and the Lord's Supper. Catholic and Orthodox churches count seven sacraments. Most Protestants count two."
+  },
+  {
+    "id": "sacrifice",
+    "term": "Sacrifice",
+    "definition": "An offering given to God. In Israel's worship, animal sacrifices dealt with sin, gave thanks and restored fellowship. The New Testament sees Jesus' death as the final sacrifice."
+  },
+  {
+    "id": "salvation",
+    "term": "Salvation",
+    "definition": "Rescue: God saving people from sin, death and evil, and restoring them to life with him. The Bible pictures it as past (forgiven), present (being made new) and future (full renewal)."
+  },
+  {
+    "id": "schism",
+    "term": "Schism",
+    "definition": "A split or break in fellowship within the church. The best known is the East–West Schism usually dated to 1054."
+  },
+  {
+    "id": "scribe",
+    "term": "Scribe",
+    "definition": "A trained writer and copyist. In the Bible, scribes also became experts who taught the Law."
+  },
+  {
+    "id": "second-coming",
+    "term": "Second coming",
+    "definition": "The Christian hope that Jesus will return in glory to judge the world, raise the dead and make all things new."
+  },
+  {
+    "id": "septuagint",
+    "term": "Septuagint",
+    "definition": "The ancient Greek translation of the Hebrew Scriptures, made by Jewish scholars from about the 3rd century BC. The early church often used it, and it is still the Orthodox Old Testament. Often abbreviated LXX (70) after a legend of 70 translators."
+  },
+  {
+    "id": "sin",
+    "term": "Sin",
+    "definition": "Missing the mark: failing to love God and others, and choosing our own way over his. Sin damages our relationships with God, each other and creation."
+  },
+  {
+    "id": "sola-scriptura",
+    "term": "Sola Scriptura",
+    "definition": "Latin for 'Scripture alone'. The Reformation principle that the Bible is the final authority for faith, above church tradition. Catholic and Orthodox Christians see Scripture and Tradition working together."
+  },
+  {
+    "id": "synoptic-gospels",
+    "term": "Synoptic Gospels",
+    "definition": "Matthew, Mark and Luke, called 'synoptic' (seen together) because they tell many of the same stories in similar ways. John's Gospel has a different style and selection."
+  },
+  {
+    "id": "tabernacle",
+    "term": "Tabernacle",
+    "definition": "The portable tent Israel built in the wilderness as the place where God dwelt among them, before the temple."
+  },
+  {
+    "id": "tanakh",
+    "term": "Tanakh",
+    "definition": "The Jewish name for the Hebrew Bible, from the first letters of its three parts: Torah (Law), Nevi'im (Prophets) and Ketuvim (Writings). It has the same content as the Protestant Old Testament, arranged differently."
+  },
+  {
+    "id": "temple",
+    "term": "Temple",
+    "definition": "The house of worship in Jerusalem where God's presence dwelt among Israel. Solomon built the first (destroyed 586 BC), and the second was rebuilt from about 516 BC and destroyed by Rome in AD 70."
+  },
+  {
+    "id": "testament",
+    "term": "Testament",
+    "definition": "An old word for 'covenant'. The Old Testament tells of God's covenants with Israel. The New Testament tells of the new covenant in Jesus."
+  },
+  {
+    "id": "textual-criticism",
+    "term": "Textual criticism",
+    "definition": "The careful science of comparing manuscripts to recover the original wording of a text as closely as possible."
+  },
+  {
+    "id": "textual-variant",
+    "term": "Textual variant",
+    "definition": "A place where manuscripts differ in wording. Most variants are tiny, such as spelling or word order, and none changes a core Christian belief."
+  },
+  {
+    "id": "torah",
+    "term": "Torah",
+    "definition": "Hebrew for 'instruction'. The first five books of the Bible, or God's teaching more broadly."
+  },
+  {
+    "id": "translation",
+    "term": "Translation",
+    "definition": "Putting a text into another language. Every translation involves choices about wording, which is why different English Bibles read differently."
+  },
+  {
+    "id": "trinity",
+    "term": "Trinity",
+    "definition": "The Christian belief that there is one God who exists eternally as three persons: Father, Son and Holy Spirit. The word is not in the Bible, but the church used it to sum up what Scripture teaches."
+  },
+  {
+    "id": "vulgate",
+    "term": "Vulgate",
+    "definition": "The Latin translation of the Bible made mainly by Jerome (about AD 382–405). It was the standard Bible of the Western church for over a thousand years."
+  },
+  {
+    "id": "wisdom-literature",
+    "term": "Wisdom literature",
+    "definition": "Books such as Proverbs, Job and Ecclesiastes that reflect on how to live well in God's world and wrestle with life's hard questions."
+  }
+]
