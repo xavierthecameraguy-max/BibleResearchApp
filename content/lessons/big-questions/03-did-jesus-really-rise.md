@@ -59,7 +59,7 @@ Historians of many backgrounds, whether Christian, Jewish, agnostic or atheist, 
 - Jesus was a real Jewish teacher who was crucified by the Romans in Jerusalem around AD 30-33.
 - Soon afterwards, his followers became convinced that he had risen and appeared to them.
 - This belief spread quickly, even in Jerusalem, where he had been executed.
-- Two people who had not been his followers, Jesus' brother James and a persecutor named Saul (later Paul), came to believe as well.
+- A persecutor named Saul (later Paul) came to believe as well, and so did Jesus' brother James, who seems not to have followed him during his ministry (John 7:5).
 
 The debate is usually not about these facts. It is about how best to explain them.
 
@@ -82,7 +82,7 @@ It is only fair to describe the other explanations people have offered, and why 
 - **The body was stolen, or the disciples lied.** This was the earliest alternative. Christians respond that the disciples' willingness to suffer makes deliberate fraud unlikely.
 - **The women went to the wrong tomb.** But then the authorities could simply have pointed to the right one.
 - **Jesus did not really die.** This "swoon" idea suggests he revived in the cool of the tomb. Most historians reject it. Roman soldiers were practised at execution, and a badly injured man would hardly have inspired faith in a glorious victory over death.
-- **The appearances were visions or grief experiences.** This is the most common view among sceptical scholars today. Grieving people do sometimes sense the presence of someone they have lost. Some scholars, such as the German writer Gerd Lüdemann, have suggested that Peter and Paul had visions that others then shared. Christians respond that this struggles to explain group appearances, the conversion of a hostile Paul and the empty tomb.
+- **The appearances were visions or grief experiences.** This is the most common view among sceptical scholars today. Grieving people do sometimes sense the presence of someone they have lost. Some, such as the German New Testament scholar Gerd Lüdemann, have suggested that Peter and Paul had visions that others then shared. Christians respond that this struggles to explain group appearances, the conversion of a hostile Paul and the empty tomb.
 - **The story grew into a legend over time.** Christians point to how early Paul's summary is.
 
 Some historians add that, whatever happened, historical study by its nature cannot conclude that a miracle took place. At that point the question becomes a larger one: does God exist, and might he act in the world?

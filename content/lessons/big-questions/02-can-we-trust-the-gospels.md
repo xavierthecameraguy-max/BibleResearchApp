@@ -69,7 +69,7 @@ Jesus was crucified around AD 30 or 33. Most scholars date the Gospels within th
 
 These are estimates, and there is a real range of opinion. Some scholars argue for earlier dates, partly because the book of Acts, Luke's second volume, ends with Paul still alive in Rome around AD 62. Others place some Gospels a little later.
 
-Either way, the gap is short by ancient standards. The main surviving accounts of the life of Alexander the Great were written roughly three to four centuries after his death, yet historians still use them. The Gospels were written within the lifetime of people who had known Jesus.
+Either way, the gap is short by ancient standards. The main surviving accounts of the life of Alexander the Great were written roughly three to four and a half centuries after his death, yet historians still use them. The Gospels were written within the lifetime of people who had known Jesus.
 
 Paul's letters are even earlier, from the AD 50s. In 1 Corinthians 15:3-7, written around AD 53-55, Paul passes on a summary of the faith that he says he himself had received: Christ died for our sins, was buried, was raised on the third day and appeared to many. Many scholars think this summary goes back to within a few years of the crucifixion.
 
