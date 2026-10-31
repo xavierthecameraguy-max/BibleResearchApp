@@ -5,7 +5,7 @@ import { useSyncExternalStore } from 'react'
 
 export const STORAGE_KEY = 'foundations:v1'
 
-export type Theme = 'system' | 'light' | 'dark'
+export type Theme = 'system' | 'light' | 'dark' | 'sepia'
 export type TextSize = 'md' | 'lg' | 'xl'
 
 export interface LessonProgress {
@@ -420,5 +420,6 @@ export function applySettingsToDocument() {
   const { theme, textSize } = state.settings
   const dark = theme === 'dark' || (theme === 'system' && matchMedia('(prefers-color-scheme: dark)').matches)
   document.documentElement.classList.toggle('dark', dark)
+  document.documentElement.classList.toggle('sepia', theme === 'sepia')
   document.documentElement.dataset.textSize = textSize
 }

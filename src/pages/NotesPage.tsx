@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { deleteNote, exportBackup, importBackup, useAppState, type StudyAnswers } from '../lib/storage.ts'
+import { deleteNote, exportBackup, importBackup, useAppState, type Note, type StudyAnswers } from '../lib/storage.ts'
 import { useTitle } from '../lib/hooks.ts'
 import { Card, PageTitle, buttonClass } from '../components/ui.tsx'
 
@@ -10,6 +10,26 @@ const LABELS: Record<keyof StudyAnswers, string> = {
   audience: 'What did it mean to the original audience?',
   story: "Where does it fit in the Bible's larger story?",
   today: 'What does it mean for me today?',
+}
+
+/** Share a study note (e.g. with a pastor or mentor) as plain text. */
+async function shareNote(n: Note) {
+  const text = [
+    `My study of ${n.passageRef}`,
+    '',
+    ...(Object.keys(LABELS) as (keyof StudyAnswers)[])
+      .filter((k) => n.answers[k]?.trim())
+      .flatMap((k) => [LABELS[k], n.answers[k].trim(), '']),
+  ].join('\n')
+  try {
+    if (navigator.share) await navigator.share({ title: `Study: ${n.passageRef}`, text })
+    else {
+      await navigator.clipboard.writeText(text)
+      alert('Copied. You can paste it into a message or email.')
+    }
+  } catch {
+    // the person cancelled sharing
+  }
 }
 
 export function NotesPage() {
@@ -58,7 +78,10 @@ export function NotesPage() {
                       </div>
                     ))}
                 </dl>
-                <div className="mt-4 flex gap-2">
+                <div className="mt-4 flex flex-wrap gap-2">
+                  <button type="button" className={buttonClass('secondary', 'flex-1')} onClick={() => shareNote(n)}>
+                    Share
+                  </button>
                   <Link to={`/study/passage?note=${n.id}`} className={buttonClass('secondary', 'flex-1')}>
                     Edit
                   </Link>

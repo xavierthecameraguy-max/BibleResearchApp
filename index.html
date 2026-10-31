@@ -18,6 +18,7 @@
         var s = JSON.parse(localStorage.getItem('foundations:v1') || '{}').settings || {}
         var dark = s.theme === 'dark' || (s.theme !== 'light' && matchMedia('(prefers-color-scheme: dark)').matches)
         if (dark) document.documentElement.classList.add('dark')
+        if (s.theme === 'sepia') document.documentElement.classList.add('sepia')
         document.documentElement.dataset.textSize = s.textSize || 'md'
       } catch (e) {}
     </script>

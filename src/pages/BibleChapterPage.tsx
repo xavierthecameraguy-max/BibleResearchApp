@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react'
-import { Link, useParams, useSearchParams } from 'react-router-dom'
+import { useEffect, useRef, useState } from 'react'
+import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom'
+import { ChapterJump } from '../components/ChapterJump.tsx'
 import { getBook } from '../lib/books.ts'
 import { fallbackMessage, useChapters, useCurrentTranslation, useTitle } from '../lib/hooks.ts'
 import { setLastRead, useAppState, verseKey } from '../lib/storage.ts'
@@ -32,6 +33,14 @@ export function BibleChapterPage() {
   const verseNotes = useAppState((s) => s.verseNotes)
   const speaking = useSpeaking()
   const [panel, setPanel] = useState<null | 'xrefs'>(null)
+  const [jumpOpen, setJumpOpen] = useState(false)
+  const navigate = useNavigate()
+  // Swipe left/right to change chapter (ignored while verses are selected).
+  const touch = useRef<{ x: number; y: number; t: number } | null>(null)
+  const onTouchStart = (e: React.TouchEvent) => {
+    const t = e.touches[0]
+    touch.current = { x: t.clientX, y: t.clientY, t: Date.now() }
+  }
   const settings = useAppState((s) => s.settings)
   const leading = { normal: 'leading-[1.6]', relaxed: 'leading-[1.85]', loose: 'leading-[2.1]' }[settings.lineSpacing]
   const fontClass = settings.readerFont === 'sans' ? 'font-sans' : 'font-serif'
@@ -57,14 +66,35 @@ export function BibleChapterPage() {
   const next = chapter < book.chapters ? `/bible/${book.id}/${chapter + 1}` : idx < 65 ? `/bible/${BOOKS[idx + 1].id}/1` : null
   const passage = { book: book.id, startChapter: chapter, endChapter: chapter }
 
+  const onTouchEnd = (e: React.TouchEvent) => {
+    const start = touch.current
+    touch.current = null
+    if (!start || selected.length) return
+    const t = e.changedTouches[0]
+    const dx = t.clientX - start.x
+    const dy = t.clientY - start.y
+    if (Math.abs(dx) > 70 && Math.abs(dx) > Math.abs(dy) * 2 && Date.now() - start.t < 600) {
+      if (dx < 0 && next) navigate(next)
+      if (dx > 0 && prev) navigate(prev)
+    }
+  }
+
   return (
-    <article aria-labelledby="chapter-title">
+    <article aria-labelledby="chapter-title" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
+      <ChapterJump open={jumpOpen} onClose={() => setJumpOpen(false)} currentBook={book.id} />
       <div className="mb-4 flex items-baseline justify-between gap-3">
         <h1 id="chapter-title" className="font-serif text-3xl font-semibold">
-          <Link to={`/bible/${book.id}`} className="hover:underline">
-            {book.id === 'PSA' ? 'Psalm' : book.name}
-          </Link>{' '}
-          {chapter}
+          <button
+            type="button"
+            onClick={() => setJumpOpen(true)}
+            className="inline-flex items-baseline gap-1 rounded-lg text-left hover:underline"
+            aria-label={`${book.id === 'PSA' ? 'Psalm' : book.name} ${chapter}. Choose another book or chapter`}
+          >
+            {book.id === 'PSA' ? 'Psalm' : book.name} {chapter}
+            <span aria-hidden="true" className="text-xl text-stone-500">
+              ▾
+            </span>
+          </button>
         </h1>
         <button
           type="button"
@@ -94,7 +124,9 @@ export function BibleChapterPage() {
           </button>
         )}
       </div>
-      <p className="mb-3 text-sm text-stone-600 dark:text-stone-400">Tap a verse to highlight, bookmark, add a note or compare.</p>
+      <p className="mb-3 text-sm text-stone-600 dark:text-stone-400">
+        Tap a verse for highlights, notes, cross-references and more. Swipe to change chapter.
+      </p>
 
       {loading ? (
         <p className="text-stone-500">Loading…</p>

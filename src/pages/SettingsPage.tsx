@@ -177,6 +177,7 @@ export function SettingsPage() {
             options={[
               ['system', 'Auto'],
               ['light', 'Light'],
+              ['sepia', 'Sepia'],
               ['dark', 'Dark'],
             ]}
             onChange={(theme) => updateSettings({ theme })}

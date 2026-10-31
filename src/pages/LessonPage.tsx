@@ -10,12 +10,26 @@ import { Quiz } from '../components/Quiz.tsx'
 import { MentorNote, buttonClass } from '../components/ui.tsx'
 import { CheckIcon, ClockIcon } from '../components/Icons.tsx'
 import { NotFoundPage } from './NotFoundPage.tsx'
+import { speak, speechSupported, stopSpeaking, useSpeaking } from '../lib/speech.ts'
+import { getTerm } from '../lib/content.ts'
+
+/** Lesson Markdown as plain sentences for reading aloud. */
+function speakable(md: string): string[] {
+  return md
+    .replace(/\[\[([a-z0-9-]+)(?:\|([^\]]+))?\]\]/g, (_m, id: string, label?: string) => label ?? getTerm(id)?.term ?? id)
+    .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
+    .replace(/[*_`>#]/g, '')
+    .split(/\n{2,}/)
+    .map((p) => p.replace(/\s+/g, ' ').trim())
+    .filter(Boolean)
+}
 
 export function LessonPage() {
   const { lessonId = '' } = useParams()
   const lesson = getLesson(lessonId)
   const progress = useAppState((s) => s.progress[lessonId])
   const [retake, setRetake] = useState(false)
+  const speaking = useSpeaking()
   useTitle(lesson?.title ?? 'Not found')
 
   useEffect(() => {
@@ -49,6 +63,17 @@ export function LessonPage() {
           </>
         )}
       </p>
+
+      {speechSupported && (
+        <button
+          type="button"
+          className={buttonClass('secondary', 'mt-4 min-h-11 px-4 py-2 text-[0.95rem]')}
+          aria-pressed={speaking}
+          onClick={() => (speaking ? stopSpeaking() : speak([lesson.title, lesson.summary, ...speakable(lesson.body)]))}
+        >
+          {speaking ? 'Stop reading' : 'Listen to this lesson'}
+        </button>
+      )}
 
       <div className="mt-5 rounded-2xl bg-stone-100 p-5 dark:bg-stone-900">
         <h2 className="text-sm font-semibold uppercase tracking-wide text-stone-600 dark:text-stone-400">In short</h2>
